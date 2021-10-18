@@ -213,7 +213,7 @@ object 对比技术 - 整个ruby范围内会用到的技术，既是默认的也
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#00D">3</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; <span style="color:#00D">1</span>.+(<span style="color:#00D">2</span>)
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#00D">3</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt;
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt;
 </pre></div>
 </div>
 </div>
@@ -226,7 +226,7 @@ object 对比技术 - 整个ruby范围内会用到的技术，既是默认的也
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#777">#&lt;Object:0x00007fead491e6c0&gt;</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; <span style="color:#080;font-weight:bold">def</span> obj.<span style="color:#06B;font-weight:bold">+</span>(other)
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span>?&gt;   <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Trying to add something to me, en?</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#A60">:+</span>
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; puts obj + <span style="color:#00D">100</span>
 <span class="line-numbers"><a href="#n8" name="n8">8</a></span><span style="color:#036;font-weight:bold">Trying</span> to add something to me, eh?
@@ -243,7 +243,7 @@ object 对比技术 - 整个ruby范围内会用到的技术，既是默认的也
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  attr_accessor <span style="color:#A60">:balance</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(amount=<span style="color:#00D">0</span>)
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>    <span style="color:#069">self</span>.balance = amount
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#069">self</span>.balance = amount
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">+</span>(x)
@@ -253,7 +253,7 @@ object 对比技术 - 整个ruby范围内会用到的技术，既是默认的也
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">-</span>(x)
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>    <span style="color:#069">self</span>.balance -= x
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">to_s</span>
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span>    balance.to_s
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span>  <span style="color:#080;font-weight:bold">end</span>
@@ -298,7 +298,7 @@ Account 的实例去执行 - 和 + 操作，直接返回 其中一个 attribute 
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(text)
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#33B">@text</span> = text
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">to_s</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#33B">@text</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">end</span>
@@ -308,7 +308,7 @@ Account 的实例去执行 - 和 + 操作，直接返回 其中一个 attribute 
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">-@</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>    <span style="color:#33B">@text</span>.downcase
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    <span style="color:#33B">@text</span>.downcase
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span>
@@ -382,7 +382,7 @@ Account 的实例去执行 - 和 + 操作，直接返回 其中一个 attribute 
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; str.object_id
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#00D">70337950032840</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; str.upcase.object_id
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; str.upcase.object_id
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#00D">70337949939580</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; str.upcase!.object_id
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#00D">70337950032840</span>
@@ -409,7 +409,7 @@ Account 的实例去执行 - 和 + 操作，直接返回 其中一个 attribute 
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">A piece of string.</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt; str.clear
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span> &gt; str
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span> &gt; str
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>
 </pre></div>
 </div>
@@ -475,7 +475,7 @@ Account 的实例去执行 - 和 + 操作，直接返回 其中一个 attribute 
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#777">#&lt;Object:0x00007fdde513c340&gt;</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; puts obj
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#777">#&lt;Object:0x00007fdde513c340&gt;</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span> =&gt; <span style="color:#069">nil</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span> =&gt; <span style="color:#069">nil</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; <span style="color:#080;font-weight:bold">def</span> obj.<span style="color:#06B;font-weight:bold">to_s</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span>?&gt;   <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am an object!</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
@@ -523,7 +523,7 @@ array在产生string格式输出时会有所不同。 对一个array使用to_s�
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#777">#&lt;Object:0x00007f9d650546f0&gt;</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; obj.to_s
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">#&lt;Object:0x00007f9d650546f0&gt;</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; obj.inspect
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; obj.inspect
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">#&lt;Object:0x00007f9d650546f0&gt;</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt;
 </pre></div>
@@ -543,7 +543,7 @@ array在产生string格式输出时会有所不同。 对一个array使用to_s�
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(name)
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span>?&gt;     <span style="color:#33B">@name</span> = name
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span>?&gt;     <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">011</span>?&gt;
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">011</span>?&gt;
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">012</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">inspect</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span>?&gt;     <span style="color:#33B">@name</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span>?&gt;     <span style="color:#080;font-weight:bold">end</span>
@@ -553,7 +553,7 @@ array在产生string格式输出时会有所不同。 对一个array使用to_s�
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">017</span> &gt; david = <span style="color:#036;font-weight:bold">Person</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">David</span><span style="color:#710">&quot;</span></span>)
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span> =&gt; <span style="color:#036;font-weight:bold">David</span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span> &gt; puts david.inspect
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="color:#036;font-weight:bold">David</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#036;font-weight:bold">David</span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span> =&gt; <span style="color:#069">nil</span>
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">9</span> &gt; puts david
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#777">#&lt;Person:0x00007f9d65022fd8&gt;</span>
@@ -598,7 +598,7 @@ array在产生string格式输出时会有所不同。 对一个array使用to_s�
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#777">#&lt;File:./display.out&gt;</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">023</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hello</span><span style="color:#710">&quot;</span></span>.display(fh)
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#069">nil</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">024</span> &gt; fh.close
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">024</span> &gt; fh.close
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#069">nil</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">025</span> &gt; puts(<span style="color:#036;font-weight:bold">File</span>.read(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">./display.out</span><span style="color:#710">&quot;</span></span>))
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#036;font-weight:bold">Hello</span>
@@ -625,7 +625,7 @@ array在产生string格式输出时会有所不同。 对一个array使用to_s�
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, <span style="color:#00D">3</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">one</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">two</span><span style="color:#710">&quot;</span></span>]
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; array_1 = [array]
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; [[<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, <span style="color:#00D">3</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">one</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">two</span><span style="color:#710">&quot;</span></span>]]
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; array_2 = [*array]
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; array_2 = [*array]
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span> =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, <span style="color:#00D">3</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">one</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">two</span><span style="color:#710">&quot;</span></span>]
 </pre></div>
 </div>
@@ -652,7 +652,7 @@ array在产生string格式输出时会有所不同。 对一个array使用to_s�
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span>?&gt;   puts one
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span>?&gt;   puts two
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span> =&gt; <span style="color:#A60">:show</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span> =&gt; <span style="color:#A60">:show</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span> &gt; show <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hello</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">World</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#036;font-weight:bold">Hello</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#036;font-weight:bold">World</span>
@@ -662,7 +662,7 @@ array在产生string格式输出时会有所不同。 对一个array使用to_s�
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>        <span style="color:#00D">1</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">SyntaxError ((irb):11: syntax error, unexpected ',', expecting end-of-input</span></span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">&quot;Hello&quot;, &quot;World&quot;</span></span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">       ^)</span></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">       ^)</span></span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">2.5.0 :012 &gt;</span></span>
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2"></span></span></pre></div>
 </div>
@@ -677,7 +677,7 @@ array在产生string格式输出时会有所不同。 对一个array使用to_s�
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">016</span>?&gt;   first_name + <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20"> </span><span style="color:#710">&quot;</span></span> + last_name
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">017</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#A60">:full_name</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span> &gt;
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span> &gt;
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">9</span> &gt; names = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">David</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Black</span><span style="color:#710">&quot;</span></span>]
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span> =&gt; [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">David</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Black</span><span style="color:#710">&quot;</span></span>]
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">020</span> &gt; puts full_name(*names)
@@ -695,7 +695,7 @@ array在产生string格式输出时会有所不同。 对一个array使用to_s�
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>        <span style="color:#00D">3</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        2: from (irb):21</span></span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from (irb):15:in </span><span style="color:#161">`</span></span>full_name<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"></span></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from (irb):15:in </span><span style="color:#161">`</span></span>full_name<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"></span></span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">ArgumentError (wrong number of arguments (given 1, expected 2))</span></span>
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :022 &gt;</span></span>
 <span class="line-numbers"><a href="#n8" name="n8">8</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
@@ -714,7 +714,7 @@ array在产生string格式输出时会有所不同。 对一个array使用to_s�
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#00D">1234</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span>.to_i
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#00D">0</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello123world</span><span style="color:#710">&quot;</span></span>.to_i
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello123world</span><span style="color:#710">&quot;</span></span>.to_i
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#00D">0</span>
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt;
 </pre></div>
@@ -730,7 +730,7 @@ array在产生string格式输出时会有所不同。 对一个array使用to_s�
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#60E">3.14</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">abc3.14</span><span style="color:#710">&quot;</span></span>.to_f
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#60E">0.0</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt;
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt;
 </pre></div>
 </div>
 </div>
@@ -742,7 +742,7 @@ array在产生string格式输出时会有所不同。 对一个array使用to_s�
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#00D">-123</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">-123abc</span><span style="color:#710">&quot;</span></span>.to_f
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#60E">-123.0</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span> &gt;
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span> &gt;
 </pre></div>
 </div>
 </div>
@@ -756,7 +756,7 @@ array在产生string格式输出时会有所不同。 对一个array使用to_s�
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>        <span style="color:#00D">3</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        2: from (irb):12</span></span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from (irb):12:in </span><span style="color:#161">`</span></span><span style="color:#036;font-weight:bold">Float</span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"></span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from (irb):12:in </span><span style="color:#161">`</span></span><span style="color:#036;font-weight:bold">Float</span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"></span></span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">ArgumentError (invalid value for Float(): &quot;123abc&quot;)</span></span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :013 &gt; Integer(&quot;123abc&quot;)</span></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">Traceback (most recent call last):</span></span>
@@ -766,7 +766,7 @@ array在产生string格式输出时会有所不同。 对一个array使用to_s�
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">ArgumentError (invalid value for Integer(): &quot;123abc&quot;)</span></span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">2.5.0 :014 &gt; Integer(&quot;123&quot;)</span></span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2"> =&gt; 123</span></span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">2.5.0 :015 &gt; Float(&quot;123&quot;)</span></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">2.5.0 :015 &gt; Float(&quot;123&quot;)</span></span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2"> =&gt; 123.0</span></span>
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">2.5.0 :016 &gt;</span></span>
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2"></span></span></pre></div>
@@ -783,7 +783,7 @@ array在产生string格式输出时会有所不同。 对一个array使用to_s�
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">9</span> &gt; str.object_id
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#00D">70225471129980</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">020</span> &gt; str.to_s.object_id
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">020</span> &gt; str.to_s.object_id
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#00D">70225471129980</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">021</span> &gt;
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">022</span> &gt; num = <span style="color:#00D">123</span>
@@ -825,7 +825,7 @@ conversion和typecasting的区别触及到了ruby中最核心的内容。那就�
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello world</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span> + <span style="color:#00D">100</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>        <span style="color:#00D">3</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>        <span style="color:#00D">3</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        2: from (irb):3</span></span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from (irb):3:in </span><span style="color:#161">`</span></span>+<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"></span></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">TypeError (no implicit conversion of Integer into String)</span></span>
@@ -843,7 +843,7 @@ conversion和typecasting的区别触及到了ruby中最核心的内容。那就�
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span>?&gt;   attr_accessor <span style="color:#A60">:name</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">to_str</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span>?&gt;     name
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span> =&gt; <span style="color:#A60">:to_str</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
@@ -853,7 +853,7 @@ conversion和typecasting的区别触及到了ruby中最核心的内容。那就�
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span> =&gt; <span style="color:#777">#&lt;Person:0x00007fa2de09bec8&gt;</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">011</span> &gt; david.name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">David</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">David</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">012</span> &gt; puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">David is named </span><span style="color:#710">&quot;</span></span> + david + <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">.</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">012</span> &gt; puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">David is named </span><span style="color:#710">&quot;</span></span> + david + <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">.</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#036;font-weight:bold">David</span> is named <span style="color:#036;font-weight:bold">David</span>.
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span> =&gt; <span style="color:#069">nil</span>
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt;
@@ -872,7 +872,7 @@ conversion和typecasting的区别触及到了ruby中最核心的内容。那就�
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#777">#&lt;Person:0x00007fa2de09bec8 @name=&quot;David&quot;&gt;</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">david object after &lt;&lt; is: </span><span style="color:#710">&quot;</span></span> &lt;&lt; david
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">david object after &lt;&lt; is: David</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">015</span> &gt;
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">015</span> &gt;
 </pre></div>
 </div>
 </div>
@@ -892,7 +892,7 @@ conversion和typecasting的区别触及到了ruby中最核心的内容。那就�
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span>?&gt;   attr_accessor <span style="color:#A60">:name</span>, <span style="color:#A60">:age</span>, <span style="color:#A60">:email</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">to_ary</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span>?&gt;     [name, age, email]
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span>?&gt;     <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span>?&gt;     <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span> =&gt; <span style="color:#A60">:to_ary</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; david = <span style="color:#036;font-weight:bold">Person</span>.new
@@ -902,7 +902,7 @@ conversion和typecasting的区别触及到了ruby中最核心的内容。那就�
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt; david.email = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">david@wherever</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">david@wherever</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span> &gt; array = []
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span> =&gt; []
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span> =&gt; []
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">011</span> &gt; array.concat(david)
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span> =&gt; [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">David</span><span style="color:#710">&quot;</span></span>, <span style="color:#069">nil</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">david@wherever</span><span style="color:#710">&quot;</span></span>]
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">012</span> &gt; p array
@@ -928,7 +928,7 @@ conversion和typecasting的区别触及到了ruby中最核心的内容。那就�
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">nil</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">016</span> &gt; <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">YourClass</span>; <span style="color:#00D">1</span>; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#00D">1</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">017</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">meth1</span>; <span style="color:#080;font-weight:bold">return</span> <span style="color:#069">false</span>; <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">017</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">meth1</span>; <span style="color:#080;font-weight:bold">return</span> <span style="color:#069">false</span>; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#A60">:meth1</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">meth2</span>; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#A60">:meth2</span>
@@ -951,7 +951,7 @@ conversion和typecasting的区别触及到了ruby中最核心的内容。那就�
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#036;font-weight:bold">TrueClass</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; <span style="color:#069">false</span>.class
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#036;font-weight:bold">FalseClass</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; <span style="color:#036;font-weight:bold">TrueClass</span>.ancestors
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; <span style="color:#036;font-weight:bold">TrueClass</span>.ancestors
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; [<span style="color:#036;font-weight:bold">TrueClass</span>, <span style="color:#036;font-weight:bold">Object</span>, <span style="color:#036;font-weight:bold">Kernel</span>, <span style="color:#036;font-weight:bold">BasicObject</span>]
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; <span style="color:#036;font-weight:bold">FalseClass</span>.ancestors
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; [<span style="color:#036;font-weight:bold">FalseClass</span>, <span style="color:#036;font-weight:bold">Object</span>, <span style="color:#036;font-weight:bold">Kernel</span>, <span style="color:#036;font-weight:bold">BasicObject</span>]
@@ -971,7 +971,7 @@ conversion和typecasting的区别触及到了ruby中最核心的内容。那就�
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">true</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; a = <span style="color:#00D">1</span> <span style="color:#080;font-weight:bold">unless</span> a
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#069">nil</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; a
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; a
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#069">true</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt; b = a
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#069">true</span>
@@ -981,7 +981,7 @@ conversion和typecasting的区别触及到了ruby中最核心的内容。那就�
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span> =&gt; <span style="color:#00D">20</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">011</span> &gt; b.object_id
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span> =&gt; <span style="color:#00D">20</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">012</span> &gt;
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">012</span> &gt;
 </pre></div>
 </div>
 </div>
@@ -993,7 +993,7 @@ conversion和typecasting的区别触及到了ruby中最核心的内容。那就�
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#00D">183</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt; <span style="color:#036;font-weight:bold">String</span>.instance_methods(<span style="color:#069">false</span>).size
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#00D">128</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span> &gt;
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span> &gt;
 </pre></div>
 </div>
 </div>
@@ -1032,7 +1032,7 @@ nil 代表着缺少了什么东西。 你可以通过印出一个没出现过的
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">nil</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">017</span> &gt; puts <span style="color:#33B">@x</span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span> =&gt; <span style="color:#069">nil</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span> =&gt; <span style="color:#069">nil</span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span> &gt;
 </pre></div>
 </div>
@@ -1058,7 +1058,7 @@ nil 代表着缺少了什么东西。 你可以通过印出一个没出现过的
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#036;font-weight:bold">NilClass</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">030</span> &gt; <span style="color:#069">nil</span>.to_s
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">031</span> &gt; <span style="color:#069">nil</span>.to_i
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">031</span> &gt; <span style="color:#069">nil</span>.to_i
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#00D">0</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">032</span> &gt; <span style="color:#069">nil</span>.object_id
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#00D">8</span>
@@ -1094,7 +1094,7 @@ nil 代表着缺少了什么东西。 你可以通过印出一个没出现过的
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#777">#&lt;Object:0x00007fdfcb019d40&gt;</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; two = one.dup
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#777">#&lt;Object:0x00007fdfcb032778&gt;</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; one == two
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; one == two
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#069">false</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; one.eql?(two)
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#069">false</span>
@@ -1147,7 +1147,7 @@ Comparable 中使用 <code>&lt;=&gt;</code> 来实现传统的 大于 小于 等
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">nil</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; one = <span style="color:#036;font-weight:bold">MyClass</span>.new
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#777">#&lt;MyClass:0x00007fdfcc85fdc8&gt;</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt; two = <span style="color:#036;font-weight:bold">MyClass</span>.new
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt; two = <span style="color:#036;font-weight:bold">MyClass</span>.new
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#777">#&lt;MyClass:0x00007fdfcc828260&gt;</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt; one == two
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#069">false</span>
@@ -1157,7 +1157,7 @@ Comparable 中使用 <code>&lt;=&gt;</code> 来实现传统的 大于 小于 等
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from (irb):10</span></span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">NoMethodError (undefined method </span><span style="color:#161">`</span></span>&gt;<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"> for #&lt;MyClass:0x00007fdfcc85fdc8&gt;)</span></span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :011 &gt;</span></span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
 </div>
 </div>
 
@@ -1175,7 +1175,7 @@ Comparable 中使用 <code>&lt;=&gt;</code> 来实现传统的 大于 小于 等
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span>?&gt;   include <span style="color:#036;font-weight:bold">Comparable</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">015</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#036;font-weight:bold">MyClass</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">016</span> &gt; one = <span style="color:#036;font-weight:bold">MyClass</span>.new
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">016</span> &gt; one = <span style="color:#036;font-weight:bold">MyClass</span>.new
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#777">#&lt;MyClass:0x00007fdfcb05a8e0&gt;</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">017</span> &gt; two = <span style="color:#036;font-weight:bold">MyClass</span>.new
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#777">#&lt;MyClass:0x00007fdfcb040378&gt;</span>
@@ -1185,7 +1185,7 @@ Comparable 中使用 <code>&lt;=&gt;</code> 来实现传统的 大于 小于 等
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>        <span style="color:#00D">3</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        2: from (irb):19</span></span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from (irb):19:in </span><span style="color:#161">`</span></span>&gt;<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"></span></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from (irb):19:in </span><span style="color:#161">`</span></span>&gt;<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"></span></span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">ArgumentError (comparison of MyClass with MyClass failed)</span></span>
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :020 &gt;</span></span>
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
@@ -1203,7 +1203,7 @@ Comparable 中使用 <code>&lt;=&gt;</code> 来实现传统的 大于 小于 等
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  include <span style="color:#036;font-weight:bold">Comparable</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  attr_accessor <span style="color:#A60">:estimate</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">&lt;=&gt;</span>(other)
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>    <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">self</span>.estimate &lt; other.estimate
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">self</span>.estimate &lt; other.estimate
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      <span style="color:#00D">-1</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#080;font-weight:bold">elsif</span> <span style="color:#069">self</span>.estimate &gt; other.estimate
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>      <span style="color:#00D">1</span>
@@ -1239,7 +1239,7 @@ Comparable 中使用 <code>&lt;=&gt;</code> 来实现传统的 大于 小于 等
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">true</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; bid1 = <span style="color:#036;font-weight:bold">Bid</span>.new
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#777">#&lt;Bid:0x00007fa935829ac0&gt;</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; bid1.estimate = <span style="color:#00D">100</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; bid1.estimate = <span style="color:#00D">100</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#00D">100</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; bid2 = <span style="color:#036;font-weight:bold">Bid</span>.new
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#777">#&lt;Bid:0x00007fa9351165a8&gt;</span>
@@ -1259,7 +1259,7 @@ Comparable 中使用 <code>&lt;=&gt;</code> 来实现传统的 大于 小于 等
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#00D">120</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt; bid2.between?(bid1, bid2)
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#069">true</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt;
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt;
 </pre></div>
 </div>
 </div>
@@ -1276,7 +1276,7 @@ Comparable 中使用 <code>&lt;=&gt;</code> 来实现传统的 大于 小于 等
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt; str.methods.include?(<span style="color:#A60">:shout</span>)
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#069">false</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span> &gt; <span style="color:#080;font-weight:bold">def</span> str.<span style="color:#06B;font-weight:bold">shout</span>; <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span> &gt; <span style="color:#080;font-weight:bold">def</span> str.<span style="color:#06B;font-weight:bold">shout</span>; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#A60">:shout</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">015</span> &gt; str.methods.include?(<span style="color:#A60">:shout</span>)
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#069">true</span>
@@ -1302,7 +1302,7 @@ Comparable 中使用 <code>&lt;=&gt;</code> 来实现传统的 大于 小于 等
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">024</span> &gt; str = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">New string</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">New string</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">025</span> &gt; <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">StringExtras</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">026</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">shout</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">026</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">shout</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">027</span>?&gt;     <span style="color:#069">self</span>.upcase + <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">!!!</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">02</span><span style="color:#00D">8</span>?&gt;     <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">02</span><span style="color:#00D">9</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
@@ -1312,7 +1312,7 @@ Comparable 中使用 <code>&lt;=&gt;</code> 来实现传统的 大于 小于 等
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">032</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span> =&gt; <span style="color:#036;font-weight:bold">String</span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">033</span> &gt; str.methods.include?(<span style="color:#A60">:shout</span>)
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span> =&gt; <span style="color:#069">true</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span> =&gt; <span style="color:#069">true</span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">034</span> &gt;
 </pre></div>
 </div>
@@ -1327,7 +1327,7 @@ Comparable 中使用 <code>&lt;=&gt;</code> 来实现传统的 大于 小于 等
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">037</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">mountain</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">03</span><span style="color:#00D">8</span>?&gt;     <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">03</span><span style="color:#00D">9</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span> =&gt; <span style="color:#A60">:mountain</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span> =&gt; <span style="color:#A60">:mountain</span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">040</span> &gt; <span style="color:#036;font-weight:bold">Demo</span>.instance_methods
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span> =&gt; [<span style="color:#A60">:mountain</span>]
 <span class="line-numbers"><a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">041</span> &gt;
@@ -1346,7 +1346,7 @@ Comparable 中使用 <code>&lt;=&gt;</code> 来实现传统的 大于 小于 等
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#00D">184</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">042</span> &gt; <span style="color:#036;font-weight:bold">String</span>.instance_methods(<span style="color:#069">false</span>).count
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#00D">128</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">043</span> &gt;
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">043</span> &gt;
 </pre></div>
 </div>
 </div>

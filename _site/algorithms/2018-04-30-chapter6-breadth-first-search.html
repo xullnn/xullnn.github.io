@@ -221,7 +221,7 @@
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bob</span><span style="color:#710">&quot;</span></span>] = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">anuj</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">peggy</span><span style="color:#710">&quot;</span></span>]
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">alice</span><span style="color:#710">&quot;</span></span>] = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">peggy</span><span style="color:#710">&quot;</span></span>]
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">claire</span><span style="color:#710">&quot;</span></span>] = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">thom</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jonny</span><span style="color:#710">&quot;</span></span>]
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">anuj</span><span style="color:#710">&quot;</span></span>] = []
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">anuj</span><span style="color:#710">&quot;</span></span>] = []
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">peggy</span><span style="color:#710">&quot;</span></span>] = []
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">thom</span><span style="color:#710">&quot;</span></span>] = []
 <span class="line-numbers"><a href="#n8" name="n8">8</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jonny</span><span style="color:#710">&quot;</span></span>] = []
@@ -247,7 +247,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>    search_queue = deque() <span style="color:#777"># 新建queue</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    search_queue += graph[name] <span style="color:#777"># 中心节点的所有neighbor</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    searched = []
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>    <span style="color:#080;font-weight:bold">while</span> search_queue:
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#080;font-weight:bold">while</span> search_queue:
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      person = search_queue.popleft() <span style="color:#777"># 拿出一个neighbor</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      <span style="color:#080;font-weight:bold">if</span> <span style="color:#080;font-weight:bold">not</span> person <span style="color:#080;font-weight:bold">in</span> searched:
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>        <span style="color:#080;font-weight:bold">if</span> person_is_seller(person):
@@ -257,7 +257,7 @@
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>          search_queue += graph[person] <span style="color:#777"># 若不是seller，把他的朋友加到queue中</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>          searched.append(person)
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#080;font-weight:bold">return</span>  <span style="color:#069">False</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>  search(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">you</span><span style="color:#710">&quot;</span></span>)
 </pre></div>
 </div>
@@ -292,7 +292,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#777"># will set :is_seller to false</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#777"># will get an empty array's friends</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Person</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>  attr_accessor <span style="color:#A60">:name</span>, <span style="color:#A60">:is_seller</span>, <span style="color:#A60">:friends</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  attr_accessor <span style="color:#A60">:name</span>, <span style="color:#A60">:is_seller</span>, <span style="color:#A60">:friends</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#33B">@name</span> = (<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">a</span><span style="color:#710">'</span></span>..<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">z</span><span style="color:#710">'</span></span>).to_a.sample(<span style="color:#00D">5</span>).join.capitalize!
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#33B">@is_seller</span> = <span style="color:#069">false</span>
@@ -302,7 +302,7 @@
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">make_friends</span>(n)
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>  friends = []
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>  n.times { friends &lt;&lt; <span style="color:#036;font-weight:bold">Person</span>.new}
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  n.times { friends &lt;&lt; <span style="color:#036;font-weight:bold">Person</span>.new}
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>  <span style="color:#080;font-weight:bold">return</span> friends
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span>
@@ -312,7 +312,7 @@
 <span class="line-numbers"><a href="#n22" name="n22">22</a></span><span style="color:#777"># make 4 friends for central person</span>
 <span class="line-numbers"><a href="#n23" name="n23">23</a></span>central_person.friends = make_friends(<span style="color:#00D">4</span>)
 <span class="line-numbers"><a href="#n24" name="n24">24</a></span>
-<span class="line-numbers"><strong><a href="#n25" name="n25">25</a></strong></span><span style="color:#777"># for each central person's friends, make 3 friends for them</span>
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span><span style="color:#777"># for each central person's friends, make 3 friends for them</span>
 <span class="line-numbers"><a href="#n26" name="n26">26</a></span><span style="color:#777"># thus we get 1 + 4 + 4*3 == 17 person in all levels</span>
 <span class="line-numbers"><a href="#n27" name="n27">27</a></span>central_person.friends.each { |f| f.friends = make_friends(<span style="color:#00D">3</span>) }
 <span class="line-numbers"><a href="#n28" name="n28">28</a></span>
@@ -322,7 +322,7 @@
 <span class="line-numbers"><a href="#n32" name="n32">32</a></span>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">This time seller is: </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>seller.name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n33" name="n33">33</a></span>
 <span class="line-numbers"><a href="#n34" name="n34">34</a></span>
-<span class="line-numbers"><strong><a href="#n35" name="n35">35</a></strong></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">search_seller</span>(center)
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">search_seller</span>(center)
 <span class="line-numbers"><a href="#n36" name="n36">36</a></span>  search_queue = <span style="color:#036;font-weight:bold">Queue</span>.new
 <span class="line-numbers"><a href="#n37" name="n37">37</a></span>  search_queue &lt;&lt; center
 <span class="line-numbers"><a href="#n38" name="n38">38</a></span>  searched = []
@@ -332,7 +332,7 @@
 <span class="line-numbers"><a href="#n42" name="n42">42</a></span>      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>person.name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> is seller!</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n43" name="n43">43</a></span>      <span style="color:#080;font-weight:bold">return</span> <span style="color:#069">true</span>
 <span class="line-numbers"><a href="#n44" name="n44">44</a></span>    <span style="color:#080;font-weight:bold">else</span>
-<span class="line-numbers"><strong><a href="#n45" name="n45">45</a></strong></span>      <span style="color:#080;font-weight:bold">if</span> !person.friends.empty? &amp;&amp; !searched.include?(person) <span style="color:#777"># this avoids error when touching end point person</span>
+<span class="line-numbers"><a href="#n45" name="n45">45</a></span>      <span style="color:#080;font-weight:bold">if</span> !person.friends.empty? &amp;&amp; !searched.include?(person) <span style="color:#777"># this avoids error when touching end point person</span>
 <span class="line-numbers"><a href="#n46" name="n46">46</a></span>        person.friends.each { |f| search_queue &lt;&lt; f }
 <span class="line-numbers"><a href="#n47" name="n47">47</a></span>        searched &lt;&lt; person
 <span class="line-numbers"><a href="#n48" name="n48">48</a></span>      <span style="color:#080;font-weight:bold">end</span>
@@ -342,7 +342,7 @@
 <span class="line-numbers"><a href="#n52" name="n52">52</a></span>  <span style="color:#080;font-weight:bold">return</span> <span style="color:#069">false</span>
 <span class="line-numbers"><a href="#n53" name="n53">53</a></span><span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n54" name="n54">54</a></span>
-<span class="line-numbers"><strong><a href="#n55" name="n55">55</a></strong></span>search_seller(central_person)
+<span class="line-numbers"><a href="#n55" name="n55">55</a></span>search_seller(central_person)
 </pre></div>
 </div>
 </div>

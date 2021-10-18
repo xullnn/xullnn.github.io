@@ -189,7 +189,7 @@
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">if</span> voted?(name)
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Kick them out</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">else</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>    voted?(name) = <span style="color:#069">true</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>    voted?(name) = <span style="color:#069">true</span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Let them vote.</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n8" name="n8">8</a></span><span style="color:#080;font-weight:bold">end</span>
@@ -232,7 +232,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">get_page</span>(url)
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#080;font-weight:bold">if</span> cache.get(url)
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#080;font-weight:bold">return</span> cache[url]
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>  <span style="color:#080;font-weight:bold">else</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  <span style="color:#080;font-weight:bold">else</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    data = get_data_from_server(url)
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    cache[url] = data
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#080;font-weight:bold">return</span> data
@@ -510,7 +510,7 @@ Map every letter to a prime number: a = 2, b = 3, c = 5, d = 7, e = 11, and so o
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>2似乎可以，但名字的长度的分布应该是正态分布，也就是名字很长和很短的人都很少，这部分人会浪费掉一些slot,导致中间长度的人名对应的slot会比较拥挤。
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>3可以，比如每2-3个字母对应一个slot
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>4也可以，相对随机
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>最后选 3和4
 </pre></div>
 </div>
@@ -525,7 +525,7 @@ Map every letter to a prime number: a = 2, b = 3, c = 5, d = 7, e = 11, and so o
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>2可以，key总共就那么几个，而且每个的长度都不一样
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>3不行，首字母都是A
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>4 算一下: 四种size分别算出来是 2 4 6 8，对10求余数每个都不一样，所以可以
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>最后选 2 和 4
 </pre></div>
 </div>
@@ -540,7 +540,7 @@ Map every letter to a prime number: a = 2, b = 3, c = 5, d = 7, e = 11, and so o
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>2不太好，后两本书的长度一样
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>3可以，首字母不同
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>4可以
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>最后是 3和4
 </pre></div>
 </div>

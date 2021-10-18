@@ -148,7 +148,7 @@
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the first line.</span><span style="color:#710">&quot;</span></span>);
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>}, <span style="color:#00D">0</span>);
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#777">// this line is only added for increasing the time consumption in between</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#777">// this line is only added for increasing the time consumption in between</span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#080;font-weight:bold">for</span>(let i = <span style="color:#00D">0</span>; i &lt; <span style="color:#00D">1000000000</span>; i += <span style="color:#00D">1</span> ) {};
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>
 <span class="line-numbers"><a href="#n8" name="n8">8</a></span>console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the last line.</span><span style="color:#710">&quot;</span></span>);
@@ -165,7 +165,7 @@
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#777">// this line is only added for increase the time consuption in between</span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#080;font-weight:bold">for</span>(let i = <span style="color:#00D">0</span>; i &lt; <span style="color:#00D">1000000000</span>; i += <span style="color:#00D">1</span> ) {};                               <span style="color:#777">// 2</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the last line.</span><span style="color:#710">&quot;</span></span>); <span style="color:#777">// this always gets printed out first // 3</span>
 </pre></div>
 </div>
@@ -184,7 +184,7 @@
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#777">// we can also do Promise.resolve(&quot;&quot;).then(() =&gt; for(let i = 0; i &lt; 1000000000; i += 1 ) {});</span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>setTimeout(() =&gt; { <span style="color:#080;font-weight:bold">for</span>(let i = <span style="color:#00D">0</span>; i &lt; <span style="color:#00D">1000000000</span>; i += <span style="color:#00D">1</span> ) {}}, <span style="color:#00D">0</span>);       <span style="color:#777">// 2</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the last line.</span><span style="color:#710">&quot;</span></span>); <span style="color:#777">// this always gets printed out first // 3</span>
 </pre></div>
 </div>
@@ -250,7 +250,7 @@ Counting to 1 billion may be slow now so we want to make it async. But what abou
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">for</span>(let i = <span style="color:#00D">0</span>; i &lt; <span style="color:#00D">1000000000</span>; i += <span style="color:#00D">1</span> ) {};                            <span style="color:#777">// 2</span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the last line.</span><span style="color:#710">&quot;</span></span>);                                    <span style="color:#777">// 3</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the last line.</span><span style="color:#710">&quot;</span></span>);                                    <span style="color:#777">// 3</span>
 </pre></div>
 </div>
 </div>

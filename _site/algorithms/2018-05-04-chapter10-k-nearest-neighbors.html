@@ -225,7 +225,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  attr_accessor <span style="color:#A60">:name</span>, <span style="color:#A60">:category_ratings</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(name)
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>    <span style="color:#33B">@name</span> = name
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#33B">@name</span> = name
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#33B">@loved_movies</span> = []
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#33B">@category_ratings</span> = <span style="color:#036;font-weight:bold">Hash</span>.new(<span style="color:#00D">0</span>)
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">end</span>
@@ -235,7 +235,7 @@
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="color:#069">self</span>.category_ratings.each <span style="color:#080;font-weight:bold">do</span> |key, value|
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>      diffs &lt;&lt; value - another_user.category_ratings[key]
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>    distance = <span style="color:#036;font-weight:bold">Math</span>.sqrt(diffs.reduce { |acc, diff| acc + diff**<span style="color:#00D">2</span> })
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    distance = <span style="color:#036;font-weight:bold">Math</span>.sqrt(diffs.reduce { |acc, diff| acc + diff**<span style="color:#00D">2</span> })
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>    p <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Distance between </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> and </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>another_user.name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> is </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>distance.round(<span style="color:#00D">2</span>)<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#080;font-weight:bold">end</span>
@@ -245,7 +245,7 @@
 <span class="line-numbers"><a href="#n22" name="n22">22</a></span>
 <span class="line-numbers"><a href="#n23" name="n23">23</a></span>user1.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">comedy</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">5</span>
 <span class="line-numbers"><a href="#n24" name="n24">24</a></span>user1.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">action</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">4</span>
-<span class="line-numbers"><strong><a href="#n25" name="n25">25</a></strong></span>user1.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">drama</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">3</span>
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>user1.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">drama</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">3</span>
 <span class="line-numbers"><a href="#n26" name="n26">26</a></span>user1.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">horror</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">0</span>
 <span class="line-numbers"><a href="#n27" name="n27">27</a></span>user1.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">romance</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">3</span>
 <span class="line-numbers"><a href="#n28" name="n28">28</a></span>
@@ -255,7 +255,7 @@
 <span class="line-numbers"><a href="#n32" name="n32">32</a></span>user2.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">horror</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">5</span>
 <span class="line-numbers"><a href="#n33" name="n33">33</a></span>user2.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">romance</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">2</span>
 <span class="line-numbers"><a href="#n34" name="n34">34</a></span>
-<span class="line-numbers"><strong><a href="#n35" name="n35">35</a></strong></span>user1.distance_between(user2)
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span>user1.distance_between(user2)
 </pre></div>
 </div>
 </div>
@@ -312,7 +312,7 @@
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#606">Jc</span>: <span style="color:#00D">4</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#606">Joey</span>: <span style="color:#00D">4</span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#606">Lanc</span>: <span style="color:#00D">5</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#606">Chris</span>: <span style="color:#00D">3</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#606">Chris</span>: <span style="color:#00D">3</span>
 </pre></div>
 </div>
 </div>
@@ -345,7 +345,7 @@
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>A: (5,1,0) =&gt; 300
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>B: (3,1,1) =&gt; 225
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>C: (1,1,0) =&gt; 75
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>C: (1,1,0) =&gt; 75
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>D: (4,0,1) =&gt; 200
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>E: (4,0,0) =&gt; 150
 <span class="line-numbers"><a href="#n8" name="n8">8</a></span>F: (2,0,0) =&gt; 50

@@ -97,7 +97,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">if</span> list == []
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#00D">0</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">else</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>    <span style="color:#080;font-weight:bold">return</span> list.shift + recursive_sum(list) <span style="color:#777"># 这里就call回到自己本身</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#080;font-weight:bold">return</span> list.shift + recursive_sum(list) <span style="color:#777"># 这里就call回到自己本身</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
@@ -250,7 +250,7 @@ A simple <strong>base case</strong> (or cases)—a terminating scenario that doe
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  acc = <span style="color:#00D">0</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  i = <span style="color:#00D">0</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">while</span> i &lt; list.length
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>    acc += list[i]
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    acc += list[i]
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    i += <span style="color:#00D">1</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">return</span> acc

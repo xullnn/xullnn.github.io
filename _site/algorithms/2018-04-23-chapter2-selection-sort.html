@@ -249,7 +249,7 @@ https://en.wikipedia.org/wiki/Array_data_structure</li>
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#777"># every execution O(n)</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">findSmallest</span>(arr):
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    smallest = arr[<span style="color:#00D">0</span>]
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>    smallest_index = <span style="color:#00D">0</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    smallest_index = <span style="color:#00D">0</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#080;font-weight:bold">for</span> i <span style="color:#080;font-weight:bold">in</span> <span style="color:#369;font-weight:bold">range</span>(<span style="color:#00D">1</span>, <span style="color:#369;font-weight:bold">len</span>(arr)):
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>        <span style="color:#080;font-weight:bold">if</span> arr[i] &lt; smallest:
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>            smallest = arr[i]
@@ -259,7 +259,7 @@ https://en.wikipedia.org/wiki/Array_data_structure</li>
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#777"># sorting</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#777"># arr.length * O(n)</span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">selectionSort</span>(arr):
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>    newArr = []
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    newArr = []
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>    <span style="color:#080;font-weight:bold">for</span> i <span style="color:#080;font-weight:bold">in</span> <span style="color:#369;font-weight:bold">range</span>(<span style="color:#369;font-weight:bold">len</span>(arr)):
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span>        smallest = findSmallest(arr)
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span>        newArr.append(arr.pop(smallest))

@@ -125,7 +125,7 @@ O(log n) 比 O(n) 快很多，在搜索对象变多时，这种优势更明显</
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  low = <span style="color:#00D">0</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  high = <span style="color:#369;font-weight:bold">len</span>(ordered_list) - <span style="color:#00D">1</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>  <span style="color:#080;font-weight:bold">while</span> low &lt;= high:
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  <span style="color:#080;font-weight:bold">while</span> low &lt;= high:
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    mid = (low + high)/<span style="color:#00D">2</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    guess = ordered_list[mid]
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#080;font-weight:bold">if</span> guess == item:
@@ -135,7 +135,7 @@ O(log n) 比 O(n) 快很多，在搜索对象变多时，这种优势更明显</
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="color:#080;font-weight:bold">else</span>:
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>        low = mid + <span style="color:#00D">1</span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span style="color:#080;font-weight:bold">return</span> <span style="color:#069">None</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>my_list = [<span style="color:#00D">1</span>,<span style="color:#00D">3</span>,<span style="color:#00D">5</span>,<span style="color:#00D">7</span>,<span style="color:#00D">9</span>]
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span>
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#080;font-weight:bold">print</span> binary_search(my_list, <span style="color:#00D">3</span>) <span style="color:#777">#=&gt; 4</span>
@@ -151,7 +151,7 @@ O(log n) 比 O(n) 快很多，在搜索对象变多时，这种优势更明显</
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  l_index = <span style="color:#00D">0</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  h_index = ordered_list.length - <span style="color:#00D">1</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>  <span style="color:#080;font-weight:bold">while</span> l_index &lt;=  h_index
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  <span style="color:#080;font-weight:bold">while</span> l_index &lt;=  h_index
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    mid_index = (l_index + h_index)/<span style="color:#00D">2</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    guess = ordered_list[mid_index]
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#080;font-weight:bold">if</span> guess == item
@@ -161,7 +161,7 @@ O(log n) 比 O(n) 快很多，在搜索对象变多时，这种优势更明显</
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="color:#080;font-weight:bold">else</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>      h_index = mid_index - <span style="color:#00D">1</span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span>  <span style="color:#080;font-weight:bold">return</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Not found</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#080;font-weight:bold">end</span>

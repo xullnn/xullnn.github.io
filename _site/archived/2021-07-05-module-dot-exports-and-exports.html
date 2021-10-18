@@ -68,7 +68,7 @@
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">f</span>() {  };
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>module.exports.f = f;
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span style="color:#777">// or exports.f = f;</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#777">// toImport.js</span>
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>const { f } = require(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">./toBeExported</span><span style="color:#710">&quot;</span></span>);
 <span class="line-numbers"><a href="#n8" name="n8">8</a></span>  <span style="color:#777">// or const f = require(&quot;./toBeExported&quot;).f;</span>
@@ -90,7 +90,7 @@ A lot of articles on the internet and the <a href="https://nodejs.org/api/module
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#606">a</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hello world</span><span style="color:#710">'</span></span>,
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#606">x</span>: {
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#606">f</span>: () =&gt; { console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">I am a func</span><span style="color:#710">'</span></span>)},
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>    <span style="color:#606">p</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">nested</span><span style="color:#710">'</span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#606">p</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">nested</span><span style="color:#710">'</span></span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  }
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>};
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
@@ -114,7 +114,7 @@ A lot of articles on the internet and the <a href="https://nodejs.org/api/module
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>x = {
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span style="color:#606">newF</span>: () =&gt; {console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">I am new func</span><span style="color:#710">'</span></span>)}
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>};
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>};
 </pre></div>
 </div>
 </div>
@@ -143,7 +143,7 @@ A lot of articles on the internet and the <a href="https://nodejs.org/api/module
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  constructor() {
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#606">exports</span>: {}
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  }
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>};
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>};
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>const module = <span style="color:#080;font-weight:bold">new</span> Module();
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
@@ -169,7 +169,7 @@ A lot of articles on the internet and the <a href="https://nodejs.org/api/module
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#606">id</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;repl&gt;</span><span style="color:#710">'</span></span>,
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#606">path</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">.</span><span style="color:#710">'</span></span>,
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#606">exports</span>: {},
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>  <span style="color:#606">parent</span>: <span style="color:#069">undefined</span>,
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  <span style="color:#606">parent</span>: <span style="color:#069">undefined</span>,
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#606">filename</span>: <span style="color:#069">null</span>,
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  <span style="color:#606">loaded</span>: <span style="color:#069">false</span>,
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#606">children</span>: [],
@@ -179,7 +179,7 @@ A lot of articles on the internet and the <a href="https://nodejs.org/api/module
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/xullnn/node_modules</span><span style="color:#710">'</span></span>,
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/node_modules</span><span style="color:#710">'</span></span>,
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/node_modules</span><span style="color:#710">'</span></span>,
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/xullnn/.node_modules</span><span style="color:#710">'</span></span>,
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/xullnn/.node_modules</span><span style="color:#710">'</span></span>,
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/xullnn/.node_libraries</span><span style="color:#710">'</span></span>,
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span>    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/usr/local/Cellar/node/14.11.0/lib/node</span><span style="color:#710">'</span></span>
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span>  ]

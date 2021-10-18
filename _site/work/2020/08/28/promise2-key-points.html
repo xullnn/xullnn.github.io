@@ -141,7 +141,7 @@ not so obvious to newbies. It’s more of a communication problem. I hope this a
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">new</span> Promise((resolve, reject) =&gt; {
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>    <span style="color:#777">// do sync thing one</span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>    <span style="color:#777">// do sync thing two</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>    <span style="color:#777">// resolve or reject at a certain point</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>    <span style="color:#777">// resolve or reject at a certain point</span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>  })
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>};
 </pre></div>
@@ -159,7 +159,7 @@ not so obvious to newbies. It’s more of a communication problem. I hope this a
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">new</span> Promise((resolve, reject) =&gt; {
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    let xhr = <span style="color:#080;font-weight:bold">new</span> XMLHttpRequest();
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    xhr.open(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">GET</span><span style="color:#710">'</span></span>, url);
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>    xhr.addEventListener(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">load</span><span style="color:#710">'</span></span>, () =&gt; {
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    xhr.addEventListener(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">load</span><span style="color:#710">'</span></span>, () =&gt; {
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      let result = xhr.response;
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      resolve(result);
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    })
@@ -205,7 +205,7 @@ not so obvious to newbies. It’s more of a communication problem. I hope this a
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>[u1, u2, u3].forEach(url =&gt; {
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>  chain = chain.then(() =&gt; requestURL(url));
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>})
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>})
 </pre></div>
 </div>
 </div>
@@ -221,7 +221,7 @@ not so obvious to newbies. It’s more of a communication problem. I hope this a
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">new</span> Promise((resolve, reject) =&gt; {
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    let xhr = <span style="color:#080;font-weight:bold">new</span> XMLHttpRequest();
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    xhr.open(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">GET</span><span style="color:#710">'</span></span>, url);
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>    xhr.addEventListener(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">load</span><span style="color:#710">'</span></span>, () =&gt; {
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    xhr.addEventListener(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">load</span><span style="color:#710">'</span></span>, () =&gt; {
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      let suburl = xhr.response[<span style="color:#00D">0</span>];
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      resolve(suburl);
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    })
@@ -271,7 +271,7 @@ not so obvious to newbies. It’s more of a communication problem. I hope this a
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>let starterPromise = Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the starter promise.</span><span style="color:#710">&quot;</span></span>);
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>starterPromise.then(resolvedPromise);
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>starterPromise.then(resolvedPromise);
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#777">// Promise {&lt;fulfilled&gt;: &quot;I am the starter promise.&quot;}</span>
 </pre></div>
 </div>
@@ -306,7 +306,7 @@ not so obvious to newbies. It’s more of a communication problem. I hope this a
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>pendingPromise.then(() =&gt; console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hello World.</span><span style="color:#710">&quot;</span></span>)); <span style="color:#777">// Not words printed out</span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>            <span style="color:#777">//  ^</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>            <span style="color:#777">//paused</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>            <span style="color:#777">//paused</span>
 </pre></div>
 </div>
 </div>

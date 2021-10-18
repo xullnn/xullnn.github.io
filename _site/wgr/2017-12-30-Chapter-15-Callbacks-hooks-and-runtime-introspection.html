@@ -184,7 +184,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  attr_accessor <span style="color:#A60">:title</span>, <span style="color:#A60">:author</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>    <span style="color:#33B">@recipes</span> = []
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#33B">@recipes</span> = []
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">method_missing</span>(m,*args,&amp;block)
@@ -194,7 +194,7 @@
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Recipe</span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span style="color:#777"># some assuming methods</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#080;font-weight:bold">end</span>
 </pre></div>
 </div>
 </div>
@@ -207,7 +207,7 @@
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>cb &lt;&lt; recipe_for_cake
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>cb &lt;&lt; recipe_for_chicken
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>beef_dishes = cb.select { |recipes| recipe.main_ingredient == “beef” }
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>beef_dishes = cb.select { |recipes| recipe.main_ingredient == “beef” }
 </pre></div>
 </div>
 </div>
@@ -245,7 +245,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>        <span style="color:#00D">2</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from (irb):1</span></span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">NameError (undefined local variable or method </span><span style="color:#161">`</span></span>a<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"> for main:Object)</span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">NameError (undefined local variable or method </span><span style="color:#161">`</span></span>a<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"> for main:Object)</span></span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :002 &gt; a?</span></span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">Traceback (most recent call last):</span></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">        2: from /Users/caven/.rvm/rubies/ruby-2.5.0/bin/irb:11:in `&lt;main&gt;</span><span style="color:#710">'</span></span>
@@ -271,7 +271,7 @@
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; main
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; <span style="color:#069">self</span>.class
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#036;font-weight:bold">Object</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span> <span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; <span style="color:#036;font-weight:bold">Object</span>.ancestors
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span> <span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; <span style="color:#036;font-weight:bold">Object</span>.ancestors
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>  =&gt; [<span style="color:#036;font-weight:bold">Object</span>, <span style="color:#036;font-weight:bold">Kernel</span>, <span style="color:#036;font-weight:bold">BasicObject</span>]
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span> <span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt;
 </pre></div>
@@ -313,7 +313,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span>?&gt;   attr_accessor <span style="color:#A60">:name</span>, <span style="color:#A60">:age</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(name, age)
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span>?&gt;     <span style="color:#33B">@name</span>, <span style="color:#33B">@age</span> = name, age
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span>?&gt;
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">method_missing</span>(m, *args, &amp;block)
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">011</span>?&gt;     <span style="color:#080;font-weight:bold">if</span> <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">set_(.*)</span><span style="color:#404">/</span></span>.match(m)
@@ -323,7 +323,7 @@
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">015</span>?&gt;     <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">016</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">017</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span> =&gt; <span style="color:#A60">:method_missing</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span> =&gt; <span style="color:#A60">:method_missing</span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span> &gt;
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">9</span> &gt; person = <span style="color:#036;font-weight:bold">Person</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">David</span><span style="color:#710">&quot;</span></span>, <span style="color:#00D">54</span>)
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span> =&gt; <span style="color:#777">#&lt;Person:0x00007f7eeb87f6b0 @name=&quot;David&quot;, @age=54&gt;</span>
@@ -347,7 +347,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">023</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">respond_to_missing?</span>(m, include_private = <span style="color:#069">false</span>)
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">024</span>?&gt;     <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">set_</span><span style="color:#404">/</span></span>.match(m) || <span style="color:#080;font-weight:bold">super</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">025</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">026</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">026</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#A60">:respond_to_missing?</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">027</span> &gt; person = <span style="color:#036;font-weight:bold">Person</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Caven</span><span style="color:#710">&quot;</span></span>, <span style="color:#00D">18</span>)
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#777">#&lt;Person:0x00007f7eed842330 @name=&quot;Caven&quot;, @age=18&gt;</span>
@@ -402,7 +402,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">included</span>(holder)
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I have just been mixed into </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>holder<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">.</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">C</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  include <span style="color:#036;font-weight:bold">M</span>
@@ -436,7 +436,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">included</span>(holder)
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">def</span> holder.<span style="color:#06B;font-weight:bold">a_class_method</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Now the class has a new class method.</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>    <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">an_inst_method</span>
@@ -446,7 +446,7 @@
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">C</span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>  include <span style="color:#036;font-weight:bold">M</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#080;font-weight:bold">end</span>
 </pre></div>
 </div>
 </div>
@@ -458,7 +458,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">true</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; c = <span style="color:#036;font-weight:bold">C</span>.new
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#777">#&lt;C:0x00007fdc78035898&gt;</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; c.an_inst_method
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; c.an_inst_method
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#036;font-weight:bold">This</span> <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">supplies</span> this instance method.
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span> =&gt; <span style="color:#069">nil</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; <span style="color:#036;font-weight:bold">C</span>.a_class_method
@@ -494,7 +494,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">extended</span>(obj)
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Module </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span><span style="color:#069">self</span><span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> is being used by </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>obj<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">.</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">an_inst_method</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">This module supplies this instance method.</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">end</span>
@@ -510,7 +510,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">true</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; my_object = <span style="color:#036;font-weight:bold">Object</span>.new
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#777">#&lt;Object:0x00007fdf3a0743a8&gt;</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; my_object.extend(<span style="color:#036;font-weight:bold">M</span>)
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; my_object.extend(<span style="color:#036;font-weight:bold">M</span>)
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#036;font-weight:bold">Module</span> <span style="color:#036;font-weight:bold">M</span> is being used by <span style="color:#777">#&lt;Object:0x00007fdf3a0743a8&gt;.</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span> =&gt; <span style="color:#777">#&lt;Object:0x00007fdf3a0743a8&gt;</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; my_object.an_inst_method
@@ -530,7 +530,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#777">#&lt;Object:0x00007fdf3a83f538&gt;</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; <span style="color:#080;font-weight:bold">class</span> &lt;&lt; <span style="color:#B06;font-weight:bold">o</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">talk</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">talk</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span>?&gt;     puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Instance method in singleton class.</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">011</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
@@ -540,7 +540,7 @@
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span> =&gt; <span style="color:#069">nil</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span> &gt; <span style="color:#080;font-weight:bold">class</span> &lt;&lt; <span style="color:#B06;font-weight:bold">o</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">015</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">talk</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">015</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">talk</span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">016</span>?&gt;     puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Class method for singleton class.</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">017</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
@@ -573,7 +573,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">included</span>(c)
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span><span style="color:#069">self</span><span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> included by </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>c<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">extended</span>(obj)
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span><span style="color:#069">self</span><span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> extended by </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>obj<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">.</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">end</span>
@@ -583,7 +583,7 @@
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Including M in object's singleton class:</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#080;font-weight:bold">class</span> &lt;&lt; <span style="color:#B06;font-weight:bold">obj</span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>  include <span style="color:#036;font-weight:bold">M</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span>puts
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span>obj = <span style="color:#036;font-weight:bold">Object</span>.new
@@ -600,7 +600,7 @@
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#036;font-weight:bold">Including</span> <span style="color:#036;font-weight:bold">M</span> <span style="color:#080;font-weight:bold">in</span> object<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">s singleton class:</span></span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">M included by #&lt;Class:#&lt;Object:0x00007fe2870c05a0&gt;&gt;.</span></span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">Extending object with M:</span></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">Extending object with M:</span></span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">M extended by #&lt;Object:0x00007fe2870a3e28&gt;.</span></span>
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
 </div>
@@ -631,7 +631,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">inherited</span>(subclass)
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span>?&gt;     puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span><span style="color:#069">self</span><span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> just got a subclass: </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>subclass<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">.</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#A60">:inherited</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt;
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">D</span> &lt; <span style="color:#036;font-weight:bold">C</span>
@@ -654,7 +654,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">012</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#036;font-weight:bold">D</span> just got a <span style="color:#606">subclass</span>: <span style="color:#036;font-weight:bold">E</span>.
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#069">nil</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt; <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">F</span> &lt; <span style="color:#036;font-weight:bold">E</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt; <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">F</span> &lt; <span style="color:#036;font-weight:bold">E</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#036;font-weight:bold">E</span> just got a <span style="color:#606">subclass</span>: <span style="color:#036;font-weight:bold">F</span>.
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#069">nil</span>
@@ -680,7 +680,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">017</span>?&gt;   <span style="color:#080;font-weight:bold">class</span> &lt;&lt; <span style="color:#B06;font-weight:bold">self</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span>?&gt;     <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">inherited</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">9</span>?&gt;       puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Singleton class of C just got inherited!</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">020</span>?&gt;       puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">But you'll never see this message.</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">020</span>?&gt;       puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">But you'll never see this message.</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">021</span>?&gt;     <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">022</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">023</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
@@ -690,7 +690,7 @@
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">026</span>?&gt;     puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">D's singleton class now exists, but no callback!</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">027</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">02</span><span style="color:#00D">8</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="color:#036;font-weight:bold">D</span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">s singleton class now exists, but no callback!</span></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#036;font-weight:bold">D</span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">s singleton class now exists, but no callback!</span></span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> =&gt; nil</span></span>
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :029 &gt;</span></span>
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
@@ -716,7 +716,7 @@
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">const_missing</span>(const)
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>const<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> is undefined_setting to 1.</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>    const_set(const,<span style="color:#00D">1</span>)
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#080;font-weight:bold">end</span>
 </pre></div>
 </div>
@@ -729,7 +729,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">true</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; puts <span style="color:#036;font-weight:bold">C</span>::<span style="color:#036;font-weight:bold">A</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#036;font-weight:bold">A</span> is undefined_setting to <span style="color:#00D">1</span>.
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#F00;background-color:#FAA">1</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#F00;background-color:#FAA">1</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#069">nil</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; puts <span style="color:#036;font-weight:bold">C</span>::<span style="color:#036;font-weight:bold">A</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#00D">1</span>
@@ -762,7 +762,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">method_added</span>(m)
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span>?&gt;     puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Method </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>m<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> was just defined.</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#A60">:method_added</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">011</span> &gt;
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">012</span> &gt; <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">C</span>
@@ -785,7 +785,7 @@
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">017</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">singleton_method_added</span>(m)
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span>?&gt;     puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Method </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>m<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> was just defined.</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">9</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">020</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">020</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#036;font-weight:bold">Method</span> singleton_method_added was just defined.
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span> =&gt; <span style="color:#A60">:singleton_method_added</span>
 <span class="line-numbers"><a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">021</span> &gt;
@@ -800,7 +800,7 @@
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">022</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#036;font-weight:bold">Method</span> a_class_method was just defined.
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#A60">:a_class_method</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">023</span> &gt;
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">023</span> &gt;
 </pre></div>
 </div>
 </div>
@@ -814,7 +814,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#777">#&lt;Object:0x00007fe524033778&gt;</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">026</span> &gt; <span style="color:#080;font-weight:bold">def</span> obj.<span style="color:#06B;font-weight:bold">singleton_method_added</span>(m)
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">027</span>?&gt;   puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Singleton method </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>m<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> was just defined.</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">02</span><span style="color:#00D">8</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">02</span><span style="color:#00D">8</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#036;font-weight:bold">Singleton</span> method singleton_method_added was just defined.
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span> =&gt; <span style="color:#A60">:singleton_method_added</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">02</span><span style="color:#00D">9</span> &gt;
@@ -840,7 +840,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#777">#&lt;Object:0x00007fe5258563c8&gt;</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">034</span> &gt; <span style="color:#080;font-weight:bold">class</span> &lt;&lt; <span style="color:#B06;font-weight:bold">obj</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">035</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">singleton_method_added</span>(m)
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">036</span>?&gt;     puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Singleton method </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>m<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> was just defined.</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">036</span>?&gt;     puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Singleton method </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>m<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> was just defined.</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">037</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">03</span><span style="color:#00D">8</span>?&gt;
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">03</span><span style="color:#00D">9</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">new_meth</span>
@@ -865,7 +865,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">singleton_method_added</span>(m)
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span>?&gt;     puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Singleton method </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>m<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> was just defined to </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span><span style="color:#069">self</span><span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">.</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#A60">:singleton_method_added</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt;
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; c = <span style="color:#036;font-weight:bold">C</span>.new
@@ -918,7 +918,7 @@
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Test string</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">012</span> &gt; string.methods.grep(<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">case</span><span style="color:#404">/</span></span>).sort
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; [<span style="color:#A60">:casecmp</span>, <span style="color:#A60">:casecmp?</span>, <span style="color:#A60">:downcase</span>, <span style="color:#A60">:downcase!</span>, <span style="color:#A60">:swapcase</span>, <span style="color:#A60">:swapcase!</span>, <span style="color:#A60">:upcase</span>, <span style="color:#A60">:upcase!</span>]
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt;
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt;
 </pre></div>
 </div>
 </div>
@@ -951,7 +951,7 @@
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>methods = string.methods
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>bangs = methods.grep(<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">.!</span><span style="color:#404">/</span></span>)
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>unmatched = bangs.reject <span style="color:#080;font-weight:bold">do</span> |b|
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>  methods.include?(b[<span style="color:#00D">0</span>..<span style="color:#00D">-2</span>].to_sym) <span style="color:#777"># bangs 中每个method从倒数第二到第一个字符，也就是刨去了`!`</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  methods.include?(b[<span style="color:#00D">0</span>..<span style="color:#00D">-2</span>].to_sym) <span style="color:#777"># bangs 中每个method从倒数第二到第一个字符，也就是刨去了`!`</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#080;font-weight:bold">if</span> unmatched.empty?
@@ -993,7 +993,7 @@
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; [<span style="color:#A60">:one!</span>, <span style="color:#A60">:two</span>, <span style="color:#A60">:two!</span>, <span style="color:#A60">:twoo</span>]
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">020</span> &gt; a.include?(<span style="color:#A60">:one</span>)
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#069">false</span>
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">021</span> &gt;
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">021</span> &gt;
 </pre></div>
 </div>
 </div>
@@ -1047,7 +1047,7 @@ Freshly minted Ruby objects have a lot of private methods and no protected metho
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#777">#&lt;Object:0x00007fdeb90fa588&gt;</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">026</span> &gt; p o.private_methods.size
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#00D">74</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span> =&gt; <span style="color:#00D">74</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span> =&gt; <span style="color:#00D">74</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">027</span> &gt; p o.protected_methods.size
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#00D">0</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#00D">0</span>
@@ -1089,7 +1089,7 @@ Naturally, if you define a private method yourself, it will also appear in the l
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  attr_reader <span style="color:#A60">:name</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">name=</span>(name)
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#33B">@name</span> = name
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>    normalize_name <span style="color:#777"># normalizes name when assign</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    normalize_name <span style="color:#777"># normalizes name when assign</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  private
@@ -1108,7 +1108,7 @@ Naturally, if you define a private method yourself, it will also appear in the l
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">true</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; david = <span style="color:#036;font-weight:bold">Person</span>.new
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#777">#&lt;Person:0x00007fefd403f8d8&gt;</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; david.name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">123Da%vi(d! Bla&amp;^ck</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; david.name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">123Da%vi(d! Bla&amp;^ck</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">David Black</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; p david.private_methods.sort.grep(<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">normal</span><span style="color:#404">/</span></span>)
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>[<span style="color:#A60">:normalize_name</span>]
@@ -1193,7 +1193,7 @@ Naturally, if you define a private method yourself, it will also appear in the l
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>enum_classes = <span style="color:#036;font-weight:bold">ObjectSpace</span>.each_object(<span style="color:#036;font-weight:bold">Class</span>).select <span style="color:#080;font-weight:bold">do</span> |c|
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  c.ancestors.include?(<span style="color:#036;font-weight:bold">Enumerable</span>)
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>puts enum_classes
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
@@ -1203,7 +1203,7 @@ Naturally, if you define a private method yourself, it will also appear in the l
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>overrides.delete_if { |c, methods| methods.empty? }
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">-</span><span style="color:#710">&quot;</span></span> * <span style="color:#00D">50</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">-</span><span style="color:#710">&quot;</span></span> * <span style="color:#00D">50</span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span>overrides.each <span style="color:#080;font-weight:bold">do</span> |c, methods|
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span>  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Class </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>c<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> overrides: </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>methods.join(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">, </span><span style="color:#710">&quot;</span></span>)<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
@@ -1217,7 +1217,7 @@ Naturally, if you define a private method yourself, it will also appear in the l
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#036;font-weight:bold">StringIO</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#036;font-weight:bold">Gem</span>::<span style="color:#036;font-weight:bold">List</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#777">#&lt;Class:Gem::Specification&gt;</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#036;font-weight:bold">Process</span>::<span style="color:#036;font-weight:bold">Tms</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#036;font-weight:bold">Process</span>::<span style="color:#036;font-weight:bold">Tms</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#036;font-weight:bold">Enumerator</span>::<span style="color:#036;font-weight:bold">Generator</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#036;font-weight:bold">Enumerator</span>::<span style="color:#036;font-weight:bold">Lazy</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#036;font-weight:bold">Enumerator</span>
@@ -1227,7 +1227,7 @@ Naturally, if you define a private method yourself, it will also appear in the l
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#069">ARGF</span>.class
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#036;font-weight:bold">IO</span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#036;font-weight:bold">Range</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="color:#036;font-weight:bold">Struct</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#036;font-weight:bold">Struct</span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#777">#&lt;Class:#&lt;Object:0x00007fefd28ad030&gt;&gt;</span>
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#036;font-weight:bold">Hash</span>
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#036;font-weight:bold">Array</span>
@@ -1237,7 +1237,7 @@ Naturally, if you define a private method yourself, it will also appear in the l
 <span class="line-numbers"><a href="#n22" name="n22">22</a></span><span style="color:#777">#&lt;Class:0x00007fefd29822d0&gt;</span>
 <span class="line-numbers"><a href="#n23" name="n23">23</a></span><span style="color:#777">#&lt;Class:#&lt;Object:0x00007fefd3040bd0&gt;&gt;</span>
 <span class="line-numbers"><a href="#n24" name="n24">24</a></span><span style="color:#777">#&lt;Class:#&lt;Hash:0x00007fefd405ca00&gt;&gt;</span>
-<span class="line-numbers"><strong><a href="#n25" name="n25">25</a></strong></span>--------------------------------------------------
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>--------------------------------------------------
 <span class="line-numbers"><a href="#n26" name="n26">26</a></span><span style="color:#036;font-weight:bold">Class</span> <span style="color:#036;font-weight:bold">Gem</span>::<span style="color:#036;font-weight:bold">List</span> <span style="color:#606">overrides</span>: to_a
 <span class="line-numbers"><a href="#n27" name="n27">27</a></span><span style="color:#036;font-weight:bold">Class</span> <span style="color:#036;font-weight:bold">Enumerator</span>::<span style="color:#036;font-weight:bold">Lazy</span> <span style="color:#606">overrides</span>: grep, grep_v, find_all, select, reject, collect, map, flat_map, collect_concat, lazy, zip, take, take_while, drop, drop_while, chunk, slice_before, slice_after, slice_when, chunk_while, uniq
 <span class="line-numbers"><a href="#n28" name="n28">28</a></span><span style="color:#036;font-weight:bold">Class</span> <span style="color:#036;font-weight:bold">Enumerator</span> <span style="color:#606">overrides</span>: each_with_index, each_with_object
@@ -1247,7 +1247,7 @@ Naturally, if you define a private method yourself, it will also appear in the l
 <span class="line-numbers"><a href="#n32" name="n32">32</a></span><span style="color:#036;font-weight:bold">Class</span> <span style="color:#036;font-weight:bold">Struct</span> <span style="color:#606">overrides</span>: to_a, to_h, select
 <span class="line-numbers"><a href="#n33" name="n33">33</a></span><span style="color:#036;font-weight:bold">Class</span> <span style="color:#777">#&lt;Class:#&lt;Object:0x00007fefd28ad030&gt;&gt; overrides: to_a, select, reject, include?, to_h, member?</span>
 <span class="line-numbers"><a href="#n34" name="n34">34</a></span><span style="color:#036;font-weight:bold">Class</span> <span style="color:#036;font-weight:bold">Hash</span> <span style="color:#606">overrides</span>: to_h, include?, to_a, select, reject, any?, member?
-<span class="line-numbers"><strong><a href="#n35" name="n35">35</a></strong></span><span style="color:#036;font-weight:bold">Class</span> <span style="color:#036;font-weight:bold">Array</span> <span style="color:#606">overrides</span>: to_h, include?, sort, count, find_index, select, reject, collect, map, first, any?, reverse_each, zip, take, take_while, drop, drop_while, cycle, sum, uniq, max, min, to_a
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span><span style="color:#036;font-weight:bold">Class</span> <span style="color:#036;font-weight:bold">Array</span> <span style="color:#606">overrides</span>: to_h, include?, sort, count, find_index, select, reject, collect, map, first, any?, reverse_each, zip, take, take_while, drop, drop_while, cycle, sum, uniq, max, min, to_a
 <span class="line-numbers"><a href="#n36" name="n36">36</a></span> =&gt; <span style="color:#069">true</span>
 </pre></div>
 </div>
@@ -1283,7 +1283,7 @@ Let’s look next at how to query an object with regard to its singleton methods
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#036;font-weight:bold">Module</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">017</span> &gt; <span style="color:#036;font-weight:bold">ObjectSpace</span>.methods(<span style="color:#069">false</span>)
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; [<span style="color:#A60">:each_object</span>, <span style="color:#A60">:define_finalizer</span>, <span style="color:#A60">:undefine_finalizer</span>, <span style="color:#A60">:_id2ref</span>, <span style="color:#A60">:garbage_collect</span>, <span style="color:#A60">:count_objects</span>]
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span> &gt;
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span> &gt;
 </pre></div>
 </div>
 </div>
@@ -1301,7 +1301,7 @@ Let’s look next at how to query an object with regard to its singleton methods
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>c = <span style="color:#036;font-weight:bold">C</span>.new
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#080;font-weight:bold">class</span> &lt;&lt; <span style="color:#B06;font-weight:bold">c</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">class</span> &lt;&lt; <span style="color:#B06;font-weight:bold">c</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">x</span>; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">y</span>; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">z</span>; <span style="color:#080;font-weight:bold">end</span>
@@ -1331,7 +1331,7 @@ Let’s look next at how to query an object with regard to its singleton methods
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>c = <span style="color:#036;font-weight:bold">C</span>.new
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#080;font-weight:bold">class</span> &lt;&lt; <span style="color:#B06;font-weight:bold">c</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">class</span> &lt;&lt; <span style="color:#B06;font-weight:bold">c</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">x</span>; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">y</span>; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">z</span>; <span style="color:#080;font-weight:bold">end</span>
@@ -1341,7 +1341,7 @@ Let’s look next at how to query an object with regard to its singleton methods
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>p c.singleton_methods
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="color:#080;font-weight:bold">class</span> &lt;&lt; <span style="color:#B06;font-weight:bold">c</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#080;font-weight:bold">class</span> &lt;&lt; <span style="color:#B06;font-weight:bold">c</span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>  p private_instance_methods(<span style="color:#069">false</span>)
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#080;font-weight:bold">end</span>
 </pre></div>
@@ -1369,7 +1369,7 @@ You can ask a class for its singleton methods, and you’ll get the singleton me
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">nil</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">D</span> &lt; <span style="color:#036;font-weight:bold">C</span>; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#069">nil</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#036;font-weight:bold">C</span>.<span style="color:#06B;font-weight:bold">meth1</span>; <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#036;font-weight:bold">C</span>.<span style="color:#06B;font-weight:bold">meth1</span>; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#A60">:meth1</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#036;font-weight:bold">C</span>.<span style="color:#06B;font-weight:bold">meth2</span>; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#A60">:meth2</span>
@@ -1379,7 +1379,7 @@ You can ask a class for its singleton methods, and you’ll get the singleton me
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span> =&gt; <span style="color:#A60">:func1</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">012</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#036;font-weight:bold">D</span>.<span style="color:#06B;font-weight:bold">func2</span>; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span> =&gt; <span style="color:#A60">:func2</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt; <span style="color:#036;font-weight:bold">D</span>.singleton_methods
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt; <span style="color:#036;font-weight:bold">D</span>.singleton_methods
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span> =&gt; [<span style="color:#A60">:func1</span>, <span style="color:#A60">:func2</span>, <span style="color:#A60">:meth2</span>, <span style="color:#A60">:meth3</span>, <span style="color:#A60">:meth1</span>]
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span> &gt;
 </pre></div>
@@ -1453,7 +1453,7 @@ You can ask a class for its singleton methods, and you’ll get the singleton me
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; [<span style="color:#A60">:_</span>]
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">9</span> &gt; x = <span style="color:#00D">1</span>; y = <span style="color:#00D">2</span>; z = <span style="color:#00D">3</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#00D">3</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">020</span> &gt; local_variables
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">020</span> &gt; local_variables
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; [<span style="color:#A60">:x</span>, <span style="color:#A60">:y</span>, <span style="color:#A60">:z</span>, <span style="color:#A60">:_</span>]
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">021</span> &gt; global_variables.sort
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; [<span style="color:#A60">:$!</span>, <span style="color:#A60">:$&quot;</span>, <span style="color:#A60">:$$</span>, <span style="color:#A60">:$&amp;</span>, <span style="color:#A60">:$'</span>, <span style="color:#A60">:$*</span>, <span style="color:#A60">:$+</span>, <span style="color:#A60">:$,</span>, <span style="color:#A60">:$-0</span>, <span style="color:#A60">:$-F</span>, <span style="color:#A60">:$-I</span>, <span style="color:#A60">:$-K</span>, <span style="color:#A60">:$-W</span>, <span style="color:#A60">:$-a</span>, <span style="color:#A60">:$-d</span>, <span style="color:#A60">:$-i</span>, <span style="color:#A60">:$-l</span>, <span style="color:#A60">:$-p</span>, <span style="color:#A60">:$-v</span>, <span style="color:#A60">:$-w</span>, <span style="color:#A60">:$.</span>, <span style="color:#A60">:$/</span>, <span style="color:#A60">:$0</span>, <span style="color:#A60">:$:</span>, <span style="color:#A60">:$;</span>, <span style="color:#A60">:$&lt;</span>, <span style="color:#A60">:$=</span>, <span style="color:#A60">:$&gt;</span>, <span style="color:#A60">:$?</span>, <span style="color:#A60">:$@</span>, <span style="color:#A60">:$DEBUG</span>, <span style="color:#A60">:$FILENAME</span>, <span style="color:#A60">:$KCODE</span>, <span style="color:#A60">:$LOADED_FEATURES</span>, <span style="color:#A60">:$LOAD_PATH</span>, <span style="color:#A60">:$PROGRAM_NAME</span>, <span style="color:#A60">:$SAFE</span>, <span style="color:#A60">:$VERBOSE</span>, <span style="color:#A60">:$\</span>, <span style="color:#A60">:$_</span>, <span style="color:#A60">:$`</span>, <span style="color:#A60">:$binding</span>, <span style="color:#A60">:$stderr</span>, <span style="color:#A60">:$stdin</span>, <span style="color:#A60">:$stdout</span>, <span style="color:#A60">:$~</span>]
@@ -1477,7 +1477,7 @@ You can ask a class for its singleton methods, and you’ll get the singleton me
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/gems/ruby-2.5.0@global/gems/did_you_mean-1.2.0/lib</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0/x86_64-darwin17</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/vendor_ruby/2.5.0</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/vendor_ruby/2.5.0/x86_64-darwin17</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/vendor_ruby</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/2.5.0</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/2.5.0/x86_64-darwin17</span><span style="color:#710">&quot;</span></span>]
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">025</span> &gt;
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">026</span> &gt; <span style="color:#d70">$~</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span> =&gt; <span style="color:#069">nil</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span> =&gt; <span style="color:#069">nil</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">027</span> &gt; <span style="color:#d70">$0</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">irb</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">02</span><span style="color:#00D">8</span> &gt; <span style="color:#d70">$FILENAME</span>
@@ -1500,7 +1500,7 @@ You can ask a class for its singleton methods, and you’ll get the singleton me
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">032</span>?&gt;   attr_accessor <span style="color:#A60">:name</span>, <span style="color:#A60">:age</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">033</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#069">nil</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">034</span> &gt; p = <span style="color:#036;font-weight:bold">Person</span>.new
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">034</span> &gt; p = <span style="color:#036;font-weight:bold">Person</span>.new
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#777">#&lt;Person:0x00007f87b08df038&gt;</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">035</span> &gt; p.instance_variables
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; []
@@ -1533,7 +1533,7 @@ You can ask a class for its singleton methods, and you’ll get the singleton me
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; _
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span> =&gt; <span style="color:#069">nil</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; x = <span style="color:#00D">100</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span> =&gt; <span style="color:#00D">100</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span> =&gt; <span style="color:#00D">100</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; _
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span> =&gt; <span style="color:#00D">100</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; rand <span style="color:#00D">1000</span>
@@ -1543,7 +1543,7 @@ You can ask a class for its singleton methods, and you’ll get the singleton me
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">some string</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">some string</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; _
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">some string</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">some string</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt;
 </pre></div>
 </div>
@@ -1582,7 +1582,7 @@ Here’s an example. Put these lines in a file called tracedemo.rb:</p>
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  y
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">y</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">y</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  z
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
@@ -1644,7 +1644,7 @@ Here’s an example. Put these lines in a file called tracedemo.rb:</p>
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Call</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#036;font-weight:bold">CALL_RE</span> = <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">(.*):(</span><span style="color:#D20">\d</span><span style="color:#808">+):in`(.*)'</span><span style="color:#404">/</span></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    attr_reader <span style="color:#A60">:program</span>, <span style="color:#A60">:line</span>, <span style="color:#A60">:meth</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(event)
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      <span style="color:#33B">@program</span>, <span style="color:#33B">@line</span>, <span style="color:#33B">@meth</span> = <span style="color:#036;font-weight:bold">CALL_RE</span>.match(event).captures
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#080;font-weight:bold">end</span>
@@ -1654,7 +1654,7 @@ Here’s an example. Put these lines in a file called tracedemo.rb:</p>
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#080;font-weight:bold">end</span>
 </pre></div>
 </div>
 </div>
@@ -1684,7 +1684,7 @@ Here’s an example. Put these lines in a file called tracedemo.rb:</p>
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span> <span style="color:#777"># Stack.new is involved in stacktrace too</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    stack = caller
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    stack.shift
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>    <span style="color:#33B">@backtrace</span> = stack.map <span style="color:#080;font-weight:bold">do</span> |call|
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#33B">@backtrace</span> = stack.map <span style="color:#080;font-weight:bold">do</span> |call|
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      <span style="color:#777"># this step will created (caller.size-1) Call instances</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      <span style="color:#777"># then push them into a stack object's @backtrace</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>      <span style="color:#036;font-weight:bold">Call</span>.new(call)
@@ -1694,7 +1694,7 @@ Here’s an example. Put these lines in a file called tracedemo.rb:</p>
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">report</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>    <span style="color:#33B">@backtrace</span>.map <span style="color:#080;font-weight:bold">do</span> |call|
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>      call.to_s
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>    <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span>
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">find</span>(&amp;block)
@@ -1732,7 +1732,7 @@ Here’s an example. Put these lines in a file called tracedemo.rb:</p>
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">CallerTools</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#777"># class Call's every instance represents and formats one step of a stacktrace</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Call</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>    <span style="color:#036;font-weight:bold">CALL_RE</span> = <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">(.*):(</span><span style="color:#D20">\d</span><span style="color:#808">+):in `(.*)'</span><span style="color:#404">/</span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#036;font-weight:bold">CALL_RE</span> = <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">(.*):(</span><span style="color:#D20">\d</span><span style="color:#808">+):in `(.*)'</span><span style="color:#404">/</span></span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    attr_reader <span style="color:#A60">:program</span>, <span style="color:#A60">:line</span>, <span style="color:#A60">:meth</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(event)
@@ -1742,7 +1742,7 @@ Here’s an example. Put these lines in a file called tracedemo.rb:</p>
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">to_s</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>      <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">%30s%5s%15s</span><span style="color:#710">&quot;</span></span> % [program, line, meth]
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span>  <span style="color:#777"># class Stack being to hold Call's instance and report formatted info based on Call's work</span>
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Stack</span>
@@ -1752,7 +1752,7 @@ Here’s an example. Put these lines in a file called tracedemo.rb:</p>
 <span class="line-numbers"><a href="#n22" name="n22">22</a></span>      <span style="color:#33B">@backtrace</span> = stack.map <span style="color:#080;font-weight:bold">do</span> |call|
 <span class="line-numbers"><a href="#n23" name="n23">23</a></span>        <span style="color:#036;font-weight:bold">Call</span>.new(call)
 <span class="line-numbers"><a href="#n24" name="n24">24</a></span>      <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n25" name="n25">25</a></strong></span>    <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>    <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n26" name="n26">26</a></span>
 <span class="line-numbers"><a href="#n27" name="n27">27</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">report</span>
 <span class="line-numbers"><a href="#n28" name="n28">28</a></span>      <span style="color:#33B">@backtrace</span>.map <span style="color:#080;font-weight:bold">do</span> |call|
@@ -1762,7 +1762,7 @@ Here’s an example. Put these lines in a file called tracedemo.rb:</p>
 <span class="line-numbers"><a href="#n32" name="n32">32</a></span>
 <span class="line-numbers"><a href="#n33" name="n33">33</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">find</span>(&amp;block)
 <span class="line-numbers"><a href="#n34" name="n34">34</a></span>      <span style="color:#33B">@backtrace</span>.find(&amp;block)
-<span class="line-numbers"><strong><a href="#n35" name="n35">35</a></strong></span>    <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span>    <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n36" name="n36">36</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n37" name="n37">37</a></span><span style="color:#080;font-weight:bold">end</span>
 </pre></div>
@@ -1782,7 +1782,7 @@ Here’s an example. Put these lines in a file called tracedemo.rb:</p>
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">x</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  y
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">y</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  z
@@ -1792,7 +1792,7 @@ Here’s an example. Put these lines in a file called tracedemo.rb:</p>
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>  stack = <span style="color:#036;font-weight:bold">CallerTools</span>::<span style="color:#036;font-weight:bold">Stack</span>.new
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>  puts stack.report
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>x
 </pre></div>
 </div>
@@ -1805,7 +1805,7 @@ Here’s an example. Put these lines in a file called tracedemo.rb:</p>
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>                 callertest.rb   <span style="color:#00D">12</span>              z
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>                 callertest.rb    <span style="color:#00D">8</span>              y
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>                 callertest.rb    <span style="color:#00D">4</span>              x
-<span class="line-numbers"><strong><a href="#n5" name="n5">5</a></strong></span>                 callertest.rb   <span style="color:#00D">16</span>         &lt;main&gt;
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>                 callertest.rb   <span style="color:#00D">16</span>         &lt;main&gt;
 </pre></div>
 </div>
 </div>
@@ -1854,7 +1854,7 @@ First, a bit of backstory.</p>
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#036;font-weight:bold">RANKS</span> = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">%w{</span><span style="color:#D20"> 2 3 4 5 6 7 8 9 10 J Q K A </span><span style="color:#710">}</span></span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#036;font-weight:bold">SUITS</span> = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">%w{</span><span style="color:#D20"> clubs diamonds hearts spades </span><span style="color:#710">}</span></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Deck</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Deck</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      <span style="color:#33B">@cards</span> = []
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>      <span style="color:#036;font-weight:bold">RANKS</span>.each <span style="color:#080;font-weight:bold">do</span> |r|
@@ -1864,7 +1864,7 @@ First, a bit of backstory.</p>
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>      <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>      <span style="color:#33B">@cards</span>.shuffle!
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">deal</span>(n=<span style="color:#00D">1</span>)
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span>      <span style="color:#33B">@cards</span>.pop(n)
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span>    <span style="color:#080;font-weight:bold">end</span>
@@ -1874,7 +1874,7 @@ First, a bit of backstory.</p>
 <span class="line-numbers"><a href="#n22" name="n22">22</a></span>    <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n23" name="n23">23</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n24" name="n24">24</a></span>
-<span class="line-numbers"><strong><a href="#n25" name="n25">25</a></strong></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span><span style="color:#080;font-weight:bold">end</span>
 </pre></div>
 </div>
 </div>
@@ -1891,7 +1891,7 @@ So far, so good. Now, let’s test it. Enter MiniTest. The next listing shows th
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">minitest/autorun</span><span style="color:#710">'</span></span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>require_relative <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">microtest_cards</span><span style="color:#710">'</span></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">CardTest</span> &lt; <span style="color:#036;font-weight:bold">MiniTest</span>::<span style="color:#036;font-weight:bold">Unit</span>::<span style="color:#036;font-weight:bold">TestCase</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">CardTest</span> &lt; <span style="color:#036;font-weight:bold">MiniTest</span>::<span style="color:#036;font-weight:bold">Unit</span>::<span style="color:#036;font-weight:bold">TestCase</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">setup</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#33B">@deck</span> = <span style="color:#036;font-weight:bold">PlayingCards</span>::<span style="color:#036;font-weight:bold">Deck</span>.new
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">end</span>
@@ -1901,7 +1901,7 @@ So far, so good. Now, let’s test it. Enter MiniTest. The next listing shows th
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>    assert_equal(<span style="color:#00D">51</span>, <span style="color:#33B">@deck</span>.size)
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">test_deal_many</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">test_deal_many</span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>    <span style="color:#33B">@deck</span>.deal(<span style="color:#00D">5</span>)
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span>    assert_equal(<span style="color:#00D">47</span>, <span style="color:#33B">@deck</span>.size)
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span>  <span style="color:#080;font-weight:bold">end</span>
@@ -1948,7 +1948,7 @@ Execute cardtest.rb from the command line. Here’s what you’ll see (probably 
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#036;font-weight:bold">Run</span> <span style="color:#606">options</span>: --seed <span style="color:#00D">33974</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#777"># Running:</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>..
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#036;font-weight:bold">Finished</span> <span style="color:#080;font-weight:bold">in</span> <span style="color:#60E">0.001026</span>s, <span style="color:#60E">1949.3179</span> runs/s, <span style="color:#60E">1949.3179</span> assertions/s.
@@ -2007,7 +2007,7 @@ Execute cardtest.rb from the command line. Here’s what you’ll see (probably 
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">inherited</span>(c)
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    c.class_eval <span style="color:#080;font-weight:bold">do</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>      <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">method_added</span>(m)
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>      <span style="color:#777"># If m starts with 'test'</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>      <span style="color:#777"># If m starts with 'test'</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      <span style="color:#777">#    Create an instance of c</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      <span style="color:#777">#    If there's a setup method</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>      <span style="color:#777">#       execute setup</span>
@@ -2037,7 +2037,7 @@ Execute cardtest.rb from the command line. Here’s what you’ll see (probably 
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">MicroTest</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">inherited</span>(c)         <span style="color:#777"># Once a class inherit from MicroTest, this method will be triggered</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>    c.class_eval <span style="color:#080;font-weight:bold">do</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    c.class_eval <span style="color:#080;font-weight:bold">do</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">method_added</span>(m)  <span style="color:#777"># whatever instance method was building in testing class, this method will be triggered</span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>        puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">method_added got triggered...</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>        <span style="color:#080;font-weight:bold">if</span> m =~ <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">^test</span><span style="color:#404">/</span></span>         <span style="color:#777"># If m starts with 'test'</span>
@@ -2047,7 +2047,7 @@ Execute cardtest.rb from the command line. Here’s what you’ll see (probably 
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>          <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>          obj.send(m)                               <span style="color:#777"># Execute m</span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>        <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>      <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>      <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>    <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span>
@@ -2057,7 +2057,7 @@ Execute cardtest.rb from the command line. Here’s what you’ll see (probably 
 <span class="line-numbers"><a href="#n22" name="n22">22</a></span>      <span style="color:#069">true</span>
 <span class="line-numbers"><a href="#n23" name="n23">23</a></span>    <span style="color:#080;font-weight:bold">else</span>
 <span class="line-numbers"><a href="#n24" name="n24">24</a></span>      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Assertion failed: </span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><strong><a href="#n25" name="n25">25</a></strong></span>      stack = <span style="color:#036;font-weight:bold">CallerTools</span>::<span style="color:#036;font-weight:bold">Stack</span>.new
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>      stack = <span style="color:#036;font-weight:bold">CallerTools</span>::<span style="color:#036;font-weight:bold">Stack</span>.new
 <span class="line-numbers"><a href="#n26" name="n26">26</a></span>      failure = stack.find { |call| call.meth !~ <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">assert</span><span style="color:#404">/</span></span> }
 <span class="line-numbers"><a href="#n27" name="n27">27</a></span>      puts failure
 <span class="line-numbers"><a href="#n28" name="n28">28</a></span>      <span style="color:#069">false</span>
@@ -2067,7 +2067,7 @@ Execute cardtest.rb from the command line. Here’s what you’ll see (probably 
 <span class="line-numbers"><a href="#n32" name="n32">32</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">assert_equal</span>(expected, actual)
 <span class="line-numbers"><a href="#n33" name="n33">33</a></span>    result = assert(expected == actual)
 <span class="line-numbers"><a href="#n34" name="n34">34</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>actual<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> is not </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>expected<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span> <span style="color:#080;font-weight:bold">unless</span> result
-<span class="line-numbers"><strong><a href="#n35" name="n35">35</a></strong></span>    result
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span>    result
 <span class="line-numbers"><a href="#n36" name="n36">36</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n37" name="n37">37</a></span>
 <span class="line-numbers"><a href="#n38" name="n38">38</a></span><span style="color:#080;font-weight:bold">end</span>
@@ -2118,7 +2118,7 @@ The second assertion method, assert_equal, tests for equality between its two ar
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>require_relative <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">microtest_cards</span><span style="color:#710">'</span></span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">CardTest</span> &lt; <span style="color:#036;font-weight:bold">MicroTest</span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">setup</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">setup</span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#33B">@deck</span> = <span style="color:#036;font-weight:bold">PlayingCards</span>::<span style="color:#036;font-weight:bold">Deck</span>.new
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
@@ -2128,7 +2128,7 @@ The second assertion method, assert_equal, tests for equality between its two ar
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">test_deal_many</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span>    <span style="color:#33B">@deck</span>.deal(<span style="color:#00D">5</span>)
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    <span style="color:#33B">@deck</span>.deal(<span style="color:#00D">5</span>)
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>    assert_equal(<span style="color:#00D">47</span>, <span style="color:#33B">@deck</span>.size)
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span>  <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#080;font-weight:bold">end</span>
@@ -2171,7 +2171,7 @@ The second assertion method, assert_equal, tests for equality between its two ar
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>        <span style="color:#00D">1</span>: from microcardtest.rb:<span style="color:#00D">1</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">microcardtest.rb:1:in </span><span style="color:#161">`</span></span>require_relative<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">: /Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/microtest.rb:6: class/module name must be CONSTANT (SyntaxError)</span></span>
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">     class c</span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">     class c</span></span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">            ^</span></span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">/Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/microtest.rb:6: class definition in method body</span></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">     class c</span></span>
@@ -2195,7 +2195,7 @@ The second assertion method, assert_equal, tests for equality between its two ar
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">-----------Now </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>c<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> inherits from </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span><span style="color:#069">self</span><span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">------------</span><span style="color:#b0b">\n</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  c.class_eval <span style="color:#080;font-weight:bold">do</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">method_added</span>(m)  
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">------------method_added got triggered by </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>m<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">------------method_added got triggered by </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>m<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      <span style="color:#080;font-weight:bold">if</span> m =~ <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">^test</span><span style="color:#404">/</span></span>         
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>        obj = <span style="color:#069">self</span>.new       
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>        <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">self</span>.instance_methods.include?(<span style="color:#A60">:setup</span>)
@@ -2205,7 +2205,7 @@ The second assertion method, assert_equal, tests for equality between its two ar
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>      <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>    <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#080;font-weight:bold">end</span>
 </pre></div>
 </div>
 </div>
@@ -2217,7 +2217,7 @@ The second assertion method, assert_equal, tests for equality between its two ar
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>------------method_added got triggered by setup
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>------------method_added got triggered by test_deal_one
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span><span style="color:#036;font-weight:bold">Assertion</span> <span style="color:#606">failed</span>:
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#036;font-weight:bold">Assertion</span> <span style="color:#606">failed</span>:
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>              microcardtest.rb   <span style="color:#00D">11</span>  test_deal_one
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#00D">51</span> is <span style="color:#080;font-weight:bold">not</span> <span style="color:#00D">50</span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>------------method_added got triggered by test_deal_many
@@ -2233,7 +2233,7 @@ The second assertion method, assert_equal, tests for equality between its two ar
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">-----------Now </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>c<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> inherits from </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span><span style="color:#069">self</span><span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20">------------</span><span style="color:#b0b">\n</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  c.class_eval <span style="color:#080;font-weight:bold">do</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">method_added</span>(m)  
-<span class="line-numbers"> <strong><a href="#n5" name="n5">5</a></strong></span>      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">------------method_added got triggered by </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>m<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">------------method_added got triggered by </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>m<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      <span style="color:#080;font-weight:bold">if</span> m =~ <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">^test</span><span style="color:#404">/</span></span>         
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>        obj = <span style="color:#069">self</span>.new       
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>        <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">self</span>.instance_methods.include?(<span style="color:#A60">:setup</span>)
@@ -2243,7 +2243,7 @@ The second assertion method, assert_equal, tests for equality between its two ar
 <span class="line-numbers"><a href="#n12" name="n12">12</a></span>      <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>    <span style="color:#080;font-weight:bold">end</span>
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n15" name="n15">15</a></strong></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#080;font-weight:bold">end</span>
 </pre></div>
 </div>
 </div>
