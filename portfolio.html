@@ -1,0 +1,107 @@
+---
+nav_category: portfolio
+---
+
+
+<div class="portfolio">
+  {% include bar_nav.html %}
+
+  <div class="portfolio_panels">
+  {% for item in site.portfolios %}
+    {% if item.cover_type == "horizontal" %}
+
+
+      <div class="horizontal_portfolio_panel">
+        <div class="horizontal_thumbnail">
+          <a href="{{item.url}}">
+            <img src="{{ item.cover_url }}" alt="">
+          </a>
+        </div>
+
+        <div class="short_description_horizontal">
+          <p class="masthead">Hyllo</p>
+          <p>{{ item.short_description }}</p>
+        </div>
+      </div>
+    {% elsif item.cover_type == "vertical"%}
+      <div class="vertical_portfolio_panel">
+        <div class="vertical_thumbnail">
+          <a href="{{item.url}}">
+            <img src="{{ item.cover_url }}" alt="">
+          </a>
+        </div>
+
+        <div class="short_description_vertical">
+          <p class="masthead">Hyllo</p>
+          <p>{{ item.short_description }}</p>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+  </div>
+
+</div>
+
+
+<style media="screen">
+  .portfolio {
+    width: 100%;
+  }
+
+  .portfolio_panels {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+
+  .horizontal_portfolio_panel {
+    /* width: 375px; */
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 4em;
+  }
+
+  /* .horizontal_thumbnail {
+    height: 80%;
+  } */
+
+  .horizontal_portfolio_panel img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: fill;
+  }
+
+
+  .vertical_portfolio_panel {
+    /* width: 375px; */
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    margin-bottom: 4em;
+  }
+
+  .vertical_portfolio_panel img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  .vertical_thumbnail {
+    max-width: 70%;
+  }
+
+  .short_description_horizontal {
+    padding: 5px 5px 5px 15px;
+  }
+
+  .short_description_vertical {
+    padding: 0 15px;
+  }
+
+
+</style>

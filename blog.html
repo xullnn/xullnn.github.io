@@ -1,0 +1,21 @@
+---
+title: Blog
+headline: Writings
+description: Writings about everything
+nav_category: blog
+---
+
+<div class="blog">
+  {% include bar_nav.html %}
+
+  <h5>{{ page.headline }}</h5>
+
+  <ul>
+    {% for post in site.posts %}
+      <li>
+        <p class="post_title"><a href="{{ post.url }}">{{ post.title }}</a><span class="post_date">{{ post.date | date: "%Y-%m-%d"  }}</span></p>
+        <!-- <p class="post excerpt">{{ post.excerpt }}</p> -->
+      </li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,23 @@
+<!-- <nav>
+  {% for item in site.data.navigation %}
+    <a href="{{ item.link }}" {% if page.url == item.link %} class="current" {% endif %}>
+      {{ item.name }}
+    </a>
+  {% endfor%}
+</nav> -->
+
+
+<!-- <div class="bar_nav">
+  <p>Home</p>
+  <p>Portfolio</p>
+  <p>Blog</p>
+  <p>Me</p>
+</div> -->
+
+
+<div class="bar_nav">
+  {% for item in site.data.navigation %}
+    {% assign page_name = item.name | downcase %}
+    <p {% if page.nav_category == page_name %} class="current" {% endif %}><a href="{{ item.link }}">{{ item.name }}</a></p>
+  {% endfor %}
+</div>

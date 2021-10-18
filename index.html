@@ -1,0 +1,90 @@
+---
+name: index page
+title: Xullnn
+nav_category: home
+---
+
+<!-- 3 recent essays or projects not too much -->
+<div class="index">
+  {% include side_nav.html %}
+
+  <div class="dotdotdot">
+    <p class="dot"></p>
+    <p class="dot"></p>
+    <p class="dot"></p>
+  </div>
+
+  <div class="recent">
+    <p>Recent Articles:</p>
+    <ul>
+      {% for item in site.posts %}
+        {% if item.recent %}
+          <li>- <a href="{{item.url}}">{{item.title}}</a></li>
+        {% endif %}
+      {% endfor%}
+    </ul>
+
+    <p>Recent Work:</p>
+    <ul>
+      {% for item in site.portfolios %}
+        {% if item.recent %}
+          <li>
+            <a href="{{item.project_url}}">
+              <div class="portfolio_recent_panel">
+                <img src="{{item.cover_url}}" alt=""/>
+                <div class="recent_project_description">
+                  <span class="block_project_name">{{ item.project_name }}</span>
+                  <p>{{ item.short_description }}</p>
+                </div>
+
+              </div>
+            </a>
+          </li>
+        {% endif %}
+      {% endfor%}
+    </ul>
+
+    <p>Recent photo:</p>
+      <div class="portfolio_recent_panel">
+        <img src="photography/honghaizi.jpg" alt=""/>
+        <div class="recent_project_description">
+          <span class="block_project_name">Sichuan, honghaizi.</span>
+          <p>Recent trip to western Sichuan. <a href="/photography.html">More photos</a></p>
+          <p></p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<style media="screen">
+  .portfolio_recent_panel {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    height: 120px;
+    padding: 1em 0.5em 1em;
+    margin-top: 1em;
+
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+  }
+
+  .block_project_name {
+    display: inlineblock;
+  }
+
+  .recent_project_description {
+    height: 95%;
+    overflow: hidden;
+  }
+
+
+
+  .portfolio_recent_panel img {
+    height: 100%;
+    object-fit: scale-down;
+    margin-right: 0.5em;
+    border: 1px solid lightgrey;
+    }
+
+</style>

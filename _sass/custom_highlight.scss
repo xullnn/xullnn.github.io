@@ -1,0 +1,42 @@
+// for code highlight
+.CodeRay {
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: 1.8em 0;
+  font-weight: normal;
+
+  pre {
+    width: 100%;
+    overflow: scroll;
+  }
+
+
+  .line-numbers {
+    margin-right: 0.5em;
+
+    a {
+      color: lightgrey;
+      text-decoration: none;
+    }
+
+  }
+}
+
+code {
+  background-color: rgb(245, 245, 245);
+  padding: 0 0.5em;
+}
+
+// for blockquotes
+
+blockquote {
+  padding: 0.1em 1.2em;
+  background-color: rgb(245, 245, 245);
+  border-radius: 0.2em;
+  margin: 0.8em 1em;
+
+  p {
+    font-style: italic;
+    font-weight: normal;
+  }
+}

@@ -1,0 +1,99 @@
+---
+nav_category: portfolio
+---
+
+
+<div class="portfolio">
+  {% include bar_nav.html %}
+
+  <div class="portfolio_panels">
+    <div class="horizontal_portfolio_panel">
+      <div class="horizontal_thumbnail">
+        <img src="/assets/images/sample.png" alt="">
+      </div>
+
+      <div class="short_description_vertical">
+        <p class="masthead">Hyllo</p>
+        <p>Help you find the pattern between your diet and states in a heuristic way.</p>
+      </div>
+    </div>
+
+
+    <div class="vertical_portfolio_panel">
+      <div class="vertical_thumbnail">
+        <img src="/assets/images/sample2.png" alt="">
+      </div>
+
+      <div class="short_description_horizontal">
+        <p class="masthead">Hyllo</p>
+        <p>Help you find the pattern between your diet and states in a heuristic way.</p>
+      </div>
+    </div>
+  </div>
+
+  <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FcpPIbnwWO6BBONS1IBYcbd%2Fv1.0%3Fnode-id%3D516%253A2212%26scaling%3Dscale-down%26page-id%3D111%253A387%26starting-point-node-id%3D516%253A2212" allowfullscreen></iframe>
+
+</div>
+
+<style media="screen">
+  .portfolio {
+    width: 100%;
+  }
+
+  .portfolio_panels {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+
+  .horizontal_portfolio_panel {
+    width: 375px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 4em;
+  }
+
+  /* .horizontal_thumbnail {
+    height: 80%;
+  } */
+
+  .horizontal_portfolio_panel img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: fill;
+  }
+
+
+  .vertical_portfolio_panel {
+    width: 375px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    margin-bottom: 4em;
+  }
+
+  .vertical_portfolio_panel img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  .vertical_thumbnail {
+    max-width: 70%;
+  }
+
+  .short_description_horizontal {
+    padding: 5px 5px 5px 15px;
+  }
+
+  .short_description_vertical {
+    padding: 0 15px;
+  }
+
+
+</style>

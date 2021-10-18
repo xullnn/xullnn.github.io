@@ -1,0 +1,54 @@
+collections:
+  portfolios:
+    output: true
+  archived:
+    output: true
+  algorithms:
+    output: true
+  reading_notes:
+    output: true
+  wgr:
+    output: true
+  archived:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      nav_category: "blog"
+  - scope:
+      path: ""
+      type: "archived"
+    values:
+      layout: "post"
+      nav_category: "blog"
+  - scope:
+      path: ""
+      type: "algorithms"
+    values:
+      layout: "post"
+      nav_category: "blog"
+  - scope:
+      path: ""
+      type: "wgr"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "portfolios"
+    values:
+      layout: "post"
+      nav_category: "portfolios"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+kramdown:
+  syntax_highlighter: coderay
+  syntax_highlighter_opts:
+    line_numbers: inline
+    bold_every: 5

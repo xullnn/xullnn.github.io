@@ -1,0 +1,83 @@
+body { width: 60%; max-width: 600px; margin: auto; padding-top: 5%; }
+
+@media (max-width: 400px) { body { width: 95%; } }
+
+p { line-height: 120%; overflow-wrap: break-word; }
+
+iframe { width: 100%; }
+
+.current { border: 1px solid grey; border-radius: 0.3em; }
+
+.side_nav { width: 25%; flex-basis: content; font-weight: 600; color: rgba(0, 0, 0, 0.65); }
+
+.side_nav a { text-decoration-line: none; color: #23A6F0; }
+
+@media (max-width: 800px) { .side_nav { width: 100%; display: flex; flex-direction: row; justify-content: space-evenly; align-items: center; } .side_nav p { margin: 0.3em 0; flex-basis: 10%; display: inline-block; padding: 2px 6px; } }
+
+.recent { width: 60%; line-height: 120%; }
+
+.recent ul { list-style-type: none; padding-left: 0; }
+
+.recent ul li { margin-bottom: 0.2em; }
+
+.index { display: flex; flex-direction: row; justify-content: space-evenly; flex-wrap: wrap; }
+
+@media (max-width: 800px) { .index * { width: 100%; } }
+
+.dot { height: 2px; width: 2px; border-radius: 50%; border: grey solid 0.5px; background-color: grey; }
+
+.dotdotdot { width: 15%; }
+
+@media (max-width: 800px) { .dotdotdot { display: none; } .dotdotdot p { font-size: 0.3em; font-style: bold; margin-left: 50%; } }
+
+.bar_nav { width: 100%; display: flex; flex-direction: row; justify-content: space-evenly; align-items: start; font-weight: 600; }
+
+.bar_nav a { text-decoration-line: none; color: #23A6F0; align-content: center; }
+
+.bar_nav p { padding: 2px 6px; flex-basis: 10%; }
+
+.post { align-content: center; }
+
+.post_date { margin-left: 1em; color: lightgrey; font-size: 90%; }
+
+img { width: 100%; }
+
+.CodeRay { padding-left: 1em; padding-right: 1em; margin: 1.8em 0; font-weight: normal; }
+
+.CodeRay pre { width: 100%; overflow: scroll; }
+
+.CodeRay .line-numbers { margin-right: 0.5em; }
+
+.CodeRay .line-numbers a { color: lightgrey; text-decoration: none; }
+
+code { background-color: whitesmoke; padding: 0 0.5em; }
+
+blockquote { padding: 0.1em 1.2em; background-color: whitesmoke; border-radius: 0.2em; margin: 0.8em 1em; }
+
+blockquote p { font-style: italic; font-weight: normal; }
+
+@font-face { font-family: "Nunito"; src: url("/assets/fonts/Nunito/Nunito-Regular.ttf"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: "Nunito"; src: url("/assets/fonts/Nunito/Nunito-Italic.ttf"); font-weight: normal; font-style: italic; }
+
+@font-face { font-family: "Nunito"; src: url("/assets/fonts/Nunito/Nunito-Light.ttf"); font-weight: lighter; font-style: normal; }
+
+@font-face { font-family: "Nunito"; src: url("/assets/fonts/Nunito/Nunito-LightItalic.ttf"); font-weight: lighter; font-style: italic; }
+
+@font-face { font-family: "Nunito"; src: url("/assets/fonts/Nunito/Nunito-Bold.ttf"); font-weight: bold; font-style: normal; }
+
+@font-face { font-family: "Nunito"; src: url("/assets/fonts/Nunito/Nunito-BoldItalic.ttf"); font-weight: bold; font-style: italic; }
+
+@font-face { font-family: "Nunito"; src: url("/assets/fonts/Nunito/Nunito-SemiBold.ttf"); font-weight: 600; font-style: normal; }
+
+@font-face { font-family: "Courier_Prime"; src: url("/assets/fonts/Courier_Prime/CourierPrime-Regular.ttf"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: "Courier_Prime"; src: url("/assets/fonts/Courier_Prime/CourierPrime-Italic.ttf"); font-weight: normal; font-style: italic; }
+
+@font-face { font-family: "Courier_Prime"; src: url("/assets/fonts/Courier_Prime/CourierPrime-Bold.ttf"); font-weight: bold; font-style: normal; }
+
+@font-face { font-family: "Courier_Prime"; src: url("/assets/fonts/Courier_Prime/Courier_Prime-BoldItalic.ttf"); font-weight: bold; font-style: italic; }
+
+body { font-family: "Nunito", "Tahoma", "Times New Roman", "Gill Sans", sans-serif; font-weight: 600; color: rgba(0, 0, 0, 0.8); font-size: 0.8em; }
+
+/*# sourceMappingURL=styles.css.map */

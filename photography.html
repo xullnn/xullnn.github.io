@@ -1,0 +1,26 @@
+---
+nav_category: photography
+---
+
+<div class="photos">
+  {% include bar_nav.html %}
+
+  {% for static_file in site.static_files %}
+    {% if static_file.path contains "photography"%}
+      <img src="{{static_file.path}}" alt="">
+    {% endif %}
+  {% endfor %}
+</div>
+
+<style media="screen">
+  .photos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  img {
+    padding: 1em;
+    height: 200px;
+    width: auto;
+  }
+</style>
