@@ -274,12 +274,16 @@ JavaScript libraries, frameworks, and plugins.</p>
 
     <p>文章中提到 <code>Promise</code> 的标准构造方式也就是用 Constructor:</p>
 
-    <div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>let promise = <span style="color:#080;font-weight:bold">new</span> Promise(<span style="color:#080;font-weight:bold">function</span>(resolve, reject) =&gt; {
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#777">// do something then resolve/reject</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>})
-</pre></div>
-</div>
+    <div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre>let promise = <span style="color:#080;font-weight:bold">new</span> Promise(<span style="color:#080;font-weight:bold">function</span>(resolve, reject) =&gt; {
+  <span style="color:#777">// do something then resolve/reject</span>
+})
+</pre></td>
+</tr></table>
     </div>
 
     <p><code>Promise</code> constructor 接收一个callback作为argument, 这个callkback function又接收两个arguments通常命名为<code>resolve</code> 和 <code>reject</code>(也可以使用其他名称)。这两个 callback arguments 可以决定新构建的这个<code>Promise</code> object的内部状态(state)，而一旦这个<code>Promise</code> object的构造执行完成，我们就无法再使用<code>resolve</code>或者<code>reject</code>来篡改其状态，只能使用<code>then</code>来连接后续操作。</p>
@@ -299,10 +303,12 @@ JavaScript libraries, frameworks, and plugins.</p>
       <li>https://blog.domenic.me/the-revealing-constructor-pattern/</li>
     </ul>
 
-    <div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ohoooo!</span><span style="color:#710">&quot;</span></span>).then((a) =&gt; <span style="color:#080;font-weight:bold">return</span> a).then(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">guess what</span><span style="color:#710">&quot;</span></span>)
-</pre></div>
-</div>
+    <div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ohoooo!</span><span style="color:#710">&quot;</span></span>).then((a) =&gt; <span style="color:#080;font-weight:bold">return</span> a).then(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">guess what</span><span style="color:#710">&quot;</span></span>)
+</pre></td>
+</tr></table>
     </div>
 
     <h3 id="google-上关于web开发的资源网站">Google 上关于web开发的资源网站</h3>

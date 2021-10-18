@@ -108,13 +108,18 @@
 
 <p>Intuitively we probably won’t do these tasks sequentially. For example, when we are boiling eggs, we won’t stare at the pot seeing the water boiling gradually and doing nothing else. Thus it may take us <code>3 + 4 + 10 + 2 = 19</code> minutes to make the breakfast. We all know we can do something else while we have started some previous tasks, especially some time-consuming tasks. Or we can say some tasks can be handled in parallel. One way to do things in this style may be like this:</p>
 
-<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>|-------------- boil eggs --------------|
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span> |- heat potato -|
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  |--- heat water ---|
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>                      |- brew coffee -|
-</pre></div>
-</div>
+<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre>|-------------- boil eggs --------------|
+ |- heat potato -|
+  |--- heat water ---|
+                      |- brew coffee -|
+</pre></td>
+</tr></table>
 </div>
 
 <p>By doing this we can have our breakfast only after 10 minutes. And the purpose of rearranging these tasks is similar to the purpose of “async” in programming.</p>
@@ -143,32 +148,48 @@
 
 <p>A good starting point to develop a realization about the existence of sync and async in JavaScript is the “zero-delay” example with <code>setTimeout</code>:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>setTimeout(() =&gt; {
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the first line.</span><span style="color:#710">&quot;</span></span>);
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>}, <span style="color:#00D">0</span>);
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#777">// this line is only added for increasing the time consumption in between</span>
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#080;font-weight:bold">for</span>(let i = <span style="color:#00D">0</span>; i &lt; <span style="color:#00D">1000000000</span>; i += <span style="color:#00D">1</span> ) {};
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span>
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span>console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the last line.</span><span style="color:#710">&quot;</span></span>);
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+</pre></td>
+  <td class="code"><pre>setTimeout(() =&gt; {
+  console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the first line.</span><span style="color:#710">&quot;</span></span>);
+}, <span style="color:#00D">0</span>);
+
+<span style="color:#777">// this line is only added for increasing the time consumption in between</span>
+<span style="color:#080;font-weight:bold">for</span>(let i = <span style="color:#00D">0</span>; i &lt; <span style="color:#00D">1000000000</span>; i += <span style="color:#00D">1</span> ) {};
+
+console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the last line.</span><span style="color:#710">&quot;</span></span>);
+</pre></td>
+</tr></table>
 </div>
 
 <p>If we don’t have any notion about async with JavaScript we may expect the two messages to be printed out sequentially, just as the order they were written in code. However in this case, though the time delay of <code>setTimeout</code> is set to <code>0</code>, plus that we add a time-consuming operation in between, the message in <code>setTimeout</code> callback always goes after the <code>"I am the last line."</code>. The <code>0</code> didn’t make sure <code>"I am the first line."</code> to be printed out right away. Because callback wrapped by <code>setTimeout</code> will be executed asynchronously. An oversimplified description of how this works is: the async part is executed after the sync part has finished executing. The async part here is the callback passed to <code>setTimeout</code>, everything else is the sync part. This is a typical example to prove the existence of sync and async parts.</p>
 
 <p>But who makes the callback asynchronous? It’s the <code>setTimeout</code> API. <code>Promise</code> also, has similar feature. Let’s change the code example to use Promise:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>).then(() =&gt; console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the first line.</span><span style="color:#710">&quot;</span></span>));      <span style="color:#777">// 1</span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#777">// this line is only added for increase the time consuption in between</span>
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#080;font-weight:bold">for</span>(let i = <span style="color:#00D">0</span>; i &lt; <span style="color:#00D">1000000000</span>; i += <span style="color:#00D">1</span> ) {};                               <span style="color:#777">// 2</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the last line.</span><span style="color:#710">&quot;</span></span>); <span style="color:#777">// this always gets printed out first // 3</span>
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre>Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>).then(() =&gt; console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the first line.</span><span style="color:#710">&quot;</span></span>));      <span style="color:#777">// 1</span>
+
+<span style="color:#777">// this line is only added for increase the time consuption in between</span>
+<span style="color:#080;font-weight:bold">for</span>(let i = <span style="color:#00D">0</span>; i &lt; <span style="color:#00D">1000000000</span>; i += <span style="color:#00D">1</span> ) {};                               <span style="color:#777">// 2</span>
+
+console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the last line.</span><span style="color:#710">&quot;</span></span>); <span style="color:#777">// this always gets printed out first // 3</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>The only change made here is the way we wrap the callback. And we get the messages printed out in the same order as the zero-delay one. For now we don’t have to worry about what does the <code>Promise.resolve("")</code> do, just try to realize there is a distinction between sync and async, and the execution of sync and async code is coordinated in a certain way by the browser. It can be oversimplified as “async goes after sync”.</p>
@@ -179,15 +200,22 @@
 
 <p>A sensible way is to go through and set up all tasks as soon as possible, then outsource tasks that are time-consuming to somewhere else, just like how we change the way we make breakfast. Now take the code of incrementing <code>i</code> from <code>0</code> to <code>1000000000</code>, we can move it from the sync part to async part to eliminate the blocking experience in between. We can use <code>setTimeout</code> or <code>Promise</code> to do this:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>).then(() =&gt; console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the first line.</span><span style="color:#710">&quot;</span></span>));      <span style="color:#777">// 1</span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#777">// we can also do Promise.resolve(&quot;&quot;).then(() =&gt; for(let i = 0; i &lt; 1000000000; i += 1 ) {});</span>
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>setTimeout(() =&gt; { <span style="color:#080;font-weight:bold">for</span>(let i = <span style="color:#00D">0</span>; i &lt; <span style="color:#00D">1000000000</span>; i += <span style="color:#00D">1</span> ) {}}, <span style="color:#00D">0</span>);       <span style="color:#777">// 2</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the last line.</span><span style="color:#710">&quot;</span></span>); <span style="color:#777">// this always gets printed out first // 3</span>
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre>Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>).then(() =&gt; console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the first line.</span><span style="color:#710">&quot;</span></span>));      <span style="color:#777">// 1</span>
+
+<span style="color:#777">// we can also do Promise.resolve(&quot;&quot;).then(() =&gt; for(let i = 0; i &lt; 1000000000; i += 1 ) {});</span>
+setTimeout(() =&gt; { <span style="color:#080;font-weight:bold">for</span>(let i = <span style="color:#00D">0</span>; i &lt; <span style="color:#00D">1000000000</span>; i += <span style="color:#00D">1</span> ) {}}, <span style="color:#00D">0</span>);       <span style="color:#777">// 2</span>
+
+console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the last line.</span><span style="color:#710">&quot;</span></span>); <span style="color:#777">// this always gets printed out first // 3</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>Now the messages’ printing order doesn’t change, but the short period time of blocking disappears. Actually it doesn’t disappear, it’s just moved to the end of the execution. Because “async part goes after sync part”, and we turned the counting operation into async task, so it’s moved to the end of all the sync tasks. We can prove this by adding 2 or 3 more <code>0</code>s to the number then see if the browser is blocked after printing out the two messages.</p>
@@ -245,14 +273,20 @@ Counting to 1 billion may be slow now so we want to make it async. But what abou
 
 <p>Let’s review the code example:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>setTimeout(() =&gt; { console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the first line.</span><span style="color:#710">&quot;</span></span>) }, <span style="color:#00D">0</span>);          <span style="color:#777">// 1</span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">for</span>(let i = <span style="color:#00D">0</span>; i &lt; <span style="color:#00D">1000000000</span>; i += <span style="color:#00D">1</span> ) {};                            <span style="color:#777">// 2</span>
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the last line.</span><span style="color:#710">&quot;</span></span>);                                    <span style="color:#777">// 3</span>
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+</pre></td>
+  <td class="code"><pre>setTimeout(() =&gt; { console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the first line.</span><span style="color:#710">&quot;</span></span>) }, <span style="color:#00D">0</span>);          <span style="color:#777">// 1</span>
+
+<span style="color:#080;font-weight:bold">for</span>(let i = <span style="color:#00D">0</span>; i &lt; <span style="color:#00D">1000000000</span>; i += <span style="color:#00D">1</span> ) {};                            <span style="color:#777">// 2</span>
+
+console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the last line.</span><span style="color:#710">&quot;</span></span>);                                    <span style="color:#777">// 3</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>Except for the callback passed to <code>setTimeout</code> at line 1, all other code is synchronous, which means they be executed first, line by line from top to bottom.</p>

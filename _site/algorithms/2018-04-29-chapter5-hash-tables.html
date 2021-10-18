@@ -184,17 +184,26 @@
 
 <p>在hash table中，key 不能重复。用代码演示上述过程就是</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">check_voter</span>(name)
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">if</span> voted?(name)
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Kick them out</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">else</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>    voted?(name) = <span style="color:#069">true</span>
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Let them vote.</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">check_voter</span>(name)
+  <span style="color:#080;font-weight:bold">if</span> voted?(name)
+    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Kick them out</span><span style="color:#710">&quot;</span></span>
+  <span style="color:#080;font-weight:bold">else</span>
+    voted?(name) = <span style="color:#069">true</span>
+    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Let them vote.</span><span style="color:#710">&quot;</span></span>
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>hash table 可能是这样 <code>{"Xullnn" =&gt; true, "Wix" =&gt; true ...}</code>， 这里不会有 false 的情况。</p>
@@ -227,19 +236,30 @@
 
 <p>用代码表示上述过程就是</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>cache = {}
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">get_page</span>(url)
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#080;font-weight:bold">if</span> cache.get(url)
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#080;font-weight:bold">return</span> cache[url]
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  <span style="color:#080;font-weight:bold">else</span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    data = get_data_from_server(url)
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    cache[url] = data
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#080;font-weight:bold">return</span> data
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+</pre></td>
+  <td class="code"><pre>cache = {}
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">get_page</span>(url)
+  <span style="color:#080;font-weight:bold">if</span> cache.get(url)
+    <span style="color:#080;font-weight:bold">return</span> cache[url]
+  <span style="color:#080;font-weight:bold">else</span>
+    data = get_data_from_server(url)
+    cache[url] = data
+    <span style="color:#080;font-weight:bold">return</span> data
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p><code>else</code> 分支中又将你访问过的页面存储起来，下次你在访问的时候，又可以直接提取。</p>
@@ -490,13 +510,18 @@ Map every letter to a prime number: a = 2, b = 3, c = 5, d = 7, e = 11, and so o
 
 <p>假设你有下列4个hash function:</p>
 
-<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>1 所有input都 return '1'
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>2 使用key的lenght作为index
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>3 使用首字母作为index基础
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>4 先将每个字母对应到一个质数，比如 a = 2, b = 3, c = 5, d = 7, e = 11, and so on. 一个key的index的算法是将这个 string 中所有字母对应的质数加起来，然后对hash size求余数。 比如 key 是 'bag', hash table 有10个slot位置，那么首先 b = 3, a = 2, g = 17， 先将质数加起来等于 22， 然后对10求余数， 22 % 10 = 2，2就是bag对应的index
-</pre></div>
-</div>
+<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre>1 所有input都 return '1'
+2 使用key的lenght作为index
+3 使用首字母作为index基础
+4 先将每个字母对应到一个质数，比如 a = 2, b = 3, c = 5, d = 7, e = 11, and so on. 一个key的index的算法是将这个 string 中所有字母对应的质数加起来，然后对hash size求余数。 比如 key 是 'bag', hash table 有10个slot位置，那么首先 b = 3, a = 2, g = 17， 先将质数加起来等于 22， 然后对10求余数， 22 % 10 = 2，2就是bag对应的index
+</pre></td>
+</tr></table>
 </div>
 
 <p>假设hash size 是10，对于下面每一个应用场景，上述4个hash function那些能提供较好的分布性。</p>
@@ -505,56 +530,82 @@ Map every letter to a prime number: a = 2, b = 3, c = 5, d = 7, e = 11, and so o
 
 <p>A phonebook where the keys are names and values are phone numbers. The names are as follows: Esther, Ben, Bob, and Dan.</p>
 
-<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>1可以排除；
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>2似乎可以，但名字的长度的分布应该是正态分布，也就是名字很长和很短的人都很少，这部分人会浪费掉一些slot,导致中间长度的人名对应的slot会比较拥挤。
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>3可以，比如每2-3个字母对应一个slot
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>4也可以，相对随机
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>最后选 3和4
-</pre></div>
-</div>
+<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre>1可以排除；
+2似乎可以，但名字的长度的分布应该是正态分布，也就是名字很长和很短的人都很少，这部分人会浪费掉一些slot,导致中间长度的人名对应的slot会比较拥挤。
+3可以，比如每2-3个字母对应一个slot
+4也可以，相对随机
+
+最后选 3和4
+</pre></td>
+</tr></table>
 </div>
 
 <p>5.6</p>
 
 <p>A mapping from battery size to power. The sizes are A, AA, AAA, and AAAA.</p>
 
-<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>1排除
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>2可以，key总共就那么几个，而且每个的长度都不一样
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>3不行，首字母都是A
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>4 算一下: 四种size分别算出来是 2 4 6 8，对10求余数每个都不一样，所以可以
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>最后选 2 和 4
-</pre></div>
-</div>
+<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre>1排除
+2可以，key总共就那么几个，而且每个的长度都不一样
+3不行，首字母都是A
+4 算一下: 四种size分别算出来是 2 4 6 8，对10求余数每个都不一样，所以可以
+
+最后选 2 和 4
+</pre></td>
+</tr></table>
 </div>
 
 <p>5.7</p>
 
 <p>A mapping from book titles to authors. The titles are Maus, Fun Home, and Watchmen.</p>
 
-<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>1排除
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>2不太好，后两本书的长度一样
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>3可以，首字母不同
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>4可以
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>最后是 3和4
-</pre></div>
-</div>
+<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre>1排除
+2不太好，后两本书的长度一样
+3可以，首字母不同
+4可以
+
+最后是 3和4
+</pre></td>
+</tr></table>
 </div>
 
 <p>书上给的是 234</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">fun home</span><span style="color:#710">&quot;</span></span>.length
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#00D">8</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">watchmen</span><span style="color:#710">&quot;</span></span>.length
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#00D">8</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">fun home</span><span style="color:#710">&quot;</span></span>.length
+ =&gt; <span style="color:#00D">8</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">watchmen</span><span style="color:#710">&quot;</span></span>.length
+ =&gt; <span style="color:#00D">8</span>
+</pre></td>
+</tr></table>
 </div>
 
 </div>

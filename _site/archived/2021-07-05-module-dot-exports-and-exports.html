@@ -63,17 +63,26 @@
 
 <p>Exporting and importing modules are common operations in a Node app.</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#777">// toBeExported.js</span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">f</span>() {  };
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>module.exports.f = f;
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span style="color:#777">// or exports.f = f;</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#777">// toImport.js</span>
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span>const { f } = require(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">./toBeExported</span><span style="color:#710">&quot;</span></span>);
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span>  <span style="color:#777">// or const f = require(&quot;./toBeExported&quot;).f;</span>
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#777">// toBeExported.js</span>
+<span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">f</span>() {  };
+module.exports.f = f;
+  <span style="color:#777">// or exports.f = f;</span>
+
+<span style="color:#777">// toImport.js</span>
+const { f } = require(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">./toBeExported</span><span style="color:#710">&quot;</span></span>);
+  <span style="color:#777">// or const f = require(&quot;./toBeExported&quot;).f;</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>And I was once confused by the different exporting syntax of <code>module.exports</code> and <code>exports</code>.
@@ -85,22 +94,36 @@ A lot of articles on the internet and the <a href="https://nodejs.org/api/module
 
 <p>If we have an nested object <code>nested_object</code>:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>const nested_object = {
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#606">a</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hello world</span><span style="color:#710">'</span></span>,
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#606">x</span>: {
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#606">f</span>: () =&gt; { console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">I am a func</span><span style="color:#710">'</span></span>)},
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#606">p</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">nested</span><span style="color:#710">'</span></span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  }
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>};
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>let x = nested_object.x; <span style="color:#777">// references the nested object</span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>x.another_f = () =&gt; { console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">I am also a func</span><span style="color:#710">'</span></span>) };
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span>nested_object.x;
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+</pre></td>
+  <td class="code"><pre>const nested_object = {
+  <span style="color:#606">a</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hello world</span><span style="color:#710">'</span></span>,
+  <span style="color:#606">x</span>: {
+    <span style="color:#606">f</span>: () =&gt; { console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">I am a func</span><span style="color:#710">'</span></span>)},
+    <span style="color:#606">p</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">nested</span><span style="color:#710">'</span></span>
+  }
+};
+
+let x = nested_object.x; <span style="color:#777">// references the nested object</span>
+
+x.another_f = () =&gt; { console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">I am also a func</span><span style="color:#710">'</span></span>) };
+
+nested_object.x;
+</pre></td>
+</tr></table>
 </div>
 
 <p>Is <code>another_f</code> injected in the nested object <code>nested_object.x;</code>?</p>
@@ -109,14 +132,20 @@ A lot of articles on the internet and the <a href="https://nodejs.org/api/module
 
 <p>What if we reassign the local variable <code>x</code>:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#777">// ... omit code</span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>x = {
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span style="color:#606">newF</span>: () =&gt; {console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">I am new func</span><span style="color:#710">'</span></span>)}
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>};
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+</pre></td>
+  <td class="code"><pre><span style="color:#777">// ... omit code</span>
+
+x = {
+  <span style="color:#606">newF</span>: () =&gt; {console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">I am new func</span><span style="color:#710">'</span></span>)}
+};
+</pre></td>
+</tr></table>
 </div>
 <p>How would this affect the <code>nested_object.x</code>? No effect, this simply lets the local <code>x</code> lose its original reference to the nested object.</p>
 
@@ -138,20 +167,32 @@ A lot of articles on the internet and the <a href="https://nodejs.org/api/module
 
 <p>Following this logic, a reassignment to <code>module.exports</code> will also disable the <code>exports</code> because “(<code>exports</code>) is assigned the value of <code>module.exports</code> before the module(file) is evaluated”. This means the referential relation is built right after the <code>module</code> instance object is instantiated and before all the functions and properties are written in it. It may look like:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">class</span> Module {
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  constructor() {
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#606">exports</span>: {}
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  }
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>};
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>const module = <span style="color:#080;font-weight:bold">new</span> Module();
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>let exports = module.exports;
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#777">// Then write functions and properties exported into module.exports</span>
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">class</span> Module {
+  constructor() {
+    <span style="color:#606">exports</span>: {}
+  }
+};
+
+const module = <span style="color:#080;font-weight:bold">new</span> Module();
+
+let exports = module.exports;
+
+<span style="color:#777">// Then write functions and properties exported into module.exports</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>And this entails a bonus point. What’s the <code>module</code> under the context of a module file?</p>
@@ -164,38 +205,62 @@ A lot of articles on the internet and the <a href="https://nodejs.org/api/module
 
 <p>We can try <code>console.log(module)</code> or simply evaluate <code>module</code> in <code>Node</code> console, it logs:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>Module {
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#606">id</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;repl&gt;</span><span style="color:#710">'</span></span>,
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#606">path</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">.</span><span style="color:#710">'</span></span>,
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#606">exports</span>: {},
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  <span style="color:#606">parent</span>: <span style="color:#069">undefined</span>,
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#606">filename</span>: <span style="color:#069">null</span>,
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  <span style="color:#606">loaded</span>: <span style="color:#069">false</span>,
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#606">children</span>: [],
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  <span style="color:#606">paths</span>: [
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/xullnn/blog/repl/node_modules</span><span style="color:#710">'</span></span>,
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/xullnn/blog/node_modules</span><span style="color:#710">'</span></span>,
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/xullnn/node_modules</span><span style="color:#710">'</span></span>,
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/node_modules</span><span style="color:#710">'</span></span>,
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/node_modules</span><span style="color:#710">'</span></span>,
-<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/xullnn/.node_modules</span><span style="color:#710">'</span></span>,
-<span class="line-numbers"><a href="#n16" name="n16">16</a></span>    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/xullnn/.node_libraries</span><span style="color:#710">'</span></span>,
-<span class="line-numbers"><a href="#n17" name="n17">17</a></span>    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/usr/local/Cellar/node/14.11.0/lib/node</span><span style="color:#710">'</span></span>
-<span class="line-numbers"><a href="#n18" name="n18">18</a></span>  ]
-<span class="line-numbers"><a href="#n19" name="n19">19</a></span>}
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<strong><a href="#n15" name="n15">15</a></strong>
+<a href="#n16" name="n16">16</a>
+<a href="#n17" name="n17">17</a>
+<a href="#n18" name="n18">18</a>
+<a href="#n19" name="n19">19</a>
+</pre></td>
+  <td class="code"><pre>Module {
+  <span style="color:#606">id</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">&lt;repl&gt;</span><span style="color:#710">'</span></span>,
+  <span style="color:#606">path</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">.</span><span style="color:#710">'</span></span>,
+  <span style="color:#606">exports</span>: {},
+  <span style="color:#606">parent</span>: <span style="color:#069">undefined</span>,
+  <span style="color:#606">filename</span>: <span style="color:#069">null</span>,
+  <span style="color:#606">loaded</span>: <span style="color:#069">false</span>,
+  <span style="color:#606">children</span>: [],
+  <span style="color:#606">paths</span>: [
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/xullnn/blog/repl/node_modules</span><span style="color:#710">'</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/xullnn/blog/node_modules</span><span style="color:#710">'</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/xullnn/node_modules</span><span style="color:#710">'</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/node_modules</span><span style="color:#710">'</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/node_modules</span><span style="color:#710">'</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/xullnn/.node_modules</span><span style="color:#710">'</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/Users/xullnn/.node_libraries</span><span style="color:#710">'</span></span>,
+    <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">/usr/local/Cellar/node/14.11.0/lib/node</span><span style="color:#710">'</span></span>
+  ]
+}
+</pre></td>
+</tr></table>
 </div>
 
 <p>First on the top there’s the <code>Module</code>. This indicates <code>module</code> in the current file is an instance of a class called <code>Module</code>. We can check this in <code>Node</code>:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>module.constructor.name
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#777">// =&gt; 'Module'</span>
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre>module.constructor.name
+
+<span style="color:#777">// =&gt; 'Module'</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>So for each module file, new <code>Module</code> instance will be created instead of using a global <code>module</code> object that can be rewritten everywhere in the project.</p>

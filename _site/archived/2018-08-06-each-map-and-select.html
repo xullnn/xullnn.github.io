@@ -63,14 +63,20 @@
 
 <p>Let’s start with some code:</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>[<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>].map <span style="color:#080;font-weight:bold">do</span> |num|
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">false</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>    num
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+</pre></td>
+  <td class="code"><pre>[<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>].map <span style="color:#080;font-weight:bold">do</span> |num|
+  <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">false</span>
+    num
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>Can you tell the return value of the code above? What about swapping the <code>map</code> method with <code>each</code>, or <code>select</code>?</p>
@@ -99,20 +105,26 @@
 
 <p>This is obvious.</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>collection.each <span style="color:#080;font-weight:bold">do</span> |item|
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#777"># do something</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre>collection.each <span style="color:#080;font-weight:bold">do</span> |item|
+  <span style="color:#777"># do something</span>
+<span style="color:#080;font-weight:bold">end</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>is the same as:</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>collection.each { |item| <span style="color:#777"># do something }</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>collection.each { |item| <span style="color:#777"># do something }</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p><code>each</code> is the method we are using, the <code>do...end</code> or <code>{  }</code> part are different syntaxes.</p>
@@ -125,18 +137,28 @@
 
 <p>The typical representation of this type is <code>each</code> method. It just ‘visit’ the objects in the collection one by one while it may do something to the object or do nothing. Then it always returns the original caller object, unless you have changed some objects in the original collection during iteration, but normally the caller won’t be changed, since it’s not a good habit.</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>nums = [<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>]
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#777"># =&gt; [1, 2, 3]</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>return_value_of_each = nums.each <span style="color:#080;font-weight:bold">do</span> |num|
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>                         num**<span style="color:#00D">2</span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>                       <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#777"># =&gt; [1, 2, 3]</span>
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>return_value_of_each.object_id == nums.object_id
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#777"># =&gt; true</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+</pre></td>
+  <td class="code"><pre>nums = [<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>]
+<span style="color:#777"># =&gt; [1, 2, 3]</span>
+
+return_value_of_each = nums.each <span style="color:#080;font-weight:bold">do</span> |num|
+                         num**<span style="color:#00D">2</span>
+                       <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#777"># =&gt; [1, 2, 3]</span>
+return_value_of_each.object_id == nums.object_id
+<span style="color:#777"># =&gt; true</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>Most important, <code>each</code> do not care about the return value of the block. It directly return the caller object.</p>
@@ -150,63 +172,98 @@
   <li><code>map</code> cares about the return value, not just ‘visits’ every object</li>
 </ul>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>nums = [<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>]
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#777"># =&gt; [1, 2, 3]</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>return_value_of_map = nums.map <span style="color:#080;font-weight:bold">do</span> |num|
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>                        num**<span style="color:#00D">2</span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>                      <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#777"># =&gt; [1, 4, 9]</span>
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>return_value_of_map.object_id == nums.object_id
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#777"># =&gt; false</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+</pre></td>
+  <td class="code"><pre>nums = [<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>]
+<span style="color:#777"># =&gt; [1, 2, 3]</span>
+
+return_value_of_map = nums.map <span style="color:#080;font-weight:bold">do</span> |num|
+                        num**<span style="color:#00D">2</span>
+                      <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#777"># =&gt; [1, 4, 9]</span>
+return_value_of_map.object_id == nums.object_id
+<span style="color:#777"># =&gt; false</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>Another important thing is the returned array of <code>map</code> will always keeps the same size as the original collection. It creates a new array, fills every position with the return value of the block–no matter what is the return value.</p>
 
 <p>What would the return value of the code below?</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>[<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>].map <span style="color:#080;font-weight:bold">do</span> |num|
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  puts num
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre>[<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>].map <span style="color:#080;font-weight:bold">do</span> |num|
+  puts num
+<span style="color:#080;font-weight:bold">end</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>It’s <code>[nil, nil, nil]</code>. Why? We can use some code to explain this:</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I'm not nil</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#777"># =&gt; nil</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>[] &lt;&lt; (puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I'm not nil</span><span style="color:#710">&quot;</span></span>)
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#777"># =&gt; [nil]</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+</pre></td>
+  <td class="code"><pre>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I'm not nil</span><span style="color:#710">&quot;</span></span>
+<span style="color:#777"># =&gt; nil</span>
+
+[] &lt;&lt; (puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I'm not nil</span><span style="color:#710">&quot;</span></span>)
+<span style="color:#777"># =&gt; [nil]</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>Let’s take a look at a tricky example:</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>nums = [<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>]
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#777"># =&gt; [1, 2, 3]</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>return_value_of_map = nums.map <span style="color:#080;font-weight:bold">do</span> |num|
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  nums[i] = num**<span style="color:#00D">2</span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  i += <span style="color:#00D">1</span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#777"># =&gt; [1, 2, 3]</span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>return_value_of_map
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#777"># =&gt; [1, 2, 3]</span>
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span>nums
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#777"># =&gt; [1,4,9]</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+</pre></td>
+  <td class="code"><pre>nums = [<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>]
+<span style="color:#777"># =&gt; [1, 2, 3]</span>
+
+return_value_of_map = nums.map <span style="color:#080;font-weight:bold">do</span> |num|
+  nums[i] = num**<span style="color:#00D">2</span>
+  i += <span style="color:#00D">1</span>
+<span style="color:#080;font-weight:bold">end</span>
+<span style="color:#777"># =&gt; [1, 2, 3]</span>
+
+return_value_of_map
+<span style="color:#777"># =&gt; [1, 2, 3]</span>
+
+nums
+<span style="color:#777"># =&gt; [1,4,9]</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>Why the <code>return_value_of_map</code> is still same as the original <code>nums</code>? No they are not the same. Remember how Ruby determines the return value? The last line, here it is <code>i += 1</code>, this is why we get <code>[1,2,3]</code> again.</p>
@@ -219,15 +276,22 @@
 
 <p>First a simple example:</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>hash = {<span style="color:#606">a</span>: <span style="color:#00D">1</span>, <span style="color:#606">b</span>: <span style="color:#00D">2</span>, <span style="color:#606">c</span>: <span style="color:#00D">3</span>, <span style="color:#606">d</span>: <span style="color:#00D">4</span>}
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#777"># =&gt; {:a=&gt;1, :b=&gt;2, :c=&gt;3, :d=&gt;4}</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>hash.select <span style="color:#080;font-weight:bold">do</span> |key, value|
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  value.odd?
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#777"># =&gt; {:a=&gt;1, :c=&gt;3}</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre>hash = {<span style="color:#606">a</span>: <span style="color:#00D">1</span>, <span style="color:#606">b</span>: <span style="color:#00D">2</span>, <span style="color:#606">c</span>: <span style="color:#00D">3</span>, <span style="color:#606">d</span>: <span style="color:#00D">4</span>}
+<span style="color:#777"># =&gt; {:a=&gt;1, :b=&gt;2, :c=&gt;3, :d=&gt;4}</span>
+hash.select <span style="color:#080;font-weight:bold">do</span> |key, value|
+  value.odd?
+<span style="color:#080;font-weight:bold">end</span>
+<span style="color:#777"># =&gt; {:a=&gt;1, :c=&gt;3}</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>Three things need to notice:</p>
@@ -239,15 +303,22 @@
 
 <p>Another example:</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>hash = {<span style="color:#606">a</span>: <span style="color:#00D">1</span>, <span style="color:#606">b</span>: <span style="color:#00D">2</span>, <span style="color:#606">c</span>: <span style="color:#00D">3</span>, <span style="color:#606">d</span>: <span style="color:#00D">4</span>}
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#777"># =&gt; {:a=&gt;1, :b=&gt;2, :c=&gt;3, :d=&gt;4}</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>hash.select <span style="color:#080;font-weight:bold">do</span> |key, value|
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">false</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#777"># =&gt; {:a=&gt;1, :b=&gt;2, :c=&gt;3, :d=&gt;4}</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre>hash = {<span style="color:#606">a</span>: <span style="color:#00D">1</span>, <span style="color:#606">b</span>: <span style="color:#00D">2</span>, <span style="color:#606">c</span>: <span style="color:#00D">3</span>, <span style="color:#606">d</span>: <span style="color:#00D">4</span>}
+<span style="color:#777"># =&gt; {:a=&gt;1, :b=&gt;2, :c=&gt;3, :d=&gt;4}</span>
+hash.select <span style="color:#080;font-weight:bold">do</span> |key, value|
+  <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">false</span><span style="color:#710">&quot;</span></span>
+<span style="color:#080;font-weight:bold">end</span>
+<span style="color:#777"># =&gt; {:a=&gt;1, :b=&gt;2, :c=&gt;3, :d=&gt;4}</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>All the key-value pairs were selected. The reason is <code>"false"</code> will always evaluates to <code>true</code> in Ruby. And the returning hash has the same size as the original one. But we should know the returning hash and the original hash are not same object though they look same.</p>
@@ -275,30 +346,46 @@
 
 <p>Based on the rule we mentioned above, all the truthiness of these situations will be <code>false</code> in Ruby:</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>!!(<span style="color:#069">nil</span>)
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>!!(<span style="color:#069">false</span>)
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>!!(puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">true</span><span style="color:#710">&quot;</span></span>)
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+</pre></td>
+  <td class="code"><pre>!!(<span style="color:#069">nil</span>)
+
+!!(<span style="color:#069">false</span>)
+
+!!(puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">true</span><span style="color:#710">&quot;</span></span>)
+</pre></td>
+</tr></table>
 </div>
 
 <p>And all the situations below will evaluated to <code>true</code> in Ruby:</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>!!(<span style="color:#069">true</span>)
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>!!(<span style="color:#00D">0</span>)
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>!!(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>)
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>!!([])
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>!!({})
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+</pre></td>
+  <td class="code"><pre>!!(<span style="color:#069">true</span>)
+
+!!(<span style="color:#00D">0</span>)
+
+!!(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>)
+
+!!([])
+
+!!({})
+</pre></td>
+</tr></table>
 </div>
 
 <p>Keep these in mind especially when you were using ‘selection’ ones.</p>
@@ -334,15 +421,22 @@
 
 <p>Just for fun, guess what’s the return value of the code below:</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>[<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>].map <span style="color:#080;font-weight:bold">do</span> |num|
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">false</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>    var = num
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>  var
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre>[<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>].map <span style="color:#080;font-weight:bold">do</span> |num|
+  <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">false</span>
+    var = num
+  <span style="color:#080;font-weight:bold">end</span>
+  var
+<span style="color:#080;font-weight:bold">end</span>
+</pre></td>
+</tr></table>
 </div>
 
 </div>

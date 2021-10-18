@@ -220,52 +220,90 @@
 
 <h5 id="33-用户距离的简单代码实现">3.3 用户距离的简单代码实现</h5>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">User</span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  attr_accessor <span style="color:#A60">:name</span>, <span style="color:#A60">:category_ratings</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(name)
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#33B">@name</span> = name
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#33B">@loved_movies</span> = []
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#33B">@category_ratings</span> = <span style="color:#036;font-weight:bold">Hash</span>.new(<span style="color:#00D">0</span>)
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">distance_between</span>(another_user)
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>    diffs = []
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="color:#069">self</span>.category_ratings.each <span style="color:#080;font-weight:bold">do</span> |key, value|
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span>      diffs &lt;&lt; value - another_user.category_ratings[key]
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    distance = <span style="color:#036;font-weight:bold">Math</span>.sqrt(diffs.reduce { |acc, diff| acc + diff**<span style="color:#00D">2</span> })
-<span class="line-numbers"><a href="#n16" name="n16">16</a></span>    p <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Distance between </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> and </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>another_user.name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> is </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>distance.round(<span style="color:#00D">2</span>)<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><a href="#n17" name="n17">17</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n19" name="n19">19</a></span>
-<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>user1 = <span style="color:#036;font-weight:bold">User</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Xullnn</span><span style="color:#710">&quot;</span></span>)
-<span class="line-numbers"><a href="#n21" name="n21">21</a></span>user2 = <span style="color:#036;font-weight:bold">User</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Mark</span><span style="color:#710">&quot;</span></span>)
-<span class="line-numbers"><a href="#n22" name="n22">22</a></span>
-<span class="line-numbers"><a href="#n23" name="n23">23</a></span>user1.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">comedy</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">5</span>
-<span class="line-numbers"><a href="#n24" name="n24">24</a></span>user1.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">action</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">4</span>
-<span class="line-numbers"><a href="#n25" name="n25">25</a></span>user1.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">drama</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">3</span>
-<span class="line-numbers"><a href="#n26" name="n26">26</a></span>user1.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">horror</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">0</span>
-<span class="line-numbers"><a href="#n27" name="n27">27</a></span>user1.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">romance</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">3</span>
-<span class="line-numbers"><a href="#n28" name="n28">28</a></span>
-<span class="line-numbers"><a href="#n29" name="n29">29</a></span>user2.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">comedy</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">4</span>
-<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>user2.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">action</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">3</span>
-<span class="line-numbers"><a href="#n31" name="n31">31</a></span>user2.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">drama</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">5</span>
-<span class="line-numbers"><a href="#n32" name="n32">32</a></span>user2.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">horror</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">5</span>
-<span class="line-numbers"><a href="#n33" name="n33">33</a></span>user2.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">romance</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">2</span>
-<span class="line-numbers"><a href="#n34" name="n34">34</a></span>
-<span class="line-numbers"><a href="#n35" name="n35">35</a></span>user1.distance_between(user2)
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<strong><a href="#n15" name="n15">15</a></strong>
+<a href="#n16" name="n16">16</a>
+<a href="#n17" name="n17">17</a>
+<a href="#n18" name="n18">18</a>
+<a href="#n19" name="n19">19</a>
+<strong><a href="#n20" name="n20">20</a></strong>
+<a href="#n21" name="n21">21</a>
+<a href="#n22" name="n22">22</a>
+<a href="#n23" name="n23">23</a>
+<a href="#n24" name="n24">24</a>
+<strong><a href="#n25" name="n25">25</a></strong>
+<a href="#n26" name="n26">26</a>
+<a href="#n27" name="n27">27</a>
+<a href="#n28" name="n28">28</a>
+<a href="#n29" name="n29">29</a>
+<strong><a href="#n30" name="n30">30</a></strong>
+<a href="#n31" name="n31">31</a>
+<a href="#n32" name="n32">32</a>
+<a href="#n33" name="n33">33</a>
+<a href="#n34" name="n34">34</a>
+<strong><a href="#n35" name="n35">35</a></strong>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">User</span>
+  attr_accessor <span style="color:#A60">:name</span>, <span style="color:#A60">:category_ratings</span>
+
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(name)
+    <span style="color:#33B">@name</span> = name
+    <span style="color:#33B">@loved_movies</span> = []
+    <span style="color:#33B">@category_ratings</span> = <span style="color:#036;font-weight:bold">Hash</span>.new(<span style="color:#00D">0</span>)
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">distance_between</span>(another_user)
+    diffs = []
+    <span style="color:#069">self</span>.category_ratings.each <span style="color:#080;font-weight:bold">do</span> |key, value|
+      diffs &lt;&lt; value - another_user.category_ratings[key]
+    <span style="color:#080;font-weight:bold">end</span>
+    distance = <span style="color:#036;font-weight:bold">Math</span>.sqrt(diffs.reduce { |acc, diff| acc + diff**<span style="color:#00D">2</span> })
+    p <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Distance between </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> and </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>another_user.name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> is </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>distance.round(<span style="color:#00D">2</span>)<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+user1 = <span style="color:#036;font-weight:bold">User</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Xullnn</span><span style="color:#710">&quot;</span></span>)
+user2 = <span style="color:#036;font-weight:bold">User</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Mark</span><span style="color:#710">&quot;</span></span>)
+
+user1.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">comedy</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">5</span>
+user1.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">action</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">4</span>
+user1.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">drama</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">3</span>
+user1.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">horror</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">0</span>
+user1.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">romance</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">3</span>
+
+user2.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">comedy</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">4</span>
+user2.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">action</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">3</span>
+user2.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">drama</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">5</span>
+user2.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">horror</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">5</span>
+user2.category_ratings[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">romance</span><span style="color:#710">&quot;</span></span>] = <span style="color:#00D">2</span>
+
+user1.distance_between(user2)
+</pre></td>
+</tr></table>
 </div>
 
 <p>返回的结果是</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Distance between Xullnn and Mark is 5.66</span><span style="color:#710">&quot;</span></span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Distance between Xullnn and Mark is 5.66</span><span style="color:#710">&quot;</span></span>
+</pre></td>
+</tr></table>
 </div>
 
 <h4 id="4-regression">4 Regression</h4>
@@ -307,14 +345,20 @@
 
 <p>最简单的做法就是找到离他最近的n个用户对这部电影的评分，然后取算术平均值，比如离这个用户最近的几个用户对电影 A 的评分是</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#606">Justin</span>: <span style="color:#00D">5</span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#606">Jc</span>: <span style="color:#00D">4</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#606">Joey</span>: <span style="color:#00D">4</span>
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#606">Lanc</span>: <span style="color:#00D">5</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#606">Chris</span>: <span style="color:#00D">3</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+</pre></td>
+  <td class="code"><pre><span style="color:#606">Justin</span>: <span style="color:#00D">5</span>
+<span style="color:#606">Jc</span>: <span style="color:#00D">4</span>
+<span style="color:#606">Joey</span>: <span style="color:#00D">4</span>
+<span style="color:#606">Lanc</span>: <span style="color:#00D">5</span>
+<span style="color:#606">Chris</span>: <span style="color:#00D">3</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>那么把这几个值加起来除以5就得到4.2, 你就可以猜这个用户对这部电影的评分很可能是 4.2。 这就叫<strong>回归</strong>。</p>
@@ -340,17 +384,26 @@
 
 <p>而且你知道过往时期内，这些feature不同组合，对应的面包条销量。比如</p>
 
-<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>(weather, day, game)
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>A: (5,1,0) =&gt; 300
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>B: (3,1,1) =&gt; 225
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>C: (1,1,0) =&gt; 75
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>D: (4,0,1) =&gt; 200
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span>E: (4,0,0) =&gt; 150
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span>F: (2,0,0) =&gt; 50
-</pre></div>
-</div>
+<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+</pre></td>
+  <td class="code"><pre>(weather, day, game)
+
+A: (5,1,0) =&gt; 300
+B: (3,1,1) =&gt; 225
+C: (1,1,0) =&gt; 75
+D: (4,0,1) =&gt; 200
+E: (4,0,0) =&gt; 150
+F: (2,0,0) =&gt; 50
+</pre></td>
+</tr></table>
 </div>
 
 <p>那么今天的天气不错(4), 是个周末(1), 没有比赛(0)，那么要你预测今天面包条销量你怎么做？</p>

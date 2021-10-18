@@ -199,34 +199,48 @@
 
 <p>python</p>
 
-<div class="language-python highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>graph = {}
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">you</span><span style="color:#710">&quot;</span></span>] = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">alice</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bob</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">claire</span><span style="color:#710">&quot;</span></span>]
-</pre></div>
-</div>
+<div class="language-python highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre>graph = {}
+graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">you</span><span style="color:#710">&quot;</span></span>] = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">alice</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bob</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">claire</span><span style="color:#710">&quot;</span></span>]
+</pre></td>
+</tr></table>
 </div>
 
 <p>到到末端节点也就是往下没有朋友时就使用空 array</p>
 
-<div class="language-python highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Some</span><span style="color:#710">&quot;</span></span>] = []
-</pre></div>
-</div>
+<div class="language-python highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Some</span><span style="color:#710">&quot;</span></span>] = []
+</pre></td>
+</tr></table>
 </div>
 
 <p>完成整个hash table</p>
 
-<div class="language-python highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">you</span><span style="color:#710">&quot;</span></span>] = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">alice</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bob</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">claire</span><span style="color:#710">&quot;</span></span>]
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bob</span><span style="color:#710">&quot;</span></span>] = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">anuj</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">peggy</span><span style="color:#710">&quot;</span></span>]
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">alice</span><span style="color:#710">&quot;</span></span>] = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">peggy</span><span style="color:#710">&quot;</span></span>]
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">claire</span><span style="color:#710">&quot;</span></span>] = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">thom</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jonny</span><span style="color:#710">&quot;</span></span>]
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">anuj</span><span style="color:#710">&quot;</span></span>] = []
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">peggy</span><span style="color:#710">&quot;</span></span>] = []
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">thom</span><span style="color:#710">&quot;</span></span>] = []
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jonny</span><span style="color:#710">&quot;</span></span>] = []
-</pre></div>
-</div>
+<div class="language-python highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+</pre></td>
+  <td class="code"><pre>graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">you</span><span style="color:#710">&quot;</span></span>] = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">alice</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bob</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">claire</span><span style="color:#710">&quot;</span></span>]
+graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bob</span><span style="color:#710">&quot;</span></span>] = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">anuj</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">peggy</span><span style="color:#710">&quot;</span></span>]
+graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">alice</span><span style="color:#710">&quot;</span></span>] = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">peggy</span><span style="color:#710">&quot;</span></span>]
+graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">claire</span><span style="color:#710">&quot;</span></span>] = [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">thom</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jonny</span><span style="color:#710">&quot;</span></span>]
+graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">anuj</span><span style="color:#710">&quot;</span></span>] = []
+graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">peggy</span><span style="color:#710">&quot;</span></span>] = []
+graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">thom</span><span style="color:#710">&quot;</span></span>] = []
+graph[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">jonny</span><span style="color:#710">&quot;</span></span>] = []
+</pre></td>
+</tr></table>
 </div>
 
 <p><strong>directed graph 和 undirected graph</strong>， 之前提到的当一个节点指向另一个节点时，这类graph叫directed graph 有向graph，而如果两个节点相互指向，则是undirected graph无向graph。</p>
@@ -242,25 +256,42 @@
 <h5 id="32-代码实现">3.2 代码实现</h5>
 
 <p>python伪代码</p>
-<div class="language-python highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">search</span>(name):
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>    search_queue = deque() <span style="color:#777"># 新建queue</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    search_queue += graph[name] <span style="color:#777"># 中心节点的所有neighbor</span>
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    searched = []
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#080;font-weight:bold">while</span> search_queue:
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      person = search_queue.popleft() <span style="color:#777"># 拿出一个neighbor</span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      <span style="color:#080;font-weight:bold">if</span> <span style="color:#080;font-weight:bold">not</span> person <span style="color:#080;font-weight:bold">in</span> searched:
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>        <span style="color:#080;font-weight:bold">if</span> person_is_seller(person):
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>          <span style="color:#080;font-weight:bold">print</span> person + <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20"> is a mango seller!</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>          <span style="color:#080;font-weight:bold">return</span> <span style="color:#069">True</span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>        <span style="color:#080;font-weight:bold">else</span>:
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>          search_queue += graph[person] <span style="color:#777"># 若不是seller，把他的朋友加到queue中</span>
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span>          searched.append(person)
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#080;font-weight:bold">return</span>  <span style="color:#069">False</span>
-<span class="line-numbers"><a href="#n15" name="n15">15</a></span>
-<span class="line-numbers"><a href="#n16" name="n16">16</a></span>  search(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">you</span><span style="color:#710">&quot;</span></span>)
-</pre></div>
-</div>
+<div class="language-python highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<strong><a href="#n15" name="n15">15</a></strong>
+<a href="#n16" name="n16">16</a>
+</pre></td>
+  <td class="code"><pre>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">search</span>(name):
+    search_queue = deque() <span style="color:#777"># 新建queue</span>
+    search_queue += graph[name] <span style="color:#777"># 中心节点的所有neighbor</span>
+    searched = []
+    <span style="color:#080;font-weight:bold">while</span> search_queue:
+      person = search_queue.popleft() <span style="color:#777"># 拿出一个neighbor</span>
+      <span style="color:#080;font-weight:bold">if</span> <span style="color:#080;font-weight:bold">not</span> person <span style="color:#080;font-weight:bold">in</span> searched:
+        <span style="color:#080;font-weight:bold">if</span> person_is_seller(person):
+          <span style="color:#080;font-weight:bold">print</span> person + <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20"> is a mango seller!</span><span style="color:#710">&quot;</span></span>
+          <span style="color:#080;font-weight:bold">return</span> <span style="color:#069">True</span>
+        <span style="color:#080;font-weight:bold">else</span>:
+          search_queue += graph[person] <span style="color:#777"># 若不是seller，把他的朋友加到queue中</span>
+          searched.append(person)
+    <span style="color:#080;font-weight:bold">return</span>  <span style="color:#069">False</span>
+
+  search(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">you</span><span style="color:#710">&quot;</span></span>)
+</pre></td>
+</tr></table>
 </div>
 
 <p>大体思路是先把中心节点的neigbors加到queue中，然后依次拿出来比对，比对成功时即退出function返回true, 比对失败一个就把这个node的neighbors加到queue中，这样如果第一层级的neighbors搜索全部失败之后，第一层级所有人的neighbors也全部加到 queue中，while loop 会进行进直到 queue中排空。</p>
@@ -287,64 +318,120 @@
 
 <p>尝试用ruby写出上述过程，但不同的是没有使用hash table来模拟关系网，是用 class 以及对象属性来模拟。</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#777"># Every new Person instance will get a random name</span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#777"># will set :is_seller to false</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#777"># will get an empty array's friends</span>
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Person</span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  attr_accessor <span style="color:#A60">:name</span>, <span style="color:#A60">:is_seller</span>, <span style="color:#A60">:friends</span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#33B">@name</span> = (<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">a</span><span style="color:#710">'</span></span>..<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">z</span><span style="color:#710">'</span></span>).to_a.sample(<span style="color:#00D">5</span>).join.capitalize!
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#33B">@is_seller</span> = <span style="color:#069">false</span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span style="color:#33B">@friends</span> = []
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">make_friends</span>(n)
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span>  friends = []
-<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  n.times { friends &lt;&lt; <span style="color:#036;font-weight:bold">Person</span>.new}
-<span class="line-numbers"><a href="#n16" name="n16">16</a></span>  <span style="color:#080;font-weight:bold">return</span> friends
-<span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n18" name="n18">18</a></span>
-<span class="line-numbers"><a href="#n19" name="n19">19</a></span><span style="color:#777"># create central node person</span>
-<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>central_person = <span style="color:#036;font-weight:bold">Person</span>.new; central_person.name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Center_node</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><a href="#n21" name="n21">21</a></span>
-<span class="line-numbers"><a href="#n22" name="n22">22</a></span><span style="color:#777"># make 4 friends for central person</span>
-<span class="line-numbers"><a href="#n23" name="n23">23</a></span>central_person.friends = make_friends(<span style="color:#00D">4</span>)
-<span class="line-numbers"><a href="#n24" name="n24">24</a></span>
-<span class="line-numbers"><a href="#n25" name="n25">25</a></span><span style="color:#777"># for each central person's friends, make 3 friends for them</span>
-<span class="line-numbers"><a href="#n26" name="n26">26</a></span><span style="color:#777"># thus we get 1 + 4 + 4*3 == 17 person in all levels</span>
-<span class="line-numbers"><a href="#n27" name="n27">27</a></span>central_person.friends.each { |f| f.friends = make_friends(<span style="color:#00D">3</span>) }
-<span class="line-numbers"><a href="#n28" name="n28">28</a></span>
-<span class="line-numbers"><a href="#n29" name="n29">29</a></span><span style="color:#777"># Randomly choose one person as seller in the second level</span>
-<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>seller = central_person.friends.sample.friends.sample
-<span class="line-numbers"><a href="#n31" name="n31">31</a></span>seller.is_seller = <span style="color:#069">true</span>
-<span class="line-numbers"><a href="#n32" name="n32">32</a></span>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">This time seller is: </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>seller.name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><a href="#n33" name="n33">33</a></span>
-<span class="line-numbers"><a href="#n34" name="n34">34</a></span>
-<span class="line-numbers"><a href="#n35" name="n35">35</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">search_seller</span>(center)
-<span class="line-numbers"><a href="#n36" name="n36">36</a></span>  search_queue = <span style="color:#036;font-weight:bold">Queue</span>.new
-<span class="line-numbers"><a href="#n37" name="n37">37</a></span>  search_queue &lt;&lt; center
-<span class="line-numbers"><a href="#n38" name="n38">38</a></span>  searched = []
-<span class="line-numbers"><a href="#n39" name="n39">39</a></span>  <span style="color:#080;font-weight:bold">while</span> search_queue <span style="color:#777"># or say until search_queue.empty?</span>
-<span class="line-numbers"><strong><a href="#n40" name="n40">40</a></strong></span>    person = search_queue.pop
-<span class="line-numbers"><a href="#n41" name="n41">41</a></span>    <span style="color:#080;font-weight:bold">if</span> person.is_seller
-<span class="line-numbers"><a href="#n42" name="n42">42</a></span>      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>person.name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> is seller!</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><a href="#n43" name="n43">43</a></span>      <span style="color:#080;font-weight:bold">return</span> <span style="color:#069">true</span>
-<span class="line-numbers"><a href="#n44" name="n44">44</a></span>    <span style="color:#080;font-weight:bold">else</span>
-<span class="line-numbers"><a href="#n45" name="n45">45</a></span>      <span style="color:#080;font-weight:bold">if</span> !person.friends.empty? &amp;&amp; !searched.include?(person) <span style="color:#777"># this avoids error when touching end point person</span>
-<span class="line-numbers"><a href="#n46" name="n46">46</a></span>        person.friends.each { |f| search_queue &lt;&lt; f }
-<span class="line-numbers"><a href="#n47" name="n47">47</a></span>        searched &lt;&lt; person
-<span class="line-numbers"><a href="#n48" name="n48">48</a></span>      <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n49" name="n49">49</a></span>    <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n50" name="n50">50</a></strong></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n51" name="n51">51</a></span>  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">No seller</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><a href="#n52" name="n52">52</a></span>  <span style="color:#080;font-weight:bold">return</span> <span style="color:#069">false</span>
-<span class="line-numbers"><a href="#n53" name="n53">53</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n54" name="n54">54</a></span>
-<span class="line-numbers"><a href="#n55" name="n55">55</a></span>search_seller(central_person)
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<strong><a href="#n15" name="n15">15</a></strong>
+<a href="#n16" name="n16">16</a>
+<a href="#n17" name="n17">17</a>
+<a href="#n18" name="n18">18</a>
+<a href="#n19" name="n19">19</a>
+<strong><a href="#n20" name="n20">20</a></strong>
+<a href="#n21" name="n21">21</a>
+<a href="#n22" name="n22">22</a>
+<a href="#n23" name="n23">23</a>
+<a href="#n24" name="n24">24</a>
+<strong><a href="#n25" name="n25">25</a></strong>
+<a href="#n26" name="n26">26</a>
+<a href="#n27" name="n27">27</a>
+<a href="#n28" name="n28">28</a>
+<a href="#n29" name="n29">29</a>
+<strong><a href="#n30" name="n30">30</a></strong>
+<a href="#n31" name="n31">31</a>
+<a href="#n32" name="n32">32</a>
+<a href="#n33" name="n33">33</a>
+<a href="#n34" name="n34">34</a>
+<strong><a href="#n35" name="n35">35</a></strong>
+<a href="#n36" name="n36">36</a>
+<a href="#n37" name="n37">37</a>
+<a href="#n38" name="n38">38</a>
+<a href="#n39" name="n39">39</a>
+<strong><a href="#n40" name="n40">40</a></strong>
+<a href="#n41" name="n41">41</a>
+<a href="#n42" name="n42">42</a>
+<a href="#n43" name="n43">43</a>
+<a href="#n44" name="n44">44</a>
+<strong><a href="#n45" name="n45">45</a></strong>
+<a href="#n46" name="n46">46</a>
+<a href="#n47" name="n47">47</a>
+<a href="#n48" name="n48">48</a>
+<a href="#n49" name="n49">49</a>
+<strong><a href="#n50" name="n50">50</a></strong>
+<a href="#n51" name="n51">51</a>
+<a href="#n52" name="n52">52</a>
+<a href="#n53" name="n53">53</a>
+<a href="#n54" name="n54">54</a>
+<strong><a href="#n55" name="n55">55</a></strong>
+</pre></td>
+  <td class="code"><pre><span style="color:#777"># Every new Person instance will get a random name</span>
+<span style="color:#777"># will set :is_seller to false</span>
+<span style="color:#777"># will get an empty array's friends</span>
+<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Person</span>
+  attr_accessor <span style="color:#A60">:name</span>, <span style="color:#A60">:is_seller</span>, <span style="color:#A60">:friends</span>
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>
+    <span style="color:#33B">@name</span> = (<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">a</span><span style="color:#710">'</span></span>..<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">z</span><span style="color:#710">'</span></span>).to_a.sample(<span style="color:#00D">5</span>).join.capitalize!
+    <span style="color:#33B">@is_seller</span> = <span style="color:#069">false</span>
+    <span style="color:#33B">@friends</span> = []
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">make_friends</span>(n)
+  friends = []
+  n.times { friends &lt;&lt; <span style="color:#036;font-weight:bold">Person</span>.new}
+  <span style="color:#080;font-weight:bold">return</span> friends
+<span style="color:#080;font-weight:bold">end</span>
+
+<span style="color:#777"># create central node person</span>
+central_person = <span style="color:#036;font-weight:bold">Person</span>.new; central_person.name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Center_node</span><span style="color:#710">&quot;</span></span>
+
+<span style="color:#777"># make 4 friends for central person</span>
+central_person.friends = make_friends(<span style="color:#00D">4</span>)
+
+<span style="color:#777"># for each central person's friends, make 3 friends for them</span>
+<span style="color:#777"># thus we get 1 + 4 + 4*3 == 17 person in all levels</span>
+central_person.friends.each { |f| f.friends = make_friends(<span style="color:#00D">3</span>) }
+
+<span style="color:#777"># Randomly choose one person as seller in the second level</span>
+seller = central_person.friends.sample.friends.sample
+seller.is_seller = <span style="color:#069">true</span>
+puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">This time seller is: </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>seller.name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
+
+
+<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">search_seller</span>(center)
+  search_queue = <span style="color:#036;font-weight:bold">Queue</span>.new
+  search_queue &lt;&lt; center
+  searched = []
+  <span style="color:#080;font-weight:bold">while</span> search_queue <span style="color:#777"># or say until search_queue.empty?</span>
+    person = search_queue.pop
+    <span style="color:#080;font-weight:bold">if</span> person.is_seller
+      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>person.name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> is seller!</span><span style="color:#710">&quot;</span></span>
+      <span style="color:#080;font-weight:bold">return</span> <span style="color:#069">true</span>
+    <span style="color:#080;font-weight:bold">else</span>
+      <span style="color:#080;font-weight:bold">if</span> !person.friends.empty? &amp;&amp; !searched.include?(person) <span style="color:#777"># this avoids error when touching end point person</span>
+        person.friends.each { |f| search_queue &lt;&lt; f }
+        searched &lt;&lt; person
+      <span style="color:#080;font-weight:bold">end</span>
+    <span style="color:#080;font-weight:bold">end</span>
+  <span style="color:#080;font-weight:bold">end</span>
+  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">No seller</span><span style="color:#710">&quot;</span></span>
+  <span style="color:#080;font-weight:bold">return</span> <span style="color:#069">false</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+search_seller(central_person)
+</pre></td>
+</tr></table>
 </div>
 
 <p><a href="https://gist.github.com/gitXullnndish/f65f36ab990ab805ad53febc435ac558">将过程注释出来</a>，可以看到搜索的顺序是按层级展开的</p>

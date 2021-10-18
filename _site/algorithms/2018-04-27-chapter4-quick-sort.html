@@ -164,34 +164,54 @@
 
 <p>写成代码：</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">recursive_sum</span>(list)
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">if</span> list[<span style="color:#00D">1</span>] == <span style="color:#069">nil</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">return</span> list[<span style="color:#00D">0</span>]
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">else</span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#080;font-weight:bold">return</span> list.shift + recursive_sum(list)
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>puts recursive_sum [<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>]
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">recursive_sum</span>(list)
+  <span style="color:#080;font-weight:bold">if</span> list[<span style="color:#00D">1</span>] == <span style="color:#069">nil</span>
+    <span style="color:#080;font-weight:bold">return</span> list[<span style="color:#00D">0</span>]
+  <span style="color:#080;font-weight:bold">else</span>
+    <span style="color:#080;font-weight:bold">return</span> list.shift + recursive_sum(list)
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+puts recursive_sum [<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>]
+</pre></td>
+</tr></table>
 </div>
 
 <p>也可以将 array 为空作为 base case</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">recursive_sum</span>(list)
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">if</span> list == []
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#00D">0</span>
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">else</span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#080;font-weight:bold">return</span> list.shift + recursive_sum(list)
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>puts recursive_sum [<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>]
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">recursive_sum</span>(list)
+  <span style="color:#080;font-weight:bold">if</span> list == []
+    <span style="color:#080;font-weight:bold">return</span> <span style="color:#00D">0</span>
+  <span style="color:#080;font-weight:bold">else</span>
+    <span style="color:#080;font-weight:bold">return</span> list.shift + recursive_sum(list)
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+puts recursive_sum [<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>]
+</pre></td>
+</tr></table>
 </div>
 
 <h4 id="3-quicksort">3 Quicksort</h4>
@@ -239,64 +259,114 @@
 
 <p>代码示例：</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">quick_sort</span>(array)
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">if</span> array.size &lt; <span style="color:#00D">2</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">return</span> array
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">else</span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    pivot = array[<span style="color:#00D">0</span>]
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    s_array, b_array = [],[]
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    array[<span style="color:#00D">1</span>..<span style="color:#00D">-1</span>].each { |e| e &lt; pivot ? s_array &lt;&lt; e : b_array &lt;&lt; e }
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#080;font-weight:bold">return</span> quick_sort(s_array) + [pivot] + quick_sort(b_array)
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>p quick_sort [<span style="color:#00D">7</span>,<span style="color:#00D">2</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>,<span style="color:#00D">2</span>,<span style="color:#00D">8</span>,<span style="color:#00D">9</span>]
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#777"># ==&gt; [2, 2, 2, 3, 4, 7, 8, 9]</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">quick_sort</span>(array)
+  <span style="color:#080;font-weight:bold">if</span> array.size &lt; <span style="color:#00D">2</span>
+    <span style="color:#080;font-weight:bold">return</span> array
+  <span style="color:#080;font-weight:bold">else</span>
+    pivot = array[<span style="color:#00D">0</span>]
+    s_array, b_array = [],[]
+    array[<span style="color:#00D">1</span>..<span style="color:#00D">-1</span>].each { |e| e &lt; pivot ? s_array &lt;&lt; e : b_array &lt;&lt; e }
+    <span style="color:#080;font-weight:bold">return</span> quick_sort(s_array) + [pivot] + quick_sort(b_array)
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+p quick_sort [<span style="color:#00D">7</span>,<span style="color:#00D">2</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>,<span style="color:#00D">2</span>,<span style="color:#00D">8</span>,<span style="color:#00D">9</span>]
+<span style="color:#777"># ==&gt; [2, 2, 2, 3, 4, 7, 8, 9]</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>几点重要的说明</p>
 
-<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>1 拆分左右array时，避免将 pivot 再次分配
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>array[1..-1].each { |e| e &lt; pivot ? s_array &lt;&lt; e : b_array &lt;&lt; e }
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>这一行中的 array如果不加上[1..-1] 就会报错 stack level too deep (SystemStackError)
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>不管是使用 each 还是使用 select
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>如果每次不排除掉第一个元素，那么在拆分的时候会出现重复分配，陷入无限循环。
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>原因分析：
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  在拆分左右两个array时，一边用的是 &lt; 另一遍 else 就会是 &gt;=
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>  那么当第一次拆分之后
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>    - 右边的 array 中会包含之前的 array[0]，以及剩下的 大于等于它的数字
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span>     - 下一步拆右边这array时由于 array[0]仍然在右边array的第一个
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span>     - 所以它又充当pivot，同时再次被放到右边的array中
-<span class="line-numbers"><a href="#n15" name="n15">15</a></span>     - 此时左边拆出来的是 [] ，中间是之前的 array[0], 右边是 array[0] + 其他所有大于等于他的数
-<span class="line-numbers"><a href="#n16" name="n16">16</a></span>     - 从这一步开始就会发现右边的 array 无论怎么拆大小都保持不变了，只是每一步把array[0] 拿出来当 pivot
-<span class="line-numbers"><a href="#n17" name="n17">17</a></span>  如果把左边的条件换成 &lt;= 右边换成 &gt; ，最后的结果也是一样
-<span class="line-numbers"><a href="#n18" name="n18">18</a></span>
-<span class="line-numbers"><a href="#n19" name="n19">19</a></span>2 array中有重复的数字时
-<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>
-<span class="line-numbers"><a href="#n21" name="n21">21</a></span>如果去掉条件中的等号
-<span class="line-numbers"><a href="#n22" name="n22">22</a></span>
-<span class="line-numbers"><a href="#n23" name="n23">23</a></span> array.each  do |e|
-<span class="line-numbers"><a href="#n24" name="n24">24</a></span>   s_array &lt;&lt; e if e &lt; pivot
-<span class="line-numbers"><a href="#n25" name="n25">25</a></span>   b_array &lt;&lt; e if e &gt; pivot
-<span class="line-numbers"><a href="#n26" name="n26">26</a></span> end
-<span class="line-numbers"><a href="#n27" name="n27">27</a></span>
-<span class="line-numbers"><a href="#n28" name="n28">28</a></span> 换成这样
-<span class="line-numbers"><a href="#n29" name="n29">29</a></span>
-<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span> 这种情况不会再报错，排序可以完成，但同时也丢掉了重复的数字，类似排序的同时作了uniq!处理。
-<span class="line-numbers"><a href="#n31" name="n31">31</a></span> 会得到 ==&gt; [2, 3, 4, 7, 8, 9]
-<span class="line-numbers"><a href="#n32" name="n32">32</a></span>
-<span class="line-numbers"><a href="#n33" name="n33">33</a></span> 如果要保留重复数字就在左右拆分前排除掉作为pivot的第一个数字。
-<span class="line-numbers"><a href="#n34" name="n34">34</a></span>
-<span class="line-numbers"><a href="#n35" name="n35">35</a></span> 如果不需要保留则可以拆分时不用等号，直接滤掉。
-</pre></div>
-</div>
+<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<strong><a href="#n15" name="n15">15</a></strong>
+<a href="#n16" name="n16">16</a>
+<a href="#n17" name="n17">17</a>
+<a href="#n18" name="n18">18</a>
+<a href="#n19" name="n19">19</a>
+<strong><a href="#n20" name="n20">20</a></strong>
+<a href="#n21" name="n21">21</a>
+<a href="#n22" name="n22">22</a>
+<a href="#n23" name="n23">23</a>
+<a href="#n24" name="n24">24</a>
+<strong><a href="#n25" name="n25">25</a></strong>
+<a href="#n26" name="n26">26</a>
+<a href="#n27" name="n27">27</a>
+<a href="#n28" name="n28">28</a>
+<a href="#n29" name="n29">29</a>
+<strong><a href="#n30" name="n30">30</a></strong>
+<a href="#n31" name="n31">31</a>
+<a href="#n32" name="n32">32</a>
+<a href="#n33" name="n33">33</a>
+<a href="#n34" name="n34">34</a>
+<strong><a href="#n35" name="n35">35</a></strong>
+</pre></td>
+  <td class="code"><pre>1 拆分左右array时，避免将 pivot 再次分配
+
+array[1..-1].each { |e| e &lt; pivot ? s_array &lt;&lt; e : b_array &lt;&lt; e }
+这一行中的 array如果不加上[1..-1] 就会报错 stack level too deep (SystemStackError)
+不管是使用 each 还是使用 select
+如果每次不排除掉第一个元素，那么在拆分的时候会出现重复分配，陷入无限循环。
+
+原因分析：
+
+  在拆分左右两个array时，一边用的是 &lt; 另一遍 else 就会是 &gt;=
+  那么当第一次拆分之后
+    - 右边的 array 中会包含之前的 array[0]，以及剩下的 大于等于它的数字
+     - 下一步拆右边这array时由于 array[0]仍然在右边array的第一个
+     - 所以它又充当pivot，同时再次被放到右边的array中
+     - 此时左边拆出来的是 [] ，中间是之前的 array[0], 右边是 array[0] + 其他所有大于等于他的数
+     - 从这一步开始就会发现右边的 array 无论怎么拆大小都保持不变了，只是每一步把array[0] 拿出来当 pivot
+  如果把左边的条件换成 &lt;= 右边换成 &gt; ，最后的结果也是一样
+
+2 array中有重复的数字时
+
+如果去掉条件中的等号
+
+ array.each  do |e|
+   s_array &lt;&lt; e if e &lt; pivot
+   b_array &lt;&lt; e if e &gt; pivot
+ end
+
+ 换成这样
+
+ 这种情况不会再报错，排序可以完成，但同时也丢掉了重复的数字，类似排序的同时作了uniq!处理。
+ 会得到 ==&gt; [2, 3, 4, 7, 8, 9]
+
+ 如果要保留重复数字就在左右拆分前排除掉作为pivot的第一个数字。
+
+ 如果不需要保留则可以拆分时不用等号，直接滤掉。
+</pre></td>
+</tr></table>
 </div>
 
 <p>纸上验证：</p>
@@ -372,19 +442,30 @@
 
 <p>所以可以把我们之前的代码改一下，只改选pivot那步</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">quick_sort</span>(array)
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">if</span> array.size &lt; <span style="color:#00D">2</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">return</span> array
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">else</span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    pivot = array.sample
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    s_array, b_array = [],[]
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    array[<span style="color:#00D">1</span>..<span style="color:#00D">-1</span>].each { |e| e &lt; pivot ? s_array &lt;&lt; e : b_array &lt;&lt; e }
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#080;font-weight:bold">return</span> quick_sort(s_array) + [pivot] + quick_sort(b_array)
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">quick_sort</span>(array)
+  <span style="color:#080;font-weight:bold">if</span> array.size &lt; <span style="color:#00D">2</span>
+    <span style="color:#080;font-weight:bold">return</span> array
+  <span style="color:#080;font-weight:bold">else</span>
+    pivot = array.sample
+    s_array, b_array = [],[]
+    array[<span style="color:#00D">1</span>..<span style="color:#00D">-1</span>].each { |e| e &lt; pivot ? s_array &lt;&lt; e : b_array &lt;&lt; e }
+    <span style="color:#080;font-weight:bold">return</span> quick_sort(s_array) + [pivot] + quick_sort(b_array)
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+</pre></td>
+</tr></table>
 </div>
 
 <hr />
@@ -422,50 +503,76 @@ constant time 在 Big O notation 中有时比较重要。</li>
 
 <p>Write out the code for the earlier sum function.</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">recursive_sum</span>(array)
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">if</span> array[<span style="color:#00D">1</span>] == <span style="color:#069">nil</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">return</span> array[<span style="color:#00D">0</span>]
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">else</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>    <span style="color:#080;font-weight:bold">return</span> array.shift + recursive_sum(array)
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">recursive_sum</span>(array)
+  <span style="color:#080;font-weight:bold">if</span> array[<span style="color:#00D">1</span>] == <span style="color:#069">nil</span>
+    <span style="color:#080;font-weight:bold">return</span> array[<span style="color:#00D">0</span>]
+  <span style="color:#080;font-weight:bold">else</span>
+    <span style="color:#080;font-weight:bold">return</span> array.shift + recursive_sum(array)
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>4.2</p>
 
 <p>Write a recursive function to count the number of items in a list.</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">recursive_count</span>(array)
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">if</span> array[<span style="color:#00D">1</span>] == <span style="color:#069">nil</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#00D">1</span>
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">else</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>    array.pop
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#00D">1</span> + recursive_count(array)
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">recursive_count</span>(array)
+  <span style="color:#080;font-weight:bold">if</span> array[<span style="color:#00D">1</span>] == <span style="color:#069">nil</span>
+    <span style="color:#080;font-weight:bold">return</span> <span style="color:#00D">1</span>
+  <span style="color:#080;font-weight:bold">else</span>
+    array.pop
+    <span style="color:#080;font-weight:bold">return</span> <span style="color:#00D">1</span> + recursive_count(array)
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>4.3</p>
 
 <p>Find the maximum number in a list.</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">find_max</span>(array)
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">if</span> array.size == <span style="color:#00D">1</span> <span style="color:#777"># 也可以写 array[1] == nil</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">return</span> array[<span style="color:#00D">0</span>]
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">else</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>    array[<span style="color:#00D">0</span>] &gt;= array[<span style="color:#00D">1</span>] ? array.delete_at(<span style="color:#00D">1</span>) : array.delete_at(<span style="color:#00D">0</span>)
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>    <span style="color:#080;font-weight:bold">return</span> find_max(array)
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">find_max</span>(array)
+  <span style="color:#080;font-weight:bold">if</span> array.size == <span style="color:#00D">1</span> <span style="color:#777"># 也可以写 array[1] == nil</span>
+    <span style="color:#080;font-weight:bold">return</span> array[<span style="color:#00D">0</span>]
+  <span style="color:#080;font-weight:bold">else</span>
+    array[<span style="color:#00D">0</span>] &gt;= array[<span style="color:#00D">1</span>] ? array.delete_at(<span style="color:#00D">1</span>) : array.delete_at(<span style="color:#00D">0</span>)
+    <span style="color:#080;font-weight:bold">return</span> find_max(array)
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>4.4</p>

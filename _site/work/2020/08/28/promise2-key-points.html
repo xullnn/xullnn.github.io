@@ -136,16 +136,24 @@ not so obvious to newbies. It’s more of a communication problem. I hope this a
 
 <p>If we have a function that returns a <code>promise</code>:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">makePromise</span>() {
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">new</span> Promise((resolve, reject) =&gt; {
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>    <span style="color:#777">// do sync thing one</span>
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>    <span style="color:#777">// do sync thing two</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>    <span style="color:#777">// resolve or reject at a certain point</span>
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>  })
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span>};
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">makePromise</span>() {
+  <span style="color:#080;font-weight:bold">new</span> Promise((resolve, reject) =&gt; {
+    <span style="color:#777">// do sync thing one</span>
+    <span style="color:#777">// do sync thing two</span>
+    <span style="color:#777">// resolve or reject at a certain point</span>
+  })
+};
+</pre></td>
+</tr></table>
 </div>
 
 <p>When you execute <code>makePromise()</code>, <code>thing one</code> and <code>thing two</code> in the callback are beginning execution and are done synchronously immediately. I don’t know why I had a tendency(don’t know if others have too) to think all the code within the <code>Promise</code> constructor only begins executing as a whole at the settling point, the point when the <code>resolve</code> or <code>reject</code> are called. Realizing this is important for us to maintain the execution sequence of tasks and thinking about possible performance considerations.</p>
@@ -154,33 +162,52 @@ not so obvious to newbies. It’s more of a communication problem. I hope this a
 
 <p>If we have a list of urls <code>[u1, u2, u3]</code> that don’t depend on each other, means they can be loaded in parallel. But we want to get things from the 3 urls one after another, in the order of <code>1,2,3</code>. We may write something like this:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">requestURL</span>(url) {
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">new</span> Promise((resolve, reject) =&gt; {
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    let xhr = <span style="color:#080;font-weight:bold">new</span> XMLHttpRequest();
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    xhr.open(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">GET</span><span style="color:#710">'</span></span>, url);
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    xhr.addEventListener(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">load</span><span style="color:#710">'</span></span>, () =&gt; {
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      let result = xhr.response;
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      resolve(result);
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    })
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  });
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>};
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>[u1, u2, u3].forEach(url =&gt; {
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span>  requestURL(url)
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span>})
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">requestURL</span>(url) {
+  <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">new</span> Promise((resolve, reject) =&gt; {
+    let xhr = <span style="color:#080;font-weight:bold">new</span> XMLHttpRequest();
+    xhr.open(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">GET</span><span style="color:#710">'</span></span>, url);
+    xhr.addEventListener(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">load</span><span style="color:#710">'</span></span>, () =&gt; {
+      let result = xhr.response;
+      resolve(result);
+    })
+  });
+};
+
+[u1, u2, u3].forEach(url =&gt; {
+  requestURL(url)
+})
+</pre></td>
+</tr></table>
 </div>
 
 <p>Although all the requests may succeed but the order of completion is not guaranteed. Why? Because <code>forEach</code> is sync and what we actually did can be seen as:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>requestURL(u1);
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>requestURL(u2);
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>requestURL(u3);
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre>requestURL(u1);
+requestURL(u2);
+requestURL(u3);
+</pre></td>
+</tr></table>
 </div>
 
 <p>All <code>promise</code>s begin creating almost at the same time because the 3 function calls are executed synchronously, meanwhile all code within <code>Promise</code> constructor begins executing. <code>requestURL</code> returns a <code>promise</code>, but code written in <code>Promise</code> constructor won’t pause executing. So the 3 requests begins at almost the same time but we don’t know how much time each request would take, therefore we don’t know the order completion.</p>
@@ -200,14 +227,20 @@ not so obvious to newbies. It’s more of a communication problem. I hope this a
 
 <p>How to chain the requests in a wanted sequence or say initiate them one after another? Also with <code>forEach</code>, but this time a bit different.</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>let chain = Promise.resovle(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#710">'</span></span>);
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>[u1, u2, u3].forEach(url =&gt; {
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  chain = chain.then(() =&gt; requestURL(url));
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>})
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+</pre></td>
+  <td class="code"><pre>let chain = Promise.resovle(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#710">'</span></span>);
+
+[u1, u2, u3].forEach(url =&gt; {
+  chain = chain.then(() =&gt; requestURL(url));
+})
+</pre></td>
+</tr></table>
 </div>
 
 <p>Notice <code>chain.then(() =&gt; requestURL(url))</code> is different from <code>chain.then(requestURL(url))</code>,  <code>requestURL(url)</code> is a function invocation that will create a <code>promise</code> immediately, you should always pass a <em>function</em> to <code>then()</code>.</p>
@@ -216,19 +249,30 @@ not so obvious to newbies. It’s more of a communication problem. I hope this a
 
 <p>The same example:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">fetchURL</span>(url) { <span style="color:#777">// returns promise</span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">new</span> Promise((resolve, reject) =&gt; {
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    let xhr = <span style="color:#080;font-weight:bold">new</span> XMLHttpRequest();
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    xhr.open(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">GET</span><span style="color:#710">'</span></span>, url);
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    xhr.addEventListener(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">load</span><span style="color:#710">'</span></span>, () =&gt; {
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      let suburl = xhr.response[<span style="color:#00D">0</span>];
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      resolve(suburl);
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    })
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  });
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>};
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">function</span> <span style="color:#06B;font-weight:bold">fetchURL</span>(url) { <span style="color:#777">// returns promise</span>
+  <span style="color:#080;font-weight:bold">return</span> <span style="color:#080;font-weight:bold">new</span> Promise((resolve, reject) =&gt; {
+    let xhr = <span style="color:#080;font-weight:bold">new</span> XMLHttpRequest();
+    xhr.open(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">GET</span><span style="color:#710">'</span></span>, url);
+    xhr.addEventListener(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">load</span><span style="color:#710">'</span></span>, () =&gt; {
+      let suburl = xhr.response[<span style="color:#00D">0</span>];
+      resolve(suburl);
+    })
+  });
+};
+</pre></td>
+</tr></table>
 </div>
 
 <p>This is a tricky point. The <code>resolve</code> method don’t know how much time a request would take. We call <code>resolve</code> in <code>Promise</code> constructor, and that happens inside the <code>'load'</code> event listener. Here <code>resolve(suburl)</code> has no notion about <code>sync/async</code> it’s called immediately when the request is <code>'load'</code>ed, and calling <code>resolve(suburl)</code> grants the state <code>fulfilled</code> to the promise with <code>suburl</code> as its value to prepare for possible future operations. And resolving of a promise is synchronous or say happens instantly.</p>
@@ -243,21 +287,26 @@ not so obvious to newbies. It’s more of a communication problem. I hope this a
 
 <p><a href="https://github.com/promises-aplus/promises-spec">Promise/A+ spec</a> also mentions that <code>then</code> must return a promise and if <code>onFulfilled</code> <em>is not a function</em>, a <code>then</code> called on a resolved promise must return a new promise resolved with the value of the previous promise. It’s better to be expressed by code:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>let resolvedPromise = Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">One</span><span style="color:#710">&quot;</span></span>); <span style="color:#777">// 1</span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>resolvedPromise.then(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">two</span><span style="color:#710">&quot;</span></span>); <span style="color:#777">// 2</span>
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre>let resolvedPromise = Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">One</span><span style="color:#710">&quot;</span></span>); <span style="color:#777">// 1</span>
+resolvedPromise.then(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">two</span><span style="color:#710">&quot;</span></span>); <span style="color:#777">// 2</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>Line 1 returns a promise resolved with “One”, but line 2 returns a new <code>promise</code>: <code>Promise {&lt;fulfilled&gt;: "One"}</code> resolved with <code>"One"</code> NOT <code>"Two"</code>. The string <code>"Two"</code> we pass the <code>then()</code> is ignored.</p>
 
 <p>If we make a promise chain with several non-functions inserted for example:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>resolvedPromise.then(func).then(non-func).then(func).then(non-func)
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>resolvedPromise.then(func).then(non-func).then(func).then(non-func)
+</pre></td>
+</tr></table>
 </div>
 
 <p>We can imagine that we strikethrough the <code>.then(non-func)</code> parts like:</p>
@@ -266,15 +315,22 @@ not so obvious to newbies. It’s more of a communication problem. I hope this a
 
 <p>Some call this “promise fall through”. What if one of the <code>non-func</code> is a <code>promise</code>? You may think the promise chain won’t ignore a <code>promise</code>. Let’s try by code:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>let resolvedPromise = Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I was resolved</span><span style="color:#710">&quot;</span></span>);
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>let starterPromise = Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the starter promise.</span><span style="color:#710">&quot;</span></span>);
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>starterPromise.then(resolvedPromise);
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#777">// Promise {&lt;fulfilled&gt;: &quot;I am the starter promise.&quot;}</span>
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre>let resolvedPromise = Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I was resolved</span><span style="color:#710">&quot;</span></span>);
+
+let starterPromise = Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am the starter promise.</span><span style="color:#710">&quot;</span></span>);
+
+starterPromise.then(resolvedPromise);
+<span style="color:#777">// Promise {&lt;fulfilled&gt;: &quot;I am the starter promise.&quot;}</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>The last line returns <code>Promise {&lt;fulfilled&gt;: "I am the starter promise."}</code>, the resolved value of the <code>resolvedPromise</code> we passed to <code>then()</code> was not taken. So there’s no exception for this rule. <em>Function is the only currency within a promise chain</em>. If you want to insert a <code>promise</code> into a promise chain, use a function that returns a <code>promise</code>.</p>
@@ -289,10 +345,12 @@ not so obvious to newbies. It’s more of a communication problem. I hope this a
 
 <p>This is fun and easy. Remember I said when trying to create a <code>promise</code> always consider <code>Promise</code> constructor? So the answer of this is “just make it but don’t resolve it”. That is:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>let pendingPromise = <span style="color:#080;font-weight:bold">new</span> Promise((resolve, reject) =&gt; {}); <span style="color:#777">// Promise {&lt;pending&gt;}</span>
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>let pendingPromise = <span style="color:#080;font-weight:bold">new</span> Promise((resolve, reject) =&gt; {}); <span style="color:#777">// Promise {&lt;pending&gt;}</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>By doing this we get a pending promise <code>Promise {&lt;pending&gt;}</code> since we don’t call <code>resolve()</code> or <code>reject()</code> at all inside the callback. Another theoretically possible scenario is we called <code>resolve()</code> or <code>reject()</code> but the time before that happens was “forever”. For example, <code>resolve()</code> or <code>reject()</code> is waiting to be called after a data retrieving task that never ends.</p>
@@ -301,25 +359,34 @@ not so obvious to newbies. It’s more of a communication problem. I hope this a
 
 <p>Now if we have a <code>pending</code> promise, let’s see how the chain will pause:</p>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>let pendingPromise = <span style="color:#080;font-weight:bold">new</span> Promise((resolve, reject) =&gt; {}); <span style="color:#777">// Promise {&lt;pending&gt;}</span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>pendingPromise.then(() =&gt; console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hello World.</span><span style="color:#710">&quot;</span></span>)); <span style="color:#777">// Not words printed out</span>
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>            <span style="color:#777">//  ^</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>            <span style="color:#777">//paused</span>
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+</pre></td>
+  <td class="code"><pre>let pendingPromise = <span style="color:#080;font-weight:bold">new</span> Promise((resolve, reject) =&gt; {}); <span style="color:#777">// Promise {&lt;pending&gt;}</span>
+
+pendingPromise.then(() =&gt; console.log(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hello World.</span><span style="color:#710">&quot;</span></span>)); <span style="color:#777">// Not words printed out</span>
+            <span style="color:#777">//  ^</span>
+            <span style="color:#777">//paused</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>Since <code>pendingPromise</code> is at the state of <code>pending</code>, the next <code>then</code> will wait on it. I often see words like “waiting on a promise”, though this is not wrong, but this gives us a sense that where there is a promise there is a waiting. But waiting only happens on <code>pending</code> promise.</p>
 
 <h5 id="253-then-only-waits-on-pending-promises-doesnt-mean-settled-ones-are-skipped">2.5.3 <code>then()</code> only waits on <code>pending</code> promises doesn’t mean settled ones are skipped</h5>
 
-<div class="language-js highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">one</span><span style="color:#710">&quot;</span></span>).then(() =&gt; Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">two</span><span style="color:#710">&quot;</span></span>)); <span style="color:#777">// Promise {&lt;fulfilled&gt;: &quot;two&quot;}</span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">one</span><span style="color:#710">&quot;</span></span>).then(() =&gt; Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">two</span><span style="color:#710">&quot;</span></span>)).then(() =&gt; Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">three</span><span style="color:#710">&quot;</span></span>)); <span style="color:#777">// Promise {&lt;fulfilled&gt;: &quot;three&quot;}</span>
-</pre></div>
-</div>
+<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre>Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">one</span><span style="color:#710">&quot;</span></span>).then(() =&gt; Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">two</span><span style="color:#710">&quot;</span></span>)); <span style="color:#777">// Promise {&lt;fulfilled&gt;: &quot;two&quot;}</span>
+Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">one</span><span style="color:#710">&quot;</span></span>).then(() =&gt; Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">two</span><span style="color:#710">&quot;</span></span>)).then(() =&gt; Promise.resolve(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">three</span><span style="color:#710">&quot;</span></span>)); <span style="color:#777">// Promise {&lt;fulfilled&gt;: &quot;three&quot;}</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>Here both lines start with a <code>promise</code> resolved with <code>"one"</code>. When we chain one <code>then</code> we get a new <code>promise</code> resolved with <code>"two"</code>. When chain two <code>then</code>s we get a new <code>promise</code> resolved with <code>"three"</code>. Based on line 1 we know there is a “middle promise” with “two” as its value existed transitorily. But no <code>promise</code> is skipped even through they are resolved ones.</p>

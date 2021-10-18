@@ -76,62 +76,112 @@
 
 <p>这也是 module 发挥作用的地方。当你设计一个程序时，你需要一个或一系列展现出不止一类对象的特点的行为，那你就找到了好的 module 候选。 堆栈性适合这个情况：不止一个实体，甚至不止一个class，都展现出堆栈性。在一个module 中定义好所有具有堆栈性的对象所共有的方法methods，你就在所有需要堆栈性的 classes 中引入了堆栈性。</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">Stacklike</span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">stack</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#33B">@stack</span> ||= []
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">add_to_stack</span>(obj)
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    stack.push(obj)
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">take_from_stack</span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>    stack.pop
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">Stacklike</span>
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">stack</span>
+    <span style="color:#33B">@stack</span> ||= []
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">add_to_stack</span>(obj)
+    stack.push(obj)
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">take_from_stack</span>
+    stack.pop
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+</pre></td>
+</tr></table>
 </div>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./stacklike.rb</span><span style="color:#710">'</span></span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">true</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; s = <span style="color:#036;font-weight:bold">Stacklike</span>.new
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>        <span style="color:#00D">2</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from (irb):3</span></span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">NoMethodError (undefined method </span><span style="color:#161">`</span></span>new<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"> for Stacklike:Module)</span></span>
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :004 &gt; require_relative </span><span style="color:#710">'</span></span>stacklike<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"></span></span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> =&gt; true</span></span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :005 &gt; class Stack</span></span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :006?&gt;   include Stacklike</span></span>
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :007?&gt; end</span></span>
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> =&gt; Stack</span></span>
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :008 &gt; s = Stack.new</span></span>
-<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> =&gt; #&lt;Stack:0x00007ff1260a96e0&gt;</span></span>
-<span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :009 &gt; s.add_to_stack(&quot;item one&quot;)</span></span>
-<span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> =&gt; [&quot;item one&quot;]</span></span>
-<span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :010 &gt; s.add_to_stack(&quot;item two&quot;)</span></span>
-<span class="line-numbers"><a href="#n19" name="n19">19</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> =&gt; [&quot;item one&quot;, &quot;item two&quot;]</span></span>
-<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :011 &gt; s.add_to_stack(&quot;item three&quot;)</span></span>
-<span class="line-numbers"><a href="#n21" name="n21">21</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> =&gt; [&quot;item one&quot;, &quot;item two&quot;, &quot;item three&quot;]</span></span>
-<span class="line-numbers"><a href="#n22" name="n22">22</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :012 &gt; puts s.stack</span></span>
-<span class="line-numbers"><a href="#n23" name="n23">23</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">item one</span></span>
-<span class="line-numbers"><a href="#n24" name="n24">24</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">item two</span></span>
-<span class="line-numbers"><a href="#n25" name="n25">25</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">item three</span></span>
-<span class="line-numbers"><a href="#n26" name="n26">26</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> =&gt; nil</span></span>
-<span class="line-numbers"><a href="#n27" name="n27">27</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :013 &gt; taken = s.take_from_stack</span></span>
-<span class="line-numbers"><a href="#n28" name="n28">28</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> =&gt; &quot;item three&quot;</span></span>
-<span class="line-numbers"><a href="#n29" name="n29">29</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :014 &gt; puts taken</span></span>
-<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">item three</span></span>
-<span class="line-numbers"><a href="#n31" name="n31">31</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> =&gt; nil</span></span>
-<span class="line-numbers"><a href="#n32" name="n32">32</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :015 &gt; puts s.stack</span></span>
-<span class="line-numbers"><a href="#n33" name="n33">33</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">item one</span></span>
-<span class="line-numbers"><a href="#n34" name="n34">34</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">item two</span></span>
-<span class="line-numbers"><a href="#n35" name="n35">35</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> =&gt; nil</span></span>
-<span class="line-numbers"><a href="#n36" name="n36">36</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<strong><a href="#n15" name="n15">15</a></strong>
+<a href="#n16" name="n16">16</a>
+<a href="#n17" name="n17">17</a>
+<a href="#n18" name="n18">18</a>
+<a href="#n19" name="n19">19</a>
+<strong><a href="#n20" name="n20">20</a></strong>
+<a href="#n21" name="n21">21</a>
+<a href="#n22" name="n22">22</a>
+<a href="#n23" name="n23">23</a>
+<a href="#n24" name="n24">24</a>
+<strong><a href="#n25" name="n25">25</a></strong>
+<a href="#n26" name="n26">26</a>
+<a href="#n27" name="n27">27</a>
+<a href="#n28" name="n28">28</a>
+<a href="#n29" name="n29">29</a>
+<strong><a href="#n30" name="n30">30</a></strong>
+<a href="#n31" name="n31">31</a>
+<a href="#n32" name="n32">32</a>
+<a href="#n33" name="n33">33</a>
+<a href="#n34" name="n34">34</a>
+<strong><a href="#n35" name="n35">35</a></strong>
+</pre></td>
+  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./stacklike.rb</span><span style="color:#710">'</span></span>
+ =&gt; <span style="color:#069">true</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; s = <span style="color:#036;font-weight:bold">Stacklike</span>.new
+<span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
+        <span style="color:#00D">2</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'
+        1: from (irb):3
+NoMethodError (undefined method </span><span style="color:#161">`</span></span>new<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"> for Stacklike:Module)
+2.5.0 :004 &gt; require_relative </span><span style="color:#710">'</span></span>stacklike<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">
+ =&gt; true
+2.5.0 :005 &gt; class Stack
+2.5.0 :006?&gt;   include Stacklike
+2.5.0 :007?&gt; end
+ =&gt; Stack
+2.5.0 :008 &gt; s = Stack.new
+ =&gt; #&lt;Stack:0x00007ff1260a96e0&gt;
+2.5.0 :009 &gt; s.add_to_stack(&quot;item one&quot;)
+ =&gt; [&quot;item one&quot;]
+2.5.0 :010 &gt; s.add_to_stack(&quot;item two&quot;)
+ =&gt; [&quot;item one&quot;, &quot;item two&quot;]
+2.5.0 :011 &gt; s.add_to_stack(&quot;item three&quot;)
+ =&gt; [&quot;item one&quot;, &quot;item two&quot;, &quot;item three&quot;]
+2.5.0 :012 &gt; puts s.stack
+item one
+item two
+item three
+ =&gt; nil
+2.5.0 :013 &gt; taken = s.take_from_stack
+ =&gt; &quot;item three&quot;
+2.5.0 :014 &gt; puts taken
+item three
+ =&gt; nil
+2.5.0 :015 &gt; puts s.stack
+item one
+item two
+ =&gt; nil
+</span></span></pre></td>
+</tr></table>
 </div>
 
 <p>但在上面例子中，这些方法都可以直接写在 class Stack 而得到相同的结果。那么 module 的用处是什么？</p>
@@ -183,48 +233,82 @@ unload 方法会呼叫到 take_from_stack 方法。我们直接在unload 方法�
 </ul>
 
 <p>Put the code in the next listing into cargohold.rb, and run it.</p>
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>require_relative <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">stacklike</span><span style="color:#710">'</span></span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Suitcase</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">CargoHold</span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  include <span style="color:#036;font-weight:bold">Stacklike</span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">load_and_report</span>(obj)
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    print <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Loading objet </span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    puts obj.object_id
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    add_to_stack(obj)
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">unload</span>
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    take_from_stack
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n16" name="n16">16</a></span>
-<span class="line-numbers"><a href="#n17" name="n17">17</a></span>ch = <span style="color:#036;font-weight:bold">CargoHold</span>.new
-<span class="line-numbers"><a href="#n18" name="n18">18</a></span>sc1 = <span style="color:#036;font-weight:bold">Suitcase</span>.new
-<span class="line-numbers"><a href="#n19" name="n19">19</a></span>sc2 = <span style="color:#036;font-weight:bold">Suitcase</span>.new
-<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>sc3 = <span style="color:#036;font-weight:bold">Suitcase</span>.new
-<span class="line-numbers"><a href="#n21" name="n21">21</a></span>ch.load_and_report(sc1)
-<span class="line-numbers"><a href="#n22" name="n22">22</a></span>ch.load_and_report(sc2)
-<span class="line-numbers"><a href="#n23" name="n23">23</a></span>ch.load_and_report(sc3)
-<span class="line-numbers"><a href="#n24" name="n24">24</a></span>first_unloaded = ch.unload
-<span class="line-numbers"><a href="#n25" name="n25">25</a></span>print <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">The first suitcase off the plane is ...</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><a href="#n26" name="n26">26</a></span>puts first_unloaded.object_id
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<strong><a href="#n15" name="n15">15</a></strong>
+<a href="#n16" name="n16">16</a>
+<a href="#n17" name="n17">17</a>
+<a href="#n18" name="n18">18</a>
+<a href="#n19" name="n19">19</a>
+<strong><a href="#n20" name="n20">20</a></strong>
+<a href="#n21" name="n21">21</a>
+<a href="#n22" name="n22">22</a>
+<a href="#n23" name="n23">23</a>
+<a href="#n24" name="n24">24</a>
+<strong><a href="#n25" name="n25">25</a></strong>
+<a href="#n26" name="n26">26</a>
+</pre></td>
+  <td class="code"><pre>require_relative <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">stacklike</span><span style="color:#710">'</span></span>
+<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Suitcase</span>
+<span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">CargoHold</span>
+  include <span style="color:#036;font-weight:bold">Stacklike</span>
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">load_and_report</span>(obj)
+    print <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Loading objet </span><span style="color:#710">&quot;</span></span>
+    puts obj.object_id
+    add_to_stack(obj)
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">unload</span>
+    take_from_stack
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+ch = <span style="color:#036;font-weight:bold">CargoHold</span>.new
+sc1 = <span style="color:#036;font-weight:bold">Suitcase</span>.new
+sc2 = <span style="color:#036;font-weight:bold">Suitcase</span>.new
+sc3 = <span style="color:#036;font-weight:bold">Suitcase</span>.new
+ch.load_and_report(sc1)
+ch.load_and_report(sc2)
+ch.load_and_report(sc3)
+first_unloaded = ch.unload
+print <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">The first suitcase off the plane is ...</span><span style="color:#710">&quot;</span></span>
+puts first_unloaded.object_id
+</pre></td>
+</tr></table>
 </div>
 
 <p>The output from the cargo-hold program looks like this (remember that suitcases are referred to by their object ID numbers, which may be different on your system):</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./cargohold.rb</span><span style="color:#710">'</span></span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#036;font-weight:bold">Loading</span> objet <span style="color:#00D">70102091429060</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#036;font-weight:bold">Loading</span> objet <span style="color:#00D">70102091428980</span>
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#036;font-weight:bold">Loading</span> objet <span style="color:#00D">70102091428940</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#036;font-weight:bold">The</span> first suitcase off the plane is ...<span style="color:#00D">70102091428940</span>
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#069">true</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./cargohold.rb</span><span style="color:#710">'</span></span>
+<span style="color:#036;font-weight:bold">Loading</span> objet <span style="color:#00D">70102091429060</span>
+<span style="color:#036;font-weight:bold">Loading</span> objet <span style="color:#00D">70102091428980</span>
+<span style="color:#036;font-weight:bold">Loading</span> objet <span style="color:#00D">70102091428940</span>
+<span style="color:#036;font-weight:bold">The</span> first suitcase off the plane is ...<span style="color:#00D">70102091428940</span>
+ =&gt; <span style="color:#069">true</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>The cargo-hold example shows how you can use an existing module for a new class. Sometimes it pays to wrap the methods in new methods with better names for the new domain (like unload instead of take_from_stack), although if you find yourself changing too much, it may be a sign that the module isn’t a good fit.
@@ -264,34 +348,54 @@ cargohold 的例子演示了如何在class 中引入一个已经存在的module�
 
 <p>Figure 4.1 illustrates the method search path from our earlier example (the class D object) all the way up the ladder. In the example, the search for the method succeeds at module M; the figure shows how far the object would look if it didn’t find the method there. When the message x is sent to the object, the method search begins, hitting the various classes and mix-ins (modules) as shown by the arrows.</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">M</span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">report</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">'report' method in module M</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">C</span>
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  include <span style="color:#036;font-weight:bold">M</span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">D</span> &lt; <span style="color:#036;font-weight:bold">C</span>
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span>
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span>obj = <span style="color:#036;font-weight:bold">D</span>.new
-<span class="line-numbers"><a href="#n15" name="n15">15</a></span>obj.report
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<strong><a href="#n15" name="n15">15</a></strong>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">M</span>
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">report</span>
+    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">'report' method in module M</span><span style="color:#710">&quot;</span></span>
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">C</span>
+  include <span style="color:#036;font-weight:bold">M</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">D</span> &lt; <span style="color:#036;font-weight:bold">C</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+obj = <span style="color:#036;font-weight:bold">D</span>.new
+obj.report
+</pre></td>
+</tr></table>
 </div>
 
 <p>输出</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./lookup_path.rb</span><span style="color:#710">'</span></span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">report</span><span style="color:#710">'</span></span> method <span style="color:#080;font-weight:bold">in</span> <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">M</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span> =&gt; <span style="color:#069">true</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./lookup_path.rb</span><span style="color:#710">'</span></span>
+<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">report</span><span style="color:#710">'</span></span> method <span style="color:#080;font-weight:bold">in</span> <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">M</span>
+ =&gt; <span style="color:#069">true</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fnsswjvl2kj30rk0y0gts.jpg" alt="" /></p>
@@ -300,22 +404,36 @@ cargohold 的例子演示了如何在class 中引入一个已经存在的module�
 
 <p>BasicObject, Object以及Kernel 的内部定义都是用C语言写的，但是下面的代码可以解释他们之间的互动关系。</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">BasicObject</span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#777"># a scant seven method definitions go here</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">Kernel</span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#777"># over 100 method definitions go here!</span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Object</span> &lt; <span style="color:#036;font-weight:bold">BasicObject</span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  <span style="color:#777"># one or two private methods go here,</span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>  <span style="color:#777"># but the main point is to mix in the Kernel module</span>
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>  include <span style="color:#036;font-weight:bold">Kernel</span>
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">BasicObject</span>
+  <span style="color:#777"># a scant seven method definitions go here</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+<span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">Kernel</span>
+  <span style="color:#777"># over 100 method definitions go here!</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Object</span> &lt; <span style="color:#036;font-weight:bold">BasicObject</span>
+  <span style="color:#777"># one or two private methods go here,</span>
+  <span style="color:#777"># but the main point is to mix in the Kernel module</span>
+  include <span style="color:#036;font-weight:bold">Kernel</span>
+<span style="color:#080;font-weight:bold">end</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>-</p>
@@ -346,60 +464,95 @@ cargohold 的例子演示了如何在class 中引入一个已经存在的module�
 
 <p>3 某个 module 被 include 了多次</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">M</span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">report</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">'report' method in module M</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">N</span>
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">report</span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">'report' method in module N</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">C</span>
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span>  include <span style="color:#036;font-weight:bold">M</span>
-<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  include <span style="color:#036;font-weight:bold">N</span>
-<span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<strong><a href="#n15" name="n15">15</a></strong>
+<a href="#n16" name="n16">16</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">M</span>
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">report</span>
+    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">'report' method in module M</span><span style="color:#710">&quot;</span></span>
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+<span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">N</span>
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">report</span>
+    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">'report' method in module N</span><span style="color:#710">&quot;</span></span>
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">C</span>
+  include <span style="color:#036;font-weight:bold">M</span>
+  include <span style="color:#036;font-weight:bold">N</span>
+<span style="color:#080;font-weight:bold">end</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>上面的例子执行 report 方法结果会是</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./multi_include.rb</span><span style="color:#710">'</span></span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">true</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; <span style="color:#036;font-weight:bold">C</span>.new.report
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">report</span><span style="color:#710">'</span></span> method <span style="color:#080;font-weight:bold">in</span> <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">N</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span> =&gt; <span style="color:#069">nil</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+</pre></td>
+  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./multi_include.rb</span><span style="color:#710">'</span></span>
+ =&gt; <span style="color:#069">true</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; <span style="color:#036;font-weight:bold">C</span>.new.report
+<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">report</span><span style="color:#710">'</span></span> method <span style="color:#080;font-weight:bold">in</span> <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">N</span>
+ =&gt; <span style="color:#069">nil</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>如果是</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">C</span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  include <span style="color:#036;font-weight:bold">M</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  include <span style="color:#036;font-weight:bold">N</span>
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  include <span style="color:#036;font-weight:bold">M</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">C</span>
+  include <span style="color:#036;font-weight:bold">M</span>
+  include <span style="color:#036;font-weight:bold">N</span>
+  include <span style="color:#036;font-weight:bold">M</span>
+<span style="color:#080;font-weight:bold">end</span>
+</pre></td>
+</tr></table>
 </div>
 <p>按照2中的逻辑似乎该是 最下方的 M 优先，但实际上第二次 include 同名 module 是无效的，因此结果还是 N</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./multi_include.rb</span><span style="color:#710">'</span></span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">true</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; <span style="color:#036;font-weight:bold">C</span>.new.report
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">report</span><span style="color:#710">'</span></span> method <span style="color:#080;font-weight:bold">in</span> <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">N</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span> =&gt; <span style="color:#069">nil</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+</pre></td>
+  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./multi_include.rb</span><span style="color:#710">'</span></span>
+ =&gt; <span style="color:#069">true</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; <span style="color:#036;font-weight:bold">C</span>.new.report
+<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">report</span><span style="color:#710">'</span></span> method <span style="color:#080;font-weight:bold">in</span> <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">N</span>
+ =&gt; <span style="color:#069">nil</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>-</p>
@@ -414,57 +567,86 @@ cargohold 的例子演示了如何在class 中引入一个已经存在的module�
 
 <p>比如下面的例子</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">Greet</span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">say_hi</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hi, I am Greet</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Person</span>
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  prepend <span style="color:#036;font-weight:bold">Greet</span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">say_hi</span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hi, I am Person</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span>
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span>p <span style="color:#036;font-weight:bold">Person</span>.ancestors
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">Greet</span>
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">say_hi</span>
+    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hi, I am Greet</span><span style="color:#710">&quot;</span></span>
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Person</span>
+  prepend <span style="color:#036;font-weight:bold">Greet</span>
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">say_hi</span>
+    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hi, I am Person</span><span style="color:#710">&quot;</span></span>
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+p <span style="color:#036;font-weight:bold">Person</span>.ancestors
+</pre></td>
+</tr></table>
 </div>
 
 <p>输出是</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./prepend.rb</span><span style="color:#710">'</span></span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>[<span style="color:#036;font-weight:bold">Greet</span>, <span style="color:#036;font-weight:bold">Person</span>, <span style="color:#036;font-weight:bold">Object</span>, <span style="color:#036;font-weight:bold">Kernel</span>, <span style="color:#036;font-weight:bold">BasicObject</span>]
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span> =&gt; <span style="color:#069">true</span>
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt;
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./prepend.rb</span><span style="color:#710">'</span></span>
+[<span style="color:#036;font-weight:bold">Greet</span>, <span style="color:#036;font-weight:bold">Person</span>, <span style="color:#036;font-weight:bold">Object</span>, <span style="color:#036;font-weight:bold">Kernel</span>, <span style="color:#036;font-weight:bold">BasicObject</span>]
+ =&gt; <span style="color:#069">true</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt;
+</pre></td>
+</tr></table>
 </div>
 
 <p>然后把prepend 改成 include 看看继承链上顺序的变化</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./prepend.rb</span><span style="color:#710">'</span></span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>[<span style="color:#036;font-weight:bold">Person</span>, <span style="color:#036;font-weight:bold">Greet</span>, <span style="color:#036;font-weight:bold">Object</span>, <span style="color:#036;font-weight:bold">Kernel</span>, <span style="color:#036;font-weight:bold">BasicObject</span>]
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span> =&gt; <span style="color:#069">true</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./prepend.rb</span><span style="color:#710">'</span></span>
+[<span style="color:#036;font-weight:bold">Person</span>, <span style="color:#036;font-weight:bold">Greet</span>, <span style="color:#036;font-weight:bold">Object</span>, <span style="color:#036;font-weight:bold">Kernel</span>, <span style="color:#036;font-weight:bold">BasicObject</span>]
+ =&gt; <span style="color:#069">true</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>被class prepend的module 会在 lookup path 中出现在 class 之前的位置。</p>
 
 <p>使用 .ancestors 可以查看某个 class对象的祖先血统</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Person</span>; <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">nil</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; <span style="color:#036;font-weight:bold">Person</span>.ancestors
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; [<span style="color:#036;font-weight:bold">Person</span>, <span style="color:#036;font-weight:bold">Object</span>, <span style="color:#036;font-weight:bold">Kernel</span>, <span style="color:#036;font-weight:bold">BasicObject</span>]
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Person</span>; <span style="color:#080;font-weight:bold">end</span>
+ =&gt; <span style="color:#069">nil</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; <span style="color:#036;font-weight:bold">Person</span>.ancestors
+ =&gt; [<span style="color:#036;font-weight:bold">Person</span>, <span style="color:#036;font-weight:bold">Object</span>, <span style="color:#036;font-weight:bold">Kernel</span>, <span style="color:#036;font-weight:bold">BasicObject</span>]
+</pre></td>
+</tr></table>
 </div>
 
 <p>You can use prepend when you want a module’s version of one or more methods to take precedence over the versions defined in a given class. As mentioned earlier, prepend is new in Ruby 2.0. You won’t see it used much, at least not yet. But it’s useful to know it’s there, both so that you can use it if you need it and so that you’ll know what it means if you encounter it in someone else’s code.</p>
@@ -493,62 +675,104 @@ cargohold 的例子演示了如何在class 中引入一个已经存在的module�
 <p>super 方法在 method 内部使用。
 目的是尝试去找到methods lookup path下一个与该method 同名的 method 并执行一次。这个功能类似 method 内部的 迷你版的 mixin searching</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">M</span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">report</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">'report' method in module M</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">C</span>
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  include <span style="color:#036;font-weight:bold">M</span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">report</span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">'report' method in class C</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">About to trigger the next higher-up report method ...</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="color:#080;font-weight:bold">super</span>
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Back from the 'super' call.</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n16" name="n16">16</a></span>
-<span class="line-numbers"><a href="#n17" name="n17">17</a></span>c = <span style="color:#036;font-weight:bold">C</span>.new
-<span class="line-numbers"><a href="#n18" name="n18">18</a></span>c.report
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<strong><a href="#n15" name="n15">15</a></strong>
+<a href="#n16" name="n16">16</a>
+<a href="#n17" name="n17">17</a>
+<a href="#n18" name="n18">18</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">M</span>
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">report</span>
+    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">'report' method in module M</span><span style="color:#710">&quot;</span></span>
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">C</span>
+  include <span style="color:#036;font-weight:bold">M</span>
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">report</span>
+    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">'report' method in class C</span><span style="color:#710">&quot;</span></span>
+    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">About to trigger the next higher-up report method ...</span><span style="color:#710">&quot;</span></span>
+    <span style="color:#080;font-weight:bold">super</span>
+    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Back from the 'super' call.</span><span style="color:#710">&quot;</span></span>
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+c = <span style="color:#036;font-weight:bold">C</span>.new
+c.report
+</pre></td>
+</tr></table>
 </div>
 <p>输出</p>
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./super.rb</span><span style="color:#710">'</span></span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">report</span><span style="color:#710">'</span></span> method <span style="color:#080;font-weight:bold">in</span> <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">C</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#036;font-weight:bold">About</span> to trigger the <span style="color:#080;font-weight:bold">next</span> higher-up report method ...
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">report</span><span style="color:#710">'</span></span> method <span style="color:#080;font-weight:bold">in</span> <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">M</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#036;font-weight:bold">Back</span> from the <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">super</span><span style="color:#710">'</span></span> call.
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#069">true</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./super.rb</span><span style="color:#710">'</span></span>
+<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">report</span><span style="color:#710">'</span></span> method <span style="color:#080;font-weight:bold">in</span> <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">C</span>
+<span style="color:#036;font-weight:bold">About</span> to trigger the <span style="color:#080;font-weight:bold">next</span> higher-up report method ...
+<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">report</span><span style="color:#710">'</span></span> method <span style="color:#080;font-weight:bold">in</span> <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">M</span>
+<span style="color:#036;font-weight:bold">Back</span> from the <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">super</span><span style="color:#710">'</span></span> call.
+ =&gt; <span style="color:#069">true</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>Sometimes, particularly when you’re writing a subclass, a method in an existing class does almost but not quite what you want. With super, you can have the best of both worlds by hooking into or wrapping the original method, as the next listing illustrates.</p>
 
 <p>有时，特别是当你在写一个 subclass 时，另一个class中存在的method或许并不是你想要的。使用super你可以远程呼叫到其他 lookup path 中的方法或者使用当前版本的 method 。</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Bicycle</span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  attr_reader <span style="color:#A60">:gears</span>, <span style="color:#A60">:wheels</span>, <span style="color:#A60">:seats</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(gears = <span style="color:#00D">1</span>)
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#33B">@wheels</span> = <span style="color:#00D">2</span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#33B">@seats</span> = <span style="color:#00D">1</span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#33B">@gears</span> = gears
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Tandem</span> &lt; <span style="color:#036;font-weight:bold">Bicycle</span> <span style="color:#777"># tandem 双人自行车</span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(gears)
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="color:#080;font-weight:bold">super</span>
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    <span style="color:#33B">@seats</span> = <span style="color:#00D">2</span>
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<strong><a href="#n15" name="n15">15</a></strong>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Bicycle</span>
+  attr_reader <span style="color:#A60">:gears</span>, <span style="color:#A60">:wheels</span>, <span style="color:#A60">:seats</span>
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(gears = <span style="color:#00D">1</span>)
+    <span style="color:#33B">@wheels</span> = <span style="color:#00D">2</span>
+    <span style="color:#33B">@seats</span> = <span style="color:#00D">1</span>
+    <span style="color:#33B">@gears</span> = gears
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Tandem</span> &lt; <span style="color:#036;font-weight:bold">Bicycle</span> <span style="color:#777"># tandem 双人自行车</span>
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(gears)
+    <span style="color:#080;font-weight:bold">super</span>
+    <span style="color:#33B">@seats</span> = <span style="color:#00D">2</span>
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>super provides a clean way to make a tandem almost like a bicycle. We change only what needs to be changed (the number of seats ), and super triggers the earlier initialize method , which sets bicycle-like default values for the other properties of the tandem.
@@ -583,70 +807,112 @@ cargohold 的例子演示了如何在class 中引入一个已经存在的module�
 
 <p>常见的报错是</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">C</span>; <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">nil</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; <span style="color:#036;font-weight:bold">C</span>.new.unknown
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>        <span style="color:#00D">2</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from (irb):2</span></span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">NoMethodError (undefined method </span><span style="color:#161">`</span></span>unknown<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"> for #&lt;C:0x00007fec93060e50&gt;)</span></span>
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :003 &gt;</span></span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">C</span>; <span style="color:#080;font-weight:bold">end</span>
+ =&gt; <span style="color:#069">nil</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; <span style="color:#036;font-weight:bold">C</span>.new.unknown
+<span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
+        <span style="color:#00D">2</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'
+        1: from (irb):2
+NoMethodError (undefined method </span><span style="color:#161">`</span></span>unknown<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"> for #&lt;C:0x00007fec93060e50&gt;)
+2.5.0 :003 &gt;
+</span></span></pre></td>
+</tr></table>
 </div>
 
 <p>ruby 在报错中提到了错误 method 的名字 所以 method_missing 这个方法 至少需要接受一个 参数 即送给 object 的method的名称</p>
 
 <p>http://ruby-doc.org/core-2.5.0/BasicObject.html#method-i-method_missing</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">A</span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">method_missing</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span>?&gt;     puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Miss miss miss</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span>?&gt;     <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#A60">:method_missing</span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; <span style="color:#036;font-weight:bold">A</span>.new.unknown
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>        <span style="color:#00D">3</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        2: from (irb):6</span></span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from (irb):2:in </span><span style="color:#161">`</span></span>method_missing<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"></span></span>
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">ArgumentError (wrong number of arguments (given 1, expected 0))</span></span>
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :007 &gt;</span></span>
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :008 &gt; class B</span></span>
-<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :009?&gt;   def method_missing(m)</span></span>
-<span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :010?&gt;     puts &quot;Miss miss miss&quot;</span></span>
-<span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :011?&gt;     end</span></span>
-<span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :012?&gt;   end</span></span>
-<span class="line-numbers"><a href="#n19" name="n19">19</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> =&gt; :method_missing</span></span>
-<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :013 &gt; B.new.unknown</span></span>
-<span class="line-numbers"><a href="#n21" name="n21">21</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">Miss miss miss</span></span>
-<span class="line-numbers"><a href="#n22" name="n22">22</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> =&gt; nil</span></span>
-<span class="line-numbers"><a href="#n23" name="n23">23</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<strong><a href="#n15" name="n15">15</a></strong>
+<a href="#n16" name="n16">16</a>
+<a href="#n17" name="n17">17</a>
+<a href="#n18" name="n18">18</a>
+<a href="#n19" name="n19">19</a>
+<strong><a href="#n20" name="n20">20</a></strong>
+<a href="#n21" name="n21">21</a>
+<a href="#n22" name="n22">22</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">A</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span>?&gt;   <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">method_missing</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span>?&gt;     puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Miss miss miss</span><span style="color:#710">&quot;</span></span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span>?&gt;     <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
+ =&gt; <span style="color:#A60">:method_missing</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; <span style="color:#036;font-weight:bold">A</span>.new.unknown
+<span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
+        <span style="color:#00D">3</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'
+        2: from (irb):6
+        1: from (irb):2:in </span><span style="color:#161">`</span></span>method_missing<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">
+ArgumentError (wrong number of arguments (given 1, expected 0))
+2.5.0 :007 &gt;
+2.5.0 :008 &gt; class B
+2.5.0 :009?&gt;   def method_missing(m)
+2.5.0 :010?&gt;     puts &quot;Miss miss miss&quot;
+2.5.0 :011?&gt;     end
+2.5.0 :012?&gt;   end
+ =&gt; :method_missing
+2.5.0 :013 &gt; B.new.unknown
+Miss miss miss
+ =&gt; nil
+</span></span></pre></td>
+</tr></table>
 </div>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span> &gt; method(<span style="color:#A60">:method_missing</span>).owner
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#036;font-weight:bold">BasicObject</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span> &gt; method(<span style="color:#A60">:method_missing</span>).owner
+ =&gt; <span style="color:#036;font-weight:bold">BasicObject</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>ruby doc 中也提到可以改写标准的 method_missing 行为来提供更加灵活的错误信息</p>
 
 <p>书中提到的版本添加了一个 <code>*args</code> 来吸掉剩余的所有参数</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">def</span> o.<span style="color:#06B;font-weight:bold">method_missing</span>(m, *args)
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span> <span style="color:#777"># do some</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>o = <span style="color:#036;font-weight:bold">Object</span>.new
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>o.unknown
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">def</span> o.<span style="color:#06B;font-weight:bold">method_missing</span>(m, *args)
+ <span style="color:#777"># do some</span>
+<span style="color:#080;font-weight:bold">end</span>
+
+o = <span style="color:#036;font-weight:bold">Object</span>.new
+o.unknown
+</pre></td>
+</tr></table>
 </div>
 
 <p><code>*arg</code>的存在增加了这个方法的灵活性</p>
@@ -655,34 +921,56 @@ cargohold 的例子演示了如何在class 中引入一个已经存在的module�
 
 <p>所以如果要在 method_missing 内部对 m 作调整或限定，要先把 m 转为 string</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Student</span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">method_missing</span>(m, *args)
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">if</span> m.to_s.start_with?(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">grade_for</span><span style="color:#710">&quot;</span></span>)
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">New method name is </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>m<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#080;font-weight:bold">else</span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      <span style="color:#080;font-weight:bold">super</span>
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#080;font-weight:bold">end</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Student</span>
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">method_missing</span>(m, *args)
+    <span style="color:#080;font-weight:bold">if</span> m.to_s.start_with?(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">grade_for</span><span style="color:#710">&quot;</span></span>)
+      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">New method name is </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>m<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
+    <span style="color:#080;font-weight:bold">else</span>
+      <span style="color:#080;font-weight:bold">super</span>
+    <span style="color:#080;font-weight:bold">end</span>
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+</pre></td>
+</tr></table>
 </div>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./student.rb</span><span style="color:#710">'</span></span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">true</span>
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; <span style="color:#036;font-weight:bold">Student</span>.new.grade_for_twelve
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#036;font-weight:bold">New</span> method name is grade_for_twelve
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span> =&gt; <span style="color:#069">nil</span>
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; <span style="color:#036;font-weight:bold">Student</span>.new.standup
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>        <span style="color:#00D">3</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        2: from (irb):3</span></span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from /Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/student.rb:6:in </span><span style="color:#161">`</span></span>method_missing<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"></span></span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">NoMethodError (undefined method `standup</span><span style="color:#710">'</span></span> <span style="color:#080;font-weight:bold">for</span> <span style="color:#777">#&lt;Student:0x00007ffe75836fc8&gt;)</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./student.rb</span><span style="color:#710">'</span></span>
+ =&gt; <span style="color:#069">true</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; <span style="color:#036;font-weight:bold">Student</span>.new.grade_for_twelve
+<span style="color:#036;font-weight:bold">New</span> method name is grade_for_twelve
+ =&gt; <span style="color:#069">nil</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; <span style="color:#036;font-weight:bold">Student</span>.new.standup
+<span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
+        <span style="color:#00D">3</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'
+        2: from (irb):3
+        1: from /Users/caven/Notes &amp; Articles/Note of Rubyist/code examples/student.rb:6:in </span><span style="color:#161">`</span></span>method_missing<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">
+NoMethodError (undefined method `standup</span><span style="color:#710">'</span></span> <span style="color:#080;font-weight:bold">for</span> <span style="color:#777">#&lt;Student:0x00007ffe75836fc8&gt;)</span>
+</pre></td>
+</tr></table>
 </div>
 
 <p>上面的 method_missing 加入了条件判断</p>
@@ -694,71 +982,134 @@ cargohold 的例子演示了如何在class 中引入一个已经存在的module�
 
 <p>start_with?()  方法检测字串开头是否与给出参数字串相同</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Person</span>
-<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#036;font-weight:bold">PEOPLE</span> = []
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  attr_reader <span style="color:#A60">:name</span>, <span style="color:#A60">:friends</span>, <span style="color:#A60">:hobbies</span>
-<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>
-<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(name)
-<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#33B">@name</span> = name
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#33B">@friends</span> = []
-<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#33B">@hobbies</span> = []
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span style="color:#036;font-weight:bold">PEOPLE</span> &lt;&lt; <span style="color:#069">self</span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>
-<span class="line-numbers"><a href="#n12" name="n12">12</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">has_friend</span>(friend)
-<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    <span style="color:#33B">@friends</span> &lt;&lt; friend
-<span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n15" name="n15">15</a></span>
-<span class="line-numbers"><a href="#n16" name="n16">16</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">has_hobby</span>(hobby)
-<span class="line-numbers"><a href="#n17" name="n17">17</a></span>    <span style="color:#33B">@hobbies</span> &lt;&lt; hobby
-<span class="line-numbers"><a href="#n18" name="n18">18</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n19" name="n19">19</a></span>
-<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">method_missing</span>(m, *args)
-<span class="line-numbers"><a href="#n21" name="n21">21</a></span>    method = m.to_s
-<span class="line-numbers"><a href="#n22" name="n22">22</a></span>    <span style="color:#080;font-weight:bold">if</span> method.start_with?(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">all_with_</span><span style="color:#710">&quot;</span></span>)
-<span class="line-numbers"><a href="#n23" name="n23">23</a></span>      attr = method[<span style="color:#00D">9</span>..<span style="color:#00D">-1</span>]
-<span class="line-numbers"><a href="#n24" name="n24">24</a></span>      <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">self</span>.public_method_defined?(attr)
-<span class="line-numbers"><a href="#n25" name="n25">25</a></span>        <span style="color:#036;font-weight:bold">PEOPLE</span>.find_all <span style="color:#080;font-weight:bold">do</span> |person|
-<span class="line-numbers"><a href="#n26" name="n26">26</a></span>          person.send(attr).include?(args[<span style="color:#00D">0</span>])
-<span class="line-numbers"><a href="#n27" name="n27">27</a></span>        <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n28" name="n28">28</a></span>      <span style="color:#080;font-weight:bold">else</span>
-<span class="line-numbers"><a href="#n29" name="n29">29</a></span>        raise <span style="color:#036;font-weight:bold">ArgumentError</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Cannot find attribute: </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>attr<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>      <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n31" name="n31">31</a></span>    <span style="color:#080;font-weight:bold">else</span>
-<span class="line-numbers"><a href="#n32" name="n32">32</a></span>      <span style="color:#080;font-weight:bold">super</span>
-<span class="line-numbers"><a href="#n33" name="n33">33</a></span>    <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n34" name="n34">34</a></span>  <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n35" name="n35">35</a></span>
-<span class="line-numbers"><a href="#n36" name="n36">36</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n37" name="n37">37</a></span>
-<span class="line-numbers"><a href="#n38" name="n38">38</a></span>j = <span style="color:#036;font-weight:bold">Person</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">John</span><span style="color:#710">&quot;</span></span>)
-<span class="line-numbers"><a href="#n39" name="n39">39</a></span>p = <span style="color:#036;font-weight:bold">Person</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Paul</span><span style="color:#710">&quot;</span></span>)
-<span class="line-numbers"><strong><a href="#n40" name="n40">40</a></strong></span>g = <span style="color:#036;font-weight:bold">Person</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">George</span><span style="color:#710">&quot;</span></span>)
-<span class="line-numbers"><a href="#n41" name="n41">41</a></span>r = <span style="color:#036;font-weight:bold">Person</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ringo</span><span style="color:#710">&quot;</span></span>)
-<span class="line-numbers"><a href="#n42" name="n42">42</a></span>j.has_friend(p)
-<span class="line-numbers"><a href="#n43" name="n43">43</a></span>j.has_friend(g)
-<span class="line-numbers"><a href="#n44" name="n44">44</a></span>g.has_friend(p)
-<span class="line-numbers"><a href="#n45" name="n45">45</a></span>r.has_hobby(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">rings</span><span style="color:#710">&quot;</span></span>)
-<span class="line-numbers"><a href="#n46" name="n46">46</a></span>
-<span class="line-numbers"><a href="#n47" name="n47">47</a></span><span style="color:#036;font-weight:bold">Person</span>.all_with_friends(p).each <span style="color:#080;font-weight:bold">do</span> |person|
-<span class="line-numbers"><a href="#n48" name="n48">48</a></span>  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>person.name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> is friends with </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>p.name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><a href="#n49" name="n49">49</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><strong><a href="#n50" name="n50">50</a></strong></span>
-<span class="line-numbers"><a href="#n51" name="n51">51</a></span><span style="color:#036;font-weight:bold">Person</span>.all_with_hobbies(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">rings</span><span style="color:#710">&quot;</span></span>).each <span style="color:#080;font-weight:bold">do</span> |person|
-<span class="line-numbers"><a href="#n52" name="n52">52</a></span>  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>person.name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> is into rings</span><span style="color:#710">&quot;</span></span>
-<span class="line-numbers"><a href="#n53" name="n53">53</a></span><span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n54" name="n54">54</a></span>
-<span class="line-numbers"><a href="#n55" name="n55">55</a></span><span style="color:#777"># 代码报错，暂未查明原因</span>
-<span class="line-numbers"><a href="#n56" name="n56">56</a></span><span style="color:#777"># John is friends with Paul</span>
-<span class="line-numbers"><a href="#n57" name="n57">57</a></span><span style="color:#777"># person_my.rb:32:in `method_missing': undefined method ` ' for Person:Class (NoMethodError)</span>
-<span class="line-numbers"><a href="#n58" name="n58">58</a></span><span style="color:#777">#         from person_my.rb:49:in `block in &lt;class:Person&gt;'</span>
-<span class="line-numbers"><a href="#n59" name="n59">59</a></span><span style="color:#777">#         from person_my.rb:47:in `each'</span>
-<span class="line-numbers"><strong><a href="#n60" name="n60">60</a></strong></span><span style="color:#777">#         from person_my.rb:47:in `&lt;class:Person&gt;'</span>
-<span class="line-numbers"><a href="#n61" name="n61">61</a></span><span style="color:#777">#         from person_my.rb:1:in `&lt;main&gt;'</span>
-<span class="line-numbers"><a href="#n62" name="n62">62</a></span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<strong><a href="#n15" name="n15">15</a></strong>
+<a href="#n16" name="n16">16</a>
+<a href="#n17" name="n17">17</a>
+<a href="#n18" name="n18">18</a>
+<a href="#n19" name="n19">19</a>
+<strong><a href="#n20" name="n20">20</a></strong>
+<a href="#n21" name="n21">21</a>
+<a href="#n22" name="n22">22</a>
+<a href="#n23" name="n23">23</a>
+<a href="#n24" name="n24">24</a>
+<strong><a href="#n25" name="n25">25</a></strong>
+<a href="#n26" name="n26">26</a>
+<a href="#n27" name="n27">27</a>
+<a href="#n28" name="n28">28</a>
+<a href="#n29" name="n29">29</a>
+<strong><a href="#n30" name="n30">30</a></strong>
+<a href="#n31" name="n31">31</a>
+<a href="#n32" name="n32">32</a>
+<a href="#n33" name="n33">33</a>
+<a href="#n34" name="n34">34</a>
+<strong><a href="#n35" name="n35">35</a></strong>
+<a href="#n36" name="n36">36</a>
+<a href="#n37" name="n37">37</a>
+<a href="#n38" name="n38">38</a>
+<a href="#n39" name="n39">39</a>
+<strong><a href="#n40" name="n40">40</a></strong>
+<a href="#n41" name="n41">41</a>
+<a href="#n42" name="n42">42</a>
+<a href="#n43" name="n43">43</a>
+<a href="#n44" name="n44">44</a>
+<strong><a href="#n45" name="n45">45</a></strong>
+<a href="#n46" name="n46">46</a>
+<a href="#n47" name="n47">47</a>
+<a href="#n48" name="n48">48</a>
+<a href="#n49" name="n49">49</a>
+<strong><a href="#n50" name="n50">50</a></strong>
+<a href="#n51" name="n51">51</a>
+<a href="#n52" name="n52">52</a>
+<a href="#n53" name="n53">53</a>
+<a href="#n54" name="n54">54</a>
+<strong><a href="#n55" name="n55">55</a></strong>
+<a href="#n56" name="n56">56</a>
+<a href="#n57" name="n57">57</a>
+<a href="#n58" name="n58">58</a>
+<a href="#n59" name="n59">59</a>
+<strong><a href="#n60" name="n60">60</a></strong>
+<a href="#n61" name="n61">61</a>
+<a href="#n62" name="n62">62</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Person</span>
+  <span style="color:#036;font-weight:bold">PEOPLE</span> = []
+  attr_reader <span style="color:#A60">:name</span>, <span style="color:#A60">:friends</span>, <span style="color:#A60">:hobbies</span>
+
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(name)
+    <span style="color:#33B">@name</span> = name
+    <span style="color:#33B">@friends</span> = []
+    <span style="color:#33B">@hobbies</span> = []
+    <span style="color:#036;font-weight:bold">PEOPLE</span> &lt;&lt; <span style="color:#069">self</span>
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">has_friend</span>(friend)
+    <span style="color:#33B">@friends</span> &lt;&lt; friend
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">has_hobby</span>(hobby)
+    <span style="color:#33B">@hobbies</span> &lt;&lt; hobby
+  <span style="color:#080;font-weight:bold">end</span>
+
+  <span style="color:#080;font-weight:bold">def</span> <span style="color:#069">self</span>.<span style="color:#06B;font-weight:bold">method_missing</span>(m, *args)
+    method = m.to_s
+    <span style="color:#080;font-weight:bold">if</span> method.start_with?(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">all_with_</span><span style="color:#710">&quot;</span></span>)
+      attr = method[<span style="color:#00D">9</span>..<span style="color:#00D">-1</span>]
+      <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">self</span>.public_method_defined?(attr)
+        <span style="color:#036;font-weight:bold">PEOPLE</span>.find_all <span style="color:#080;font-weight:bold">do</span> |person|
+          person.send(attr).include?(args[<span style="color:#00D">0</span>])
+        <span style="color:#080;font-weight:bold">end</span>
+      <span style="color:#080;font-weight:bold">else</span>
+        raise <span style="color:#036;font-weight:bold">ArgumentError</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Cannot find attribute: </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>attr<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
+      <span style="color:#080;font-weight:bold">end</span>
+    <span style="color:#080;font-weight:bold">else</span>
+      <span style="color:#080;font-weight:bold">super</span>
+    <span style="color:#080;font-weight:bold">end</span>
+  <span style="color:#080;font-weight:bold">end</span>
+
+<span style="color:#080;font-weight:bold">end</span>
+
+j = <span style="color:#036;font-weight:bold">Person</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">John</span><span style="color:#710">&quot;</span></span>)
+p = <span style="color:#036;font-weight:bold">Person</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Paul</span><span style="color:#710">&quot;</span></span>)
+g = <span style="color:#036;font-weight:bold">Person</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">George</span><span style="color:#710">&quot;</span></span>)
+r = <span style="color:#036;font-weight:bold">Person</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Ringo</span><span style="color:#710">&quot;</span></span>)
+j.has_friend(p)
+j.has_friend(g)
+g.has_friend(p)
+r.has_hobby(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">rings</span><span style="color:#710">&quot;</span></span>)
+
+<span style="color:#036;font-weight:bold">Person</span>.all_with_friends(p).each <span style="color:#080;font-weight:bold">do</span> |person|
+  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>person.name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> is friends with </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>p.name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
+<span style="color:#080;font-weight:bold">end</span>
+
+<span style="color:#036;font-weight:bold">Person</span>.all_with_hobbies(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">rings</span><span style="color:#710">&quot;</span></span>).each <span style="color:#080;font-weight:bold">do</span> |person|
+  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>person.name<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> is into rings</span><span style="color:#710">&quot;</span></span>
+<span style="color:#080;font-weight:bold">end</span>
+
+<span style="color:#777"># 代码报错，暂未查明原因</span>
+<span style="color:#777"># John is friends with Paul</span>
+<span style="color:#777"># person_my.rb:32:in `method_missing': undefined method ` ' for Person:Class (NoMethodError)</span>
+<span style="color:#777">#         from person_my.rb:49:in `block in &lt;class:Person&gt;'</span>
+<span style="color:#777">#         from person_my.rb:47:in `each'</span>
+<span style="color:#777">#         from person_my.rb:47:in `&lt;class:Person&gt;'</span>
+<span style="color:#777">#         from person_my.rb:1:in `&lt;main&gt;'</span>
+
+</pre></td>
+</tr></table>
 </div>
 
 <p>报错的原因是 <a href="https://en.wikipedia.org/wiki/Non-breaking_space">“non-breaking space”</a>,移除后恢复。</p>
@@ -789,30 +1140,46 @@ module 不存在继承动作。通常一类对象关于其实体信息的内容�
 
 <p>下面这样的事最好别做</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">Vehicle</span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>...
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">SelfPropelling</span>
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>...
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Truck</span> &lt; <span style="color:#036;font-weight:bold">SelfPropelling</span>
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>  include <span style="color:#036;font-weight:bold">Vehicle</span>
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span>...
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">Vehicle</span>
+...
+<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">SelfPropelling</span>
+...
+<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Truck</span> &lt; <span style="color:#036;font-weight:bold">SelfPropelling</span>
+  include <span style="color:#036;font-weight:bold">Vehicle</span>
+...
+</pre></td>
+</tr></table>
 </div>
 
 <p>Rather, you should do this: 你应该这样</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">SelfPropelling</span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span>...
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Vehicle</span>
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  include <span style="color:#036;font-weight:bold">SelfPropelling</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>...
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Truck</span> &lt; <span style="color:#036;font-weight:bold">Vehicle</span>
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span>...
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">SelfPropelling</span>
+...
+<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Vehicle</span>
+  include <span style="color:#036;font-weight:bold">SelfPropelling</span>
+...
+<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Truck</span> &lt; <span style="color:#036;font-weight:bold">Vehicle</span>
+...
+</pre></td>
+</tr></table>
 </div>
 
 <p>上面两个例子中，第二个例子从自然语言上理解更为顺畅</p>
@@ -827,16 +1194,24 @@ module 不存在继承动作。通常一类对象关于其实体信息的内容�
 
 <p>另一种组织方式是 nesting 风格</p>
 
-<div class="language-ruby highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">Tools</span>
-<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span>?&gt;   <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Hammer</span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span> =&gt; <span style="color:#069">nil</span>
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; h = <span style="color:#036;font-weight:bold">Tools</span>::<span style="color:#036;font-weight:bold">Hammer</span>.new
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span> =&gt; <span style="color:#777">#&lt;Tools::Hammer:0x00007fdd0d928848&gt;</span>
-</pre></div>
-</div>
+<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<strong><a href="#n5" name="n5">5</a></strong>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+</pre></td>
+  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; <span style="color:#080;font-weight:bold">module</span> <span style="color:#B06;font-weight:bold">Tools</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span>?&gt;   <span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Hammer</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
+ =&gt; <span style="color:#069">nil</span>
+<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; h = <span style="color:#036;font-weight:bold">Tools</span>::<span style="color:#036;font-weight:bold">Hammer</span>.new
+ =&gt; <span style="color:#777">#&lt;Tools::Hammer:0x00007fdd0d928848&gt;</span>
+</pre></td>
+</tr></table>
 </div>
 <p>这种方式可以构建起 namespace 当有名称相同的 class 时可以使用</p>
 
