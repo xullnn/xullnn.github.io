@@ -284,54 +284,31 @@
 
 <p>python:</p>
 
-<div class="language-python highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">find_lowest_cost_node</span>(costs):
-  lowest_cost = <span style="color:#369;font-weight:bold">float</span>(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">inf</span><span style="color:#710">&quot;</span></span>)
-  lowest_cost_node = <span style="color:#069">None</span>
-  <span style="color:#080;font-weight:bold">for</span> node <span style="color:#080;font-weight:bold">in</span> costs:
-    cost = costs[node]
-    <span style="color:#080;font-weight:bold">if</span> cost &lt; lowest_cost <span style="color:#080;font-weight:bold">and</span> node <span style="color:#080;font-weight:bold">not</span> <span style="color:#080;font-weight:bold">in</span> processed:
-      lowest_cost = cost
-      lowest_cost_node = node
-  <span style="color:#080;font-weight:bold">return</span> lowest_cost_node
-
-
-node = find_lowest_cost_node(costs) <span style="color:#777"># 初始化 costs</span>
-<span style="color:#080;font-weight:bold">while</span> node <span style="color:#080;font-weight:bold">is</span> <span style="color:#080;font-weight:bold">not</span> <span style="color:#069">None</span>:
-  cost = costs[node]
-  neighbors = graph[node]
-  <span style="color:#080;font-weight:bold">for</span> n <span style="color:#080;font-weight:bold">in</span> neighbors.keys():
-    new_cost = cost + neighbors[n]
-    <span style="color:#080;font-weight:bold">if</span> costs[n] &gt; new_cost:
-      costs[n] = new_cost
-      parents[n] = node
-  processed.append(node)
-  node = find_lowest_cost_node(costs) <span style="color:#777"># 找到下一个中心节点</span>
-</pre></td>
-</tr></table>
+<div class="language-python highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">find_lowest_cost_node</span>(costs):
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  lowest_cost = <span style="color:#369;font-weight:bold">float</span>(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">inf</span><span style="color:#710">&quot;</span></span>)
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  lowest_cost_node = <span style="color:#069">None</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">for</span> node <span style="color:#080;font-weight:bold">in</span> costs:
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    cost = costs[node]
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#080;font-weight:bold">if</span> cost &lt; lowest_cost <span style="color:#080;font-weight:bold">and</span> node <span style="color:#080;font-weight:bold">not</span> <span style="color:#080;font-weight:bold">in</span> processed:
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>      lowest_cost = cost
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>      lowest_cost_node = node
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  <span style="color:#080;font-weight:bold">return</span> lowest_cost_node
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>node = find_lowest_cost_node(costs) <span style="color:#777"># 初始化 costs</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#080;font-weight:bold">while</span> node <span style="color:#080;font-weight:bold">is</span> <span style="color:#080;font-weight:bold">not</span> <span style="color:#069">None</span>:
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>  cost = costs[node]
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  neighbors = graph[node]
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>  <span style="color:#080;font-weight:bold">for</span> n <span style="color:#080;font-weight:bold">in</span> neighbors.keys():
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>    new_cost = cost + neighbors[n]
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>    <span style="color:#080;font-weight:bold">if</span> costs[n] &gt; new_cost:
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>      costs[n] = new_cost
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>      parents[n] = node
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>  processed.append(node)
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>  node = find_lowest_cost_node(costs) <span style="color:#777"># 找到下一个中心节点</span>
+</pre></div>
+</div>
 </div>
 
 <h4 id="3-ruby-代码实现">3 Ruby 代码实现</h4>
@@ -350,180 +327,97 @@ node = find_lowest_cost_node(costs) <span style="color:#777"># 初始化 costs</
 
 <p>不然每次要改3个hash</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-<a href="#n23" name="n23">23</a>
-<a href="#n24" name="n24">24</a>
-<strong><a href="#n25" name="n25">25</a></strong>
-<a href="#n26" name="n26">26</a>
-<a href="#n27" name="n27">27</a>
-<a href="#n28" name="n28">28</a>
-<a href="#n29" name="n29">29</a>
-<strong><a href="#n30" name="n30">30</a></strong>
-<a href="#n31" name="n31">31</a>
-<a href="#n32" name="n32">32</a>
-<a href="#n33" name="n33">33</a>
-<a href="#n34" name="n34">34</a>
-<strong><a href="#n35" name="n35">35</a></strong>
-<a href="#n36" name="n36">36</a>
-<a href="#n37" name="n37">37</a>
-<a href="#n38" name="n38">38</a>
-<a href="#n39" name="n39">39</a>
-<strong><a href="#n40" name="n40">40</a></strong>
-<a href="#n41" name="n41">41</a>
-<a href="#n42" name="n42">42</a>
-<a href="#n43" name="n43">43</a>
-<a href="#n44" name="n44">44</a>
-<strong><a href="#n45" name="n45">45</a></strong>
-<a href="#n46" name="n46">46</a>
-<a href="#n47" name="n47">47</a>
-<a href="#n48" name="n48">48</a>
-<a href="#n49" name="n49">49</a>
-<strong><a href="#n50" name="n50">50</a></strong>
-<a href="#n51" name="n51">51</a>
-<a href="#n52" name="n52">52</a>
-<a href="#n53" name="n53">53</a>
-<a href="#n54" name="n54">54</a>
-<strong><a href="#n55" name="n55">55</a></strong>
-<a href="#n56" name="n56">56</a>
-<a href="#n57" name="n57">57</a>
-<a href="#n58" name="n58">58</a>
-<a href="#n59" name="n59">59</a>
-<strong><a href="#n60" name="n60">60</a></strong>
-<a href="#n61" name="n61">61</a>
-<a href="#n62" name="n62">62</a>
-<a href="#n63" name="n63">63</a>
-<a href="#n64" name="n64">64</a>
-<strong><a href="#n65" name="n65">65</a></strong>
-<a href="#n66" name="n66">66</a>
-<a href="#n67" name="n67">67</a>
-<a href="#n68" name="n68">68</a>
-<a href="#n69" name="n69">69</a>
-<strong><a href="#n70" name="n70">70</a></strong>
-<a href="#n71" name="n71">71</a>
-<a href="#n72" name="n72">72</a>
-<a href="#n73" name="n73">73</a>
-<a href="#n74" name="n74">74</a>
-<strong><a href="#n75" name="n75">75</a></strong>
-<a href="#n76" name="n76">76</a>
-</pre></td>
-  <td class="code"><pre>from_a = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">8</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">5</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">c</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span> } }
-from_b = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">13</span> } }
-from_c = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">c</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">5</span> } }
-from_d = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">1</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">6</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">3</span> } }
-from_e = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">1</span> } }
-from_f = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">3</span> } }
-from_g = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">6</span> } }
-from_h = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">0</span> }}
-
-graph_segments = [from_a, from_b, from_c, from_d, from_e, from_f, from_g, from_h].reduce { |graph, hash|  graph.merge! hash }
-
-<span style="color:#777"># ---------------------------------------------------------</span>
-
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">all_nodes</span>(graph_segments)
-  graph_segments.keys
-<span style="color:#080;font-weight:bold">end</span>
-
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize_costs</span>(all_nodes, source_vertex)
-  costs = { source_vertex =&gt; <span style="color:#00D">0</span> }
-  (all_nodes - [source_vertex]).each { |node| costs[node] = <span style="color:#036;font-weight:bold">Float</span>::<span style="color:#036;font-weight:bold">INFINITY</span> }
-  costs
-<span style="color:#080;font-weight:bold">end</span>
-
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize_parents</span>(nodes)
-  parents = {}
-  nodes.each { |node| parents[node] = <span style="color:#069">nil</span> }
-  parents
-<span style="color:#080;font-weight:bold">end</span>
-
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">calculate_costs</span>(graph_segments, source_vertex)
-    nodes = all_nodes(graph_segments)
-    current_proccessing_node = source_vertex
-    unproccessed_nodes = nodes
-    costs = initialize_costs(nodes, source_vertex)
-    parents = initialize_parents(nodes)
-
-    <span style="color:#080;font-weight:bold">while</span> unproccessed_nodes.include?(current_proccessing_node)
-      lowest_cost = costs[current_proccessing_node]
-      neighbors = graph_segments[current_proccessing_node].keys
-
-        neighbors.each <span style="color:#080;font-weight:bold">do</span> |neighbor|
-          new_cost = lowest_cost + graph_segments[current_proccessing_node][neighbor]
-          <span style="color:#080;font-weight:bold">if</span> new_cost &lt; costs[neighbor]
-            costs[neighbor] = new_cost
-            parents[neighbor] = current_proccessing_node
-          <span style="color:#080;font-weight:bold">end</span>
-        <span style="color:#080;font-weight:bold">end</span>
-
-      unproccessed_nodes -= [current_proccessing_node]
-      proccessed_nodes = nodes - unproccessed_nodes
-      lowest_cost = costs.values_at(*(unproccessed_nodes)).min
-      possible_lowest_cost_nodes = costs.select { |k, v| v == lowest_cost }
-        proccessed_nodes.each <span style="color:#080;font-weight:bold">do</span> |proccessed_node|
-          possible_lowest_cost_nodes.delete(proccessed_node)
-        <span style="color:#080;font-weight:bold">end</span>
-      current_proccessing_node = possible_lowest_cost_nodes.key(lowest_cost)
-    <span style="color:#080;font-weight:bold">end</span>
-
-    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#b0b">\n</span><span style="color:#D20">Final updated costs from source_vertex is: </span><span style="color:#b0b">\n</span><span style="color:#D20"> </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>costs<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
-    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#b0b">\n</span><span style="color:#D20">Following the lowest cost path, every node's parent is: </span><span style="color:#b0b">\n</span><span style="color:#D20"> </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>parents<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> </span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span>
-<span style="color:#080;font-weight:bold">end</span>
-
-calculate_costs(graph_segments, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a</span><span style="color:#710">&quot;</span></span>)
-
-
-<span style="color:#777"># Notice towarding the end of calculate_costs method, there is a possible_lowest_cost_nodes</span>
-<span style="color:#777"># The operations below aim to avoid situation like this:</span>
-<span style="color:#777"># At some point in costs, there might have multi nodes point to a same value</span>
-<span style="color:#777"># If these nodes include a proccessed one, it should have cleared out from</span>
-<span style="color:#777"># the unproccessed_nodes array</span>
-<span style="color:#777"># But if we use current_proccessing_node = costs.key(lowest_cost)</span>
-<span style="color:#777"># to update the node that will be handled in next loop, it may choose</span>
-<span style="color:#777"># the proccessed one.</span>
-<span style="color:#777"># Thus will lead while condition fail, then the whole procedure is broken</span>
-
-<span style="color:#777"># The solution is choosing next current_proccessing_node only from unproccessed_nodes</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>from_a = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">8</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">5</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">c</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span> } }
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>from_b = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">13</span> } }
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>from_c = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">c</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">5</span> } }
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>from_d = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">1</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">6</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">3</span> } }
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>from_e = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">1</span> } }
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>from_f = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">3</span> } }
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>from_g = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">6</span> } }
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>from_h = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">0</span> }}
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>graph_segments = [from_a, from_b, from_c, from_d, from_e, from_f, from_g, from_h].reduce { |graph, hash|  graph.merge! hash }
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#777"># ---------------------------------------------------------</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">all_nodes</span>(graph_segments)
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  graph_segments.keys
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize_costs</span>(all_nodes, source_vertex)
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>  costs = { source_vertex =&gt; <span style="color:#00D">0</span> }
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>  (all_nodes - [source_vertex]).each { |node| costs[node] = <span style="color:#036;font-weight:bold">Float</span>::<span style="color:#036;font-weight:bold">INFINITY</span> }
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>  costs
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize_parents</span>(nodes)
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>  parents = {}
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>  nodes.each { |node| parents[node] = <span style="color:#069">nil</span> }
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>  parents
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">calculate_costs</span>(graph_segments, source_vertex)
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>    nodes = all_nodes(graph_segments)
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span>    current_proccessing_node = source_vertex
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>    unproccessed_nodes = nodes
+<span class="line-numbers"><a href="#n34" name="n34">34</a></span>    costs = initialize_costs(nodes, source_vertex)
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span>    parents = initialize_parents(nodes)
+<span class="line-numbers"><a href="#n36" name="n36">36</a></span>
+<span class="line-numbers"><a href="#n37" name="n37">37</a></span>    <span style="color:#080;font-weight:bold">while</span> unproccessed_nodes.include?(current_proccessing_node)
+<span class="line-numbers"><a href="#n38" name="n38">38</a></span>      lowest_cost = costs[current_proccessing_node]
+<span class="line-numbers"><a href="#n39" name="n39">39</a></span>      neighbors = graph_segments[current_proccessing_node].keys
+<span class="line-numbers"><strong><a href="#n40" name="n40">40</a></strong></span>
+<span class="line-numbers"><a href="#n41" name="n41">41</a></span>        neighbors.each <span style="color:#080;font-weight:bold">do</span> |neighbor|
+<span class="line-numbers"><a href="#n42" name="n42">42</a></span>          new_cost = lowest_cost + graph_segments[current_proccessing_node][neighbor]
+<span class="line-numbers"><a href="#n43" name="n43">43</a></span>          <span style="color:#080;font-weight:bold">if</span> new_cost &lt; costs[neighbor]
+<span class="line-numbers"><a href="#n44" name="n44">44</a></span>            costs[neighbor] = new_cost
+<span class="line-numbers"><a href="#n45" name="n45">45</a></span>            parents[neighbor] = current_proccessing_node
+<span class="line-numbers"><a href="#n46" name="n46">46</a></span>          <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n47" name="n47">47</a></span>        <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n48" name="n48">48</a></span>
+<span class="line-numbers"><a href="#n49" name="n49">49</a></span>      unproccessed_nodes -= [current_proccessing_node]
+<span class="line-numbers"><strong><a href="#n50" name="n50">50</a></strong></span>      proccessed_nodes = nodes - unproccessed_nodes
+<span class="line-numbers"><a href="#n51" name="n51">51</a></span>      lowest_cost = costs.values_at(*(unproccessed_nodes)).min
+<span class="line-numbers"><a href="#n52" name="n52">52</a></span>      possible_lowest_cost_nodes = costs.select { |k, v| v == lowest_cost }
+<span class="line-numbers"><a href="#n53" name="n53">53</a></span>        proccessed_nodes.each <span style="color:#080;font-weight:bold">do</span> |proccessed_node|
+<span class="line-numbers"><a href="#n54" name="n54">54</a></span>          possible_lowest_cost_nodes.delete(proccessed_node)
+<span class="line-numbers"><a href="#n55" name="n55">55</a></span>        <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n56" name="n56">56</a></span>      current_proccessing_node = possible_lowest_cost_nodes.key(lowest_cost)
+<span class="line-numbers"><a href="#n57" name="n57">57</a></span>    <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n58" name="n58">58</a></span>
+<span class="line-numbers"><a href="#n59" name="n59">59</a></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#b0b">\n</span><span style="color:#D20">Final updated costs from source_vertex is: </span><span style="color:#b0b">\n</span><span style="color:#D20"> </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>costs<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><strong><a href="#n60" name="n60">60</a></strong></span>    puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#b0b">\n</span><span style="color:#D20">Following the lowest cost path, every node's parent is: </span><span style="color:#b0b">\n</span><span style="color:#D20"> </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>parents<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> </span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n61" name="n61">61</a></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n62" name="n62">62</a></span>
+<span class="line-numbers"><a href="#n63" name="n63">63</a></span>calculate_costs(graph_segments, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a</span><span style="color:#710">&quot;</span></span>)
+<span class="line-numbers"><a href="#n64" name="n64">64</a></span>
+<span class="line-numbers"><a href="#n65" name="n65">65</a></span>
+<span class="line-numbers"><a href="#n66" name="n66">66</a></span><span style="color:#777"># Notice towarding the end of calculate_costs method, there is a possible_lowest_cost_nodes</span>
+<span class="line-numbers"><a href="#n67" name="n67">67</a></span><span style="color:#777"># The operations below aim to avoid situation like this:</span>
+<span class="line-numbers"><a href="#n68" name="n68">68</a></span><span style="color:#777"># At some point in costs, there might have multi nodes point to a same value</span>
+<span class="line-numbers"><a href="#n69" name="n69">69</a></span><span style="color:#777"># If these nodes include a proccessed one, it should have cleared out from</span>
+<span class="line-numbers"><strong><a href="#n70" name="n70">70</a></strong></span><span style="color:#777"># the unproccessed_nodes array</span>
+<span class="line-numbers"><a href="#n71" name="n71">71</a></span><span style="color:#777"># But if we use current_proccessing_node = costs.key(lowest_cost)</span>
+<span class="line-numbers"><a href="#n72" name="n72">72</a></span><span style="color:#777"># to update the node that will be handled in next loop, it may choose</span>
+<span class="line-numbers"><a href="#n73" name="n73">73</a></span><span style="color:#777"># the proccessed one.</span>
+<span class="line-numbers"><a href="#n74" name="n74">74</a></span><span style="color:#777"># Thus will lead while condition fail, then the whole procedure is broken</span>
+<span class="line-numbers"><a href="#n75" name="n75">75</a></span>
+<span class="line-numbers"><a href="#n76" name="n76">76</a></span><span style="color:#777"># The solution is choosing next current_proccessing_node only from unproccessed_nodes</span>
+</pre></div>
+</div>
 </div>
 
 <p>结果</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-</pre></td>
-  <td class="code"><pre><span style="color:#036;font-weight:bold">Final</span> updated costs from source_vertex <span style="color:#606">is</span>:
- {<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">0</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">6</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">c</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">4</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">5</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">8</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">6</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">11</span>}
-
-<span style="color:#036;font-weight:bold">Following</span> the lowest cost path, every node<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">s parent is:
- {&quot;a&quot;=&gt;nil, &quot;b&quot;=&gt;&quot;d&quot;, &quot;c&quot;=&gt;&quot;a&quot;, &quot;d&quot;=&gt;&quot;c&quot;, &quot;e&quot;=&gt;&quot;d&quot;, &quot;f&quot;=&gt;&quot;g&quot;, &quot;g&quot;=&gt;&quot;e&quot;, &quot;h&quot;=&gt;&quot;f&quot;}
-</span></span></pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#036;font-weight:bold">Final</span> updated costs from source_vertex <span style="color:#606">is</span>:
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span> {<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">0</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">6</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">c</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">4</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">5</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">8</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">6</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">11</span>}
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#036;font-weight:bold">Following</span> the lowest cost path, every node<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">s parent is:</span></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> {&quot;a&quot;=&gt;nil, &quot;b&quot;=&gt;&quot;d&quot;, &quot;c&quot;=&gt;&quot;a&quot;, &quot;d&quot;=&gt;&quot;c&quot;, &quot;e&quot;=&gt;&quot;d&quot;, &quot;f&quot;=&gt;&quot;g&quot;, &quot;g&quot;=&gt;&quot;e&quot;, &quot;h&quot;=&gt;&quot;f&quot;}</span></span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
+</div>
 </div>
 
 <h5 id="32-使用-class-封装">3.2 使用 class 封装</h5>
@@ -532,160 +426,88 @@ calculate_costs(graph_segments, <span style="background-color:hsla(0,100%,50%,0.
 
 <p>将 dijkstra’s algorithm 写成一个 instance method 这样可以对不同的 graph 都进行计算，适用度更广。</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-<a href="#n23" name="n23">23</a>
-<a href="#n24" name="n24">24</a>
-<strong><a href="#n25" name="n25">25</a></strong>
-<a href="#n26" name="n26">26</a>
-<a href="#n27" name="n27">27</a>
-<a href="#n28" name="n28">28</a>
-<a href="#n29" name="n29">29</a>
-<strong><a href="#n30" name="n30">30</a></strong>
-<a href="#n31" name="n31">31</a>
-<a href="#n32" name="n32">32</a>
-<a href="#n33" name="n33">33</a>
-<a href="#n34" name="n34">34</a>
-<strong><a href="#n35" name="n35">35</a></strong>
-<a href="#n36" name="n36">36</a>
-<a href="#n37" name="n37">37</a>
-<a href="#n38" name="n38">38</a>
-<a href="#n39" name="n39">39</a>
-<strong><a href="#n40" name="n40">40</a></strong>
-<a href="#n41" name="n41">41</a>
-<a href="#n42" name="n42">42</a>
-<a href="#n43" name="n43">43</a>
-<a href="#n44" name="n44">44</a>
-<strong><a href="#n45" name="n45">45</a></strong>
-<a href="#n46" name="n46">46</a>
-<a href="#n47" name="n47">47</a>
-<a href="#n48" name="n48">48</a>
-<a href="#n49" name="n49">49</a>
-<strong><a href="#n50" name="n50">50</a></strong>
-<a href="#n51" name="n51">51</a>
-<a href="#n52" name="n52">52</a>
-<a href="#n53" name="n53">53</a>
-<a href="#n54" name="n54">54</a>
-<strong><a href="#n55" name="n55">55</a></strong>
-<a href="#n56" name="n56">56</a>
-<a href="#n57" name="n57">57</a>
-<a href="#n58" name="n58">58</a>
-<a href="#n59" name="n59">59</a>
-<strong><a href="#n60" name="n60">60</a></strong>
-<a href="#n61" name="n61">61</a>
-<a href="#n62" name="n62">62</a>
-<a href="#n63" name="n63">63</a>
-<a href="#n64" name="n64">64</a>
-<strong><a href="#n65" name="n65">65</a></strong>
-</pre></td>
-  <td class="code"><pre><span style="color:#777"># For every new Graph object</span>
-<span style="color:#777"># graph_segments is the hash we need to give, based on it, we get ` :nodes, :weights, :parents` while initializing a new Graph instance</span>
-<span style="color:#777"># Except for `:nodes` attribute, all the other attributes are implemented by hash.</span>
-
-
-<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Graph</span>
-  attr_accessor <span style="color:#A60">:nodes</span>, <span style="color:#A60">:graph_segments</span>, <span style="color:#A60">:weights</span>, <span style="color:#A60">:parents</span>
-
-  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(graph_segments)
-    <span style="color:#33B">@graph_segments</span> = graph_segments
-    <span style="color:#33B">@weights</span> = { }
-    <span style="color:#33B">@nodes</span> = graph_segments.keys
-    <span style="color:#33B">@nodes</span>.each { |node| <span style="color:#33B">@weights</span>[node] = <span style="color:#036;font-weight:bold">Float</span>::<span style="color:#036;font-weight:bold">INFINITY</span> }
-    <span style="color:#33B">@parents</span> = {}
-    <span style="color:#33B">@nodes</span>.each { |node| <span style="color:#33B">@parents</span>[node] = <span style="color:#069">nil</span> }
-  <span style="color:#080;font-weight:bold">end</span>
-
-
-  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">calculate_weights_from</span>(source_vertex)
-      weights[source_vertex] = <span style="color:#00D">0</span>
-      current_proccessing_node = source_vertex
-      unproccessed_nodes = nodes
-
-      <span style="color:#080;font-weight:bold">while</span> unproccessed_nodes.include?(current_proccessing_node)
-        lowest_weight = weights[current_proccessing_node]
-        neighbors = graph_segments[current_proccessing_node].keys
-
-          neighbors.each <span style="color:#080;font-weight:bold">do</span> |neighbor|
-            new_weight = lowest_weight + graph_segments[current_proccessing_node][neighbor]
-            <span style="color:#080;font-weight:bold">if</span> new_weight &lt; weights[neighbor]
-              weights[neighbor] = new_weight
-              parents[neighbor] = current_proccessing_node
-            <span style="color:#080;font-weight:bold">end</span>
-          <span style="color:#080;font-weight:bold">end</span>
-
-        unproccessed_nodes -= [current_proccessing_node]
-        proccessed_nodes = nodes - unproccessed_nodes
-        lowest_weight = weights.values_at(*(unproccessed_nodes)).min
-        possible_lowest_weight_nodes = weights.select { |k, v| v == lowest_weight }
-          proccessed_nodes.each <span style="color:#080;font-weight:bold">do</span> |proccessed_node|
-            possible_lowest_weight_nodes.delete(proccessed_node)
-          <span style="color:#080;font-weight:bold">end</span>
-        current_proccessing_node = possible_lowest_weight_nodes.key(lowest_weight)
-      <span style="color:#080;font-weight:bold">end</span>
-
-      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#b0b">\n</span><span style="color:#D20">Final updated weights from source_vertex is: </span><span style="color:#b0b">\n</span><span style="color:#D20"> </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>weights<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
-      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#b0b">\n</span><span style="color:#D20">Following the lowest weight path, every node's parent is: </span><span style="color:#b0b">\n</span><span style="color:#D20"> </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>parents<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> </span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span>
-  <span style="color:#080;font-weight:bold">end</span>
-
-<span style="color:#080;font-weight:bold">end</span>
-
-
-from_a = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">8</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">5</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">c</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span> } }
-from_b = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">13</span> } }
-from_c = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">c</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">5</span> } }
-from_d = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">1</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">6</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">3</span> } }
-from_e = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">1</span> } }
-from_f = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">3</span> } }
-from_g = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">6</span> } }
-from_h = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">0</span> }}
-
-graph_segments = [from_a, from_b, from_c, from_d, from_e, from_f, from_g, from_h].reduce { |graph, hash|  graph.merge! hash }
-
-graph = <span style="color:#036;font-weight:bold">Graph</span>.new(graph_segments)
-graph.calculate_weights_from(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a</span><span style="color:#710">&quot;</span></span>)
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#777"># For every new Graph object</span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#777"># graph_segments is the hash we need to give, based on it, we get ` :nodes, :weights, :parents` while initializing a new Graph instance</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#777"># Except for `:nodes` attribute, all the other attributes are implemented by hash.</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Graph</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  attr_accessor <span style="color:#A60">:nodes</span>, <span style="color:#A60">:graph_segments</span>, <span style="color:#A60">:weights</span>, <span style="color:#A60">:parents</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(graph_segments)
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    <span style="color:#33B">@graph_segments</span> = graph_segments
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>    <span style="color:#33B">@weights</span> = { }
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="color:#33B">@nodes</span> = graph_segments.keys
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    <span style="color:#33B">@nodes</span>.each { |node| <span style="color:#33B">@weights</span>[node] = <span style="color:#036;font-weight:bold">Float</span>::<span style="color:#036;font-weight:bold">INFINITY</span> }
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#33B">@parents</span> = {}
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    <span style="color:#33B">@nodes</span>.each { |node| <span style="color:#33B">@parents</span>[node] = <span style="color:#069">nil</span> }
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">calculate_weights_from</span>(source_vertex)
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>      weights[source_vertex] = <span style="color:#00D">0</span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>      current_proccessing_node = source_vertex
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>      unproccessed_nodes = nodes
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>      <span style="color:#080;font-weight:bold">while</span> unproccessed_nodes.include?(current_proccessing_node)
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>        lowest_weight = weights[current_proccessing_node]
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>        neighbors = graph_segments[current_proccessing_node].keys
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>          neighbors.each <span style="color:#080;font-weight:bold">do</span> |neighbor|
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>            new_weight = lowest_weight + graph_segments[current_proccessing_node][neighbor]
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>            <span style="color:#080;font-weight:bold">if</span> new_weight &lt; weights[neighbor]
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>              weights[neighbor] = new_weight
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span>              parents[neighbor] = current_proccessing_node
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>            <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n34" name="n34">34</a></span>          <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span>
+<span class="line-numbers"><a href="#n36" name="n36">36</a></span>        unproccessed_nodes -= [current_proccessing_node]
+<span class="line-numbers"><a href="#n37" name="n37">37</a></span>        proccessed_nodes = nodes - unproccessed_nodes
+<span class="line-numbers"><a href="#n38" name="n38">38</a></span>        lowest_weight = weights.values_at(*(unproccessed_nodes)).min
+<span class="line-numbers"><a href="#n39" name="n39">39</a></span>        possible_lowest_weight_nodes = weights.select { |k, v| v == lowest_weight }
+<span class="line-numbers"><strong><a href="#n40" name="n40">40</a></strong></span>          proccessed_nodes.each <span style="color:#080;font-weight:bold">do</span> |proccessed_node|
+<span class="line-numbers"><a href="#n41" name="n41">41</a></span>            possible_lowest_weight_nodes.delete(proccessed_node)
+<span class="line-numbers"><a href="#n42" name="n42">42</a></span>          <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n43" name="n43">43</a></span>        current_proccessing_node = possible_lowest_weight_nodes.key(lowest_weight)
+<span class="line-numbers"><a href="#n44" name="n44">44</a></span>      <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n45" name="n45">45</a></span>
+<span class="line-numbers"><a href="#n46" name="n46">46</a></span>      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#b0b">\n</span><span style="color:#D20">Final updated weights from source_vertex is: </span><span style="color:#b0b">\n</span><span style="color:#D20"> </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>weights<span style="font-weight:bold;color:#666">}</span></span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n47" name="n47">47</a></span>      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#b0b">\n</span><span style="color:#D20">Following the lowest weight path, every node's parent is: </span><span style="color:#b0b">\n</span><span style="color:#D20"> </span><span style="background-color:hsla(0,0%,0%,0.07);color:black"><span style="font-weight:bold;color:#666">#{</span>parents<span style="font-weight:bold;color:#666">}</span></span><span style="color:#D20"> </span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n48" name="n48">48</a></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n49" name="n49">49</a></span>
+<span class="line-numbers"><strong><a href="#n50" name="n50">50</a></strong></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n51" name="n51">51</a></span>
+<span class="line-numbers"><a href="#n52" name="n52">52</a></span>
+<span class="line-numbers"><a href="#n53" name="n53">53</a></span>from_a = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">8</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">5</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">c</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span> } }
+<span class="line-numbers"><a href="#n54" name="n54">54</a></span>from_b = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">13</span> } }
+<span class="line-numbers"><a href="#n55" name="n55">55</a></span>from_c = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">c</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">5</span> } }
+<span class="line-numbers"><a href="#n56" name="n56">56</a></span>from_d = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">1</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">6</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">3</span> } }
+<span class="line-numbers"><a href="#n57" name="n57">57</a></span>from_e = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">1</span> } }
+<span class="line-numbers"><a href="#n58" name="n58">58</a></span>from_f = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">3</span> } }
+<span class="line-numbers"><a href="#n59" name="n59">59</a></span>from_g = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">6</span> } }
+<span class="line-numbers"><strong><a href="#n60" name="n60">60</a></strong></span>from_h = { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span> =&gt; { <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">0</span> }}
+<span class="line-numbers"><a href="#n61" name="n61">61</a></span>
+<span class="line-numbers"><a href="#n62" name="n62">62</a></span>graph_segments = [from_a, from_b, from_c, from_d, from_e, from_f, from_g, from_h].reduce { |graph, hash|  graph.merge! hash }
+<span class="line-numbers"><a href="#n63" name="n63">63</a></span>
+<span class="line-numbers"><a href="#n64" name="n64">64</a></span>graph = <span style="color:#036;font-weight:bold">Graph</span>.new(graph_segments)
+<span class="line-numbers"><a href="#n65" name="n65">65</a></span>graph.calculate_weights_from(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a</span><span style="color:#710">&quot;</span></span>)
+</pre></div>
+</div>
 </div>
 
 <p>这里的结果和上面没有class的一样，这里并不一定要把 <code>a</code> 作为 souurce_vertex， 可以使用其他 vertex</p>
 
 <p>比如 c: <code>graph.calculate_weights_from("c")</code></p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-</pre></td>
-  <td class="code"><pre><span style="color:#036;font-weight:bold">Final</span> updated weights from source_vertex <span style="color:#606">is</span>:
- {<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#036;font-weight:bold">Infinity</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">4</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">c</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">0</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">3</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">6</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">4</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">9</span>}
-
-<span style="color:#036;font-weight:bold">Following</span> the lowest weight path, every node<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">s parent is:
- {&quot;a&quot;=&gt;nil, &quot;b&quot;=&gt;&quot;d&quot;, &quot;c&quot;=&gt;nil, &quot;d&quot;=&gt;&quot;c&quot;, &quot;e&quot;=&gt;&quot;d&quot;, &quot;f&quot;=&gt;&quot;g&quot;, &quot;g&quot;=&gt;&quot;e&quot;, &quot;h&quot;=&gt;&quot;f&quot;}
-</span></span></pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#036;font-weight:bold">Final</span> updated weights from source_vertex <span style="color:#606">is</span>:
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span> {<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#036;font-weight:bold">Infinity</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">4</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">c</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">0</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">2</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">3</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">6</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">4</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">9</span>}
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#036;font-weight:bold">Following</span> the lowest weight path, every node<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">s parent is:</span></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> {&quot;a&quot;=&gt;nil, &quot;b&quot;=&gt;&quot;d&quot;, &quot;c&quot;=&gt;nil, &quot;d&quot;=&gt;&quot;c&quot;, &quot;e&quot;=&gt;&quot;d&quot;, &quot;f&quot;=&gt;&quot;g&quot;, &quot;g&quot;=&gt;&quot;e&quot;, &quot;h&quot;=&gt;&quot;f&quot;}</span></span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
+</div>
 </div>
 
 <p>注意这里某些点对应的是 Infinity, 这是因为用于计算的 graph 是 directed graph 就是有向的，这意味着从某些点出发是不能到达某些点的。在定义 graph_segments 的时候，实际就定义好了 edges 的方向。比如 c 节点当时是这样定义的</p>
@@ -698,20 +520,14 @@ graph.calculate_weights_from(<span style="background-color:hsla(0,100%,50%,0.05)
 
 <p><code>graph.calculate_weights_from("h")</code></p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-</pre></td>
-  <td class="code"><pre><span style="color:#036;font-weight:bold">Final</span> updated weights from source_vertex <span style="color:#606">is</span>:
- {<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#036;font-weight:bold">Infinity</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#036;font-weight:bold">Infinity</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">c</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#036;font-weight:bold">Infinity</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#036;font-weight:bold">Infinity</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#036;font-weight:bold">Infinity</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#036;font-weight:bold">Infinity</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#036;font-weight:bold">Infinity</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">0</span>}
-
-<span style="color:#036;font-weight:bold">Following</span> the lowest weight path, every node<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">s parent is:
- {&quot;a&quot;=&gt;nil, &quot;b&quot;=&gt;nil, &quot;c&quot;=&gt;nil, &quot;d&quot;=&gt;nil, &quot;e&quot;=&gt;nil, &quot;f&quot;=&gt;nil, &quot;g&quot;=&gt;nil, &quot;h&quot;=&gt;nil}
-</span></span></pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#036;font-weight:bold">Final</span> updated weights from source_vertex <span style="color:#606">is</span>:
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span> {<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">a</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#036;font-weight:bold">Infinity</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">b</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#036;font-weight:bold">Infinity</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">c</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#036;font-weight:bold">Infinity</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">d</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#036;font-weight:bold">Infinity</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">e</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#036;font-weight:bold">Infinity</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">f</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#036;font-weight:bold">Infinity</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">g</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#036;font-weight:bold">Infinity</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">h</span><span style="color:#710">&quot;</span></span>=&gt;<span style="color:#00D">0</span>}
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#036;font-weight:bold">Following</span> the lowest weight path, every node<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">s parent is:</span></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> {&quot;a&quot;=&gt;nil, &quot;b&quot;=&gt;nil, &quot;c&quot;=&gt;nil, &quot;d&quot;=&gt;nil, &quot;e&quot;=&gt;nil, &quot;f&quot;=&gt;nil, &quot;g&quot;=&gt;nil, &quot;h&quot;=&gt;nil}</span></span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
+</div>
 </div>
 
 <hr />

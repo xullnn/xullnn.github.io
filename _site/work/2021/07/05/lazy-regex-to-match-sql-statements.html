@@ -61,36 +61,22 @@
 
   <p>In my recent work I had to extract regex statements from a <code>.sql</code> file, and get an array of strings. And I need a refresh on regular expression. A simplified example file may look like this <code>schema.sql</code>:</p>
 
-<div class="language-SQL highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#B06;font-weight:bold">CREATE</span> <span style="color:#339;font-weight:bold">TABLE</span> users (
-  id serial <span style="color:#088;font-weight:bold">PRIMARY</span> <span style="color:#339;font-weight:bold">KEY</span>,
-  nickname <span style="color:#0a8;font-weight:bold">varchar</span>(<span style="color:#00D">100</span>) <span style="color:#080;font-weight:bold">CHECK</span>(length(nickname) &gt; <span style="color:#00D">2</span>) <span style="color:#088;font-weight:bold">UNIQUE</span> <span style="color:#080;font-weight:bold">NOT</span> <span style="color:#069">NULL</span>
-);
-
-<span style="color:#777">-- This table holds food items such as egg, pork, fried potato, multiple food items</span>
-<span style="color:#B06;font-weight:bold">CREATE</span> <span style="color:#339;font-weight:bold">TABLE</span> food_items (
-  id serial <span style="color:#088;font-weight:bold">PRIMARY</span> <span style="color:#339;font-weight:bold">KEY</span>,
-  name <span style="color:#0a8;font-weight:bold">text</span> <span style="color:#080;font-weight:bold">NOT</span> <span style="color:#069">NULL</span> <span style="color:#088;font-weight:bold">UNIQUE</span> <span style="color:#080;font-weight:bold">CHECK</span> (length(name) &gt; <span style="color:#00D">2</span>),
-  amount <span style="color:#0a8;font-weight:bold">integer</span> <span style="color:#080;font-weight:bold">NOT</span> <span style="color:#069">NULL</span> <span style="color:#080;font-weight:bold">CHECK</span> (amount &gt; <span style="color:#00D">0</span>)
-);
-
-<span style="color:#777">-- more statements omitted</span>
-</pre></td>
-</tr></table>
+<div class="language-SQL highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#B06;font-weight:bold">CREATE</span> <span style="color:#339;font-weight:bold">TABLE</span> users (
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  id serial <span style="color:#088;font-weight:bold">PRIMARY</span> <span style="color:#339;font-weight:bold">KEY</span>,
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  nickname <span style="color:#0a8;font-weight:bold">varchar</span>(<span style="color:#00D">100</span>) <span style="color:#080;font-weight:bold">CHECK</span>(length(nickname) &gt; <span style="color:#00D">2</span>) <span style="color:#088;font-weight:bold">UNIQUE</span> <span style="color:#080;font-weight:bold">NOT</span> <span style="color:#069">NULL</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>);
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#777">-- This table holds food items such as egg, pork, fried potato, multiple food items</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#B06;font-weight:bold">CREATE</span> <span style="color:#339;font-weight:bold">TABLE</span> food_items (
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  id serial <span style="color:#088;font-weight:bold">PRIMARY</span> <span style="color:#339;font-weight:bold">KEY</span>,
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  name <span style="color:#0a8;font-weight:bold">text</span> <span style="color:#080;font-weight:bold">NOT</span> <span style="color:#069">NULL</span> <span style="color:#088;font-weight:bold">UNIQUE</span> <span style="color:#080;font-weight:bold">CHECK</span> (length(name) &gt; <span style="color:#00D">2</span>),
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  amount <span style="color:#0a8;font-weight:bold">integer</span> <span style="color:#080;font-weight:bold">NOT</span> <span style="color:#069">NULL</span> <span style="color:#080;font-weight:bold">CHECK</span> (amount &gt; <span style="color:#00D">0</span>)
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>);
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#777">-- more statements omitted</span>
+</pre></div>
+</div>
 </div>
 
 <h2 id="match-things-from-create-to-semicolon-">Match things from <code>CREATE</code> to semicolon <code>;</code></h2>
@@ -107,22 +93,15 @@
 
 <p>We can try in <code>Node.js</code> with the <code>fs</code> module:</p>
 
-<div class="language-js highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre>const fs = require(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">fs</span><span style="color:#710">'</span></span>);
-
-fs.readFile(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./db/schema.sql</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">utf8</span><span style="color:#710">'</span></span>, (err, data) =&gt; {
-  console.log(data.match(<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">CREATE(.|</span><span style="color:#D20">\n</span><span style="color:#808">)+;</span><span style="color:#404">/</span><span style="color:#C2C">g</span></span>));
-  <span style="color:#777">// we can also use [\s\S]+ instead of (.|\n)+</span>
-});
-</pre></td>
-</tr></table>
+<div class="language-js highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>const fs = require(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">fs</span><span style="color:#710">'</span></span>);
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>fs.readFile(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">./db/schema.sql</span><span style="color:#710">'</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">utf8</span><span style="color:#710">'</span></span>, (err, data) =&gt; {
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  console.log(data.match(<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">CREATE(.|</span><span style="color:#D20">\n</span><span style="color:#808">)+;</span><span style="color:#404">/</span><span style="color:#C2C">g</span></span>));
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>  <span style="color:#777">// we can also use [\s\S]+ instead of (.|\n)+</span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>});
+</pre></div>
+</div>
 </div>
 
 <p><strong>Lazy</strong></p>

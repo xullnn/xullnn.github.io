@@ -92,28 +92,18 @@
 
 <p>书中给的从嵌套箱子中找钥匙的例子有点让人疑惑。直接用一个简单的代码(用ruby)示例说明：</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">recursive_sum</span>(list)
-  <span style="color:#080;font-weight:bold">if</span> list == []
-    <span style="color:#080;font-weight:bold">return</span> <span style="color:#00D">0</span>
-  <span style="color:#080;font-weight:bold">else</span>
-    <span style="color:#080;font-weight:bold">return</span> list.shift + recursive_sum(list) <span style="color:#777"># 这里就call回到自己本身</span>
-  <span style="color:#080;font-weight:bold">end</span>
-<span style="color:#080;font-weight:bold">end</span>
-
-puts recursive_sum [<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>]
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">recursive_sum</span>(list)
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span style="color:#080;font-weight:bold">if</span> list == []
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="color:#00D">0</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">else</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#080;font-weight:bold">return</span> list.shift + recursive_sum(list) <span style="color:#777"># 这里就call回到自己本身</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>puts recursive_sum [<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>]
+</pre></div>
+</div>
 </div>
 
 <p>拆开一步一步看：</p>
@@ -255,28 +245,18 @@ A simple <strong>base case</strong> (or cases)—a terminating scenario that doe
 
 <p>上面array求和的例子使用loop也可以做到：</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">loop_sum</span>(list)
-  acc = <span style="color:#00D">0</span>
-  i = <span style="color:#00D">0</span>
-  <span style="color:#080;font-weight:bold">while</span> i &lt; list.length
-    acc += list[i]
-    i += <span style="color:#00D">1</span>
-  <span style="color:#080;font-weight:bold">end</span>
-  <span style="color:#080;font-weight:bold">return</span> acc
-<span style="color:#080;font-weight:bold">end</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">loop_sum</span>(list)
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  acc = <span style="color:#00D">0</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  i = <span style="color:#00D">0</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#080;font-weight:bold">while</span> i &lt; list.length
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    acc += list[i]
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    i += <span style="color:#00D">1</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">return</span> acc
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#080;font-weight:bold">end</span>
+</pre></div>
+</div>
 </div>
 
 <p>这引出了什么情况使用 loop 什么情况使用 recursion 这个问题。实际情况是处理相同的任务loop可能更节省内存（变量一直在动态变化，而不是每个循环都要存，也不会有多个function/method挂起），recursive fucntion/method 比较易读。书上给出了一个 Stackoverflow 上的答案。</p>

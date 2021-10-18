@@ -141,34 +141,24 @@ by Robert Sedgewick,‎ Kevin Wayne</p>
 
 <p>在array中，一个索引对应一条记录，比如</p>
 
-<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre>0: &quot;it is what it is&quot;
-1: &quot;what is it&quot;
-2: &quot;it is a banana&quot;
-</pre></td>
-</tr></table>
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>0: &quot;it is what it is&quot;
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>1: &quot;what is it&quot;
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>2: &quot;it is a banana&quot;
+</pre></div>
+</div>
 </div>
 
 <p>对于全文检索来说，这种索引实际不能提供太多有用的信息，因为检索是以记录为起点。 inverted index 则把上面那种索引方式反过来，记录特定内容在存储介质中的位置，像这样：</p>
 
-<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-</pre></td>
-  <td class="code"><pre>&quot;a&quot;:      {2}
-&quot;banana&quot;: {2}
-&quot;is&quot;:     {0, 1, 2}
-&quot;it&quot;:     {0, 1, 2}
-&quot;what&quot;:   {0, 1}
-</pre></td>
-</tr></table>
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>&quot;a&quot;:      {2}
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>&quot;banana&quot;: {2}
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>&quot;is&quot;:     {0, 1, 2}
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>&quot;it&quot;:     {0, 1, 2}
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>&quot;what&quot;:   {0, 1}
+</pre></div>
+</div>
 </div>
 
 <p>进行搜索时，如果查找 “is” 马上就能知道在哪几个位置包含了这个单词，可以快速定位。</p>
@@ -263,26 +253,17 @@ by Robert Sedgewick,‎ Kevin Wayne</p>
 
 <p>ruby 中的map和reduce</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; array = [<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>]
- =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, <span style="color:#00D">3</span>, <span style="color:#00D">4</span>]
-
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; mapped = array.map { |e| e**<span style="color:#00D">2</span> }
- =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">4</span>, <span style="color:#00D">9</span>, <span style="color:#00D">16</span>]
-
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt; reduced = array.reduce { |acc, e| acc + e**<span style="color:#00D">2</span> }
- =&gt; <span style="color:#00D">30</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; array = [<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>]
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, <span style="color:#00D">3</span>, <span style="color:#00D">4</span>]
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; mapped = array.map { |e| e**<span style="color:#00D">2</span> }
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span> =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">4</span>, <span style="color:#00D">9</span>, <span style="color:#00D">16</span>]
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt; reduced = array.reduce { |acc, e| acc + e**<span style="color:#00D">2</span> }
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#00D">30</span>
+</pre></div>
+</div>
 </div>
 
 <p>MapReduce就是基于这两个简单的概念跨计算机执行复杂的数据查询，当你有一个很大的数据集时，MapReduce可以让你把查询时间从传统方式的几小时缩短到几分钟。</p>
@@ -341,34 +322,21 @@ by Robert Sedgewick,‎ Kevin Wayne</p>
 
 <p>http://ruby-doc.org/stdlib-2.5.0/libdoc/digest/rdoc/index.html</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">digest</span><span style="color:#710">'</span></span>
- =&gt; <span style="color:#069">true</span>
-
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; <span style="color:#036;font-weight:bold">Digest</span>::<span style="color:#036;font-weight:bold">SHA2</span>.new(<span style="color:#00D">256</span>).hexdigest <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">abc</span><span style="color:#710">'</span></span>
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad</span><span style="color:#710">&quot;</span></span>
-
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; <span style="color:#036;font-weight:bold">Digest</span>::<span style="color:#036;font-weight:bold">SHA2</span>.new(<span style="color:#00D">384</span>).hexdigest <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">abc</span><span style="color:#710">'</span></span>
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">cb00753f45a35e8bb5a03d699ac65007272c32ab0eded1631a8b605a43ff5bed8086072ba1e7cc2358baeca134c825a7</span><span style="color:#710">&quot;</span></span>
-
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; <span style="color:#036;font-weight:bold">Digest</span>::<span style="color:#036;font-weight:bold">SHA2</span>.new(<span style="color:#00D">512</span>).hexdigest <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">abc</span><span style="color:#710">'</span></span>
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ddaf35a193617abacc417349ae20413112e6fa4e89a97ea20a9eeee64b55d39a2192992a274fc1a836ba3c23a3feebbd454d4423643ce80e2a9ac94fa54ca49f</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt;
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">digest</span><span style="color:#710">'</span></span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">true</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; <span style="color:#036;font-weight:bold">Digest</span>::<span style="color:#036;font-weight:bold">SHA2</span>.new(<span style="color:#00D">256</span>).hexdigest <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">abc</span><span style="color:#710">'</span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; <span style="color:#036;font-weight:bold">Digest</span>::<span style="color:#036;font-weight:bold">SHA2</span>.new(<span style="color:#00D">384</span>).hexdigest <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">abc</span><span style="color:#710">'</span></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">cb00753f45a35e8bb5a03d699ac65007272c32ab0eded1631a8b605a43ff5bed8086072ba1e7cc2358baeca134c825a7</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; <span style="color:#036;font-weight:bold">Digest</span>::<span style="color:#036;font-weight:bold">SHA2</span>.new(<span style="color:#00D">512</span>).hexdigest <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">abc</span><span style="color:#710">'</span></span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ddaf35a193617abacc417349ae20413112e6fa4e89a97ea20a9eeee64b55d39a2192992a274fc1a836ba3c23a3feebbd454d4423643ce80e2a9ac94fa54ca49f</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt;
+</pre></div>
+</div>
 </div>
 
 <p>SHA 是一个家族的算法，包含 MD5, SHA-0, SHA-1, SHA-2, SHA-3。不同的算法应用场景不同，安全性之间也有差别。上面例子中的 256, 384, 512 指的是 output size(bits)，也就是算出来的hash长度，一般来说是越长越安全。</p>
@@ -393,22 +361,15 @@ by Robert Sedgewick,‎ Kevin Wayne</p>
 
 <p>SHA 算法有一个特点是，如果给出的字串只有少量的不同，算出来的 hash 就完全不同。这种特性可以描述为对局部变化不敏感。</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; <span style="color:#036;font-weight:bold">Digest</span>::<span style="color:#036;font-weight:bold">SHA2</span>.new(<span style="color:#00D">256</span>).hexdigest <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">abc</span><span style="color:#710">'</span></span>
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad</span><span style="color:#710">&quot;</span></span>
-
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; <span style="color:#036;font-weight:bold">Digest</span>::<span style="color:#036;font-weight:bold">SHA2</span>.new(<span style="color:#00D">256</span>).hexdigest <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Abc</span><span style="color:#710">'</span></span>
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">06d90109c8cce34ec0c776950465421e176f08b831a938b3c6e76cb7bee8790b</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt;
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; <span style="color:#036;font-weight:bold">Digest</span>::<span style="color:#036;font-weight:bold">SHA2</span>.new(<span style="color:#00D">256</span>).hexdigest <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">abc</span><span style="color:#710">'</span></span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; <span style="color:#036;font-weight:bold">Digest</span>::<span style="color:#036;font-weight:bold">SHA2</span>.new(<span style="color:#00D">256</span>).hexdigest <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">Abc</span><span style="color:#710">'</span></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">06d90109c8cce34ec0c776950465421e176f08b831a938b3c6e76cb7bee8790b</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt;
+</pre></div>
+</div>
 </div>
 
 <p>上面例子的字串中只有1个字母大小写不同，但算出的hash则完全看不出只有少量的差别。对于安全性来说，这是一个很好的特性，因为攻击者很难知道他猜的密码是否接近正确密码了。</p>

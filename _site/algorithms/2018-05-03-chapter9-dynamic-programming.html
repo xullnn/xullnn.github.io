@@ -375,132 +375,70 @@ step2: 从剩余容量中再选最贵的放进去，没有空间了，于是结�
 
 <p>如果将上述公式写成ruby代码：</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-<a href="#n23" name="n23">23</a>
-<a href="#n24" name="n24">24</a>
-<strong><a href="#n25" name="n25">25</a></strong>
-<a href="#n26" name="n26">26</a>
-<a href="#n27" name="n27">27</a>
-<a href="#n28" name="n28">28</a>
-<a href="#n29" name="n29">29</a>
-<strong><a href="#n30" name="n30">30</a></strong>
-<a href="#n31" name="n31">31</a>
-<a href="#n32" name="n32">32</a>
-<a href="#n33" name="n33">33</a>
-<a href="#n34" name="n34">34</a>
-<strong><a href="#n35" name="n35">35</a></strong>
-<a href="#n36" name="n36">36</a>
-<a href="#n37" name="n37">37</a>
-<a href="#n38" name="n38">38</a>
-<a href="#n39" name="n39">39</a>
-<strong><a href="#n40" name="n40">40</a></strong>
-<a href="#n41" name="n41">41</a>
-<a href="#n42" name="n42">42</a>
-<a href="#n43" name="n43">43</a>
-<a href="#n44" name="n44">44</a>
-<strong><a href="#n45" name="n45">45</a></strong>
-<a href="#n46" name="n46">46</a>
-<a href="#n47" name="n47">47</a>
-<a href="#n48" name="n48">48</a>
-<a href="#n49" name="n49">49</a>
-<strong><a href="#n50" name="n50">50</a></strong>
-<a href="#n51" name="n51">51</a>
-<a href="#n52" name="n52">52</a>
-<a href="#n53" name="n53">53</a>
-<a href="#n54" name="n54">54</a>
-<strong><a href="#n55" name="n55">55</a></strong>
-<a href="#n56" name="n56">56</a>
-<a href="#n57" name="n57">57</a>
-<a href="#n58" name="n58">58</a>
-<a href="#n59" name="n59">59</a>
-<strong><a href="#n60" name="n60">60</a></strong>
-<a href="#n61" name="n61">61</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Item</span>
-  attr_accessor <span style="color:#A60">:name</span>, <span style="color:#A60">:weight</span>, <span style="color:#A60">:price</span>
-<span style="color:#080;font-weight:bold">end</span>
-
-<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Knapsack</span>
-  attr_accessor <span style="color:#A60">:items</span>, <span style="color:#A60">:capacity</span>, <span style="color:#A60">:table</span>
-
-  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(capacity)
-    <span style="color:#33B">@items</span> = []
-    <span style="color:#33B">@capacity</span> = capacity
-    <span style="color:#33B">@table</span> = <span style="color:#036;font-weight:bold">Hash</span>.new([<span style="color:#00D">0</span>, [<span style="color:#069">nil</span>]])
-  <span style="color:#080;font-weight:bold">end</span>
-
-  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">fill_items</span>
-    <span style="color:#080;font-weight:bold">return</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">No available items</span><span style="color:#710">&quot;</span></span> <span style="color:#080;font-weight:bold">if</span> items.empty?
-    items.each_with_index <span style="color:#080;font-weight:bold">do</span> |item, index|
-      row = index + <span style="color:#00D">1</span>
-      (<span style="color:#00D">1</span>..capacity).each <span style="color:#080;font-weight:bold">do</span> |column|
-        previous_max_value = table[[row-<span style="color:#00D">1</span>, column]][<span style="color:#00D">0</span>]
-        previous_max_name = table[[row-<span style="color:#00D">1</span>, column]][<span style="color:#00D">1</span>]
-        <span style="color:#080;font-weight:bold">if</span> column &lt; item.weight
-          table[[row, column]] = table[[row-<span style="color:#00D">1</span>, column]]
-        <span style="color:#080;font-weight:bold">elsif</span> column == item.weight
-          new_value = item.price
-          new_value &gt;= previous_max_value \
-            ? table[[row, column]] = [new_value, [item.name]] \
-            : table[[row, column]] = [previous_max_value, [previous_max_name]]
-        <span style="color:#080;font-weight:bold">else</span>
-          diff_weight = column - item.weight
-          diff_item_name = table[[row-<span style="color:#00D">1</span>, diff_weight]][<span style="color:#00D">1</span>]
-          diff_item_value = table[[row-<span style="color:#00D">1</span>, diff_weight]][<span style="color:#00D">0</span>]
-          new_value = item.price + diff_item_value
-          <span style="color:#080;font-weight:bold">if</span> diff_item_value == <span style="color:#00D">0</span>
-            table[[row, column]] = [new_value, [item.name]]
-          <span style="color:#080;font-weight:bold">else</span>
-            table[[row, column]] = [new_value, [diff_item_name[<span style="color:#00D">0</span>], item.name]]
-          <span style="color:#080;font-weight:bold">end</span>
-        <span style="color:#080;font-weight:bold">end</span>
-      <span style="color:#080;font-weight:bold">end</span>
-    <span style="color:#080;font-weight:bold">end</span>
-  <span style="color:#080;font-weight:bold">end</span>
-
-
-  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">find_best_combinations</span>
-    sorted_table = table.sort_by { |k, v| v[<span style="color:#00D">0</span>] } <span style="color:#777"># return an array</span>
-    max_combination_price = sorted_table[<span style="color:#00D">-1</span>][<span style="color:#00D">1</span>][<span style="color:#00D">0</span>]
-    p best_combinations = table.select { |k, v| v[<span style="color:#00D">0</span>] == max_combination_price }
-  <span style="color:#080;font-weight:bold">end</span>
-
-
-<span style="color:#080;font-weight:bold">end</span>
-
-
-guitar = <span style="color:#036;font-weight:bold">Item</span>.new; guitar.weight = <span style="color:#00D">1</span>; guitar.price = <span style="color:#00D">1500</span>; guitar.name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">guitar</span><span style="color:#710">&quot;</span></span>
-laptop = <span style="color:#036;font-weight:bold">Item</span>.new; laptop.weight = <span style="color:#00D">3</span>; laptop.price = <span style="color:#00D">2000</span>; laptop.name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">laptop</span><span style="color:#710">&quot;</span></span>
-stereo = <span style="color:#036;font-weight:bold">Item</span>.new; stereo.weight = <span style="color:#00D">4</span>; stereo.price = <span style="color:#00D">3000</span>; stereo.name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">stereo</span><span style="color:#710">&quot;</span></span>
-
-knapsack = <span style="color:#036;font-weight:bold">Knapsack</span>.new(<span style="color:#00D">4</span>)
-knapsack.items = [stereo,laptop,guitar]
-knapsack.fill_items
-knapsack.find_best_combinations
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Item</span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  attr_accessor <span style="color:#A60">:name</span>, <span style="color:#A60">:weight</span>, <span style="color:#A60">:price</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Knapsack</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  attr_accessor <span style="color:#A60">:items</span>, <span style="color:#A60">:capacity</span>, <span style="color:#A60">:table</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(capacity)
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span style="color:#33B">@items</span> = []
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    <span style="color:#33B">@capacity</span> = capacity
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>    <span style="color:#33B">@table</span> = <span style="color:#036;font-weight:bold">Hash</span>.new([<span style="color:#00D">0</span>, [<span style="color:#069">nil</span>]])
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">fill_items</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    <span style="color:#080;font-weight:bold">return</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">No available items</span><span style="color:#710">&quot;</span></span> <span style="color:#080;font-weight:bold">if</span> items.empty?
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>    items.each_with_index <span style="color:#080;font-weight:bold">do</span> |item, index|
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>      row = index + <span style="color:#00D">1</span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>      (<span style="color:#00D">1</span>..capacity).each <span style="color:#080;font-weight:bold">do</span> |column|
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>        previous_max_value = table[[row-<span style="color:#00D">1</span>, column]][<span style="color:#00D">0</span>]
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>        previous_max_name = table[[row-<span style="color:#00D">1</span>, column]][<span style="color:#00D">1</span>]
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>        <span style="color:#080;font-weight:bold">if</span> column &lt; item.weight
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>          table[[row, column]] = table[[row-<span style="color:#00D">1</span>, column]]
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>        <span style="color:#080;font-weight:bold">elsif</span> column == item.weight
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>          new_value = item.price
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>          new_value &gt;= previous_max_value \
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>            ? table[[row, column]] = [new_value, [item.name]] \
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>            : table[[row, column]] = [previous_max_value, [previous_max_name]]
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>        <span style="color:#080;font-weight:bold">else</span>
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>          diff_weight = column - item.weight
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>          diff_item_name = table[[row-<span style="color:#00D">1</span>, diff_weight]][<span style="color:#00D">1</span>]
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>          diff_item_value = table[[row-<span style="color:#00D">1</span>, diff_weight]][<span style="color:#00D">0</span>]
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span>          new_value = item.price + diff_item_value
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>          <span style="color:#080;font-weight:bold">if</span> diff_item_value == <span style="color:#00D">0</span>
+<span class="line-numbers"><a href="#n34" name="n34">34</a></span>            table[[row, column]] = [new_value, [item.name]]
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span>          <span style="color:#080;font-weight:bold">else</span>
+<span class="line-numbers"><a href="#n36" name="n36">36</a></span>            table[[row, column]] = [new_value, [diff_item_name[<span style="color:#00D">0</span>], item.name]]
+<span class="line-numbers"><a href="#n37" name="n37">37</a></span>          <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n38" name="n38">38</a></span>        <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n39" name="n39">39</a></span>      <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><strong><a href="#n40" name="n40">40</a></strong></span>    <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n41" name="n41">41</a></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n42" name="n42">42</a></span>
+<span class="line-numbers"><a href="#n43" name="n43">43</a></span>
+<span class="line-numbers"><a href="#n44" name="n44">44</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">find_best_combinations</span>
+<span class="line-numbers"><a href="#n45" name="n45">45</a></span>    sorted_table = table.sort_by { |k, v| v[<span style="color:#00D">0</span>] } <span style="color:#777"># return an array</span>
+<span class="line-numbers"><a href="#n46" name="n46">46</a></span>    max_combination_price = sorted_table[<span style="color:#00D">-1</span>][<span style="color:#00D">1</span>][<span style="color:#00D">0</span>]
+<span class="line-numbers"><a href="#n47" name="n47">47</a></span>    p best_combinations = table.select { |k, v| v[<span style="color:#00D">0</span>] == max_combination_price }
+<span class="line-numbers"><a href="#n48" name="n48">48</a></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n49" name="n49">49</a></span>
+<span class="line-numbers"><strong><a href="#n50" name="n50">50</a></strong></span>
+<span class="line-numbers"><a href="#n51" name="n51">51</a></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n52" name="n52">52</a></span>
+<span class="line-numbers"><a href="#n53" name="n53">53</a></span>
+<span class="line-numbers"><a href="#n54" name="n54">54</a></span>guitar = <span style="color:#036;font-weight:bold">Item</span>.new; guitar.weight = <span style="color:#00D">1</span>; guitar.price = <span style="color:#00D">1500</span>; guitar.name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">guitar</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n55" name="n55">55</a></span>laptop = <span style="color:#036;font-weight:bold">Item</span>.new; laptop.weight = <span style="color:#00D">3</span>; laptop.price = <span style="color:#00D">2000</span>; laptop.name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">laptop</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n56" name="n56">56</a></span>stereo = <span style="color:#036;font-weight:bold">Item</span>.new; stereo.weight = <span style="color:#00D">4</span>; stereo.price = <span style="color:#00D">3000</span>; stereo.name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">stereo</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n57" name="n57">57</a></span>
+<span class="line-numbers"><a href="#n58" name="n58">58</a></span>knapsack = <span style="color:#036;font-weight:bold">Knapsack</span>.new(<span style="color:#00D">4</span>)
+<span class="line-numbers"><a href="#n59" name="n59">59</a></span>knapsack.items = [stereo,laptop,guitar]
+<span class="line-numbers"><strong><a href="#n60" name="n60">60</a></strong></span>knapsack.fill_items
+<span class="line-numbers"><a href="#n61" name="n61">61</a></span>knapsack.find_best_combinations
+</pre></div>
+</div>
 </div>
 
 <p>最后输出结果是 <code>{[3, 4]=&gt;[3500, ["laptop", "guitar"]]}</code></p>
@@ -511,110 +449,59 @@ knapsack.find_best_combinations
 
 <p>为了避免以后自己都看不懂或者重构的可能，注释一下</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-<a href="#n23" name="n23">23</a>
-<a href="#n24" name="n24">24</a>
-<strong><a href="#n25" name="n25">25</a></strong>
-<a href="#n26" name="n26">26</a>
-<a href="#n27" name="n27">27</a>
-<a href="#n28" name="n28">28</a>
-<a href="#n29" name="n29">29</a>
-<strong><a href="#n30" name="n30">30</a></strong>
-<a href="#n31" name="n31">31</a>
-<a href="#n32" name="n32">32</a>
-<a href="#n33" name="n33">33</a>
-<a href="#n34" name="n34">34</a>
-<strong><a href="#n35" name="n35">35</a></strong>
-<a href="#n36" name="n36">36</a>
-<a href="#n37" name="n37">37</a>
-<a href="#n38" name="n38">38</a>
-<a href="#n39" name="n39">39</a>
-<strong><a href="#n40" name="n40">40</a></strong>
-<a href="#n41" name="n41">41</a>
-<a href="#n42" name="n42">42</a>
-<a href="#n43" name="n43">43</a>
-<a href="#n44" name="n44">44</a>
-<strong><a href="#n45" name="n45">45</a></strong>
-<a href="#n46" name="n46">46</a>
-<a href="#n47" name="n47">47</a>
-<a href="#n48" name="n48">48</a>
-<a href="#n49" name="n49">49</a>
-<strong><a href="#n50" name="n50">50</a></strong>
-</pre></td>
-  <td class="code"><pre>
-<span style="color:#777"># @table = Hash.new([0, [nil]]) 的作用</span>
-
-  <span style="color:#777"># 后面会使用 table[row][column] 这样的格式来拿对应的格子中的信息</span>
-  <span style="color:#777"># 格子中包含的信息有 1 装下的商品总价， 2 构成这个价格是哪些商品</span>
-    <span style="color:#777"># 因此，一个格子中的信息单用一个 string 不能灵活的处理</span>
-    <span style="color:#777"># 所以至少是一个 array, 而商品构成又很可能是多个所以 array 中的第二个element又需要是一个 array</span>
-  <span style="color:#777"># 在填写空格的时候，会涉及到比较的问题</span>
-    <span style="color:#777"># 1 当当前column对应的knapsack承重大于当前row商品的重量时</span>
-    <span style="color:#777"># 会取重量差值，然后去上一行找对应的 knapsack 对应的该重量的商品价值，尝试与当前item价格相加</span>
-      <span style="color:#777"># 这里又可能有3种情况 1 上一行中没有差值对应的column, 2 找到了但是重量是0，也就是什么也装不下， 3 有价格，有商品</span>
-      <span style="color:#777"># 当上一行中不存在这样一个对应column时，如果不用Hash.new([0, [nil]])让不存在的格子填入一个默认值，那么就会报错</span>
-      <span style="color:#777"># 当然可以再使用条件式去处理这种报错，但会更繁杂</span>
-
-    <span style="color:#777"># 2 填完当前格之后，会需要去跟同column的上一行比较，也就是上一次记录的最大值</span>
-      <span style="color:#777"># 这里要考虑的是填第一行的时候，上一行是不存在的</span>
-      <span style="color:#777"># 所以其实每一次比较都是用 Hash.new的默认值array中的第一个 0 去比较的</span>
-      <span style="color:#777"># 不然去拿不存在的格子会返回一个 nil, 用nil去比较会报错</span>
-  <span style="color:#777"># 因此，中间可能出现这么多可能的状况，那还不如直接一开始就固定好格式，都是一个嵌套array</span>
-  <span style="color:#777"># 第一个元素是总价，第二个是商品构成</span>
-  <span style="color:#777"># 并且设好默认值，不能存在的格子的价格都设为0， 商品构成中写 nil</span>
-
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">fill_items</span>
-  <span style="color:#080;font-weight:bold">return</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">No available items</span><span style="color:#710">&quot;</span></span> <span style="color:#080;font-weight:bold">if</span> items.empty?
-  items.each_with_index <span style="color:#080;font-weight:bold">do</span> |item, index|
-    row = index + <span style="color:#00D">1</span>      <span style="color:#777"># row 其实就是 item 的 index + 1</span>
-    (<span style="color:#00D">1</span>..capacity).each <span style="color:#080;font-weight:bold">do</span> |column|
-      previous_max_value = table[[row-<span style="color:#00D">1</span>, column]][<span style="color:#00D">0</span>] <span style="color:#777"># 在处理每一格的时候，先准备好要用作比较的上一次记录的最大值和其商品构成</span>
-      previous_max_name = table[[row-<span style="color:#00D">1</span>, column]][<span style="color:#00D">1</span>]  <span style="color:#777"># 方便后面添加</span>
-      <span style="color:#777"># 这里拆分三种比较情况主要是为了方便 table 中商品构成那部分的处理</span>
-      <span style="color:#080;font-weight:bold">if</span> column &lt; item.weight                              
-        table[[row, column]] = table[[row-<span style="color:#00D">1</span>, column]]          <span style="color:#777"># 当当前column容量装不下当前item的时候，直接继承上一行中的最大值</span>
-      <span style="color:#080;font-weight:bold">elsif</span> column == item.weight                              <span style="color:#777"># 当刚好可以装下时，就需要比较</span>
-        new_value &gt;= previous_max_value <span style="color:#F00;background-color:#FAA">\</span>                        <span style="color:#777"># 如果当前item价格大于等于之前记录的最高价，将当前item信息作为当前格子信息</span>
-          ? table[[row, column]] = [new_value, [item.name]] <span style="color:#F00;background-color:#FAA">\</span>    <span style="color:#777"># 如果当前item价格小于之前记录的最高价，那么就要继承之前的总价和商品构成</span>
-          : table[[row, column]] = [previous_max_value, [previous_max_name]]
-      <span style="color:#080;font-weight:bold">else</span>                                                     <span style="color:#777"># 最后是column承重大于item重量时，就需要求差值，然后去找上一行对应承重的格子中的信息</span>
-        diff_weight = column - item.weight   <span style="color:#777"># 前把可能存在的差值格子中的信息提取出来，先算差值</span>
-        diff_item_name = table[[row-<span style="color:#00D">1</span>, diff_weight]][<span style="color:#00D">1</span>] <span style="color:#777"># 再拿商品名称</span>
-        diff_item_value = table[[row-<span style="color:#00D">1</span>, diff_weight]][<span style="color:#00D">0</span>]  <span style="color:#777"># 再拿总价</span>
-        new_value = item.price + diff_item_value <span style="color:#777"># 算差值格子中总价与当前item价格的和。这里没有再写代码去处理差值格子不存在的情况，这种情况下拿到的价格会是 0 ， 具体说明看前面对 table 默认值设定的说明</span>
-        <span style="color:#080;font-weight:bold">if</span> diff_item_value == <span style="color:#00D">0</span> <span style="color:#777"># 当差值不存在对应的格子时，将当前item信息作为当前格子信息</span>
-          table[[row, column]] = [new_value, [item.name]]
-        <span style="color:#080;font-weight:bold">else</span>  <span style="color:#777"># 当差值存在时，说明新总价是由两部分价格构成，所以要汇总两个格子的信息</span>
-          table[[row, column]] = [new_value, [diff_item_name[<span style="color:#00D">0</span>], item.name]]
-        <span style="color:#080;font-weight:bold">end</span>
-      <span style="color:#080;font-weight:bold">end</span>
-    <span style="color:#080;font-weight:bold">end</span>
-  <span style="color:#080;font-weight:bold">end</span>
-<span style="color:#080;font-weight:bold">end</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#777"># @table = Hash.new([0, [nil]]) 的作用</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  <span style="color:#777"># 后面会使用 table[row][column] 这样的格式来拿对应的格子中的信息</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  <span style="color:#777"># 格子中包含的信息有 1 装下的商品总价， 2 构成这个价格是哪些商品</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#777"># 因此，一个格子中的信息单用一个 string 不能灵活的处理</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#777"># 所以至少是一个 array, 而商品构成又很可能是多个所以 array 中的第二个element又需要是一个 array</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#777"># 在填写空格的时候，会涉及到比较的问题</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span style="color:#777"># 1 当当前column对应的knapsack承重大于当前row商品的重量时</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    <span style="color:#777"># 会取重量差值，然后去上一行找对应的 knapsack 对应的该重量的商品价值，尝试与当前item价格相加</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>      <span style="color:#777"># 这里又可能有3种情况 1 上一行中没有差值对应的column, 2 找到了但是重量是0，也就是什么也装不下， 3 有价格，有商品</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>      <span style="color:#777"># 当上一行中不存在这样一个对应column时，如果不用Hash.new([0, [nil]])让不存在的格子填入一个默认值，那么就会报错</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>      <span style="color:#777"># 当然可以再使用条件式去处理这种报错，但会更繁杂</span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    <span style="color:#777"># 2 填完当前格之后，会需要去跟同column的上一行比较，也就是上一次记录的最大值</span>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>      <span style="color:#777"># 这里要考虑的是填第一行的时候，上一行是不存在的</span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>      <span style="color:#777"># 所以其实每一次比较都是用 Hash.new的默认值array中的第一个 0 去比较的</span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>      <span style="color:#777"># 不然去拿不存在的格子会返回一个 nil, 用nil去比较会报错</span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>  <span style="color:#777"># 因此，中间可能出现这么多可能的状况，那还不如直接一开始就固定好格式，都是一个嵌套array</span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>  <span style="color:#777"># 第一个元素是总价，第二个是商品构成</span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>  <span style="color:#777"># 并且设好默认值，不能存在的格子的价格都设为0， 商品构成中写 nil</span>
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">fill_items</span>
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>  <span style="color:#080;font-weight:bold">return</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">No available items</span><span style="color:#710">&quot;</span></span> <span style="color:#080;font-weight:bold">if</span> items.empty?
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>  items.each_with_index <span style="color:#080;font-weight:bold">do</span> |item, index|
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>    row = index + <span style="color:#00D">1</span>      <span style="color:#777"># row 其实就是 item 的 index + 1</span>
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>    (<span style="color:#00D">1</span>..capacity).each <span style="color:#080;font-weight:bold">do</span> |column|
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>      previous_max_value = table[[row-<span style="color:#00D">1</span>, column]][<span style="color:#00D">0</span>] <span style="color:#777"># 在处理每一格的时候，先准备好要用作比较的上一次记录的最大值和其商品构成</span>
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>      previous_max_name = table[[row-<span style="color:#00D">1</span>, column]][<span style="color:#00D">1</span>]  <span style="color:#777"># 方便后面添加</span>
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>      <span style="color:#777"># 这里拆分三种比较情况主要是为了方便 table 中商品构成那部分的处理</span>
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>      <span style="color:#080;font-weight:bold">if</span> column &lt; item.weight                              
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span>        table[[row, column]] = table[[row-<span style="color:#00D">1</span>, column]]          <span style="color:#777"># 当当前column容量装不下当前item的时候，直接继承上一行中的最大值</span>
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>      <span style="color:#080;font-weight:bold">elsif</span> column == item.weight                              <span style="color:#777"># 当刚好可以装下时，就需要比较</span>
+<span class="line-numbers"><a href="#n34" name="n34">34</a></span>        new_value &gt;= previous_max_value <span style="color:#F00;background-color:#FAA">\</span>                        <span style="color:#777"># 如果当前item价格大于等于之前记录的最高价，将当前item信息作为当前格子信息</span>
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span>          ? table[[row, column]] = [new_value, [item.name]] <span style="color:#F00;background-color:#FAA">\</span>    <span style="color:#777"># 如果当前item价格小于之前记录的最高价，那么就要继承之前的总价和商品构成</span>
+<span class="line-numbers"><a href="#n36" name="n36">36</a></span>          : table[[row, column]] = [previous_max_value, [previous_max_name]]
+<span class="line-numbers"><a href="#n37" name="n37">37</a></span>      <span style="color:#080;font-weight:bold">else</span>                                                     <span style="color:#777"># 最后是column承重大于item重量时，就需要求差值，然后去找上一行对应承重的格子中的信息</span>
+<span class="line-numbers"><a href="#n38" name="n38">38</a></span>        diff_weight = column - item.weight   <span style="color:#777"># 前把可能存在的差值格子中的信息提取出来，先算差值</span>
+<span class="line-numbers"><a href="#n39" name="n39">39</a></span>        diff_item_name = table[[row-<span style="color:#00D">1</span>, diff_weight]][<span style="color:#00D">1</span>] <span style="color:#777"># 再拿商品名称</span>
+<span class="line-numbers"><strong><a href="#n40" name="n40">40</a></strong></span>        diff_item_value = table[[row-<span style="color:#00D">1</span>, diff_weight]][<span style="color:#00D">0</span>]  <span style="color:#777"># 再拿总价</span>
+<span class="line-numbers"><a href="#n41" name="n41">41</a></span>        new_value = item.price + diff_item_value <span style="color:#777"># 算差值格子中总价与当前item价格的和。这里没有再写代码去处理差值格子不存在的情况，这种情况下拿到的价格会是 0 ， 具体说明看前面对 table 默认值设定的说明</span>
+<span class="line-numbers"><a href="#n42" name="n42">42</a></span>        <span style="color:#080;font-weight:bold">if</span> diff_item_value == <span style="color:#00D">0</span> <span style="color:#777"># 当差值不存在对应的格子时，将当前item信息作为当前格子信息</span>
+<span class="line-numbers"><a href="#n43" name="n43">43</a></span>          table[[row, column]] = [new_value, [item.name]]
+<span class="line-numbers"><a href="#n44" name="n44">44</a></span>        <span style="color:#080;font-weight:bold">else</span>  <span style="color:#777"># 当差值存在时，说明新总价是由两部分价格构成，所以要汇总两个格子的信息</span>
+<span class="line-numbers"><a href="#n45" name="n45">45</a></span>          table[[row, column]] = [new_value, [diff_item_name[<span style="color:#00D">0</span>], item.name]]
+<span class="line-numbers"><a href="#n46" name="n46">46</a></span>        <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n47" name="n47">47</a></span>      <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n48" name="n48">48</a></span>    <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n49" name="n49">49</a></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><strong><a href="#n50" name="n50">50</a></strong></span><span style="color:#080;font-weight:bold">end</span>
+</pre></div>
+</div>
 </div>
 
 <h5 id="14-关于knapsack的dynamic-programming-解法的说明">1.4 关于knapsack的dynamic programming 解法的说明</h5>
@@ -636,36 +523,25 @@ knapsack.find_best_combinations
 
 <p>+++</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre>headphone = <span style="color:#036;font-weight:bold">Item</span>.new; headphone.weight = <span style="color:#00D">2</span>; headphone.price = <span style="color:#00D">500</span>; headphone.name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">headphone</span><span style="color:#710">&quot;</span></span>
-necklace = <span style="color:#036;font-weight:bold">Item</span>.new; necklace.weight = <span style="color:#00D">1</span>; necklace.price = <span style="color:#00D">2500</span>; necklace.name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">necklace</span><span style="color:#710">&quot;</span></span>
-
-knapsack.items = [stereo,laptop,guitar,headphone,necklace].shuffle
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>headphone = <span style="color:#036;font-weight:bold">Item</span>.new; headphone.weight = <span style="color:#00D">2</span>; headphone.price = <span style="color:#00D">500</span>; headphone.name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">headphone</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>necklace = <span style="color:#036;font-weight:bold">Item</span>.new; necklace.weight = <span style="color:#00D">1</span>; necklace.price = <span style="color:#00D">2500</span>; necklace.name = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">necklace</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>knapsack.items = [stereo,laptop,guitar,headphone,necklace].shuffle
+</pre></div>
+</div>
 </div>
 
 <p>有趣的是，每运行一次，结果都可能不同，虽然最高总价相同，但可能会有不同的组合。</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-</pre></td>
-  <td class="code"><pre>{[<span style="color:#00D">3</span>, <span style="color:#00D">4</span>]=&gt;[<span style="color:#00D">4500</span>, [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">laptop</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">necklace</span><span style="color:#710">&quot;</span></span>]], [<span style="color:#00D">4</span>, <span style="color:#00D">4</span>]=&gt;[<span style="color:#00D">4500</span>, [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">headphone</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">guitar</span><span style="color:#710">&quot;</span></span>]], [<span style="color:#00D">5</span>, <span style="color:#00D">4</span>]=&gt;[<span style="color:#00D">4500</span>, [[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">headphone</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">guitar</span><span style="color:#710">&quot;</span></span>]]]}
-
-{[<span style="color:#00D">5</span>, <span style="color:#00D">4</span>]=&gt;[<span style="color:#00D">4500</span>, [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">headphone</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">necklace</span><span style="color:#710">&quot;</span></span>]]}
-
-{[<span style="color:#00D">3</span>, <span style="color:#00D">4</span>]=&gt;[<span style="color:#00D">4500</span>, [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">necklace</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">laptop</span><span style="color:#710">&quot;</span></span>]], [<span style="color:#00D">5</span>, <span style="color:#00D">4</span>]=&gt;[<span style="color:#00D">4500</span>, [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">necklace</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">guitar</span><span style="color:#710">&quot;</span></span>]]}
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>{[<span style="color:#00D">3</span>, <span style="color:#00D">4</span>]=&gt;[<span style="color:#00D">4500</span>, [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">laptop</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">necklace</span><span style="color:#710">&quot;</span></span>]], [<span style="color:#00D">4</span>, <span style="color:#00D">4</span>]=&gt;[<span style="color:#00D">4500</span>, [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">headphone</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">guitar</span><span style="color:#710">&quot;</span></span>]], [<span style="color:#00D">5</span>, <span style="color:#00D">4</span>]=&gt;[<span style="color:#00D">4500</span>, [[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">headphone</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">guitar</span><span style="color:#710">&quot;</span></span>]]]}
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>{[<span style="color:#00D">5</span>, <span style="color:#00D">4</span>]=&gt;[<span style="color:#00D">4500</span>, [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">headphone</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">necklace</span><span style="color:#710">&quot;</span></span>]]}
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>{[<span style="color:#00D">3</span>, <span style="color:#00D">4</span>]=&gt;[<span style="color:#00D">4500</span>, [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">necklace</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">laptop</span><span style="color:#710">&quot;</span></span>]], [<span style="color:#00D">5</span>, <span style="color:#00D">4</span>]=&gt;[<span style="color:#00D">4500</span>, [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">necklace</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">guitar</span><span style="color:#710">&quot;</span></span>]]}
+</pre></div>
+</div>
 </div>
 
 <p>上面是3次执行的结果，由于item排列方式的不同，最后拿到的组合也可能不同。在写的算法中，如果后面出现了新组合与前面最高价相同，是会更新此cell中的商品构成的。由结果也可以看出算法存在一个缺点是，只保证每次至少找出一个符合要求的最佳组合，但无法保证找出所有可能的最佳组合。</p>
@@ -813,166 +689,87 @@ knapsack.items = [stereo,laptop,guitar,headphone,necklace].shuffle
 
 <p>代码实现</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-<a href="#n23" name="n23">23</a>
-<a href="#n24" name="n24">24</a>
-<strong><a href="#n25" name="n25">25</a></strong>
-<a href="#n26" name="n26">26</a>
-<a href="#n27" name="n27">27</a>
-<a href="#n28" name="n28">28</a>
-<a href="#n29" name="n29">29</a>
-<strong><a href="#n30" name="n30">30</a></strong>
-<a href="#n31" name="n31">31</a>
-<a href="#n32" name="n32">32</a>
-<a href="#n33" name="n33">33</a>
-<a href="#n34" name="n34">34</a>
-<strong><a href="#n35" name="n35">35</a></strong>
-<a href="#n36" name="n36">36</a>
-<a href="#n37" name="n37">37</a>
-<a href="#n38" name="n38">38</a>
-<a href="#n39" name="n39">39</a>
-<strong><a href="#n40" name="n40">40</a></strong>
-<a href="#n41" name="n41">41</a>
-<a href="#n42" name="n42">42</a>
-<a href="#n43" name="n43">43</a>
-<a href="#n44" name="n44">44</a>
-<strong><a href="#n45" name="n45">45</a></strong>
-<a href="#n46" name="n46">46</a>
-<a href="#n47" name="n47">47</a>
-<a href="#n48" name="n48">48</a>
-<a href="#n49" name="n49">49</a>
-<strong><a href="#n50" name="n50">50</a></strong>
-<a href="#n51" name="n51">51</a>
-<a href="#n52" name="n52">52</a>
-<a href="#n53" name="n53">53</a>
-<a href="#n54" name="n54">54</a>
-<strong><a href="#n55" name="n55">55</a></strong>
-<a href="#n56" name="n56">56</a>
-<a href="#n57" name="n57">57</a>
-<a href="#n58" name="n58">58</a>
-<a href="#n59" name="n59">59</a>
-<strong><a href="#n60" name="n60">60</a></strong>
-<a href="#n61" name="n61">61</a>
-<a href="#n62" name="n62">62</a>
-<a href="#n63" name="n63">63</a>
-<a href="#n64" name="n64">64</a>
-<strong><a href="#n65" name="n65">65</a></strong>
-<a href="#n66" name="n66">66</a>
-<a href="#n67" name="n67">67</a>
-<a href="#n68" name="n68">68</a>
-<a href="#n69" name="n69">69</a>
-<strong><a href="#n70" name="n70">70</a></strong>
-<a href="#n71" name="n71">71</a>
-<a href="#n72" name="n72">72</a>
-<a href="#n73" name="n73">73</a>
-<a href="#n74" name="n74">74</a>
-<strong><a href="#n75" name="n75">75</a></strong>
-<a href="#n76" name="n76">76</a>
-<a href="#n77" name="n77">77</a>
-<a href="#n78" name="n78">78</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Destination</span>
-  attr_accessor <span style="color:#A60">:name</span>, <span style="color:#A60">:time_cost</span>, <span style="color:#A60">:weight</span>
-  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(name,time_cost,weight)
-    <span style="color:#33B">@name</span> = name
-    <span style="color:#33B">@time_cost</span> = time_cost
-    <span style="color:#33B">@weight</span> = weight
-  <span style="color:#080;font-weight:bold">end</span>
-<span style="color:#080;font-weight:bold">end</span>
-
-<span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Schedule</span>
-  attr_accessor <span style="color:#A60">:limitation</span>, <span style="color:#A60">:destinations</span>, <span style="color:#A60">:table</span>, <span style="color:#A60">:subtimes</span>
-
-  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(limitation)
-    <span style="color:#33B">@limitation</span> = limitation
-    <span style="color:#33B">@destinations</span> = []
-    <span style="color:#33B">@subtimes</span> = make_subtimes
-    <span style="color:#33B">@table</span> = <span style="color:#036;font-weight:bold">Hash</span>.new([<span style="color:#00D">0</span>, [<span style="color:#069">nil</span>]])
-  <span style="color:#080;font-weight:bold">end</span>
-
-  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">make_subtimes</span>
-    t = <span style="color:#60E">0.5</span>
-    <span style="color:#33B">@subtimes</span> = []
-    <span style="color:#080;font-weight:bold">while</span> t &lt;= limitation
-      <span style="color:#33B">@subtimes</span> &lt;&lt; t
-      t += <span style="color:#60E">0.5</span>
-    <span style="color:#080;font-weight:bold">end</span>
-    <span style="color:#33B">@subtimes</span>
-  <span style="color:#080;font-weight:bold">end</span>
-
-  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">fill_destinations</span>
-    destinations.each.with_index <span style="color:#080;font-weight:bold">do</span> |destination, index|
-      row = index + <span style="color:#00D">1</span>
-      subtimes.each.with_index <span style="color:#080;font-weight:bold">do</span> |subtime, index|
-        column = index + <span style="color:#00D">1</span>
-        previous_max_weight = table[[row-<span style="color:#00D">1</span>, column]][<span style="color:#00D">0</span>]
-        previous_max_name = table[[row-<span style="color:#00D">1</span>, column]][<span style="color:#00D">1</span>][<span style="color:#00D">0</span>]
-        <span style="color:#080;font-weight:bold">if</span> subtime &lt; destination.time_cost
-          table[[row, column]] = table[[row-<span style="color:#00D">1</span>, column]]
-        <span style="color:#080;font-weight:bold">elsif</span> subtime == destination.time_cost
-          current_weight = destination.weight
-          current_weight &gt;= previous_max_weight \
-          ? table[[row, column]] = [current_weight, [destination.name]] \
-          : table[[row, column]] = table[[row-<span style="color:#00D">1</span>, column]]
-        <span style="color:#080;font-weight:bold">else</span>
-          diff_time = subtime - destination.time_cost
-          offset_column = (diff_time/<span style="color:#60E">0.5</span>).to_i
-          diff_weight = table[[row-<span style="color:#00D">1</span>, offset_column]][<span style="color:#00D">0</span>]
-          diff_destinations = table[[row-<span style="color:#00D">1</span>, offset_column]][<span style="color:#00D">1</span>]
-          <span style="color:#080;font-weight:bold">if</span> diff_weight == <span style="color:#00D">0</span>
-            table[[row, column]] = table[[row-<span style="color:#00D">1</span>, column]]
-          <span style="color:#080;font-weight:bold">else</span>
-            new_weight = diff_weight + destination.weight
-            new_destinations = [destination.name] + diff_destinations
-            table[[row, column]] = [new_weight, new_destinations]
-          <span style="color:#080;font-weight:bold">end</span>
-        <span style="color:#080;font-weight:bold">end</span>
-      <span style="color:#080;font-weight:bold">end</span>
-    <span style="color:#080;font-weight:bold">end</span>
-  <span style="color:#080;font-weight:bold">end</span>
-
-  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">find_best_combinations</span>
-    sorted_table = table.sort_by { |k, v| v[<span style="color:#00D">0</span>] }
-    best_combinations_weight = sorted_table[<span style="color:#00D">-1</span>][<span style="color:#00D">1</span>][<span style="color:#00D">0</span>]
-    p best_combinations = table.select { |k,v| v[<span style="color:#00D">0</span>] == best_combinations_weight }
-  <span style="color:#080;font-weight:bold">end</span>
-
-<span style="color:#080;font-weight:bold">end</span>
-
-a = <span style="color:#036;font-weight:bold">Destination</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">A</span><span style="color:#710">&quot;</span></span>,<span style="color:#60E">0.5</span>,<span style="color:#00D">7</span>)
-b = <span style="color:#036;font-weight:bold">Destination</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">B</span><span style="color:#710">&quot;</span></span>,<span style="color:#60E">0.5</span>,<span style="color:#00D">6</span>)
-c = <span style="color:#036;font-weight:bold">Destination</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">C</span><span style="color:#710">&quot;</span></span>,<span style="color:#00D">1</span>,<span style="color:#00D">9</span>)
-d = <span style="color:#036;font-weight:bold">Destination</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">D</span><span style="color:#710">&quot;</span></span>,<span style="color:#00D">2</span>,<span style="color:#00D">9</span>)
-e = <span style="color:#036;font-weight:bold">Destination</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">E</span><span style="color:#710">&quot;</span></span>,<span style="color:#60E">0.5</span>,<span style="color:#00D">8</span>)
-
-schedule = <span style="color:#036;font-weight:bold">Schedule</span>.new(<span style="color:#00D">2</span>)
-schedule.destinations = [a,b,c,d,e].shuffle
-schedule.fill_destinations
-schedule.find_best_combinations
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Destination</span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  attr_accessor <span style="color:#A60">:name</span>, <span style="color:#A60">:time_cost</span>, <span style="color:#A60">:weight</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(name,time_cost,weight)
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span style="color:#33B">@name</span> = name
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#33B">@time_cost</span> = time_cost
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#33B">@weight</span> = weight
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#080;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Schedule</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>  attr_accessor <span style="color:#A60">:limitation</span>, <span style="color:#A60">:destinations</span>, <span style="color:#A60">:table</span>, <span style="color:#A60">:subtimes</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(limitation)
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#33B">@limitation</span> = limitation
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    <span style="color:#33B">@destinations</span> = []
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>    <span style="color:#33B">@subtimes</span> = make_subtimes
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>    <span style="color:#33B">@table</span> = <span style="color:#036;font-weight:bold">Hash</span>.new([<span style="color:#00D">0</span>, [<span style="color:#069">nil</span>]])
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">make_subtimes</span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>    t = <span style="color:#60E">0.5</span>
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>    <span style="color:#33B">@subtimes</span> = []
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>    <span style="color:#080;font-weight:bold">while</span> t &lt;= limitation
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>      <span style="color:#33B">@subtimes</span> &lt;&lt; t
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>      t += <span style="color:#60E">0.5</span>
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>    <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>    <span style="color:#33B">@subtimes</span>
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">fill_destinations</span>
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>    destinations.each.with_index <span style="color:#080;font-weight:bold">do</span> |destination, index|
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span>      row = index + <span style="color:#00D">1</span>
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>      subtimes.each.with_index <span style="color:#080;font-weight:bold">do</span> |subtime, index|
+<span class="line-numbers"><a href="#n34" name="n34">34</a></span>        column = index + <span style="color:#00D">1</span>
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span>        previous_max_weight = table[[row-<span style="color:#00D">1</span>, column]][<span style="color:#00D">0</span>]
+<span class="line-numbers"><a href="#n36" name="n36">36</a></span>        previous_max_name = table[[row-<span style="color:#00D">1</span>, column]][<span style="color:#00D">1</span>][<span style="color:#00D">0</span>]
+<span class="line-numbers"><a href="#n37" name="n37">37</a></span>        <span style="color:#080;font-weight:bold">if</span> subtime &lt; destination.time_cost
+<span class="line-numbers"><a href="#n38" name="n38">38</a></span>          table[[row, column]] = table[[row-<span style="color:#00D">1</span>, column]]
+<span class="line-numbers"><a href="#n39" name="n39">39</a></span>        <span style="color:#080;font-weight:bold">elsif</span> subtime == destination.time_cost
+<span class="line-numbers"><strong><a href="#n40" name="n40">40</a></strong></span>          current_weight = destination.weight
+<span class="line-numbers"><a href="#n41" name="n41">41</a></span>          current_weight &gt;= previous_max_weight \
+<span class="line-numbers"><a href="#n42" name="n42">42</a></span>          ? table[[row, column]] = [current_weight, [destination.name]] \
+<span class="line-numbers"><a href="#n43" name="n43">43</a></span>          : table[[row, column]] = table[[row-<span style="color:#00D">1</span>, column]]
+<span class="line-numbers"><a href="#n44" name="n44">44</a></span>        <span style="color:#080;font-weight:bold">else</span>
+<span class="line-numbers"><a href="#n45" name="n45">45</a></span>          diff_time = subtime - destination.time_cost
+<span class="line-numbers"><a href="#n46" name="n46">46</a></span>          offset_column = (diff_time/<span style="color:#60E">0.5</span>).to_i
+<span class="line-numbers"><a href="#n47" name="n47">47</a></span>          diff_weight = table[[row-<span style="color:#00D">1</span>, offset_column]][<span style="color:#00D">0</span>]
+<span class="line-numbers"><a href="#n48" name="n48">48</a></span>          diff_destinations = table[[row-<span style="color:#00D">1</span>, offset_column]][<span style="color:#00D">1</span>]
+<span class="line-numbers"><a href="#n49" name="n49">49</a></span>          <span style="color:#080;font-weight:bold">if</span> diff_weight == <span style="color:#00D">0</span>
+<span class="line-numbers"><strong><a href="#n50" name="n50">50</a></strong></span>            table[[row, column]] = table[[row-<span style="color:#00D">1</span>, column]]
+<span class="line-numbers"><a href="#n51" name="n51">51</a></span>          <span style="color:#080;font-weight:bold">else</span>
+<span class="line-numbers"><a href="#n52" name="n52">52</a></span>            new_weight = diff_weight + destination.weight
+<span class="line-numbers"><a href="#n53" name="n53">53</a></span>            new_destinations = [destination.name] + diff_destinations
+<span class="line-numbers"><a href="#n54" name="n54">54</a></span>            table[[row, column]] = [new_weight, new_destinations]
+<span class="line-numbers"><a href="#n55" name="n55">55</a></span>          <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n56" name="n56">56</a></span>        <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n57" name="n57">57</a></span>      <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n58" name="n58">58</a></span>    <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n59" name="n59">59</a></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><strong><a href="#n60" name="n60">60</a></strong></span>
+<span class="line-numbers"><a href="#n61" name="n61">61</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">find_best_combinations</span>
+<span class="line-numbers"><a href="#n62" name="n62">62</a></span>    sorted_table = table.sort_by { |k, v| v[<span style="color:#00D">0</span>] }
+<span class="line-numbers"><a href="#n63" name="n63">63</a></span>    best_combinations_weight = sorted_table[<span style="color:#00D">-1</span>][<span style="color:#00D">1</span>][<span style="color:#00D">0</span>]
+<span class="line-numbers"><a href="#n64" name="n64">64</a></span>    p best_combinations = table.select { |k,v| v[<span style="color:#00D">0</span>] == best_combinations_weight }
+<span class="line-numbers"><a href="#n65" name="n65">65</a></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n66" name="n66">66</a></span>
+<span class="line-numbers"><a href="#n67" name="n67">67</a></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n68" name="n68">68</a></span>
+<span class="line-numbers"><a href="#n69" name="n69">69</a></span>a = <span style="color:#036;font-weight:bold">Destination</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">A</span><span style="color:#710">&quot;</span></span>,<span style="color:#60E">0.5</span>,<span style="color:#00D">7</span>)
+<span class="line-numbers"><strong><a href="#n70" name="n70">70</a></strong></span>b = <span style="color:#036;font-weight:bold">Destination</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">B</span><span style="color:#710">&quot;</span></span>,<span style="color:#60E">0.5</span>,<span style="color:#00D">6</span>)
+<span class="line-numbers"><a href="#n71" name="n71">71</a></span>c = <span style="color:#036;font-weight:bold">Destination</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">C</span><span style="color:#710">&quot;</span></span>,<span style="color:#00D">1</span>,<span style="color:#00D">9</span>)
+<span class="line-numbers"><a href="#n72" name="n72">72</a></span>d = <span style="color:#036;font-weight:bold">Destination</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">D</span><span style="color:#710">&quot;</span></span>,<span style="color:#00D">2</span>,<span style="color:#00D">9</span>)
+<span class="line-numbers"><a href="#n73" name="n73">73</a></span>e = <span style="color:#036;font-weight:bold">Destination</span>.new(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">E</span><span style="color:#710">&quot;</span></span>,<span style="color:#60E">0.5</span>,<span style="color:#00D">8</span>)
+<span class="line-numbers"><a href="#n74" name="n74">74</a></span>
+<span class="line-numbers"><a href="#n75" name="n75">75</a></span>schedule = <span style="color:#036;font-weight:bold">Schedule</span>.new(<span style="color:#00D">2</span>)
+<span class="line-numbers"><a href="#n76" name="n76">76</a></span>schedule.destinations = [a,b,c,d,e].shuffle
+<span class="line-numbers"><a href="#n77" name="n77">77</a></span>schedule.fill_destinations
+<span class="line-numbers"><a href="#n78" name="n78">78</a></span>schedule.find_best_combinations
+</pre></div>
+</div>
 </div>
 
 <h5 id="24-dynamic-programming-只是一种近似解法">2.4 Dynamic programming 只是一种近似解法</h5>
@@ -1074,36 +871,22 @@ schedule.find_best_combinations
 
 <p>下面是如何填表的伪代码</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-</pre></td>
-  <td class="code"><pre>s1 = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">publish</span><span style="color:#710">&quot;</span></span>
-s2 = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">fisher</span><span style="color:#710">&quot;</span></span>
-
-s1.each_char.with_index <span style="color:#080;font-weight:bold">do</span> |a, i|
-  row = i + <span style="color:#00D">1</span>
-  s2.each_char.with_index <span style="color:#080;font-weight:bold">do</span> |b, n|
-    column = n + <span style="color:#00D">1</span>
-    <span style="color:#080;font-weight:bold">if</span> a == b
-      table[[row, column]] = <span style="color:#00D">1</span> + table[[row-<span style="color:#00D">1</span>, column-<span style="color:#00D">1</span>]]
-    <span style="color:#080;font-weight:bold">else</span>
-      table[[row, column]] = <span style="color:#00D">0</span>
-    <span style="color:#080;font-weight:bold">end</span>
-<span style="color:#080;font-weight:bold">end</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>s1 = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">publish</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>s2 = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">fisher</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>s1.each_char.with_index <span style="color:#080;font-weight:bold">do</span> |a, i|
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  row = i + <span style="color:#00D">1</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  s2.each_char.with_index <span style="color:#080;font-weight:bold">do</span> |b, n|
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    column = n + <span style="color:#00D">1</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span style="color:#080;font-weight:bold">if</span> a == b
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>      table[[row, column]] = <span style="color:#00D">1</span> + table[[row-<span style="color:#00D">1</span>, column-<span style="color:#00D">1</span>]]
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    <span style="color:#080;font-weight:bold">else</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>      table[[row, column]] = <span style="color:#00D">0</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#080;font-weight:bold">end</span>
+</pre></div>
+</div>
 </div>
 
 <h5 id="42-code-of-longest-common-subsequence">4.2 code of Longest common subsequence</h5>
@@ -1114,18 +897,13 @@ s1.each_char.with_index <span style="color:#080;font-weight:bold">do</span> |a, 
 
 <p>先看下书中给出的用于填表的伪代码</p>
 
-<div class="language-python highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#080;font-weight:bold">if</span> word_a[i] == word_b[j]:
-  cell[i][j] = cellp[i-<span style="color:#00D">1</span>][j-<span style="color:#00D">1</span>] + <span style="color:#00D">1</span>
-<span style="color:#080;font-weight:bold">else</span>:
-  cell[i][j] = <span style="color:#369;font-weight:bold">max</span>(cell[i-<span style="color:#00D">1</span>][j], cell[i][j-<span style="color:#00D">1</span>])
-</pre></td>
-</tr></table>
+<div class="language-python highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">if</span> word_a[i] == word_b[j]:
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  cell[i][j] = cellp[i-<span style="color:#00D">1</span>][j-<span style="color:#00D">1</span>] + <span style="color:#00D">1</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">else</span>:
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  cell[i][j] = <span style="color:#369;font-weight:bold">max</span>(cell[i-<span style="color:#00D">1</span>][j], cell[i][j-<span style="color:#00D">1</span>])
+</pre></div>
+</div>
 </div>
 
 <p>匹配到字母时的操作和substring一样，从取左上方的值+1</p>
@@ -1140,68 +918,41 @@ s1.each_char.with_index <span style="color:#080;font-weight:bold">do</span> |a, 
 
 <p>下面是用ruby写的找出两个字串之间的所有 longest common subsequence 的代码</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-<a href="#n23" name="n23">23</a>
-</pre></td>
-  <td class="code"><pre>s1 = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGATCT</span><span style="color:#710">&quot;</span></span>
-s2 = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ACTGTA</span><span style="color:#710">&quot;</span></span>
-
-all_css = []
-
-s1.length.times <span style="color:#080;font-weight:bold">do</span> |n|
-<span style="color:#777"># starting with different letter, we may get different subsequences</span>
-  subsequence = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>
-  start = <span style="color:#00D">0</span>
-  s1[n..<span style="color:#00D">-1</span>].each_char <span style="color:#080;font-weight:bold">do</span> |a|
-    <span style="color:#080;font-weight:bold">if</span> i = s2[start..<span style="color:#00D">-1</span>] =~ <span style="color:#036;font-weight:bold">Regexp</span>.new(a) <span style="color:#777"># 不能直接用 /a/ !!!</span>
-      subsequence &lt;&lt; a
-      start = start + i + <span style="color:#00D">1</span>
-    <span style="color:#080;font-weight:bold">end</span>
-  <span style="color:#080;font-weight:bold">end</span>
-
-  all_css &lt;&lt; subsequence
-<span style="color:#080;font-weight:bold">end</span>
-
-p all_css
-longest_length =  all_css.map(&amp;<span style="color:#A60">:length</span>).max
-p all_lcss = all_css.select{ |e| e.length == longest_length }
-
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>s1 = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGATCT</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>s2 = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ACTGTA</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>all_css = []
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>s1.length.times <span style="color:#080;font-weight:bold">do</span> |n|
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#777"># starting with different letter, we may get different subsequences</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  subsequence = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  start = <span style="color:#00D">0</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  s1[n..<span style="color:#00D">-1</span>].each_char <span style="color:#080;font-weight:bold">do</span> |a|
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>    <span style="color:#080;font-weight:bold">if</span> i = s2[start..<span style="color:#00D">-1</span>] =~ <span style="color:#036;font-weight:bold">Regexp</span>.new(a) <span style="color:#777"># 不能直接用 /a/ !!!</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>      subsequence &lt;&lt; a
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>      start = start + i + <span style="color:#00D">1</span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>  all_css &lt;&lt; subsequence
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>p all_css
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>longest_length =  all_css.map(&amp;<span style="color:#A60">:length</span>).max
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>p all_lcss = all_css.select{ |e| e.length == longest_length }
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>
+</pre></div>
+</div>
 </div>
 
 <p>输出结果是</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ATT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">TT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">T</span><span style="color:#710">&quot;</span></span>]
-[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ATT</span><span style="color:#710">&quot;</span></span>]
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ATT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">TT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">T</span><span style="color:#710">&quot;</span></span>]
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ATT</span><span style="color:#710">&quot;</span></span>]
+</pre></div>
+</div>
 </div>
 
 <p>其实这个算法有遗漏，后面会提到。</p>
@@ -1226,108 +977,68 @@ p all_lcss = all_css.select{ |e| e.length == longest_length }
 
 <p>比如 <code>s1 = "CGATCT"</code> 的所有 subsequence</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">cal_subsequences</span>(string)
-  string_letters = string.split(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>)
-  subsequences = []
-  n = <span style="color:#00D">1</span>
-  <span style="color:#080;font-weight:bold">while</span> n &lt; string.length
-    combinations = string_letters.combination(n).to_a
-    combinations.map! { |c| c.join }
-    subsequences += combinations
-    n += <span style="color:#00D">1</span>
-  <span style="color:#080;font-weight:bold">end</span>
-  subsequences
-<span style="color:#080;font-weight:bold">end</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">cal_subsequences</span>(string)
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  string_letters = string.split(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>)
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  subsequences = []
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  n = <span style="color:#00D">1</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  <span style="color:#080;font-weight:bold">while</span> n &lt; string.length
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    combinations = string_letters.combination(n).to_a
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    combinations.map! { |c| c.join }
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    subsequences += combinations
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    n += <span style="color:#00D">1</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>  subsequences
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#080;font-weight:bold">end</span>
+</pre></div>
+</div>
 </div>
 
 <p>可以算出</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">C</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">G</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">A</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">T</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">C</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">T</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CG</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">TC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">TT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CAT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CAC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CAT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CTC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CTT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GAT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GAC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GAT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GTC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GTT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ATC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ATT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ACT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">TCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGAT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGAC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGAT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGTC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGTT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CATC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CATT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CACT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CTCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GATC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GATT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GACT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GTCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ATCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGATC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGATT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGACT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGTCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CATCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GATCT</span><span style="color:#710">&quot;</span></span>]
-<span style="color:#00D">62</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">C</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">G</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">A</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">T</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">C</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">T</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CG</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">TC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">TT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CAT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CAC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CAT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CTC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CTT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GAT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GAC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GAT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GTC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GTT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ATC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ATT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ACT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">TCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGAT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGAC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGAT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGTC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGTT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CATC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CATT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CACT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CTCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GATC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GATT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GACT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GTCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ATCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGATC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGATT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGACT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGTCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CATCT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GATCT</span><span style="color:#710">&quot;</span></span>]
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#00D">62</span>
+</pre></div>
+</div>
 </div>
 
 <p>总共有62个subsequences。</p>
 
 <p>如果把两个字串的 subsequneces 都算出来，然后求交集，就可以拿到他们共同的 subsequences, 接着在找到其中最长的。</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-</pre></td>
-  <td class="code"><pre>s1 = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGATCT</span><span style="color:#710">&quot;</span></span>
-s2 = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ACTGTA</span><span style="color:#710">&quot;</span></span>
-
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">cal_subsequences</span>(string)
-  string_letters = string.split(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>)
-  subsequences = []
-  n = <span style="color:#00D">1</span>
-  <span style="color:#080;font-weight:bold">while</span> n &lt; string.length
-    combinations = string_letters.combination(n).to_a
-    combinations.map! { |c| c.join }
-    subsequences += combinations
-    n += <span style="color:#00D">1</span>
-  <span style="color:#080;font-weight:bold">end</span>
-  subsequences
-<span style="color:#080;font-weight:bold">end</span>
-
-p common_sequences = cal_subsequences(s1) &amp; cal_subsequences(s2)
-p longest = common_sequences.map(&amp;<span style="color:#A60">:length</span>).max
-p common_sequences.select { |s| s.length == longest }
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>s1 = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGATCT</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>s2 = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ACTGTA</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">cal_subsequences</span>(string)
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  string_letters = string.split(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>)
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  subsequences = []
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  n = <span style="color:#00D">1</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  <span style="color:#080;font-weight:bold">while</span> n &lt; string.length
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    combinations = string_letters.combination(n).to_a
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    combinations.map! { |c| c.join }
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>    subsequences += combinations
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>    n += <span style="color:#00D">1</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>  subsequences
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>p common_sequences = cal_subsequences(s1) &amp; cal_subsequences(s2)
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>p longest = common_sequences.map(&amp;<span style="color:#A60">:length</span>).max
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>p common_sequences.select { |s| s.length == longest }
+</pre></div>
+</div>
 </div>
 
 <p>结果是</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">C</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">G</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">A</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">T</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CG</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">TT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CTT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ATT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ACT</span><span style="color:#710">&quot;</span></span>]
-<span style="color:#00D">3</span>
-[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CTT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ATT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ACT</span><span style="color:#710">&quot;</span></span>]
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">C</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">G</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">A</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">T</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CG</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">GT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">AC</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">TT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CTT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ATT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ACT</span><span style="color:#710">&quot;</span></span>]
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#00D">3</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGA</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CGT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">CTT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ATT</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ACT</span><span style="color:#710">&quot;</span></span>]
+</pre></div>
+</div>
 </div>
 
 <p>最后结果比之前手工演算的又多出了3个，找到了所有的 longest common subsequence， 这里的关键是要保持顺序，所以不能用 permutation。</p>

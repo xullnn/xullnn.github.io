@@ -83,34 +83,21 @@
 
 <p>“教会”一个object 某个 method:</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; obj = <span style="color:#036;font-weight:bold">Object</span>.new
- =&gt; <span style="color:#777">#&lt;Object:0x00007f80b784e8a8&gt;</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; <span style="color:#080;font-weight:bold">def</span> obj.<span style="color:#06B;font-weight:bold">talk</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span>?&gt;   puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am an object.</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span>?&gt;   puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">(Do you an object?)</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
- =&gt; <span style="color:#A60">:talk</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; obj.talk
-<span style="color:#036;font-weight:bold">I</span> am an object.
-(<span style="color:#036;font-weight:bold">Do</span> you an object?)
- =&gt; <span style="color:#069">nil</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt;
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; obj = <span style="color:#036;font-weight:bold">Object</span>.new
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#777">#&lt;Object:0x00007f80b784e8a8&gt;</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; <span style="color:#080;font-weight:bold">def</span> obj.<span style="color:#06B;font-weight:bold">talk</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span>?&gt;   puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">I am an object.</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span>?&gt;   puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">(Do you an object?)</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span> =&gt; <span style="color:#A60">:talk</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; obj.talk
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#036;font-weight:bold">I</span> am an object.
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>(<span style="color:#036;font-weight:bold">Do</span> you an object?)
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span> =&gt; <span style="color:#069">nil</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt;
+</pre></div>
+</div>
 </div>
 
 <p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fnqknll03kj30fp087myd.jpg" alt="" /></p>
@@ -120,16 +107,12 @@
 <p>当一个object 能理解回应某个信息，那么可以说这个 object respond to 这个 message。</p>
 
 <p>接上面的例子</p>
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt; obj.respond_to?(<span style="color:#A60">:talk</span>)
- =&gt; <span style="color:#069">true</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span> &gt;
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt; obj.respond_to?(<span style="color:#A60">:talk</span>)
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">true</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span> &gt;
+</pre></div>
+</div>
 </div>
 
 <p>关于参数</p>
@@ -145,52 +128,33 @@
 
 <p>ruby 中 除了 nil 和 false 以外的所有对象 使用 if 来判断，都会返回 True</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span> &gt; !!<span style="color:#069">nil</span>
- =&gt; <span style="color:#069">false</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">011</span> &gt; !!<span style="color:#069">false</span>
- =&gt; <span style="color:#069">false</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">012</span> &gt; !!<span style="color:#00D">1</span>
- =&gt; <span style="color:#069">true</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt; !!<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>
- =&gt; <span style="color:#069">true</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span> &gt; !![]
- =&gt; <span style="color:#069">true</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span> &gt; !!<span style="color:#069">nil</span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">false</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">011</span> &gt; !!<span style="color:#069">false</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#069">false</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">012</span> &gt; !!<span style="color:#00D">1</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#069">true</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt; !!<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#069">true</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span> &gt; !![]
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span> =&gt; <span style="color:#069">true</span>
+</pre></div>
+</div>
 </div>
 
 <p>注意 puts 最后的返回值是 nil
 所以 <code>!!one</code> 最后返回的是 false ，这类逻辑判断要以最终返回值作为依据。</p>
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">016</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">one</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">017</span>?&gt;   puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hello.</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
- =&gt; <span style="color:#A60">:one</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">9</span> &gt; !!one
-<span style="color:#036;font-weight:bold">Hello</span>.
- =&gt; <span style="color:#069">false</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">016</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">one</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">017</span>?&gt;   puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hello.</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#A60">:one</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">9</span> &gt; !!one
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="color:#036;font-weight:bold">Hello</span>.
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span> =&gt; <span style="color:#069">false</span>
+</pre></div>
+</div>
 </div>
 
 <p><strong>几个重要的 先天 methods</strong></p>
@@ -201,82 +165,52 @@
   <li>send(synonym: __send__)</li>
 </ul>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; obj = <span style="color:#036;font-weight:bold">Object</span>.new
- =&gt; <span style="color:#777">#&lt;Object:0x00007fbabd83f138&gt;</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; obj.object_id
- =&gt; <span style="color:#00D">70220010092700</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; obj.respond_to?(<span style="color:#A60">:respond_to?</span>)
- =&gt; <span style="color:#069">true</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; obj.send(<span style="color:#A60">:object_id</span>)
- =&gt; <span style="color:#00D">70220010092700</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; obj.send(<span style="color:#A60">:fake_meth</span>)
-<span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
-        <span style="color:#00D">2</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'
-        1: from (irb):6
-NoMethodError (undefined method </span><span style="color:#161">`</span></span>fake_meth<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"> for #&lt;Object:0x00007fbabd83f138&gt;)
-2.5.0 :007 &gt;
-</span></span></pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; obj = <span style="color:#036;font-weight:bold">Object</span>.new
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#777">#&lt;Object:0x00007fbabd83f138&gt;</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; obj.object_id
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#00D">70220010092700</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; obj.respond_to?(<span style="color:#A60">:respond_to?</span>)
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#069">true</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; obj.send(<span style="color:#A60">:object_id</span>)
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#00D">70220010092700</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; obj.send(<span style="color:#A60">:fake_meth</span>)
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>        <span style="color:#00D">2</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from (irb):6</span></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">NoMethodError (undefined method </span><span style="color:#161">`</span></span>fake_meth<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"> for #&lt;Object:0x00007fbabd83f138&gt;)</span></span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :007 &gt;</span></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
+</div>
 </div>
 
 <p>BasiceObject 是 Object 的 superclass</p>
 
 <p>它的实例对象能做的事很少，甚至不能使用 methods 方法查看实例能用的方法。</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; <span style="color:#036;font-weight:bold">Object</span>.superclass
- =&gt; <span style="color:#036;font-weight:bold">BasicObject</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; <span style="color:#036;font-weight:bold">BasicObject</span>.new
-(<span style="color:#036;font-weight:bold">Object</span> doesn<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">t support #inspect)
- =&gt;
-2.5.0 :003 &gt; BasicObject.new.methods
-Traceback (most recent call last):
-        2: from /Users/caven/.rvm/rubies/ruby-2.5.0/bin/irb:11:in `&lt;main&gt;</span><span style="color:#710">'</span></span>
-        <span style="color:#00D">1</span>: from (irb):<span style="color:#00D">3</span>
-<span style="color:#036;font-weight:bold">NoMethodError</span> (undefined method <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">methods' for #&lt;BasicObject:0x00007fa43084ec80&gt;)
-2.5.0 :004 &gt;
-</span></span></pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; <span style="color:#036;font-weight:bold">Object</span>.superclass
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#036;font-weight:bold">BasicObject</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; <span style="color:#036;font-weight:bold">BasicObject</span>.new
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>(<span style="color:#036;font-weight:bold">Object</span> doesn<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">t support #inspect)</span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> =&gt;</span></span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">2.5.0 :003 &gt; BasicObject.new.methods</span></span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">Traceback (most recent call last):</span></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">        2: from /Users/caven/.rvm/rubies/ruby-2.5.0/bin/irb:11:in `&lt;main&gt;</span><span style="color:#710">'</span></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>        <span style="color:#00D">1</span>: from (irb):<span style="color:#00D">3</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#036;font-weight:bold">NoMethodError</span> (undefined method <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">methods' for #&lt;BasicObject:0x00007fa43084ec80&gt;)</span></span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">2.5.0 :004 &gt;</span></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2"></span></span></pre></div>
+</div>
 </div>
 
 <p>不过在 class 层面，两个class 虽然是父子关系，但是他们的 class methods 的内容和数量都是一样的。</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; <span style="color:#036;font-weight:bold">Object</span>.methods == <span style="color:#036;font-weight:bold">BasicObject</span>.methods
- =&gt; <span style="color:#069">true</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; <span style="color:#036;font-weight:bold">Object</span>.methods == <span style="color:#036;font-weight:bold">BasicObject</span>.methods
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">true</span>
+</pre></div>
+</div>
 </div>
 
 <p><code>send</code> 用来向一个对象送出一个message 或者说让对象执行一个 method</p>
@@ -289,52 +223,30 @@ Traceback (most recent call last):
 
 <p>比如我们写了一个 class Ticket, 用户可以查询自己想查的内容</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-</pre></td>
-  <td class="code"><pre>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">answer</span>(request)
-    <span style="color:#080;font-weight:bold">case</span> request
-    <span style="color:#080;font-weight:bold">when</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">date</span><span style="color:#710">&quot;</span></span>
-      puts <span style="color:#069">self</span>.date
-    <span style="color:#080;font-weight:bold">when</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">seat</span><span style="color:#710">&quot;</span></span>
-      puts <span style="color:#069">self</span>.seat
-    <span style="color:#080;font-weight:bold">when</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">price</span><span style="color:#710">&quot;</span></span>
-      puts <span style="color:#069">self</span>.price
-      <span style="color:#777"># imagine that every ticket has hundreds of attributes</span>
-    <span style="color:#080;font-weight:bold">else</span>
-      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">No such info</span><span style="color:#710">&quot;</span></span>
-    <span style="color:#080;font-weight:bold">end</span>
-  <span style="color:#080;font-weight:bold">end</span>
-
-  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">response</span>(request)
-    <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">self</span>.respond_to?(request)
-      puts <span style="color:#069">self</span>.send(request)
-    <span style="color:#080;font-weight:bold">else</span>
-      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">No such info</span><span style="color:#710">&quot;</span></span>
-    <span style="color:#080;font-weight:bold">end</span>
-  <span style="color:#080;font-weight:bold">end</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">answer</span>(request)
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>    <span style="color:#080;font-weight:bold">case</span> request
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span style="color:#080;font-weight:bold">when</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">date</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>      puts <span style="color:#069">self</span>.date
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span style="color:#080;font-weight:bold">when</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">seat</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      puts <span style="color:#069">self</span>.seat
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    <span style="color:#080;font-weight:bold">when</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">price</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>      puts <span style="color:#069">self</span>.price
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>      <span style="color:#777"># imagine that every ticket has hundreds of attributes</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    <span style="color:#080;font-weight:bold">else</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">No such info</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>    <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>  <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">response</span>(request)
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>    <span style="color:#080;font-weight:bold">if</span> <span style="color:#069">self</span>.respond_to?(request)
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>      puts <span style="color:#069">self</span>.send(request)
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>    <span style="color:#080;font-weight:bold">else</span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>      puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">No such info</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>    <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>  <span style="color:#080;font-weight:bold">end</span>
+</pre></div>
+</div>
 </div>
 <p><code>answer</code> 方法只能针对固定的几个 attributes， 如果票的信息有很多种，那么代码会变得极其冗长。</p>
 
@@ -342,38 +254,23 @@ Traceback (most recent call last):
 
 <p>定义 method 的时候给参数列表中的参数前加星号 可以传入任意数量的参数 并以 array 的形式组织。</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">arbitrary_arg</span>(a, b, *c)
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span>?&gt;   p a, b, c
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
- =&gt; <span style="color:#A60">:arbitrary_arg</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; arbitrary_arg(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>,<span style="color:#00D">5</span>,<span style="color:#00D">6</span>)
-<span style="color:#00D">1</span>
-<span style="color:#00D">2</span>
-[<span style="color:#00D">3</span>, <span style="color:#00D">4</span>, <span style="color:#00D">5</span>, <span style="color:#00D">6</span>]
- =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, [<span style="color:#00D">3</span>, <span style="color:#00D">4</span>, <span style="color:#00D">5</span>, <span style="color:#00D">6</span>]]
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; arbitrary_arg(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>) <span style="color:#777"># 如果星号对应的参数没有给出，那么会视作空 array 对待</span>
-<span style="color:#00D">1</span>
-<span style="color:#00D">2</span>
-[]
- =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, []]
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">arbitrary_arg</span>(a, b, *c)
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span>?&gt;   p a, b, c
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#A60">:arbitrary_arg</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; arbitrary_arg(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>,<span style="color:#00D">5</span>,<span style="color:#00D">6</span>)
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#00D">1</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#00D">2</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>[<span style="color:#00D">3</span>, <span style="color:#00D">4</span>, <span style="color:#00D">5</span>, <span style="color:#00D">6</span>]
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span> =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, [<span style="color:#00D">3</span>, <span style="color:#00D">4</span>, <span style="color:#00D">5</span>, <span style="color:#00D">6</span>]]
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; arbitrary_arg(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>) <span style="color:#777"># 如果星号对应的参数没有给出，那么会视作空 array 对待</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#00D">1</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#00D">2</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>[]
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span> =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, []]
+</pre></div>
+</div>
 </div>
 
 <p>如果带星号的参数在中间,有几种情况:</p>
@@ -386,162 +283,88 @@ Traceback (most recent call last):
 
 <p>当给出参数个数比指定 parameters 少两个或以上时，报错</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-<a href="#n23" name="n23">23</a>
-<a href="#n24" name="n24">24</a>
-<strong><a href="#n25" name="n25">25</a></strong>
-<a href="#n26" name="n26">26</a>
-<a href="#n27" name="n27">27</a>
-<a href="#n28" name="n28">28</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">sponge</span>(a, b, *c, d)
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span>?&gt;   p a, b, c, d
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
- =&gt; <span style="color:#A60">:sponge</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; sponge(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>,<span style="color:#00D">5</span>,<span style="color:#00D">6</span>,<span style="color:#00D">7</span>,<span style="color:#00D">8</span>) <span style="color:#777"># 参数富余</span>
-<span style="color:#00D">1</span>
-<span style="color:#00D">2</span>
-[<span style="color:#00D">3</span>, <span style="color:#00D">4</span>, <span style="color:#00D">5</span>, <span style="color:#00D">6</span>, <span style="color:#00D">7</span>]
-<span style="color:#00D">8</span>
- =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, [<span style="color:#00D">3</span>, <span style="color:#00D">4</span>, <span style="color:#00D">5</span>, <span style="color:#00D">6</span>, <span style="color:#00D">7</span>], <span style="color:#00D">8</span>]
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; sponge(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>) <span style="color:#777"># 参数对等</span>
-<span style="color:#00D">1</span>
-<span style="color:#00D">2</span>
-[<span style="color:#00D">3</span>]
-<span style="color:#00D">4</span>
- =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, [<span style="color:#00D">3</span>], <span style="color:#00D">4</span>]
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; sponge(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>) <span style="color:#777"># 少一个参数</span>
-<span style="color:#00D">1</span>
-<span style="color:#00D">2</span>
-[]
-<span style="color:#00D">3</span>
- =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, [], <span style="color:#00D">3</span>]
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; sponge(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>) <span style="color:#777"># 少两个参数</span>
-<span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
-        <span style="color:#00D">3</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'
-        2: from (irb):7
-        1: from (irb):1:in </span><span style="color:#161">`</span></span>sponge<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">
-ArgumentError (wrong number of arguments (given 2, expected 3+))
-</span></span></pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">sponge</span>(a, b, *c, d)
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span>?&gt;   p a, b, c, d
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span>?&gt;   <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#A60">:sponge</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; sponge(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>,<span style="color:#00D">5</span>,<span style="color:#00D">6</span>,<span style="color:#00D">7</span>,<span style="color:#00D">8</span>) <span style="color:#777"># 参数富余</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#00D">1</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#00D">2</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>[<span style="color:#00D">3</span>, <span style="color:#00D">4</span>, <span style="color:#00D">5</span>, <span style="color:#00D">6</span>, <span style="color:#00D">7</span>]
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#00D">8</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span> =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, [<span style="color:#00D">3</span>, <span style="color:#00D">4</span>, <span style="color:#00D">5</span>, <span style="color:#00D">6</span>, <span style="color:#00D">7</span>], <span style="color:#00D">8</span>]
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; sponge(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>) <span style="color:#777"># 参数对等</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#00D">1</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#00D">2</span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>[<span style="color:#00D">3</span>]
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#00D">4</span>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span> =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, [<span style="color:#00D">3</span>], <span style="color:#00D">4</span>]
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; sponge(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>) <span style="color:#777"># 少一个参数</span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#00D">1</span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span><span style="color:#00D">2</span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>[]
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span><span style="color:#00D">3</span>
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span> =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, [], <span style="color:#00D">3</span>]
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; sponge(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>) <span style="color:#777"># 少两个参数</span>
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span><span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>        <span style="color:#00D">3</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        2: from (irb):7</span></span>
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from (irb):1:in </span><span style="color:#161">`</span></span>sponge<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"></span></span>
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">ArgumentError (wrong number of arguments (given 2, expected 3+))</span></span>
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
+</div>
 </div>
 
 <p>还有一种情况是 parameters 中既包括默认值设置，又包括 spongy 参数（带星号）</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-<a href="#n23" name="n23">23</a>
-<a href="#n24" name="n24">24</a>
-<strong><a href="#n25" name="n25">25</a></strong>
-<a href="#n26" name="n26">26</a>
-<a href="#n27" name="n27">27</a>
-<a href="#n28" name="n28">28</a>
-<a href="#n29" name="n29">29</a>
-<strong><a href="#n30" name="n30">30</a></strong>
-<a href="#n31" name="n31">31</a>
-<a href="#n32" name="n32">32</a>
-<a href="#n33" name="n33">33</a>
-<a href="#n34" name="n34">34</a>
-<strong><a href="#n35" name="n35">35</a></strong>
-<a href="#n36" name="n36">36</a>
-<a href="#n37" name="n37">37</a>
-<a href="#n38" name="n38">38</a>
-<a href="#n39" name="n39">39</a>
-<strong><a href="#n40" name="n40">40</a></strong>
-<a href="#n41" name="n41">41</a>
-<a href="#n42" name="n42">42</a>
-<a href="#n43" name="n43">43</a>
-<a href="#n44" name="n44">44</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">args_unleashed</span>(a, b=<span style="color:#00D">1</span>, *c, d, e)
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span>?&gt;   puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Arguments:</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span>?&gt;   p a, b, c, d, e
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
- =&gt; <span style="color:#A60">:args_unleashed</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; args_unleashed(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>,<span style="color:#00D">5</span>)
-<span style="color:#606">Arguments</span>:
-<span style="color:#00D">1</span>
-<span style="color:#00D">2</span>
-[<span style="color:#00D">3</span>]
-<span style="color:#00D">4</span>
-<span style="color:#00D">5</span>
- =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, [<span style="color:#00D">3</span>], <span style="color:#00D">4</span>, <span style="color:#00D">5</span>]
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; args_unleashed(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>)
-<span style="color:#606">Arguments</span>:
-<span style="color:#00D">1</span>
-<span style="color:#00D">2</span>
-[]
-<span style="color:#00D">3</span>
-<span style="color:#00D">4</span>
- =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, [], <span style="color:#00D">3</span>, <span style="color:#00D">4</span>]
- <span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt; args_unleashed(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>)
-<span style="color:#606">Arguments</span>:
-<span style="color:#00D">1</span>
-<span style="color:#00D">1</span>
-[]
-<span style="color:#00D">2</span>
-<span style="color:#00D">3</span>
- =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">1</span>, [], <span style="color:#00D">2</span>, <span style="color:#00D">3</span>]
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span> &gt;
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; args_unleashed(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>,<span style="color:#00D">5</span>,<span style="color:#00D">6</span>,<span style="color:#00D">7</span>,<span style="color:#00D">8</span>)
-<span style="color:#606">Arguments</span>:
-<span style="color:#00D">1</span>
-<span style="color:#00D">2</span>
-[<span style="color:#00D">3</span>, <span style="color:#00D">4</span>, <span style="color:#00D">5</span>, <span style="color:#00D">6</span>]
-<span style="color:#00D">7</span>
-<span style="color:#00D">8</span>
- =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, [<span style="color:#00D">3</span>, <span style="color:#00D">4</span>, <span style="color:#00D">5</span>, <span style="color:#00D">6</span>], <span style="color:#00D">7</span>, <span style="color:#00D">8</span>]
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt; args_unleashed(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>)
-<span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
-        <span style="color:#00D">3</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'
-        2: from (irb):8
-        1: from (irb):1:in </span><span style="color:#161">`</span></span>args_unleashed<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">
-ArgumentError (wrong number of arguments (given 2, expected 3+))
-</span></span></pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">args_unleashed</span>(a, b=<span style="color:#00D">1</span>, *c, d, e)
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span>?&gt;   puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Arguments:</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span>?&gt;   p a, b, c, d, e
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span> =&gt; <span style="color:#A60">:args_unleashed</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; args_unleashed(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>,<span style="color:#00D">5</span>)
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#606">Arguments</span>:
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="color:#00D">1</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#00D">2</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>[<span style="color:#00D">3</span>]
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#00D">4</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#00D">5</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span> =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, [<span style="color:#00D">3</span>], <span style="color:#00D">4</span>, <span style="color:#00D">5</span>]
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; args_unleashed(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>)
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#606">Arguments</span>:
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#00D">1</span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#00D">2</span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>[]
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span><span style="color:#00D">3</span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span><span style="color:#00D">4</span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span> =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, [], <span style="color:#00D">3</span>, <span style="color:#00D">4</span>]
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span> <span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt; args_unleashed(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>)
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span><span style="color:#606">Arguments</span>:
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span><span style="color:#00D">1</span>
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span><span style="color:#00D">1</span>
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>[]
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span><span style="color:#00D">2</span>
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span><span style="color:#00D">3</span>
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span> =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">1</span>, [], <span style="color:#00D">2</span>, <span style="color:#00D">3</span>]
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span> &gt;
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; args_unleashed(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>,<span style="color:#00D">3</span>,<span style="color:#00D">4</span>,<span style="color:#00D">5</span>,<span style="color:#00D">6</span>,<span style="color:#00D">7</span>,<span style="color:#00D">8</span>)
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span><span style="color:#606">Arguments</span>:
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span><span style="color:#00D">1</span>
+<span class="line-numbers"><a href="#n34" name="n34">34</a></span><span style="color:#00D">2</span>
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span>[<span style="color:#00D">3</span>, <span style="color:#00D">4</span>, <span style="color:#00D">5</span>, <span style="color:#00D">6</span>]
+<span class="line-numbers"><a href="#n36" name="n36">36</a></span><span style="color:#00D">7</span>
+<span class="line-numbers"><a href="#n37" name="n37">37</a></span><span style="color:#00D">8</span>
+<span class="line-numbers"><a href="#n38" name="n38">38</a></span> =&gt; [<span style="color:#00D">1</span>, <span style="color:#00D">2</span>, [<span style="color:#00D">3</span>, <span style="color:#00D">4</span>, <span style="color:#00D">5</span>, <span style="color:#00D">6</span>], <span style="color:#00D">7</span>, <span style="color:#00D">8</span>]
+<span class="line-numbers"><a href="#n39" name="n39">39</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt; args_unleashed(<span style="color:#00D">1</span>,<span style="color:#00D">2</span>)
+<span class="line-numbers"><strong><a href="#n40" name="n40">40</a></strong></span><span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
+<span class="line-numbers"><a href="#n41" name="n41">41</a></span>        <span style="color:#00D">3</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
+<span class="line-numbers"><a href="#n42" name="n42">42</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        2: from (irb):8</span></span>
+<span class="line-numbers"><a href="#n43" name="n43">43</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from (irb):1:in </span><span style="color:#161">`</span></span>args_unleashed<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"></span></span>
+<span class="line-numbers"><a href="#n44" name="n44">44</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">ArgumentError (wrong number of arguments (given 2, expected 3+))</span></span>
+<span class="line-numbers"><a href="#n45" name="n45">45</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
+</div>
 </div>
 
 <p>可以说 这种情况下ruby 在做的是，合乎逻辑地，努力地，分配参数，尽量不让程序报错，直到它也无能为力为止</p>
@@ -552,42 +375,29 @@ ArgumentError (wrong number of arguments (given 2, expected 3+))
 
 <p>几种参数的优先级排列是：</p>
 
-<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre>•        required
-•        default-value
-•        sponge
-</pre></td>
-</tr></table>
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>•        required
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>•        default-value
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>•        sponge
+</pre></div>
+</div>
 </div>
 
 <p>一个特例是不能以这种顺序排列 parameters</p>
 
 <p><code>(x, *y, z=1）</code></p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">mm</span>(x, *y, z=<span style="color:#00D">1</span>)
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span>?&gt;   p x, y, z
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">015</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
-<span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
-        <span style="color:#00D">1</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'
-SyntaxError ((irb):13: syntax error, unexpected '=', expecting ')'
-def mm(x, *y, z=1)
-               ^)
-</span></span></pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt; <span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">mm</span>(x, *y, z=<span style="color:#00D">1</span>)
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span>?&gt;   p x, y, z
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">015</span>?&gt; <span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>        <span style="color:#00D">1</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">SyntaxError ((irb):13: syntax error, unexpected '=', expecting ')'</span></span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">def mm(x, *y, z=1)</span></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">               ^)</span></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2"></span></span></pre></div>
+</div>
 </div>
 
 <p>it’s a syntax error, because there’s no way it could be correct. Once you’ve given x its argument and sponged up all the remaining arguments in the array y, nothing can ever be left for z. And if z gets the right-hand argument, leaving the rest for y, it makes no sense to describe z as “optional” or “default-valued.” The situation gets even thornier if you try to do something like the equally illegal <code>(x, *y, z=1, a, b)</code>. Fortunately, Ruby doesn’t allow for more than one sponge argument in a parameter list. Make sure you order your arguments sensibly and, when possible, keep your argument lists reasonably simple!</p>
@@ -610,81 +420,47 @@ def mm(x, *y, z=1)
 
 <p>而常用的 等号 赋值 = ， 则是用新内容（可以与原内容一样）的编号换掉原来的编号</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">017</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>.object_id
- =&gt; <span style="color:#00D">70106764008380</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>.object_id
- =&gt; <span style="color:#00D">70106764058080</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">9</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>.object_id
- =&gt; <span style="color:#00D">70106764148020</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">017</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>.object_id
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#00D">70106764008380</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>.object_id
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#00D">70106764058080</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">9</span> &gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>.object_id
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#00D">70106764148020</span>
+</pre></div>
+</div>
 </div>
 <p>虽然string的内容相同，但他们是不同的对象。</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-<a href="#n23" name="n23">23</a>
-<a href="#n24" name="n24">24</a>
-<strong><a href="#n25" name="n25">25</a></strong>
-<a href="#n26" name="n26">26</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; str = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; abc = str
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; str.object_id
- =&gt; <span style="color:#00D">70131023811700</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; abc.object_id
- =&gt; <span style="color:#00D">70131023811700</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; str.replace(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span>)
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; str.object_id
- =&gt; <span style="color:#00D">70131023811700</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt; abc.object_id
- =&gt; <span style="color:#00D">70131023811700</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt; str
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span> &gt; str = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">world</span><span style="color:#710">&quot;</span></span>
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">world</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">011</span> &gt; str.object_id
- =&gt; <span style="color:#00D">70131019765580</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">012</span> &gt; abc.object_id
- =&gt; <span style="color:#00D">70131023811700</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt; str
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">world</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span> &gt; abc
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; str = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; abc = str
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; str.object_id
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#00D">70131023811700</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; abc.object_id
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="color:#00D">70131023811700</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; str.replace(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span>)
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; str.object_id
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span> =&gt; <span style="color:#00D">70131023811700</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt; abc.object_id
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span> =&gt; <span style="color:#00D">70131023811700</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt; str
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span> &gt; str = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">world</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">world</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">011</span> &gt; str.object_id
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span> =&gt; <span style="color:#00D">70131019765580</span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">012</span> &gt; abc.object_id
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span> =&gt; <span style="color:#00D">70131023811700</span>
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt; str
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">world</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span> &gt; abc
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span>
+</pre></div>
+</div>
 </div>
 
 <p>在这几个原则下</p>
@@ -699,24 +475,16 @@ def mm(x, *y, z=1)
 
 <p>所以无法使用 replace 来换掉对应编号的内容</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; abc = <span style="color:#60E">1.05</span>
- =&gt; <span style="color:#60E">1.05</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; abc.replace(<span style="color:#60E">3.14</span>)
-<span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
-        <span style="color:#00D">2</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'
-        1: from (irb):2
-NoMethodError (undefined method </span><span style="color:#161">`</span></span>replace<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"> for 1.05:Float)
-</span></span></pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; abc = <span style="color:#60E">1.05</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#60E">1.05</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; abc.replace(<span style="color:#60E">3.14</span>)
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span style="color:#036;font-weight:bold">Traceback</span> (most recent call last):
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>        <span style="color:#00D">2</span>: from <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/bin/<span style="color:#606">irb</span>:<span style="color:#00D">11</span><span style="color:#A60">:in</span> <span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#161">`</span><span style="color:#2B2">&lt;main&gt;'</span></span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">        1: from (irb):2</span></span>
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span><span style="background-color:hsla(120,100%,50%,0.06)"><span style="color:#2B2">NoMethodError (undefined method </span><span style="color:#161">`</span></span>replace<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"> for 1.05:Float)</span></span>
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
+</div>
 </div>
 
 <p>从 rdoc 中也可以看到哪几种 类型 才有 replace method</p>
@@ -733,40 +501,24 @@ array 中的 每个 element 实际也只是一个编号</p>
 
 <p>所以只要不去动到 array 中的任何一个 编号，那么 array 还是被认为是原来的 array 即使部分编号的 内容被 replace 了</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; numbers = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">%w{</span><span style="color:#D20">one two three</span><span style="color:#710">}</span></span>
- =&gt; [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">one</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">two</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">three</span><span style="color:#710">&quot;</span></span>]
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; numbers.freeze
- =&gt; [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">one</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">two</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">three</span><span style="color:#710">&quot;</span></span>]
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; numbers[<span style="color:#00D">2</span>].object_id
- =&gt; <span style="color:#00D">70126305599800</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; numbers[<span style="color:#00D">2</span>].replace(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span>)
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; numbers
- =&gt; [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">one</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">two</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span>]
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; numbers.object_id
- =&gt; <span style="color:#00D">70126305599780</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; numbers[<span style="color:#00D">2</span>].object_id
- =&gt; <span style="color:#00D">70126305599800</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt;
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; numbers = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">%w{</span><span style="color:#D20">one two three</span><span style="color:#710">}</span></span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">one</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">two</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">three</span><span style="color:#710">&quot;</span></span>]
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; numbers.freeze
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span> =&gt; [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">one</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">two</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">three</span><span style="color:#710">&quot;</span></span>]
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt; numbers[<span style="color:#00D">2</span>].object_id
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#00D">70126305599800</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; numbers[<span style="color:#00D">2</span>].replace(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span>)
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt; numbers
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span> =&gt; [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">one</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">two</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hello</span><span style="color:#710">&quot;</span></span>]
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; numbers.object_id
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span> =&gt; <span style="color:#00D">70126305599780</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt; numbers[<span style="color:#00D">2</span>].object_id
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span> =&gt; <span style="color:#00D">70126305599800</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt;
+</pre></div>
+</div>
 </div>
 
 <p>即使单个改变的 array 中某个元素 array 本身的 编号也不变</p>

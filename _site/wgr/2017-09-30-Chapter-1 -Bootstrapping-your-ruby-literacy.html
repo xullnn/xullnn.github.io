@@ -82,21 +82,17 @@
 <p>Ruby 中有很多 keywords 关键词：有些是预定义的，保留词汇（术语），这些用词与特定程序任务相关。 比如用来定义方法的 <code>def</code>, 用来定义类的 <code>class</code>, 用来写条件判断逻辑的 <code>if</code>, 以及 “__FILE__“（当前正在执行的文件的名称）。这些保留词大概有40个，通常都是短小的单个词汇或符号。</p>
 
 <p>Ruby 中呼叫方法一般用 点号 . 比如</p>
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>.to_i
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>.to_i
+</pre></div>
+</div>
 </div>
 
 <p>但也有不用点号的：</p>
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">string</span><span style="color:#710">&quot;</span></span>
+</pre></div>
+</div>
 </div>
 
 <p>后一种情况中其实存在一个隐含的 <code>self</code></p>
@@ -108,39 +104,28 @@
 <p>ruby 中最重要的概念是 object</p>
 
 <p>可以在不实际运行 .rb 文件的前提下，检查 文件的语法 使用 -cw flag</p>
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-</pre></td>
-  <td class="code"><pre>ruby -cw c2f.rb
-<span style="color:#036;font-weight:bold">Syntax</span> <span style="color:#036;font-weight:bold">OK</span>
-
-ruby c2f.rb
-<span style="color:#036;font-weight:bold">The</span> result <span style="color:#606">is</span>: <span style="color:#00D">212</span>.
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>ruby -cw c2f.rb
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span style="color:#036;font-weight:bold">Syntax</span> <span style="color:#036;font-weight:bold">OK</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>ruby c2f.rb
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#036;font-weight:bold">The</span> result <span style="color:#606">is</span>: <span style="color:#00D">212</span>.
+</pre></div>
+</div>
 </div>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre>celsius = gets
-fahrenheit = (celsius.to_i * <span style="color:#00D">9</span> / <span style="color:#00D">5</span>) + <span style="color:#00D">32</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>celsius = gets
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>fahrenheit = (celsius.to_i * <span style="color:#00D">9</span> / <span style="color:#00D">5</span>) + <span style="color:#00D">32</span>
+</pre></div>
+</div>
 </div>
 <p>可以简化为</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>fahrenheit = (gets.to_i * <span style="color:#00D">9</span> / <span style="color:#00D">5</span>) + <span style="color:#00D">32</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>fahrenheit = (gets.to_i * <span style="color:#00D">9</span> / <span style="color:#00D">5</span>) + <span style="color:#00D">32</span>
+</pre></div>
+</div>
 </div>
 
 <p><strong>Anatomy of the Ruby installation</strong></p>
@@ -186,50 +171,29 @@ Term</p>
   <p><strong>sitearchdir</strong>	Your own Ruby language extensions (written in C)</p>
 </blockquote>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; <span style="color:#036;font-weight:bold">RbConfig</span>::<span style="color:#036;font-weight:bold">CONFIG</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">rubylibdir</span><span style="color:#710">&quot;</span></span>]
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/2.5.0</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt;
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; <span style="color:#036;font-weight:bold">RbConfig</span>::<span style="color:#036;font-weight:bold">CONFIG</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bindir</span><span style="color:#710">&quot;</span></span>]
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/bin</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt;
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; <span style="color:#036;font-weight:bold">RbConfig</span>::<span style="color:#036;font-weight:bold">CONFIG</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">archdir</span><span style="color:#710">&quot;</span></span>]
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/2.5.0/x86_64-darwin17</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt;
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt; <span style="color:#036;font-weight:bold">RbConfig</span>::<span style="color:#036;font-weight:bold">CONFIG</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sitedir</span><span style="color:#710">&quot;</span></span>]
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt;
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span> &gt; <span style="color:#036;font-weight:bold">RbConfig</span>::<span style="color:#036;font-weight:bold">CONFIG</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vendordir</span><span style="color:#710">&quot;</span></span>]
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/vendor_ruby</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">011</span> &gt;
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">012</span> &gt; <span style="color:#036;font-weight:bold">RbConfig</span>::<span style="color:#036;font-weight:bold">CONFIG</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sitelibdir</span><span style="color:#710">&quot;</span></span>]
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0</span><span style="color:#710">&quot;</span></span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt;
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span> &gt; <span style="color:#036;font-weight:bold">RbConfig</span>::<span style="color:#036;font-weight:bold">CONFIG</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sitearchdir</span><span style="color:#710">&quot;</span></span>]
- =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0/x86_64-darwin17</span><span style="color:#710">&quot;</span></span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt; <span style="color:#036;font-weight:bold">RbConfig</span>::<span style="color:#036;font-weight:bold">CONFIG</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">rubylibdir</span><span style="color:#710">&quot;</span></span>]
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/2.5.0</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">003</span> &gt;
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">004</span> &gt; <span style="color:#036;font-weight:bold">RbConfig</span>::<span style="color:#036;font-weight:bold">CONFIG</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bindir</span><span style="color:#710">&quot;</span></span>]
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/bin</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">005</span> &gt;
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">006</span> &gt; <span style="color:#036;font-weight:bold">RbConfig</span>::<span style="color:#036;font-weight:bold">CONFIG</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">archdir</span><span style="color:#710">&quot;</span></span>]
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/2.5.0/x86_64-darwin17</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">007</span> &gt;
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">8</span> &gt; <span style="color:#036;font-weight:bold">RbConfig</span>::<span style="color:#036;font-weight:bold">CONFIG</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sitedir</span><span style="color:#710">&quot;</span></span>]
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">00</span><span style="color:#00D">9</span> &gt;
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">010</span> &gt; <span style="color:#036;font-weight:bold">RbConfig</span>::<span style="color:#036;font-weight:bold">CONFIG</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">vendordir</span><span style="color:#710">&quot;</span></span>]
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/vendor_ruby</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">011</span> &gt;
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">012</span> &gt; <span style="color:#036;font-weight:bold">RbConfig</span>::<span style="color:#036;font-weight:bold">CONFIG</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sitelibdir</span><span style="color:#710">&quot;</span></span>]
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">013</span> &gt;
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">014</span> &gt; <span style="color:#036;font-weight:bold">RbConfig</span>::<span style="color:#036;font-weight:bold">CONFIG</span>[<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sitearchdir</span><span style="color:#710">&quot;</span></span>]
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span> =&gt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">/Users/caven/.rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0/x86_64-darwin17</span><span style="color:#710">&quot;</span></span>
+</pre></div>
+</div>
 </div>
 
 <p><strong>The Ruby standard library subdirectory (RbConfig::CONFIG[rubylibdir])</strong></p>
@@ -289,14 +253,11 @@ Some of the standard libraries, such as the drb library (the last item on the pr
 
 <p>使用 library 的方法有两种</p>
 
-<div class="language-plaintext highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre>•        require
-•        load
-</pre></td>
-</tr></table>
+<div class="language-plaintext highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>•        require
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>•        load
+</pre></div>
+</div>
 </div>
 
 <p><strong>Feature, extension, or library ?</strong></p>
@@ -307,32 +268,20 @@ Some of the standard libraries, such as the drb library (the last item on the pr
 
 <p>在执行命令时，ruby 会沿着一个特定的 loading path 查找需要的文件</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-</pre></td>
-  <td class="code"><pre>caven<span style="color:#33B">@caven</span> ⮀ ~<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Downloads</span><span style="color:#404">/</span></span>ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> ⮀ ruby -e <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">puts $:</span><span style="color:#710">&quot;</span></span>
-<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/gems/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span><span style="color:#33B">@global</span>/gems/did_you_mean-<span style="color:#60E">1.2</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib
-<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib/ruby/site_ruby/<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>
-<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib/ruby/site_ruby/<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/x86_64-darwin17
-<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib/ruby/site_ruby
-<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib/ruby/vendor_ruby/<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>
-<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib/ruby/vendor_ruby/<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/x86_64-darwin17
-<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib/ruby/vendor_ruby
-<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib/ruby/<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>
-<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib/ruby/<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/x86_64-darwin17
-caven<span style="color:#33B">@caven</span> ⮀ ~<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Downloads</span><span style="color:#404">/</span></span>ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> ⮀
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>caven<span style="color:#33B">@caven</span> ⮀ ~<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Downloads</span><span style="color:#404">/</span></span>ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> ⮀ ruby -e <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">puts $:</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/gems/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span><span style="color:#33B">@global</span>/gems/did_you_mean-<span style="color:#60E">1.2</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib/ruby/site_ruby/<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib/ruby/site_ruby/<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/x86_64-darwin17
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib/ruby/site_ruby
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib/ruby/vendor_ruby/<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib/ruby/vendor_ruby/<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/x86_64-darwin17
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib/ruby/vendor_ruby
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib/ruby/<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Users</span><span style="color:#404">/</span></span>caven/.rvm/rubies/ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/lib/ruby/<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span>/x86_64-darwin17
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>caven<span style="color:#33B">@caven</span> ⮀ ~<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Downloads</span><span style="color:#404">/</span></span>ruby-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> ⮀
+</pre></div>
+</div>
 </div>
 
 <p>When you load a file, Ruby looks for it in each of the listed directories, in order <strong>from top to bottom.</strong></p>
@@ -343,104 +292,65 @@ caven<span style="color:#33B">@caven</span> ⮀ ~<span style="background-color:h
 
 <p>但是 require 在第一次 require 到之后，就不再需要 require  同样的文件</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span> &gt; require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">json</span><span style="color:#710">'</span></span>
- =&gt; <span style="color:#069">true</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">9</span> &gt; require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">json</span><span style="color:#710">'</span></span>
- =&gt; <span style="color:#069">false</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">020</span> &gt; require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">json</span><span style="color:#710">'</span></span>
- =&gt; <span style="color:#069">false</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">8</span> &gt; require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">json</span><span style="color:#710">'</span></span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span> =&gt; <span style="color:#069">true</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">01</span><span style="color:#00D">9</span> &gt; require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">json</span><span style="color:#710">'</span></span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span> =&gt; <span style="color:#069">false</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">020</span> &gt; require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">json</span><span style="color:#710">'</span></span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span> =&gt; <span style="color:#069">false</span>
+</pre></div>
+</div>
 </div>
 
 <p>现在有两个文件</p>
 
 <p><strong>loadee.rb</strong></p>
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">&gt;&gt; Puts this line when require/load successfully.</span><span style="color:#710">&quot;</span></span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">&gt;&gt; Puts this line when require/load successfully.</span><span style="color:#710">&quot;</span></span>
+</pre></div>
+</div>
 </div>
 
 <p><strong>loaddemo.rb</strong></p>
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-</pre></td>
-  <td class="code"><pre>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Here I load loadee.rb 3 times.</span><span style="color:#710">&quot;</span></span>
-<span style="color:#00D">3</span>.times <span style="color:#080;font-weight:bold">do</span>
- load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">loadee.rb</span><span style="color:#710">&quot;</span></span>
-<span style="color:#080;font-weight:bold">end</span>
-
-puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">-</span><span style="color:#710">&quot;</span></span> * <span style="color:#00D">30</span>
-
-puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Here I require loadee.rb 3 times.</span><span style="color:#710">&quot;</span></span>
-<span style="color:#00D">3</span>.times <span style="color:#080;font-weight:bold">do</span>
- require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">./loadee.rb</span><span style="color:#710">&quot;</span></span>
-<span style="color:#080;font-weight:bold">end</span>
-
-puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">-</span><span style="color:#710">&quot;</span></span> * <span style="color:#00D">30</span>
-
-puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Here I require_relative loadee 3 times.</span><span style="color:#710">&quot;</span></span>
-<span style="color:#00D">3</span>.times <span style="color:#080;font-weight:bold">do</span>
- require_relative <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">loadee</span><span style="color:#710">&quot;</span></span>
-<span style="color:#080;font-weight:bold">end</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Here I load loadee.rb 3 times.</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#00D">3</span>.times <span style="color:#080;font-weight:bold">do</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span> load <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">loadee.rb</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">-</span><span style="color:#710">&quot;</span></span> * <span style="color:#00D">30</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Here I require loadee.rb 3 times.</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#00D">3</span>.times <span style="color:#080;font-weight:bold">do</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span> require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">./loadee.rb</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="color:#080;font-weight:bold">end</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">-</span><span style="color:#710">&quot;</span></span> * <span style="color:#00D">30</span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Here I require_relative loadee 3 times.</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="color:#00D">3</span>.times <span style="color:#080;font-weight:bold">do</span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span> require_relative <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">loadee</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="color:#080;font-weight:bold">end</span>
+</pre></div>
+</div>
 </div>
 
 <p>运行 loaddemo.rb 的结果</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-</pre></td>
-  <td class="code"><pre>caven<span style="color:#F00;background-color:#FAA">@</span><span style="color:#00D">192</span> ⮀ ~<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Notes &amp; Articles</span><span style="color:#404">/</span></span><span style="color:#036;font-weight:bold">Note</span> of <span style="color:#036;font-weight:bold">Rubyist</span>/code examples ⮀ ⭠ <span style="color:#00D">01</span>-<span style="color:#036;font-weight:bold">Rubyist±</span> ⮀ ruby loaddemo.rb
-<span style="color:#036;font-weight:bold">Here</span> <span style="color:#036;font-weight:bold">I</span> load loadee.rb <span style="color:#00D">3</span> times.
-&gt;&gt; <span style="color:#036;font-weight:bold">Puts</span> this line <span style="color:#080;font-weight:bold">when</span> require/load successfully.
-&gt;&gt; <span style="color:#036;font-weight:bold">Puts</span> this line <span style="color:#080;font-weight:bold">when</span> require/load successfully.
-&gt;&gt; <span style="color:#036;font-weight:bold">Puts</span> this line <span style="color:#080;font-weight:bold">when</span> require/load successfully.
-------------------------------
-<span style="color:#036;font-weight:bold">Here</span> <span style="color:#036;font-weight:bold">I</span> require loadee.rb <span style="color:#00D">3</span> times.
-&gt;&gt; <span style="color:#036;font-weight:bold">Puts</span> this line <span style="color:#080;font-weight:bold">when</span> require/load successfully.
-------------------------------
-<span style="color:#036;font-weight:bold">Here</span> <span style="color:#036;font-weight:bold">I</span> require_relative loadee <span style="color:#00D">3</span> times.
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>caven<span style="color:#F00;background-color:#FAA">@</span><span style="color:#00D">192</span> ⮀ ~<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Notes &amp; Articles</span><span style="color:#404">/</span></span><span style="color:#036;font-weight:bold">Note</span> of <span style="color:#036;font-weight:bold">Rubyist</span>/code examples ⮀ ⭠ <span style="color:#00D">01</span>-<span style="color:#036;font-weight:bold">Rubyist±</span> ⮀ ruby loaddemo.rb
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#036;font-weight:bold">Here</span> <span style="color:#036;font-weight:bold">I</span> load loadee.rb <span style="color:#00D">3</span> times.
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>&gt;&gt; <span style="color:#036;font-weight:bold">Puts</span> this line <span style="color:#080;font-weight:bold">when</span> require/load successfully.
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>&gt;&gt; <span style="color:#036;font-weight:bold">Puts</span> this line <span style="color:#080;font-weight:bold">when</span> require/load successfully.
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>&gt;&gt; <span style="color:#036;font-weight:bold">Puts</span> this line <span style="color:#080;font-weight:bold">when</span> require/load successfully.
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>------------------------------
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#036;font-weight:bold">Here</span> <span style="color:#036;font-weight:bold">I</span> require loadee.rb <span style="color:#00D">3</span> times.
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>&gt;&gt; <span style="color:#036;font-weight:bold">Puts</span> this line <span style="color:#080;font-weight:bold">when</span> require/load successfully.
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>------------------------------
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#036;font-weight:bold">Here</span> <span style="color:#036;font-weight:bold">I</span> require_relative loadee <span style="color:#00D">3</span> times.
+</pre></div>
+</div>
 </div>
 
 <p>每一次 load 文件都被执行</p>
@@ -501,86 +411,51 @@ require给出名称的功能</p>
 <p>-h	Show information about all command-line switches for the interpreter   <code>ruby -h</code>
 显示所有 command-line 开关的帮助信息</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-<a href="#n23" name="n23">23</a>
-<a href="#n24" name="n24">24</a>
-</pre></td>
-  <td class="code"><pre>caven<span style="color:#F00;background-color:#FAA">@</span><span style="color:#00D">192</span> ⮀ ~<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Notes &amp; Articles</span><span style="color:#404">/</span></span><span style="color:#036;font-weight:bold">Note</span> of <span style="color:#036;font-weight:bold">Rubyist</span>/code examples ⮀ ⭠ <span style="color:#00D">01</span>-<span style="color:#036;font-weight:bold">Rubyist±</span> ⮀ ruby -h
-<span style="color:#606">Usage</span>: ruby [switches] [--] [programfile] [arguments]
- <span style="color:#00D">-0</span>[octal]       specify record separator (<span style="color:#F00;background-color:#FAA">\</span><span style="color:#00D">0</span>, <span style="color:#080;font-weight:bold">if</span> no argument)
- -a              autosplit mode with -n <span style="color:#080;font-weight:bold">or</span> -p (splits <span style="color:#d70">$_</span> into <span style="color:#d70">$F</span>)
- -c              check syntax only
- -<span style="color:#036;font-weight:bold">Cdirectory</span>     cd to directory before executing your script
- -d              set debugging flags (set <span style="color:#d70">$DEBUG</span> to <span style="color:#069">true</span>)
- -e <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">command</span><span style="color:#710">'</span></span>    one line of script. Several -e<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">s allowed. Omit [programfile]
- -Eex[:in]       specify the default external and internal character encodings
- -Fpattern       split() pattern for autosplit (-a)
- -i[extension]   edit ARGV files in place (make backup if extension supplied)
- -Idirectory     specify $LOAD_PATH directory (may be used more than once)
- -l              enable line ending processing
- -n              assume </span><span style="color:#710">'</span></span><span style="color:#080;font-weight:bold">while</span> gets(); ... <span style="color:#080;font-weight:bold">end</span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"> loop around your script
- -p              assume loop like -n but print line also like sed
- -rlibrary       require the library before executing your script
- -s              enable some switch parsing for switches after script name
- -S              look for the script using PATH environment variable
- -T[level=1]     turn on tainting checks
- -v              print version number, then turn on verbose mode
- -w              turn warnings on for your script
- -W[level=2]     set warning level; 0=silence, 1=medium, 2=verbose
- -x[directory]   strip off text before #!ruby line and perhaps cd to directory
- -h              show this message, --help for more info
-</span></span></pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>caven<span style="color:#F00;background-color:#FAA">@</span><span style="color:#00D">192</span> ⮀ ~<span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">Notes &amp; Articles</span><span style="color:#404">/</span></span><span style="color:#036;font-weight:bold">Note</span> of <span style="color:#036;font-weight:bold">Rubyist</span>/code examples ⮀ ⭠ <span style="color:#00D">01</span>-<span style="color:#036;font-weight:bold">Rubyist±</span> ⮀ ruby -h
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#606">Usage</span>: ruby [switches] [--] [programfile] [arguments]
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span> <span style="color:#00D">-0</span>[octal]       specify record separator (<span style="color:#F00;background-color:#FAA">\</span><span style="color:#00D">0</span>, <span style="color:#080;font-weight:bold">if</span> no argument)
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span> -a              autosplit mode with -n <span style="color:#080;font-weight:bold">or</span> -p (splits <span style="color:#d70">$_</span> into <span style="color:#d70">$F</span>)
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span> -c              check syntax only
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span> -<span style="color:#036;font-weight:bold">Cdirectory</span>     cd to directory before executing your script
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span> -d              set debugging flags (set <span style="color:#d70">$DEBUG</span> to <span style="color:#069">true</span>)
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span> -e <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">command</span><span style="color:#710">'</span></span>    one line of script. Several -e<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">s allowed. Omit [programfile]</span></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> -Eex[:in]       specify the default external and internal character encodings</span></span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> -Fpattern       split() pattern for autosplit (-a)</span></span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> -i[extension]   edit ARGV files in place (make backup if extension supplied)</span></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> -Idirectory     specify $LOAD_PATH directory (may be used more than once)</span></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> -l              enable line ending processing</span></span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> -n              assume </span><span style="color:#710">'</span></span><span style="color:#080;font-weight:bold">while</span> gets(); ... <span style="color:#080;font-weight:bold">end</span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20"> loop around your script</span></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> -p              assume loop like -n but print line also like sed</span></span>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> -rlibrary       require the library before executing your script</span></span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> -s              enable some switch parsing for switches after script name</span></span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> -S              look for the script using PATH environment variable</span></span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> -T[level=1]     turn on tainting checks</span></span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> -v              print version number, then turn on verbose mode</span></span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> -w              turn warnings on for your script</span></span>
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> -W[level=2]     set warning level; 0=silence, 1=medium, 2=verbose</span></span>
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> -x[directory]   strip off text before #!ruby line and perhaps cd to directory</span></span>
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"> -h              show this message, --help for more info</span></span>
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span><span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20"></span></span></pre></div>
+</div>
 </div>
 
 <p>ruby 每执行一次代码，默认都会有一个返回值，并印出来</p>
 
 <p>也可以把 irb 设成不显示返回值的风格 使用 —noecho 无回声模式…</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-</pre></td>
-  <td class="code"><pre>caven<span style="color:#F00;background-color:#FAA">@</span><span style="color:#00D">192</span> ⮀ ~ ⮀ irb --simple-prompt --noecho
-&gt;&gt; puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hi</span><span style="color:#710">&quot;</span></span>
-<span style="color:#036;font-weight:bold">Hi</span>
-&gt;&gt; exit
-caven<span style="color:#F00;background-color:#FAA">@</span><span style="color:#00D">192</span> ⮀ ~ ⮀ irb
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; puts  <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hi</span><span style="color:#710">&quot;</span></span>
-<span style="color:#036;font-weight:bold">Hi</span>
-=&gt; <span style="color:#069">nil</span>
-<span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt;
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>caven<span style="color:#F00;background-color:#FAA">@</span><span style="color:#00D">192</span> ⮀ ~ ⮀ irb --simple-prompt --noecho
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>&gt;&gt; puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hi</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#036;font-weight:bold">Hi</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>&gt;&gt; exit
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>caven<span style="color:#F00;background-color:#FAA">@</span><span style="color:#00D">192</span> ⮀ ~ ⮀ irb
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">001</span> &gt; puts  <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Hi</span><span style="color:#710">&quot;</span></span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span style="color:#036;font-weight:bold">Hi</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>=&gt; <span style="color:#069">nil</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span style="color:#60E">2.5</span>.<span style="color:#F00;background-color:#FAA">0</span> :<span style="color:#00D">002</span> &gt;
+</pre></div>
+</div>
 </div>
 
 <p><strong>ri and RDoc</strong></p>
@@ -600,40 +475,24 @@ ri和 RDoc 铆接在一起：ri 能让你读取 RDoc 抽取出的信息。ri是�
 
 <p>直接在命令行中(不是irb中)执行 <code>ri String.new</code> 会返回下面的信息：</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-</pre></td>
-  <td class="code"><pre>= <span style="color:#036;font-weight:bold">String</span>.upcase
-
-(from ruby site)
-------------------------------------------------------------------------------
-  str.upcase              -&gt; new_str
-  str.upcase([options])   -&gt; new_str
-
-------------------------------------------------------------------------------
-
-<span style="color:#036;font-weight:bold">Returns</span> a copy of str with all lowercase letters replaced with their
-uppercase counterparts.
-
-See <span style="color:#036;font-weight:bold">String</span><span style="color:#777">#downcase for meaning of options and use with different encodings.</span>
-
-  <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hEllO</span><span style="color:#710">&quot;</span></span>.upcase   <span style="color:#777">#=&gt; &quot;HELLO&quot;</span>
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>= <span style="color:#036;font-weight:bold">String</span>.upcase
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>(from ruby site)
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>------------------------------------------------------------------------------
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  str.upcase              -&gt; new_str
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  str.upcase([options])   -&gt; new_str
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>------------------------------------------------------------------------------
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span style="color:#036;font-weight:bold">Returns</span> a copy of str with all lowercase letters replaced with their
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>uppercase counterparts.
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>See <span style="color:#036;font-weight:bold">String</span><span style="color:#777">#downcase for meaning of options and use with different encodings.</span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">hEllO</span><span style="color:#710">&quot;</span></span>.upcase   <span style="color:#777">#=&gt; &quot;HELLO&quot;</span>
+</pre></div>
+</div>
 </div>
 
 <p>By default, ri runs its output through a pager (such as more on Unix). It may pause at the end of output, waiting for you to hit the spacebar or some other key to show the next screen of information or to exit entirely if all the information has been shown. Exactly what you have to press in this case varies from one operating system, and one pager, to another. Spacebar, Enter, Escape, Ctrl-C, Ctrl-D, and Ctrl-Z are all good bets. If you want ri to write the output without filtering it through a pager, you can use the –T command-line switch (ri –T topic).</p>
@@ -658,12 +517,10 @@ See <span style="color:#036;font-weight:bold">String</span><span style="color:#7
 
 <p>gem 的安装也可以从本地来</p>
 
-<div class="language-ruby highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>gem install <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">home</span><span style="color:#404">/</span><span style="color:#C2C">me</span></span>/mygems/ruport-<span style="color:#60E">1.4</span>.<span style="color:#F00;background-color:#FAA">0</span>.gem
-</pre></td>
-</tr></table>
+<div class="language-ruby highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>gem install <span style="background-color:hsla(300,100%,50%,0.06)"><span style="color:#404">/</span><span style="color:#808">home</span><span style="color:#404">/</span><span style="color:#C2C">me</span></span>/mygems/ruport-<span style="color:#60E">1.4</span>.<span style="color:#F00;background-color:#FAA">0</span>.gem
+</pre></div>
+</div>
 </div>
 
 <p>安装gem 时的两个 flag</p>

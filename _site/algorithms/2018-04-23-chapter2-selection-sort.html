@@ -244,54 +244,31 @@ https://en.wikipedia.org/wiki/Array_data_structure</li>
 
 <p>pyton 代码示例将array中的数字从小到大排列</p>
 
-<div class="language-python highlighter-coderay"><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<strong><a href="#n5" name="n5">5</a></strong>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<strong><a href="#n15" name="n15">15</a></strong>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#777"># find one smallest value in an array</span>
-<span style="color:#777"># every execution O(n)</span>
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">findSmallest</span>(arr):
-    smallest = arr[<span style="color:#00D">0</span>]
-    smallest_index = <span style="color:#00D">0</span>
-    <span style="color:#080;font-weight:bold">for</span> i <span style="color:#080;font-weight:bold">in</span> <span style="color:#369;font-weight:bold">range</span>(<span style="color:#00D">1</span>, <span style="color:#369;font-weight:bold">len</span>(arr)):
-        <span style="color:#080;font-weight:bold">if</span> arr[i] &lt; smallest:
-            smallest = arr[i]
-            smallest_index = i
-    <span style="color:#080;font-weight:bold">return</span> smallest_index
-
-<span style="color:#777"># sorting</span>
-<span style="color:#777"># arr.length * O(n)</span>
-<span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">selectionSort</span>(arr):
-    newArr = []
-    <span style="color:#080;font-weight:bold">for</span> i <span style="color:#080;font-weight:bold">in</span> <span style="color:#369;font-weight:bold">range</span>(<span style="color:#369;font-weight:bold">len</span>(arr)):
-        smallest = findSmallest(arr)
-        newArr.append(arr.pop(smallest))
-    <span style="color:#080;font-weight:bold">return</span> newArr
-
-<span style="color:#080;font-weight:bold">print</span> selectionSort([<span style="color:#00D">5</span>,<span style="color:#00D">3</span>,<span style="color:#00D">6</span>,<span style="color:#00D">2</span>,<span style="color:#00D">10</span>])
-
-</pre></td>
-</tr></table>
+<div class="language-python highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span style="color:#777"># find one smallest value in an array</span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span style="color:#777"># every execution O(n)</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">findSmallest</span>(arr):
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    smallest = arr[<span style="color:#00D">0</span>]
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    smallest_index = <span style="color:#00D">0</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    <span style="color:#080;font-weight:bold">for</span> i <span style="color:#080;font-weight:bold">in</span> <span style="color:#369;font-weight:bold">range</span>(<span style="color:#00D">1</span>, <span style="color:#369;font-weight:bold">len</span>(arr)):
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>        <span style="color:#080;font-weight:bold">if</span> arr[i] &lt; smallest:
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>            smallest = arr[i]
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>            smallest_index = i
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    <span style="color:#080;font-weight:bold">return</span> smallest_index
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span style="color:#777"># sorting</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span><span style="color:#777"># arr.length * O(n)</span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">selectionSort</span>(arr):
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    newArr = []
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>    <span style="color:#080;font-weight:bold">for</span> i <span style="color:#080;font-weight:bold">in</span> <span style="color:#369;font-weight:bold">range</span>(<span style="color:#369;font-weight:bold">len</span>(arr)):
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>        smallest = findSmallest(arr)
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>        newArr.append(arr.pop(smallest))
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>    <span style="color:#080;font-weight:bold">return</span> newArr
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span><span style="color:#080;font-weight:bold">print</span> selectionSort([<span style="color:#00D">5</span>,<span style="color:#00D">3</span>,<span style="color:#00D">6</span>,<span style="color:#00D">2</span>,<span style="color:#00D">10</span>])
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>
+</pre></div>
+</div>
 </div>
 
 <hr />
