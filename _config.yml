@@ -50,5 +50,5 @@ defaults:
 kramdown:
   syntax_highlighter: coderay
   syntax_highlighter_opts:
-    line_numbers: inline
+    # line_numbers: inline
     bold_every: 5
