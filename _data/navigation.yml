@@ -5,6 +5,6 @@
 - name: Blog
   link: /blog.html
 - name: Photography
-  link: photography.html
+  link: /photography.html
 - name: Me
   link: /me.html
