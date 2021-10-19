@@ -52,6 +52,8 @@ If we can get correct HTML, we get the correct results. So we just need specify 
 
 It's kind of hard coded all the files and not let github pages generated them on the fly.
 
+But one thing needs to be remembered: run `jekyll build` each time before pushing to github.
+
 And it works.
 
 
