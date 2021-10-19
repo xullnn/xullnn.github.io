@@ -50,9 +50,5 @@ defaults:
 kramdown:
   syntax_highlighter: coderay
 
-sass:
-    sass_dir: _sass
-    style: compressed
-
 
 destination : ./docs
