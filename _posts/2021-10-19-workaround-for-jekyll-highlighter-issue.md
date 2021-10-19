@@ -33,7 +33,7 @@ If you choose the a branch, the `main` branch normally, github pages and jekyll 
 
 In this case, coderay's not applied to code blocks.
 
-## Experiments
+## 3 Experiments
 
 So the cause was coderay somehow hadn't participated in the process of build the site on github pages. No HTML structures and inline styles were added to the files.
 
@@ -41,7 +41,7 @@ A lot of similar questions can be found on the internet and I also tried some. S
 
 I suspected that all installed gems(dependencies) can work together to generated site files locally. But there's not such a step and environment on github pages to install them, so the gems won't be incorporated into the process of building site remotely, after all it's not a remote server.
 
-## Solution
+## 4 Solution
 
 If we can get correct HTML, we get the correct results. So we just need specify github pages to render the directory with correct files in it, and 'correct' means the same as the local directory.
 
@@ -50,7 +50,7 @@ If we can get correct HTML, we get the correct results. So we just need specify 
 1. let jekyll generated site to `/docs` directory
 2. change site repo's `setting -> pages -> source` to `/docs`
 
-It's kind of hard coded all the files and not let github pages generated them on the fly.
+Thus it hard coded all the files and not let github pages generated them on the fly.
 
 But one thing needs to be remembered: run `jekyll build` each time before pushing to github.
 
