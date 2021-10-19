@@ -11,7 +11,7 @@ recent: true
 
 In my recent work I had to extract regex statements from a `.sql` file, and get an array of strings. And I need a refresh on regular expression. A simplified example file may look like this `schema.sql`:
 
-```SQL
+~~~SQL
 CREATE TABLE users (
   id serial PRIMARY KEY,
   nickname varchar(100) CHECK(length(nickname) > 2) UNIQUE NOT NULL
@@ -25,7 +25,7 @@ CREATE TABLE food_items (
 );
 
 -- more statements omitted
-```
+~~~
 
 ## Match things from `CREATE` to semicolon `;`
 
