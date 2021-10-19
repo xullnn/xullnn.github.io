@@ -47,9 +47,10 @@ defaults:
     values:
       layout: "default"
 
-
-markdown: kramdown
-
 kramdown:
   syntax_highlighter: coderay
+
+sass:
+    sass_dir: _sass
+    style: compressed
 
