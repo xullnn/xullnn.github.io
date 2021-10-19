@@ -47,6 +47,9 @@ defaults:
     values:
       layout: "default"
 
+
+markdown: kramdown
+
 kramdown:
   syntax_highlighter: coderay
 
