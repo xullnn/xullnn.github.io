@@ -87,7 +87,7 @@
 
 <p>In this case, coderay’s not applied to code blocks.</p>
 
-<h2 id="experiments">Experiments</h2>
+<h2 id="3-experiments">3 Experiments</h2>
 
 <p>So the cause was coderay somehow hadn’t participated in the process of build the site on github pages. No HTML structures and inline styles were added to the files.</p>
 
@@ -95,7 +95,7 @@
 
 <p>I suspected that all installed gems(dependencies) can work together to generated site files locally. But there’s not such a step and environment on github pages to install them, so the gems won’t be incorporated into the process of building site remotely, after all it’s not a remote server.</p>
 
-<h2 id="solution">Solution</h2>
+<h2 id="4-solution">4 Solution</h2>
 
 <p>If we can get correct HTML, we get the correct results. So we just need specify github pages to render the directory with correct files in it, and ‘correct’ means the same as the local directory.</p>
 
@@ -106,7 +106,9 @@
   <li>change site repo’s <code>setting -&gt; pages -&gt; source</code> to <code>/docs</code></li>
 </ol>
 
-<p>It’s kind of hard coded all the files and not let github pages generated them on the fly.</p>
+<p>Thus it hard coded all the files and not let github pages generated them on the fly.</p>
+
+<p>But one thing needs to be remembered: run <code>jekyll build</code> each time before pushing to github.</p>
 
 <p>And it works.</p>
 
